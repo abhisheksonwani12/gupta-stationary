@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #FFFFFF;
+    --foreground: #1C1C1C;
+    --card: #FFFFFF;
+    --card-foreground: #1C1C1C;
+    --popover: #FFFFFF;
+    --popover-foreground: #1C1C1C;
+    --primary: #1C1C1C;
+    --primary-foreground: #FFFFFF;
+    --secondary: #F7F5F0;
+    --secondary-foreground: #1C1C1C;
+    --muted: #F3EFEA;
+    --muted-foreground: #706E6B;
+    --accent: #B38E5D;
+    --accent-foreground: #FFFFFF;
+    --destructive: #991B1B;
+    --destructive-foreground: #FFFFFF;
+    --border: #E8E3DA;
+    --input: #E8E3DA;
+    --ring: #1C1C1C;
+    --radius: 0rem;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-geist-sans), "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom scrollbar matching Elvy */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1ede8;
+}
+::-webkit-scrollbar-thumb {
+  background: #c7beaf;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9d9280;
+}
+
+.font-luxury {
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
