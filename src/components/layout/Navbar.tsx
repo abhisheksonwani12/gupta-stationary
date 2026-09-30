@@ -176,7 +176,7 @@ export default function Navbar() {
                   pathname === "/testimonials" ? "text-[#B38E5D] font-bold" : ""
                 }`}
               >
-                Reviews (4.8★)
+                Reviews
               </Link>
 
               <Link
@@ -289,7 +289,7 @@ export default function Navbar() {
                   About Gupta Stationery (Since 1990)
                 </Link>
                 <Link href="/testimonials" className="block py-2 border-b border-gray-100">
-                  Customer Testimonials (4.8 / 5 Rating)
+                  Customer Reviews
                 </Link>
                 <Link href="/blog" className="block py-2 border-b border-gray-100">
                   Stationery Guides & Articles
