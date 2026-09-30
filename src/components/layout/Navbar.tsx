@@ -72,10 +72,11 @@ export default function Navbar() {
                 <Image
                   src="/images/logo.png"
                   alt="Gupta Paper and Stationery"
-                  width={240}
-                  height={90}
+                  width={220}
+                  height={130}
                   priority
-                  className="h-12 sm:h-15 md:h-16 w-auto object-contain transition-transform group-hover:scale-105 duration-200"
+                  unoptimized
+                  className="h-12 sm:h-14 md:h-16 w-auto object-contain transition-transform group-hover:scale-105 duration-200"
                 />
               </div>
             </Link>
@@ -254,8 +255,9 @@ export default function Navbar() {
                 <Image
                   src="/images/logo.png"
                   alt="Gupta Paper and Stationery"
-                  width={220}
-                  height={80}
+                  width={200}
+                  height={120}
+                  unoptimized
                   className="h-12 sm:h-14 w-auto object-contain"
                 />
               </div>

@@ -81,13 +81,14 @@ export default function Footer() {
           {/* Column 1: Brand & Contact Info */}
           <div className="lg:col-span-2 space-y-4">
             <div className="space-y-2">
-              <div className="bg-white px-3.5 py-2 rounded-lg inline-block shadow-sm">
+              <div className="bg-white/10 border border-white/10 px-4 py-2.5 rounded-lg inline-block backdrop-blur-xs">
                 <Image
-                  src="/images/logo.png"
+                  src="/images/logo-white.png"
                   alt="Gupta Paper and Stationery"
-                  width={220}
-                  height={80}
-                  className="h-11 sm:h-13 w-auto object-contain"
+                  width={200}
+                  height={120}
+                  unoptimized
+                  className="h-12 sm:h-14 w-auto object-contain"
                 />
               </div>
               <p className="text-[10px] uppercase tracking-[0.25em] text-[#B38E5D] font-semibold">
