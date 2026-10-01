@@ -68,7 +68,7 @@ export default function Navbar() {
 
             {/* Brand Logo with Official Image */}
             <Link href="/" className="flex items-center gap-3 group shrink-0">
-              <div className="relative flex items-center py-0.5">
+              <div className="relative flex items-center py-1">
                 <Image
                   src="/images/logo.png"
                   alt="Gupta Paper and Stationery"
@@ -76,7 +76,7 @@ export default function Navbar() {
                   height={130}
                   priority
                   unoptimized
-                  className="h-12 sm:h-14 md:h-16 w-auto object-contain transition-transform group-hover:scale-105 duration-200"
+                  className="h-11 sm:h-13 md:h-14 w-auto object-contain transition-transform group-hover:scale-105 duration-200"
                 />
               </div>
             </Link>
@@ -99,9 +99,9 @@ export default function Navbar() {
                   <ChevronDown className="w-3.5 h-3.5 group-hover:rotate-180 transition-transform duration-200" />
                 </Link>
 
-                {/* Mega Menu Dropdown */}
+                {/* Mega Menu Dropdown - Aligned safely to prevent clipping */}
                 {activeMegaMenu === "shop" && (
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 w-[880px] bg-white border border-[#E8E3DA] shadow-luxury p-6 grid grid-cols-4 gap-6 animate-fadeIn rounded-b-md">
+                  <div className="absolute top-full -left-6 w-[820px] bg-white border border-[#E8E3DA] shadow-2xl p-6 grid grid-cols-4 gap-6 animate-fadeIn rounded-b-md z-50">
                     <div className="col-span-3 grid grid-cols-3 gap-6">
                       {CATEGORIES.map((cat) => (
                         <div key={cat.id} className="space-y-2">
