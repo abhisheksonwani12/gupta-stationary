@@ -10,7 +10,7 @@ export const BLOGS: BlogPost[] = [
     publishedDate: "August 15, 2024",
     readingTime: "8 min read",
     summary: "Choosing the right pen can make a major difference in speed and hand fatigue during long 3-hour examinations. Here is our expert guide to choosing ball, gel, and roller pens based on grip and paper type.",
-    coverImage: "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?q=80&w=900&auto=format&fit=crop",
+    coverImage: "/images/hero/hero-single-pen.jpg",
     content: [
       "When preparing for board exams or collegiate study sessions, the writing instrument you hold for hours determines your comfort, neatness, and writing speed.",
       "Ballpoint vs Gel Pens: Ballpoint pens use thicker, oil-based ink that dries instantly and lasts thousands of words without skipping on standard notebook paper. Gel pens offer richer contrast and require almost zero downward pressure, making them wonderful for headings and detailed diagram annotations.",
@@ -27,7 +27,7 @@ export const BLOGS: BlogPost[] = [
     publishedDate: "July 22, 2024",
     readingTime: "6 min read",
     summary: "Millions of disposable plastic pens and bleached virgin paper pads end up in landfills each year. Learn how simple eco-conscious swaps make a huge positive environmental impact.",
-    coverImage: "https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=900&auto=format&fit=crop",
+    coverImage: "/images/hero/hero-single-seedpencil.jpg",
     content: [
       "At Gupta Stationery, we believe sustainable stationery should be an accessible standard rather than an expensive luxury.",
       "Traditional plastic pens take over 400 years to decompose. In contrast, our Plantable Seed Pens feature recycled newspaper barrels and biodegradable herb/flower seed capsules (Marigold, Basil, Tomato) that bloom into live foliage when planted in soil.",
@@ -44,7 +44,7 @@ export const BLOGS: BlogPost[] = [
     publishedDate: "June 30, 2024",
     readingTime: "5 min read",
     summary: "Preparation is key to a calm and confident academic start. Here is the ultimate checklist for primary, middle, and high school requirements.",
-    coverImage: "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?q=80&w=900&auto=format&fit=crop",
+    coverImage: "/images/hero/hero-bulk-3.jpg",
     content: [
       "The rush before new school terms can be overwhelming for parents and teachers. Having a structured checklist avoids multiple trips to the stationery store.",
       "Primary School Essentials: Wooden HB pencil box with erasers, safety scissors, student geometry scale, non-toxic crayons, 200-page softcover ruled notebooks.",
@@ -61,7 +61,7 @@ export const BLOGS: BlogPost[] = [
     publishedDate: "May 14, 2024",
     readingTime: "7 min read",
     summary: "A cluttered desk leads to a cluttered mind. Discover easy color-coding, document filing, and desk-staging strategies to elevate work efficiency.",
-    coverImage: "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?q=80&w=900&auto=format&fit=crop",
+    coverImage: "/images/hero/hero-stationery-1.jpg",
     content: [
       "Studies show that professionals waste up to 4.3 hours a week searching for misplaced documents and misplaced office supplies.",
       "Color-Coded Filing: Allocate specific folder colors to departments or priority levels (e.g. Red for Urgent, Blue for Operations, Green for Finance).",
@@ -78,7 +78,7 @@ export const BLOGS: BlogPost[] = [
     publishedDate: "April 8, 2024",
     readingTime: "6 min read",
     summary: "From 60 GSM classroom ruled notebooks to heavy 100 GSM fountain pen friendly journals, find out what paper weight and binding fits your workflow.",
-    coverImage: "https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=900&auto=format&fit=crop",
+    coverImage: "/images/hero/hero-single-notebook.jpg",
     content: [
       "Not all notebooks are created equal. Understanding GSM (Grams per Square Meter) and binding styles transforms your writing experience.",
       "For ballpoint and gel pens: 60-70 GSM paper provides lightweight, high-volume capacity that is easy to carry.",
@@ -95,7 +95,7 @@ export const BLOGS: BlogPost[] = [
     publishedDate: "March 20, 2024",
     readingTime: "5 min read",
     summary: "Handwriting enhances memory retention, cognitive focus, and personal expression in a screen-dominated world.",
-    coverImage: "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?q=80&w=900&auto=format&fit=crop",
+    coverImage: "/images/hero/hero-single-pen.jpg",
     content: [
       "Neurological research confirms that writing by hand activates cognitive motor pathways that typing on keyboards simply cannot stimulate.",
       "Matching pen weight and balance to your hand size prevents wrist fatigue during extended writing sessions.",
@@ -111,7 +111,7 @@ export const BLOGS: BlogPost[] = [
     publishedDate: "February 10, 2024",
     readingTime: "8 min read",
     summary: "Learn how to forecast annual stationery consumption, negotiate direct-from-manufacturer pricing, and save up to 60% on recurring operational supplies.",
-    coverImage: "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?q=80&w=900&auto=format&fit=crop",
+    coverImage: "/images/hero/hero-bulk-3.jpg",
     content: [
       "Institutions often overpay by 30-40% when purchasing stationery on an ad-hoc weekly retail basis.",
       "Standardize item specifications across all departments (e.g. 75 GSM A4 copy paper reams, standard 1.0mm blue pens).",
@@ -128,7 +128,7 @@ export const BLOGS: BlogPost[] = [
     publishedDate: "January 15, 2024",
     readingTime: "7 min read",
     summary: "A practical guide to identifying genuine ISI-certified materials, non-toxic erasers, and uniform graphite hardness ratings.",
-    coverImage: "https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=900&auto=format&fit=crop",
+    coverImage: "/images/hero/hero-eco-2.jpg",
     content: [
       "Counterfeit and sub-standard stationery can scratch delicate paper, leak ink onto clothing, and expose children to harmful phthalates.",
       "Always check for ISI markings and non-toxic certifications on school art and geometry tools.",
