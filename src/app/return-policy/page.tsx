@@ -35,7 +35,7 @@ export default function ReturnPolicyPage() {
           <section className="space-y-2">
             <h2 className="font-serif text-lg font-bold uppercase text-gray-900">2. Simple 4-Step Return Process</h2>
             <ol className="list-decimal pl-5 space-y-1">
-              <li><strong>Initiate Request:</strong> Contact us via Phone or WhatsApp at <strong>8839715995</strong> or email <strong>guptapapers.ss@gmail.com</strong> with your Order ID.</li>
+              <li><strong>Initiate Request:</strong> Contact us via Phone or WhatsApp at <strong>8839715995</strong> or email <strong>support@instantstationary.com</strong> with your Order ID.</li>
               <li><strong>Free Reverse Pickup:</strong> Our delivery executive will collect the product from your doorstep in Raipur at zero charge.</li>
               <li><strong>Quick Verification:</strong> Our team checks product integrity within 24 hours.</li>
               <li><strong>Instant Refund:</strong> Funds are remitted directly to your bank account or original payment mode within 48 hours.</li>

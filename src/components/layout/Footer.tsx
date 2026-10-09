@@ -16,9 +16,17 @@ import {
   Award,
 } from "lucide-react";
 
+import { usePathname } from "next/navigation";
+
 export default function Footer() {
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
+  const pathname = usePathname();
+
+  // Hide customer footer in admin portal
+  if (pathname?.startsWith("/admin")) {
+    return null;
+  }
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
@@ -81,18 +89,13 @@ export default function Footer() {
           {/* Column 1: Brand & Contact Info */}
           <div className="lg:col-span-2 space-y-4">
             <div className="space-y-2">
-              <div className="bg-white/10 border border-white/10 px-4 py-2.5 rounded-lg inline-block backdrop-blur-xs">
-                <Image
-                  src="/images/logo-white.png"
-                  alt="Gupta Paper and Stationery"
-                  width={200}
-                  height={120}
-                  unoptimized
-                  className="h-12 sm:h-14 w-auto object-contain"
-                />
-              </div>
+              <Link href="/" className="inline-block group">
+                <span className="font-serif text-2xl sm:text-3xl font-black uppercase tracking-tight text-white leading-none group-hover:text-[#B38E5D] transition-colors">
+                  Instant <span className="text-[#B38E5D]">Stationary</span>
+                </span>
+              </Link>
               <p className="text-[10px] uppercase tracking-[0.25em] text-[#B38E5D] font-semibold">
-                Serving Raipur with Excellence Since 1990
+                Fast Dispatch • Raipur & Pan-India
               </p>
             </div>
             <p className="text-xs text-[#A09D96] leading-relaxed max-w-sm">
@@ -112,8 +115,8 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-[#B38E5D] flex-shrink-0" />
-                <a href="mailto:guptapapers.ss@gmail.com" className="hover:text-white transition-colors">
-                  guptapapers.ss@gmail.com
+                <a href="mailto:support@instantstationary.com" className="hover:text-white transition-colors">
+                  support@instantstationary.com
                 </a>
               </div>
               <div className="flex items-center gap-2.5">
@@ -294,7 +297,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="mt-6 text-center text-[11px] text-[#555555]">
-          © {new Date().getFullYear()} Gupta Stationery. All Rights Reserved. Founded by Harsh Gupta. Proudly Serving Raipur Since 1990.
+          © {new Date().getFullYear()} Instant Stationary. All Rights Reserved. Founded by Harsh Gupta. Proudly Serving Raipur Since 1990.
         </div>
       </div>
     </footer>

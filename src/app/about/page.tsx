@@ -59,7 +59,7 @@ export default function AboutPage() {
                   1990
                 </div>
                 <div className="text-xs text-gray-700">
-                  <strong>Founded by the Gupta Family:</strong> Established in Raipur with a vision to make quality stationery affordable for every student.
+                  <strong>Founded by the Instant Family:</strong> Established in Raipur with a vision to make quality stationery affordable for every student.
                 </div>
               </div>
 
@@ -68,7 +68,7 @@ export default function AboutPage() {
                   2000s
                 </div>
                 <div className="text-xs text-gray-700">
-                  <strong>Introduced &ldquo;Gupta&apos;s Premium Collection&rdquo;:</strong> Launched our own branded line of ball pens, copy paper, and ruled notebooks manufactured to ISI standards.
+                  <strong>Introduced &ldquo;Instant&apos;s Premium Collection&rdquo;:</strong> Launched our own branded line of ball pens, copy paper, and ruled notebooks manufactured to ISI standards.
                 </div>
               </div>
 
@@ -96,7 +96,7 @@ export default function AboutPage() {
             <div className="relative aspect-[4/3] bg-gray-100 border border-[#E8E3DA] overflow-hidden shadow-luxury">
               <img
                 src="https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?q=80&w=900&auto=format&fit=crop"
-                alt="Gupta Stationery Store and Products"
+                alt="Instant Stationary Store and Products"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -118,7 +118,7 @@ export default function AboutPage() {
               Our Guiding Principles
             </span>
             <h2 className="font-serif text-2xl sm:text-3xl font-bold uppercase tracking-tight text-[#1C1C1C] mt-1">
-              The 5 Pillars of Gupta Stationery
+              The 5 Pillars of Instant Stationary
             </h2>
             <div className="w-12 h-0.5 bg-[#B38E5D] mx-auto mt-3" />
           </div>
@@ -177,7 +177,7 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* Comparison Table: Gupta Stationery vs Others */}
+      {/* Comparison Table: Instant Stationary vs Others */}
       <div className="py-16 sm:py-20 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-12">
@@ -185,7 +185,7 @@ export default function AboutPage() {
               Transparent Comparison
             </span>
             <h2 className="font-serif text-2xl sm:text-3xl font-bold uppercase tracking-tight text-[#1C1C1C] mt-1">
-              Gupta Stationery vs. Competitors
+              Instant Stationary vs. Competitors
             </h2>
           </div>
 
@@ -194,7 +194,7 @@ export default function AboutPage() {
               <thead className="bg-[#1C1C1C] text-white">
                 <tr>
                   <th className="p-4 font-bold uppercase tracking-wider">Feature</th>
-                  <th className="p-4 font-bold uppercase tracking-wider text-[#B38E5D]">Gupta Stationery</th>
+                  <th className="p-4 font-bold uppercase tracking-wider text-[#B38E5D]">Instant Stationary</th>
                   <th className="p-4 font-bold uppercase tracking-wider text-gray-300">Other Shops & Marketplaces</th>
                 </tr>
               </thead>

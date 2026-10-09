@@ -1,7 +1,10 @@
-import React from "react";
+"use client";
+
+import React, { use } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PRODUCTS, CATEGORIES } from "@/data/products";
+import { useInventory } from "@/context/InventoryContext";
 import ProductCard from "@/components/products/ProductCard";
 import { ArrowLeft, Sparkles } from "lucide-react";
 
@@ -9,24 +12,22 @@ interface CategoryPageProps {
   params: Promise<{ category: string }>;
 }
 
-export async function generateStaticParams() {
-  return CATEGORIES.map((cat) => ({
-    category: cat.slug,
-  }));
-}
-
-export default async function CategoryPage({ params }: CategoryPageProps) {
-  const { category: categorySlug } = await params;
+export default function CategoryPage({ params }: CategoryPageProps) {
+  const resolvedParams = use(params);
+  const categorySlug = resolvedParams.category;
+  const { products } = useInventory();
+  
   const category = CATEGORIES.find((c) => c.slug === categorySlug);
 
   if (!category) {
     notFound();
   }
 
-  const categoryProducts = PRODUCTS.filter((p) => p.category === categorySlug);
+  const liveList = products.length > 0 ? products : PRODUCTS;
+  const categoryProducts = liveList.filter((p) => p.category === categorySlug);
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-white min-h-screen selection:bg-[#B38E5D] selection:text-white">
       {/* Category Hero Header */}
       <div className="bg-[#FAF8F5] border-b border-[#E8E3DA] py-12 sm:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -45,7 +46,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
             <div className="max-w-2xl">
               <span className="text-[11px] uppercase tracking-[0.25em] font-bold text-[#B38E5D]">
-                Gupta Collection
+                Instant Collection
               </span>
               <h1 className="font-serif text-3xl sm:text-5xl font-bold uppercase tracking-tight text-[#1C1C1C] mt-1">
                 {category.name}
@@ -56,7 +57,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
             </div>
 
             <div className="flex flex-wrap gap-2">
-              {category.subcategories.map((sub) => (
+              {category.subcategories.map((sub: string) => (
                 <span
                   key={sub}
                   className="px-3 py-1.5 bg-white border border-[#E8E3DA] text-xs font-semibold text-gray-800"
@@ -84,11 +85,23 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
           </span>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {categoryProducts.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
+        {categoryProducts.length > 0 ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {categoryProducts.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+        ) : (
+          <div className="text-center py-16 bg-[#FAF8F5] border border-[#E8E3DA] p-8">
+            <p className="font-serif text-lg text-gray-800">No products found in this category yet.</p>
+            <Link
+              href="/shop"
+              className="mt-4 inline-block px-6 py-2.5 bg-black text-white text-xs font-bold uppercase tracking-wider hover:bg-[#B38E5D]"
+            >
+              Browse All Products
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );

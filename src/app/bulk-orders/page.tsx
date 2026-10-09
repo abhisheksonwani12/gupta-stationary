@@ -30,7 +30,7 @@ export default function BulkOrdersPage() {
     email: "",
     gstNumber: "",
     businessType: "school",
-    productList: "Gupta Premium Ball Pen (Blue) x 500\nA4 Copy Paper Ream x 20\nGupta School Notebook (200 pages) x 200",
+    productList: "Instant Premium Ball Pen (Blue) x 500\nA4 Copy Paper Ream x 20\nInstant School Notebook (200 pages) x 200",
     deliveryDate: "",
     deliveryLocation: "Raipur, Chhattisgarh",
     specialRequirements: "Custom packaging with institutional stamp",
@@ -56,7 +56,7 @@ export default function BulkOrdersPage() {
               <span className="text-[#B38E5D]">Get Up to 60% Discount!</span>
             </h1>
             <p className="text-sm sm:text-base text-[#D1CCC4] leading-relaxed">
-              Serving Schools, Offices & Businesses Across Raipur Since 1990. Whether you need 50 pens or 50,000 notebooks, Gupta Stationery has you covered with unbeatable wholesale pricing and same-day delivery.
+              Serving Schools, Offices & Businesses Across Raipur Since 1990. Whether you need 50 pens or 50,000 notebooks, Instant Stationary has you covered with unbeatable wholesale pricing and same-day delivery.
             </p>
 
             <div className="pt-4 flex flex-wrap gap-4 items-center">
@@ -67,7 +67,7 @@ export default function BulkOrdersPage() {
                 Request Custom Quote
               </a>
               <a
-                href="https://wa.me/918839715995?text=Hello%20Gupta%20Stationery,%20I%20want%20to%20place%20a%20bulk%20order"
+                href="https://wa.me/918839715995?text=Hello%20Instant%20Stationery,%20I%20want%20to%20place%20a%20bulk%20order"
                 target="_blank"
                 rel="noreferrer"
                 className="px-6 py-4 bg-[#25D366] text-white text-xs font-bold uppercase tracking-luxury hover:bg-[#1ebd5a] transition-colors flex items-center gap-2"
@@ -80,12 +80,12 @@ export default function BulkOrdersPage() {
         </div>
       </div>
 
-      {/* Why Bulk Order from Gupta Stationery */}
+      {/* Why Bulk Order from Instant Stationary */}
       <div className="py-16 bg-[#FAF8F5] border-b border-[#E8E3DA]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <h2 className="font-serif text-2xl sm:text-3xl font-bold uppercase tracking-tight text-[#1C1C1C]">
-              Why Bulk Buyers Choose Gupta Stationery
+              Why Bulk Buyers Choose Instant Stationary
             </h2>
             <div className="w-12 h-0.5 bg-[#B38E5D] mx-auto mt-3" />
           </div>
@@ -267,7 +267,7 @@ export default function BulkOrdersPage() {
               <Store className="w-8 h-8 text-[#B38E5D]" />
               <h3 className="font-bold text-sm uppercase text-gray-900">Retailers & Resellers</h3>
               <p className="text-xs text-gray-600">
-                Stock your stationery retail store with our &ldquo;Gupta&apos;s&rdquo; brand products with 40-60% retail margin potential and flexible credit.
+                Stock your stationery retail store with our &ldquo;Instant&apos;s&rdquo; brand products with 40-60% retail margin potential and flexible credit.
               </p>
               <div className="text-xs font-bold text-emerald-800 pt-2">
                 40% - 60% Retail Margins
@@ -504,7 +504,7 @@ export default function BulkOrdersPage() {
                   </div>
                   <div className="flex items-center gap-3">
                     <Mail className="w-4 h-4 text-[#B38E5D]" />
-                    <span>Email: guptapapers.ss@gmail.com</span>
+                    <span>Email: support@instantstationary.com</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <MapPin className="w-4 h-4 text-[#B38E5D] mt-0.5" />
@@ -519,7 +519,7 @@ export default function BulkOrdersPage() {
                   Example Institutional Order Savings:
                 </h4>
                 <div className="p-3 bg-white border border-[#E8E3DA] space-y-1">
-                  <div className="text-gray-600">500 Gupta School Notebooks (200 pgs)</div>
+                  <div className="text-gray-600">500 Instant School Notebooks (200 pgs)</div>
                   <div className="flex justify-between font-semibold">
                     <span>Retail Total:</span>
                     <span className="line-through text-gray-400">₹42,500</span>

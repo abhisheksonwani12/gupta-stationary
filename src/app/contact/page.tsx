@@ -40,7 +40,7 @@ export default function ContactPage() {
             Get In Touch
           </span>
           <h1 className="font-serif text-3xl sm:text-5xl font-bold uppercase tracking-tight text-[#1C1C1C] mt-2">
-            Contact Gupta Stationery
+            Contact Instant Stationary
           </h1>
           <p className="text-xs sm:text-sm text-[#706E6B] mt-3 leading-relaxed">
             Have a question about a product, need a custom bulk order quotation, or want same-day delivery updates? We are here to assist you 7 days a week.
@@ -96,10 +96,10 @@ export default function ContactPage() {
             </h3>
             <p className="text-xs text-gray-600">For formal tender inquiries & GST invoicing.</p>
             <a
-              href="mailto:guptapapers.ss@gmail.com"
+              href="mailto:support@instantstationary.com"
               className="font-bold text-xs text-[#1C1C1C] hover:text-[#B38E5D] block pt-1 truncate"
             >
-              guptapapers.ss@gmail.com
+              support@instantstationary.com
             </a>
             <span className="text-[11px] text-gray-400 block">Response within 24 hours</span>
           </div>
@@ -245,7 +245,7 @@ export default function ContactPage() {
               <div className="h-64 bg-[#E8E3DA] relative flex items-center justify-center p-6 text-center">
                 <div className="space-y-2 bg-white/95 p-5 border border-[#1C1C1C] shadow-lg max-w-xs">
                   <MapPin className="w-6 h-6 text-[#B38E5D] mx-auto" />
-                  <h4 className="font-bold text-xs uppercase text-gray-900">Gupta Stationery</h4>
+                  <h4 className="font-bold text-xs uppercase text-gray-900">Instant Stationary</h4>
                   <p className="text-[11px] text-gray-600">
                     Mowa, Dubey Colony, Near Durga Temple, Raipur, Chhattisgarh
                   </p>

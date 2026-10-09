@@ -21,7 +21,7 @@ export default function PrivacyPolicyPage() {
           <h1 className="font-serif text-3xl sm:text-4xl font-bold uppercase text-gray-900 mt-1">
             Privacy Policy
           </h1>
-          <p className="text-xs text-gray-400 mt-1">Last Updated: August 2024 • Gupta Stationery, Raipur</p>
+          <p className="text-xs text-gray-400 mt-1">Last Updated: August 2024 • Instant Stationary, Raipur</p>
         </div>
 
         <div className="prose prose-neutral max-w-none text-xs sm:text-sm text-gray-700 leading-relaxed space-y-6">
@@ -54,7 +54,7 @@ export default function PrivacyPolicyPage() {
           <section className="space-y-2">
             <h2 className="font-serif text-lg font-bold uppercase text-gray-900">4. Contact For Privacy Queries</h2>
             <p>
-              If you have questions regarding data privacy or wish to delete your account records, please contact our Data Officer at: <a href="mailto:guptapapers.ss@gmail.com" className="text-[#B38E5D] underline font-semibold">guptapapers.ss@gmail.com</a> or call <strong>+91 8839715995</strong>.
+              If you have questions regarding data privacy or wish to delete your account records, please contact our Data Officer at: <a href="mailto:support@instantstationary.com" className="text-[#B38E5D] underline font-semibold">support@instantstationary.com</a> or call <strong>+91 8839715995</strong>.
             </p>
           </section>
         </div>

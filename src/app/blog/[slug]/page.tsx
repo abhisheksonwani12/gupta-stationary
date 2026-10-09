@@ -93,7 +93,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </span>
             <h4 className="font-bold text-sm text-gray-900">{blog.author}</h4>
             <p className="text-xs text-gray-500">
-              Gupta Stationery Content & Research Team, Raipur
+              Instant Stationary Content & Research Team, Raipur
             </p>
           </div>
           <Link

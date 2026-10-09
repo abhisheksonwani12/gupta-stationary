@@ -6,7 +6,7 @@ export const BLOGS: BlogPost[] = [
     slug: "best-pens-for-students-2024-complete-guide",
     title: "Best Pens for Students - Complete Guide",
     category: "Student Supplies",
-    author: "Pooh (Gupta Content Team)",
+    author: "Pooh (Instant Content Team)",
     publishedDate: "August 15, 2024",
     readingTime: "8 min read",
     summary: "Choosing the right pen can make a major difference in speed and hand fatigue during long 3-hour examinations. Here is our expert guide to choosing ball, gel, and roller pens based on grip and paper type.",
@@ -15,7 +15,7 @@ export const BLOGS: BlogPost[] = [
       "When preparing for board exams or collegiate study sessions, the writing instrument you hold for hours determines your comfort, neatness, and writing speed.",
       "Ballpoint vs Gel Pens: Ballpoint pens use thicker, oil-based ink that dries instantly and lasts thousands of words without skipping on standard notebook paper. Gel pens offer richer contrast and require almost zero downward pressure, making them wonderful for headings and detailed diagram annotations.",
       "Key factors to inspect: Tip size (0.5mm vs 0.7mm vs 1.0mm), rubberized barrel ergonomics to prevent fingertip callus formation, and ink drying speed to avoid left-handed smudging.",
-      "Our Top Recommendation: For daily notes, the Gupta Premium Ball Pen with 1.0mm Swiss carbide tip is unmatched in reliability, whereas the Gupta 10-Color Gel Pen Set is the go-to for diagramming and revision cards."
+      "Our Top Recommendation: For daily notes, the Instant Premium Ball Pen with 1.0mm Swiss carbide tip is unmatched in reliability, whereas the Instant 10-Color Gel Pen Set is the go-to for diagramming and revision cards."
     ]
   },
   {
@@ -29,7 +29,7 @@ export const BLOGS: BlogPost[] = [
     summary: "Millions of disposable plastic pens and bleached virgin paper pads end up in landfills each year. Learn how simple eco-conscious swaps make a huge positive environmental impact.",
     coverImage: "/images/hero/hero-single-seedpencil.jpg",
     content: [
-      "At Gupta Stationery, we believe sustainable stationery should be an accessible standard rather than an expensive luxury.",
+      "At Instant Stationary, we believe sustainable stationery should be an accessible standard rather than an expensive luxury.",
       "Traditional plastic pens take over 400 years to decompose. In contrast, our Plantable Seed Pens feature recycled newspaper barrels and biodegradable herb/flower seed capsules (Marigold, Basil, Tomato) that bloom into live foliage when planted in soil.",
       "Our 100% Recycled Paper Notebooks save up to 70% water and 60% electricity compared to manufacturing virgin bleached wood pulp papers.",
       "By replacing plastic stationery in schools and corporate desks across Raipur, our community has saved over 500,000 single-use plastic pen barrels in the last two years."
@@ -49,7 +49,7 @@ export const BLOGS: BlogPost[] = [
       "The rush before new school terms can be overwhelming for parents and teachers. Having a structured checklist avoids multiple trips to the stationery store.",
       "Primary School Essentials: Wooden HB pencil box with erasers, safety scissors, student geometry scale, non-toxic crayons, 200-page softcover ruled notebooks.",
       "High School & Competitive Exams: Master 15-piece geometry tin box, 0.5mm precision mechanical pencils, multi-color highlighters, sticky note flags, and durable file folders.",
-      "Save 30-50% with Gupta Stationery's Back-to-School Bundle offers available in-store and online throughout June and July."
+      "Save 30-50% with Instant Stationary's Back-to-School Bundle offers available in-store and online throughout June and July."
     ]
   },
   {
@@ -116,7 +116,7 @@ export const BLOGS: BlogPost[] = [
       "Institutions often overpay by 30-40% when purchasing stationery on an ad-hoc weekly retail basis.",
       "Standardize item specifications across all departments (e.g. 75 GSM A4 copy paper reams, standard 1.0mm blue pens).",
       "Consolidate orders quarterly to hit high-tier volume brackets (100+ units for 40% off, 500+ units for 60% off).",
-      "Partner with Gupta Stationery for dedicated account managers, scheduled staggered deliveries, and 30-day credit invoicing."
+      "Partner with Instant Stationary for dedicated account managers, scheduled staggered deliveries, and 30-day credit invoicing."
     ]
   },
   {

@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { Heart, ShoppingBag, Eye, Star, Sparkles } from "lucide-react";
+import { Heart, ShoppingBag, Eye, Star } from "lucide-react";
 import { Product } from "@/types";
 import { useCart } from "@/context/CartContext";
 import { useWishlist } from "@/context/WishlistContext";
@@ -20,6 +20,8 @@ export default function ProductCard({ product }: ProductCardProps) {
 
   const isFavorited = isInWishlist(product.id);
   const secondImage = product.images[1] || product.images[0];
+  const isOutOfStock = (product.stock ?? 0) <= 0;
+  const isLowStock = !isOutOfStock && (product.stock ?? 0) <= (product.lowStockThreshold ?? 10);
 
   const highestBulkDiscount =
     product.bulkPricing && product.bulkPricing.length > 1
@@ -28,25 +30,37 @@ export default function ProductCard({ product }: ProductCardProps) {
 
   return (
     <div
-      className="group relative bg-white border border-[#E8E3DA] flex flex-col justify-between overflow-hidden transition-all duration-300 hover:shadow-luxury hover:border-[#1C1C1C]/40"
+      className={`group relative bg-white border border-[#E8E3DA] flex flex-col justify-between overflow-hidden transition-all duration-300 hover:shadow-luxury hover:border-[#1C1C1C]/40 ${
+        isOutOfStock ? "opacity-75" : ""
+      }`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Top Image Container */}
       <div className="relative aspect-square bg-[#FAF8F5] overflow-hidden">
         {/* Badges */}
-        <div className="absolute top-2.5 left-2.5 z-10 flex flex-col gap-1">
-          {product.isBestseller && (
-            <span className="bg-[#1C1C1C] text-white text-[10px] font-bold uppercase tracking-wider px-2 py-0.5">
-              Bestseller
+        <div className="absolute top-2.5 left-2.5 z-10 flex flex-col gap-1 items-start">
+          {isOutOfStock ? (
+            <span className="bg-red-700 text-white text-[10px] font-bold uppercase tracking-wider px-2 py-0.5">
+              Out of Stock
             </span>
+          ) : isLowStock ? (
+            <span className="bg-amber-700 text-white text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 animate-pulse">
+              Only {product.stock} Left!
+            </span>
+          ) : (
+            product.isBestseller && (
+              <span className="bg-[#1C1C1C] text-white text-[10px] font-bold uppercase tracking-wider px-2 py-0.5">
+                Bestseller
+              </span>
+            )
           )}
-          {product.isEcoFriendly && (
+          {product.isEcoFriendly && !isOutOfStock && (
             <span className="bg-emerald-800 text-white text-[10px] font-bold uppercase tracking-wider px-2 py-0.5">
               Eco 🌱
             </span>
           )}
-          {highestBulkDiscount > 0 && (
+          {highestBulkDiscount > 0 && !isOutOfStock && (
             <span className="bg-[#B38E5D] text-white text-[10px] font-bold uppercase tracking-wider px-2 py-0.5">
               Up to {highestBulkDiscount}% Off Bulk
             </span>
@@ -74,27 +88,35 @@ export default function ProductCard({ product }: ProductCardProps) {
           <img
             src={isHovered ? secondImage : product.images[0]}
             alt={product.name}
-            className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+            className={`w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 ${
+              isOutOfStock ? "grayscale contrast-75" : ""
+            }`}
           />
         </Link>
 
         {/* Quick Add Overlay on Desktop */}
-        <div className="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-black/60 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-300 hidden sm:flex gap-2">
-          <button
-            onClick={() => addToCart(product, 1)}
-            className="flex-1 py-2 bg-white text-[#1C1C1C] text-xs font-bold uppercase tracking-wider hover:bg-[#B38E5D] hover:text-white transition-colors flex items-center justify-center gap-1.5 shadow-sm"
-          >
-            <ShoppingBag className="w-3.5 h-3.5" />
-            <span>Quick Add</span>
-          </button>
-          <Link
-            href={`/product/${product.slug}`}
-            className="p-2 bg-white text-[#1C1C1C] hover:bg-black hover:text-white transition-colors flex items-center justify-center"
-            title="View Details"
-          >
-            <Eye className="w-4 h-4" />
-          </Link>
-        </div>
+        {!isOutOfStock ? (
+          <div className="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-black/60 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-300 hidden sm:flex gap-2">
+            <button
+              onClick={() => addToCart(product, 1)}
+              className="flex-1 py-2 bg-white text-[#1C1C1C] text-xs font-bold uppercase tracking-wider hover:bg-[#B38E5D] hover:text-white transition-colors flex items-center justify-center gap-1.5 shadow-sm"
+            >
+              <ShoppingBag className="w-3.5 h-3.5" />
+              <span>Quick Add</span>
+            </button>
+            <Link
+              href={`/product/${product.slug}`}
+              className="p-2 bg-white text-[#1C1C1C] hover:bg-black hover:text-white transition-colors flex items-center justify-center"
+              title="View Details"
+            >
+              <Eye className="w-4 h-4" />
+            </Link>
+          </div>
+        ) : (
+          <div className="absolute inset-x-0 bottom-0 p-3 bg-black/60 text-white text-[11px] font-bold uppercase tracking-wider text-center hidden sm:block">
+            Out of Stock
+          </div>
+        )}
       </div>
 
       {/* Product Content Details */}
@@ -145,13 +167,19 @@ export default function ProductCard({ product }: ProductCardProps) {
           </div>
 
           {/* Mobile Add to Cart Button */}
-          <button
-            onClick={() => addToCart(product, 1)}
-            className="sm:hidden p-2 bg-[#FAF8F5] border border-[#E8E3DA] text-black hover:bg-black hover:text-white transition-colors"
-            aria-label="Add to cart"
-          >
-            <ShoppingBag className="w-4 h-4" />
-          </button>
+          {!isOutOfStock ? (
+            <button
+              onClick={() => addToCart(product, 1)}
+              className="sm:hidden p-2 bg-[#FAF8F5] border border-[#E8E3DA] text-black hover:bg-black hover:text-white transition-colors"
+              aria-label="Add to cart"
+            >
+              <ShoppingBag className="w-4 h-4" />
+            </button>
+          ) : (
+            <span className="sm:hidden text-[10px] font-bold text-red-600 uppercase border border-red-200 px-2 py-1">
+              Out
+            </span>
+          )}
         </div>
       </div>
     </div>

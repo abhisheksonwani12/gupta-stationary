@@ -21,7 +21,7 @@ export default function BulkSavingsBanner() {
             </h2>
 
             <p className="text-xs sm:text-sm text-[#D1CCC4] leading-relaxed max-w-xl">
-              Serving schools, coaching centers, corporate offices, and local retailers across Raipur since 1990. Whether you need 50 pens or 50,000 notebooks, Gupta Stationery offers guaranteed stock, custom quotes in 2 hours, and same-day delivery.
+              Serving schools, coaching centers, corporate offices, and local retailers across Raipur since 1990. Whether you need 50 pens or 50,000 notebooks, Instant Stationary offers guaranteed stock, custom quotes in 2 hours, and same-day delivery.
             </p>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-2">
@@ -48,7 +48,7 @@ export default function BulkSavingsBanner() {
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <a
-                href="https://wa.me/918839715995?text=Hello%20Gupta%20Stationery,%20I%20want%20to%20inquire%20about%20bulk%20pricing"
+                href="https://wa.me/918839715995?text=Hello%20Instant%20Stationery,%20I%20want%20to%20inquire%20about%20bulk%20pricing"
                 target="_blank"
                 rel="noreferrer"
                 className="px-6 py-4 bg-[#25D366] text-white text-xs font-bold uppercase tracking-luxury hover:bg-[#1ebd5a] transition-colors flex items-center gap-2"

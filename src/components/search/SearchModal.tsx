@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Search, X, ArrowRight, TrendingUp } from "lucide-react";
 import { PRODUCTS } from "@/data/products";
+import { useInventory } from "@/context/InventoryContext";
 import { formatPrice } from "@/lib/utils";
 import { Product } from "@/types";
 
@@ -14,6 +15,7 @@ interface SearchModalProps {
 }
 
 export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
+  const { products } = useInventory();
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<Product[]>([]);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -33,8 +35,9 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
       setResults([]);
       return;
     }
+    const liveList = products.length > 0 ? products : PRODUCTS;
     const q = query.toLowerCase();
-    const filtered = PRODUCTS.filter(
+    const filtered = liveList.filter(
       (p) =>
         p.name.toLowerCase().includes(q) ||
         p.category.toLowerCase().includes(q) ||
@@ -42,7 +45,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
         p.description.toLowerCase().includes(q)
     );
     setResults(filtered);
-  }, [query]);
+  }, [query, products]);
 
   if (!isOpen) return null;
 
@@ -79,7 +82,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
               </div>
               <div className="flex flex-wrap gap-2">
                 {[
-                  "Gupta Premium Ball Pen",
+                  "Instant Premium Ball Pen",
                   "A4 Copy Paper Ream",
                   "Eco-Friendly Notebook",
                   "Geometry Box",

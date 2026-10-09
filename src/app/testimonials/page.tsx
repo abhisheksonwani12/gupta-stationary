@@ -33,7 +33,7 @@ export default function TestimonialsPage() {
       setIsModalOpen(false);
       setReviewSubmitted(false);
       setFormData({ name: "", role: "", rating: 5, title: "", comment: "" });
-      alert("Thank you! Your verified review has been submitted and your 10% discount code is: GUPTA10");
+      alert("Thank you! Your verified review has been submitted and your 10% discount code is: INSTANT10");
     }, 2000);
   };
 
@@ -49,7 +49,7 @@ export default function TestimonialsPage() {
             Customer Success Stories & Ratings
           </h1>
           <p className="text-xs sm:text-sm text-[#706E6B] mt-3 leading-relaxed">
-            Discover why students, teachers, principals, office managers, and businesses across Raipur trust Gupta Stationery for their daily writing and office procurement.
+            Discover why students, teachers, principals, office managers, and businesses across Raipur trust Instant Stationary for their daily writing and office procurement.
           </p>
         </div>
       </div>
@@ -245,7 +245,7 @@ export default function TestimonialsPage() {
                 <CheckCircle2 className="w-8 h-8 text-emerald-600 mx-auto" />
                 <h4 className="font-bold text-sm text-emerald-950">Review Submitted Successfully!</h4>
                 <p className="text-xs text-emerald-800">
-                  Your review will be posted shortly. Use coupon <strong>GUPTA10</strong> at checkout!
+                  Your review will be posted shortly. Use coupon <strong>INSTANT10</strong> at checkout!
                 </p>
               </div>
             ) : (
@@ -313,7 +313,7 @@ export default function TestimonialsPage() {
                     required
                     value={formData.comment}
                     onChange={(e) => setFormData({ ...formData, comment: e.target.value })}
-                    placeholder="Describe your experience with Gupta Stationery products, delivery speed, and customer service..."
+                    placeholder="Describe your experience with Instant Stationary products, delivery speed, and customer service..."
                     className="w-full p-2.5 border border-[#E8E3DA] focus:outline-none focus:border-black"
                   />
                 </div>

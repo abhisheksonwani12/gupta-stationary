@@ -37,7 +37,7 @@ export default function CancellationPolicyPage() {
             <ul className="list-disc pl-5 space-y-1">
               <li><strong>Hotline:</strong> Call our Raipur desk at <strong>+91 8839715995</strong>.</li>
               <li><strong>WhatsApp:</strong> Message us at <strong>+91 8839715995</strong> with your Order ID.</li>
-              <li><strong>Email:</strong> Send a cancellation notice to <strong>guptapapers.ss@gmail.com</strong>.</li>
+              <li><strong>Email:</strong> Send a cancellation notice to <strong>support@instantstationary.com</strong>.</li>
             </ul>
           </section>
 

@@ -66,7 +66,7 @@ const VALUE_PROPS = [
     badge: "Curated Brands",
     title: "Own Brand + Premium Brands",
     description:
-      "Choose our signature high-performance Gupta's range or authorized stock from Cello, Pilot, Faber-Castell, and Paper Mate.",
+      "Choose our signature high-performance Instant's range or authorized stock from Cello, Pilot, Faber-Castell, and Paper Mate.",
     image:
       "https://images.unsplash.com/photo-1569683795645-b62e50fbf103?q=80&w=900&auto=format&fit=crop",
     tag: "1000+ Products",
@@ -138,7 +138,7 @@ export default function WhyChooseUs() {
           <div>
             <div className="flex items-center gap-1.5 text-[11px] uppercase tracking-[0.25em] font-bold text-[#B38E5D]">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>Why Choose Gupta Stationery</span>
+              <span>Why Choose Instant Stationary</span>
             </div>
             <h2 className="font-serif text-2xl sm:text-4xl font-bold uppercase tracking-tight text-[#1C1C1C] mt-2">
               Raipur&apos;s Most Trusted Stationery Partner
@@ -227,7 +227,7 @@ export default function WhyChooseUs() {
                         <div className="pt-4 border-t border-gray-100 flex items-center justify-between text-[11px] font-semibold text-[#B38E5D] uppercase tracking-wider">
                           <div className="flex items-center gap-1.5">
                             <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                            <span>Gupta Guarantee</span>
+                            <span>Instant Guarantee</span>
                           </div>
                           <Link
                             href={item.link}

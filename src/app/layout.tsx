@@ -4,16 +4,19 @@ import { GeistMono } from "geist/font/mono";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import { AuthProvider } from "@/context/AuthContext";
+import { InventoryProvider } from "@/context/InventoryContext";
 import { CartProvider } from "@/context/CartContext";
 import { WishlistProvider } from "@/context/WishlistContext";
 
 export const metadata: Metadata = {
-  title: "Gupta Stationery | Quality Stationery Since 1990 — Raipur",
+  title: "Instant Stationary | Quality Stationery & Office Supplies — Raipur",
   description:
-    "Eco-friendly, Premium Quality Stationery at the Lowest Prices. Serving Raipur schools, offices, and bulk buyers since 1990.",
+    "Eco-friendly, Premium Quality Stationery at the Lowest Prices. Instant delivery for schools, offices, and bulk buyers.",
   keywords: [
+    "instant stationary",
     "stationery raipur",
-    "gupta stationery",
+    "instant stationery",
     "wholesale stationery",
     "eco friendly pens",
     "recycled notebooks",
@@ -38,13 +41,17 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen flex flex-col font-sans bg-white text-[#1C1C1C] antialiased selection:bg-[#B38E5D] selection:text-white">
-        <CartProvider>
-          <WishlistProvider>
-            <Navbar />
-            <main className="flex-1">{children}</main>
-            <Footer />
-          </WishlistProvider>
-        </CartProvider>
+        <AuthProvider>
+          <InventoryProvider>
+            <CartProvider>
+              <WishlistProvider>
+                <Navbar />
+                <main className="flex-1">{children}</main>
+                <Footer />
+              </WishlistProvider>
+            </CartProvider>
+          </InventoryProvider>
+        </AuthProvider>
       </body>
     </html>
   );

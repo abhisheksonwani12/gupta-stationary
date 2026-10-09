@@ -5,10 +5,12 @@ import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { Filter, SlidersHorizontal, ChevronDown, Check, X, RotateCcw } from "lucide-react";
 import ProductCard from "@/components/products/ProductCard";
-import { PRODUCTS, CATEGORIES } from "@/data/products";
+import { CATEGORIES } from "@/data/products";
+import { useInventory } from "@/context/InventoryContext";
 import { Product } from "@/types";
 
 function ShopContent() {
+  const { products: liveProducts } = useInventory();
   const searchParams = useSearchParams();
   const initialSearch = searchParams.get("q") || "";
   const initialCategory = searchParams.get("category") || "all";
@@ -30,7 +32,7 @@ function ShopContent() {
 
   // Filtering Logic
   const filteredProducts = useMemo(() => {
-    let list = [...PRODUCTS];
+    let list = [...liveProducts];
 
     // Search query
     if (initialSearch.trim()) {
@@ -133,7 +135,7 @@ function ShopContent() {
               <span>Filters</span>
             </button>
             <span className="text-xs font-semibold text-[#706E6B]">
-              Showing <strong className="text-black">{filteredProducts.length}</strong> of {PRODUCTS.length} products
+              Showing <strong className="text-black">{filteredProducts.length}</strong> of {liveProducts.length} products
             </span>
           </div>
 
@@ -187,7 +189,7 @@ function ShopContent() {
                   }`}
                 >
                   <span>All Categories</span>
-                  <span>{PRODUCTS.length}</span>
+                  <span>{liveProducts.length}</span>
                 </button>
                 {CATEGORIES.map((cat) => (
                   <button

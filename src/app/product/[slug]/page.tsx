@@ -23,6 +23,7 @@ import { PRODUCTS } from "@/data/products";
 import { formatPrice } from "@/lib/utils";
 import { useCart } from "@/context/CartContext";
 import { useWishlist } from "@/context/WishlistContext";
+import { useInventory } from "@/context/InventoryContext";
 import BulkPricingTable from "@/components/products/BulkPricingTable";
 import ProductCard from "@/components/products/ProductCard";
 
@@ -33,7 +34,9 @@ interface ProductPageProps {
 export default function ProductDetailPage({ params }: ProductPageProps) {
   const resolvedParams = use(params);
   const slug = resolvedParams.slug;
-  const product = PRODUCTS.find((p) => p.slug === slug);
+  const { getProductBySlug, products } = useInventory();
+  
+  const product = getProductBySlug(slug) || PRODUCTS.find((p) => p.slug === slug);
 
   if (!product) {
     notFound();
@@ -50,6 +53,8 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
   const { toggleWishlist, isInWishlist } = useWishlist();
 
   const isFavorited = isInWishlist(product.id);
+  const isOutOfStock = (product.stock ?? 0) <= 0;
+  const isLowStock = !isOutOfStock && (product.stock ?? 0) <= (product.lowStockThreshold ?? 10);
 
   // Calculate current dynamic price based on bulk tiers
   const activeTier = product.bulkPricing
@@ -62,7 +67,7 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
   const originalTotalPrice = product.price * quantity;
   const totalSavings = originalTotalPrice - totalPrice;
 
-  const relatedProducts = PRODUCTS.filter(
+  const relatedProducts = (products.length > 0 ? products : PRODUCTS).filter(
     (p) => p.category === product.category && p.id !== product.id
   ).slice(0, 4);
 
@@ -155,10 +160,22 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
             <div>
               <div className="flex items-center justify-between text-xs text-gray-500 uppercase tracking-wider mb-2">
                 <span>SKU: {product.sku}</span>
-                <span className="text-emerald-800 font-semibold flex items-center gap-1">
-                  <CheckCircle2 className="w-3.5 h-3.5" />
-                  In Stock ({product.stock}+ units available)
-                </span>
+                {isOutOfStock ? (
+                  <span className="text-red-700 font-bold flex items-center gap-1">
+                    <XCircle className="w-3.5 h-3.5" />
+                    Out of Stock
+                  </span>
+                ) : isLowStock ? (
+                  <span className="text-amber-700 font-bold flex items-center gap-1 animate-pulse">
+                    <HelpCircle className="w-3.5 h-3.5" />
+                    Only {product.stock} left in stock!
+                  </span>
+                ) : (
+                  <span className="text-emerald-800 font-semibold flex items-center gap-1">
+                    <CheckCircle2 className="w-3.5 h-3.5" />
+                    In Stock ({product.stock} units available)
+                  </span>
+                )}
               </div>
 
               <h1 className="font-serif text-2xl sm:text-3xl font-bold uppercase tracking-tight text-[#1C1C1C]">
@@ -310,11 +327,20 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
 
               <div className="grid grid-cols-5 gap-3">
                 <button
+                  disabled={isOutOfStock}
                   onClick={() => addToCart(product, quantity, selectedColor)}
-                  className="col-span-4 py-4 bg-[#1C1C1C] text-white text-xs font-bold uppercase tracking-luxury hover:bg-[#B38E5D] transition-colors flex items-center justify-center gap-2 shadow-lg"
+                  className={`col-span-4 py-4 text-white text-xs font-bold uppercase tracking-luxury flex items-center justify-center gap-2 shadow-lg transition-colors ${
+                    isOutOfStock
+                      ? "bg-gray-400 cursor-not-allowed"
+                      : "bg-[#1C1C1C] hover:bg-[#B38E5D]"
+                  }`}
                 >
                   <ShoppingBag className="w-4 h-4" />
-                  <span>Add to Bag ({formatPrice(totalPrice)})</span>
+                  <span>
+                    {isOutOfStock
+                      ? "Currently Out of Stock"
+                      : `Add to Bag (${formatPrice(totalPrice)})`}
+                  </span>
                 </button>
 
                 <button
@@ -385,7 +411,7 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
                   : "text-gray-400 hover:text-black"
               }`}
             >
-              Why Choose Gupta&apos;s
+              Why Choose Instant&apos;s
             </button>
             <button
               onClick={() => setActiveTab("faqs")}
@@ -451,11 +477,11 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
             {activeTab === "why" && (
               <div className="bg-[#FAF8F5] border border-[#E8E3DA] p-6 sm:p-8 space-y-4 max-w-3xl">
                 <h3 className="font-serif text-lg font-bold text-gray-900 uppercase">
-                  Gupta Stationery Advantage
+                  Instant Stationary Advantage
                 </h3>
                 <div className="space-y-3 text-xs text-gray-700 leading-relaxed">
                   <div className="p-3 bg-red-50 border-l-4 border-red-500 text-red-900">
-                    <strong>❌ Don&apos;t waste money on overpriced imported stationery:</strong> Gupta Stationery offers equivalent Swiss-tip and Japanese-ink quality at 1/3rd the cost of retail brands.
+                    <strong>❌ Don&apos;t waste money on overpriced imported stationery:</strong> Instant Stationary offers equivalent Swiss-tip and Japanese-ink quality at 1/3rd the cost of retail brands.
                   </div>
                   <div className="p-3 bg-emerald-50 border-l-4 border-emerald-500 text-emerald-900">
                     <strong>✅ Direct Manufacturer Pricing:</strong> By supplying directly from our Raipur warehouse, you get honest pricing with no distributor markups.

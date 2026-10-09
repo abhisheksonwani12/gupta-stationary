@@ -7,7 +7,7 @@ export const TESTIMONIALS: Review[] = [
     role: "School Principal, Raipur",
     rating: 5,
     title: "33 Years of Quality & Trust!",
-    comment: "I've been buying from Gupta Stationery since 2005. Their quality is unmatched, and I've never found cheaper prices anywhere in Raipur. Every time I need stationery, I know exactly where to go. They deserve 10 stars if possible!",
+    comment: "I've been buying from Instant Stationary since 2005. Their quality is unmatched, and I've never found cheaper prices anywhere in Raipur. Every time I need stationery, I know exactly where to go. They deserve 10 stars if possible!",
     date: "Aug 15, 2024",
     verified: true
   },
@@ -18,7 +18,7 @@ export const TESTIMONIALS: Review[] = [
     company: "TechVision Solutions",
     rating: 5,
     title: "Bulk Orders Saved Us ₹50,000!",
-    comment: "We order office supplies every month. Gupta Stationery gives us 40-50% discount on bulk orders. Their quality is as good as premium brands, but at 1/3rd the price. Best supplier ever!",
+    comment: "We order office supplies every month. Instant Stationary gives us 40-50% discount on bulk orders. Their quality is as good as premium brands, but at 1/3rd the price. Best supplier ever!",
     date: "Aug 10, 2024",
     verified: true
   },
@@ -28,7 +28,7 @@ export const TESTIMONIALS: Review[] = [
     role: "Event Manager & School Teacher",
     rating: 5,
     title: "Same-Day Delivery - Lifesaver!",
-    comment: "Emergency office supply needed? Gupta Stationery delivers same day! They saved our presentation once. Now they're our only stationery supplier. Love the eco-friendly range!",
+    comment: "Emergency office supply needed? Instant Stationary delivers same day! They saved our presentation once. Now they're our only stationery supplier. Love the eco-friendly range!",
     date: "Jul 28, 2024",
     verified: true
   },
@@ -38,7 +38,7 @@ export const TESTIMONIALS: Review[] = [
     role: "Environmental Activist & Business Owner",
     rating: 5,
     title: "Eco-Friendly Without Compromise",
-    comment: "Finally, a stationery shop that offers eco-friendly options at affordable prices! Most eco-friendly products are too expensive. Gupta Stationery gets it right. Supporting sustainable business!",
+    comment: "Finally, a stationery shop that offers eco-friendly options at affordable prices! Most eco-friendly products are too expensive. Instant Stationary gets it right. Supporting sustainable business!",
     date: "Jul 18, 2024",
     verified: true
   },
@@ -48,7 +48,7 @@ export const TESTIMONIALS: Review[] = [
     role: "Parent & Teacher",
     rating: 5,
     title: "Student's Favorite!",
-    comment: "As a parent buying school supplies, I trust Gupta Stationery completely. Quality is excellent, prices are the best, and my kids actually like the products. What more can you ask?",
+    comment: "As a parent buying school supplies, I trust Instant Stationary completely. Quality is excellent, prices are the best, and my kids actually like the products. What more can you ask?",
     date: "Jul 05, 2024",
     verified: true
   },
@@ -58,7 +58,7 @@ export const TESTIMONIALS: Review[] = [
     role: "Print Shop Owner, Raipur",
     rating: 5,
     title: "Professional Quality at Student Prices",
-    comment: "I run a printing business and buy stationery in bulk from Gupta. Their papers are premium quality but cost way less than competitors. My profit margins have increased 30% since switching to them!",
+    comment: "I run a printing business and buy stationery in bulk from Instant. Their papers are premium quality but cost way less than competitors. My profit margins have increased 30% since switching to them!",
     date: "Jun 22, 2024",
     verified: true
   },
@@ -68,7 +68,7 @@ export const TESTIMONIALS: Review[] = [
     role: "Office Manager",
     rating: 5,
     title: "Customer Service Beyond Expectations",
-    comment: "Had a complaint about a defective product. Gupta Stationery not only replaced it immediately but also gave me a 10% discount on my next order! This is true customer service!",
+    comment: "Had a complaint about a defective product. Instant Stationary not only replaced it immediately but also gave me a 10% discount on my next order! This is true customer service!",
     date: "Jun 11, 2024",
     verified: true
   }

@@ -34,3 +34,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# backups
+supabase_backup/
+
+# agent and ide configs with local secrets
+.agents/
+
+

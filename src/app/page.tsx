@@ -13,7 +13,7 @@ export default function HomePage() {
       {/* 1. Hero Section */}
       <HeroSlider />
 
-      {/* 2. Why Choose Gupta Stationery */}
+      {/* 2. Why Choose Instant Stationary */}
       <WhyChooseUs />
 
       {/* 3. Featured Product Categories */}

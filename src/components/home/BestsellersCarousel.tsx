@@ -5,19 +5,22 @@ import Link from "next/link";
 import { ArrowRight, Sparkles, Star } from "lucide-react";
 import ProductCard from "@/components/products/ProductCard";
 import { PRODUCTS } from "@/data/products";
+import { useInventory } from "@/context/InventoryContext";
 
 export default function BestsellersCarousel() {
+  const { products } = useInventory();
   const [activeTab, setActiveTab] = useState<"bestsellers" | "eco" | "all">("bestsellers");
 
-  const bestsellers = PRODUCTS.filter((p) => p.isBestseller);
-  const ecoProducts = PRODUCTS.filter((p) => p.isEcoFriendly);
+  const liveList = products.length > 0 ? products : PRODUCTS;
+  const bestsellers = liveList.filter((p) => p.isBestseller);
+  const ecoProducts = liveList.filter((p) => p.isEcoFriendly);
 
   const displayedProducts =
     activeTab === "bestsellers"
-      ? bestsellers.slice(0, 8)
+      ? (bestsellers.length > 0 ? bestsellers.slice(0, 8) : liveList.slice(0, 8))
       : activeTab === "eco"
-      ? ecoProducts.slice(0, 8)
-      : PRODUCTS.slice(0, 8);
+      ? (ecoProducts.length > 0 ? ecoProducts.slice(0, 8) : liveList.slice(0, 8))
+      : liveList.slice(0, 8);
 
   return (
     <section className="py-16 sm:py-24 bg-white">

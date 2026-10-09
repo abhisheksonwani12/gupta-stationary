@@ -7,7 +7,7 @@ export const FAQ_CATEGORIES = [
   "Bulk & Wholesale",
   "Payment & Pricing",
   "Returns & Refunds",
-  "About Gupta Stationery",
+  "About Instant Stationary",
   "Customer Service & Programs"
 ];
 
@@ -17,7 +17,7 @@ export const FAQS: FAQItem[] = [
     id: "faq-1",
     category: "Ordering & Delivery",
     question: "How do I place an order?",
-    answer: "You can place an order directly online via our website cart, by calling 8839715995, sending a message on WhatsApp with your product list to 8839715995, visiting our store at Mowa, Dubey Colony in Raipur, or emailing guptapapers.ss@gmail.com."
+    answer: "You can place an order directly online via our website cart, by calling 8839715995, sending a message on WhatsApp with your product list to 8839715995, visiting our store at Mowa, Dubey Colony in Raipur, or emailing support@instantstationary.com."
   },
   {
     id: "faq-2",
@@ -49,13 +49,13 @@ export const FAQS: FAQItem[] = [
     id: "faq-6",
     category: "Products & Quality",
     question: "Are all products original and certified?",
-    answer: "100% YES. We are authorized distributors for major national and international brands. Our own brand 'Gupta's' is manufactured under strict ISO quality control and ISI certifications."
+    answer: "100% YES. We are authorized distributors for major national and international brands. Our own brand 'Instant's' is manufactured under strict ISO quality control and ISI certifications."
   },
   {
     id: "faq-7",
     category: "Products & Quality",
-    question: "What makes Gupta's brand different from expensive brands?",
-    answer: "Gupta's products deliver the identical smooth writing and paper quality as top international brands (like Pilot, Cello, Faber-Castell) but at 1/3rd the price because we cut fancy packaging overheads and sell directly from manufacturing."
+    question: "What makes Instant's brand different from expensive brands?",
+    answer: "Instant's products deliver the identical smooth writing and paper quality as top international brands (like Pilot, Cello, Faber-Castell) but at 1/3rd the price because we cut fancy packaging overheads and sell directly from manufacturing."
   },
   {
     id: "faq-8",
@@ -133,9 +133,9 @@ export const FAQS: FAQItem[] = [
   // About & Contact
   {
     id: "faq-19",
-    category: "About Gupta Stationery",
-    question: "When was Gupta Stationery founded and where is the store?",
-    answer: "Gupta Stationery was founded in 1990 by Harsh Gupta and has been serving Raipur for over 33 years. Our physical store is located at Mowa, Dubey Colony, Near Durga Temple, Raipur, Chhattisgarh - 492001."
+    category: "About Instant Stationary",
+    question: "When was Instant Stationary founded and where is the store?",
+    answer: "Instant Stationary was founded in 1990 by Harsh Gupta and has been serving Raipur for over 33 years. Our physical store is located at Mowa, Dubey Colony, Near Durga Temple, Raipur, Chhattisgarh - 492001."
   },
   {
     id: "faq-20",

@@ -1,939 +1,1065 @@
-import { Product } from "@/types";
+import { Product, Category } from "@/types";
+
+export const CATEGORIES: Category[] = [
+  {
+    id: "cat-copier-paper",
+    name: "Copier & Printing Papers",
+    slug: "copier-paper",
+    description: "Premium high-speed 75 GSM copier papers, bond papers, ledger sheets, and multi-purpose xerox reams.",
+    image: "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?q=80&w=900&auto=format&fit=crop",
+    itemCount: 6,
+    subcategories: ["75 GSM Copier", "Ecorise", "Ledger Paper", "Bond Paper", "Cedar Paper", "Orient Copier"],
+  },
+  {
+    id: "cat-office-stationery",
+    name: "Office Stationery & Desk Supplies",
+    slug: "office-stationery",
+    description: "Heavy-duty Kangaro staplers, staple pins, tape dispensers, push pins, T-pins, paper clips, sticky notes & staple guns.",
+    image: "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?q=80&w=900&auto=format&fit=crop",
+    itemCount: 14,
+    subcategories: ["Staplers", "Stapler Pins", "Tape Dispensers", "Pins & Clips", "Stapler Guns", "Sticky Notes"],
+  },
+  {
+    id: "cat-markers-writing",
+    name: "Markers & Writing Instruments",
+    slug: "markers-writing",
+    description: "Professional CD/DVD fine markers, waterproof permanent markers, and four-color dry-erase whiteboard markers.",
+    image: "https://images.unsplash.com/photo-1569683795645-b62e50fbf103?q=80&w=900&auto=format&fit=crop",
+    itemCount: 3,
+    subcategories: ["CD/DVD Markers", "Permanent Markers", "Whiteboard Markers"],
+  },
+  {
+    id: "cat-registers-notebooks",
+    name: "Registers & Accounting Ledgers",
+    slug: "registers-notebooks",
+    description: "Hardbound Mayank Jumbo accounting registers, record books (80, 170, 240, 300 pages), and deluxe king-size registers.",
+    image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=900&auto=format&fit=crop",
+    itemCount: 5,
+    subcategories: ["Jumbo 80 PG", "Jumbo 170 PG", "Jumbo 240 PG", "Jumbo 300 PG", "King Size Register"],
+  },
+];
 
 export const PRODUCTS: Product[] = [
-  // 1. Pens & Pencils
+  // ==========================================
+  // 1. COPIER & PRINTING PAPERS
+  // ==========================================
   {
-    id: "prod-1",
-    slug: "gupta-premium-ball-pen-blue",
-    name: "Gupta Premium Ball Pen (Blue)",
-    category: "pens-pencils",
-    subCategory: "ball-pens",
-    price: 15,
-    originalPrice: 20,
-    rating: 4.8,
-    reviewCount: 1247,
-    stock: 500,
+    id: "prod-jk-red-75",
+    slug: "jk-red-copier-paper-75-gsm",
+    name: "JK Red Copier Paper 75 GSM (1 Packet / Ream - 500 Sheets)",
+    category: "copier-paper",
+    subCategory: "75 GSM Copier",
+    price: 270,
+    originalPrice: 350,
+    rating: 4.9,
+    reviewCount: 384,
+    stock: 100,
     isBestseller: true,
     isEcoFriendly: false,
-    sku: "GS-PEN-01",
+    sku: "JK-COP-75-RED",
     images: [
-      "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?q=80&w=900&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1585336261026-77cc7c97f266?q=80&w=900&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1569683795645-b62e50fbf103?q=80&w=900&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?q=80&w=900&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1607344645866-009c320c5ab8?q=80&w=900&auto=format&fit=crop"
     ],
-    shortDescription: "Smooth, continuous writing experience with refillable cartridge. Perfect for daily office and academic use.",
-    description: "The Gupta Premium Ball Pen is our signature bestselling writing instrument, trusted by thousands of students, teachers, and business professionals across Raipur since 1995. Crafted for effortless ink flow with zero leakage and ergonomic grip.",
+    shortDescription: "JK Red 75 GSM premium multipurpose copier paper for ultra-sharp laser, color inkjet, and duplex printing.",
+    description: "JK Red 75 GSM Copier Paper is India's leading office paper engineered for jam-free high-speed performance across all printers, copiers, and digital duplication machines. Precision cut edges and optimal brightness ensure crisp text and high-contrast color reproduction.",
     highlights: [
-      "Smooth, continuous writing experience",
-      "2000+ words capacity per pen",
-      "Refillable cartridge (saves money & reduces plastic)",
-      "Durable break-resistant body",
-      "Perfect ergonomic grip for long writing sessions"
+      "75 GSM high-opacity paper preventing show-through on duplex copies",
+      "Compatible with laser, inkjet, digital copiers, and high-speed xerox machines",
+      "Precision rotary cut for zero-jam smooth paper feeding",
+      "High whiteness and brightness for sharp document clarity",
+      "500 sheets moisture-proof sealed packaging"
     ],
     specifications: {
-      "Tip Size": "1.0mm Swiss Carbide Tip",
-      "Ink Color": "Vibrant Blue",
-      "Ink Type": "Oil-based Low Viscosity Ink",
-      "Body Material": "High-Grade Impact Polymer",
-      "Length": "14 cm",
-      "Word Capacity": "2000+ words",
-      "Refillable": "Yes (Spare refills at ₹5 each)",
-      "Certification": "ISI Certified",
+      "Brand": "JK Paper",
+      "GSM": "75 GSM",
+      "Sheet Size": "A4 (210 x 297 mm)",
+      "Sheets per Ream": "500 Sheets",
+      "Packaging": "Moisture-proof poly wrapper",
+      "Brightness": "98% ISO",
       "Origin": "Made in India"
     },
     bulkPricing: [
-      { minQty: 1, maxQty: 9, discountPercent: 0, pricePerUnit: 15 },
-      { minQty: 10, maxQty: 49, discountPercent: 20, pricePerUnit: 12 },
-      { minQty: 50, maxQty: 99, discountPercent: 33, pricePerUnit: 10 },
-      { minQty: 100, maxQty: 499, discountPercent: 47, pricePerUnit: 8 },
-      { minQty: 500, discountPercent: 60, pricePerUnit: 6 }
-    ],
-    colors: [
-      { name: "Blue", hex: "#1e40af" },
-      { name: "Black", hex: "#111827" },
-      { name: "Red", hex: "#dc2626" }
+      { minQty: 1, maxQty: 4, discountPercent: 0, pricePerUnit: 270 },
+      { minQty: 5, maxQty: 19, discountPercent: 7, pricePerUnit: 250 },
+      { minQty: 20, maxQty: 99, discountPercent: 12, pricePerUnit: 238 },
+      { minQty: 100, discountPercent: 18, pricePerUnit: 220 }
     ]
   },
   {
-    id: "prod-2",
-    slug: "gupta-gel-pen-set-10-colors",
-    name: "Gupta Gel Pen Set (10 Colors)",
-    category: "pens-pencils",
-    subCategory: "gel-pens",
-    price: 180,
-    originalPrice: 220,
-    rating: 4.9,
-    reviewCount: 892,
-    stock: 200,
+    id: "prod-jk-ecorise",
+    slug: "jk-ecorise-copier-paper",
+    name: "JK Ecorise Copier Paper (1 Packet / Ream - 500 Sheets)",
+    category: "copier-paper",
+    subCategory: "Ecorise",
+    price: 230,
+    originalPrice: 320,
+    rating: 4.7,
+    reviewCount: 219,
+    stock: 80,
     isBestseller: true,
-    sku: "GS-GEL-10",
+    isEcoFriendly: true,
+    sku: "JK-ECO-RISE",
     images: [
-      "https://images.unsplash.com/photo-1569683795645-b62e50fbf103?q=80&w=900&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1607344645866-009c320c5ab8?q=80&w=900&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?q=80&w=900&auto=format&fit=crop"
+    ],
+    shortDescription: "Eco-friendly, cost-effective copier paper engineered for high-volume office and institutional printing.",
+    description: "JK Ecorise is an environmentally conscious copier paper crafted using agro-residue pulping processes. Ideal for everyday printing, draft copies, school assignments, and high-volume corporate document distribution.",
+    highlights: [
+      "Eco-responsible pulp production with high recycling content",
+      "Economical daily printing solution for schools and offices",
+      "Clean running through desktop laser and inkjet printers",
+      "500 sheets per packet"
+    ],
+    specifications: {
+      "Brand": "JK Paper",
+      "Sheet Size": "A4 (210 x 297 mm)",
+      "Sheets per Ream": "500 Sheets",
+      "Eco Certified": "Yes",
+      "Origin": "Made in India"
+    },
+    bulkPricing: [
+      { minQty: 1, maxQty: 4, discountPercent: 0, pricePerUnit: 230 },
+      { minQty: 5, maxQty: 19, discountPercent: 6, pricePerUnit: 215 },
+      { minQty: 20, discountPercent: 13, pricePerUnit: 200 }
+    ]
+  },
+  {
+    id: "prod-sirpur-ledger",
+    slug: "sirpur-ledger-paper-ream",
+    name: "Sirpur Ledger Paper (1 Packet / Ream - 500 Sheets)",
+    category: "copier-paper",
+    subCategory: "Ledger Paper",
+    price: 350,
+    originalPrice: 450,
+    rating: 4.8,
+    reviewCount: 142,
+    stock: 60,
+    isBestseller: false,
+    isEcoFriendly: false,
+    sku: "SIRPUR-LEDGER-01",
+    images: [
+      "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?q=80&w=900&auto=format&fit=crop"
+    ],
+    shortDescription: "Heavy-duty archival quality Sirpur ledger paper for official legal, audit, and accounting records.",
+    description: "Sirpur Ledger Paper is renowned across courts, legal chambers, accounting firms, and government offices for its enduring strength, smooth surface, and resistance to aging.",
+    highlights: [
+      "Archival-grade strength resisting yellowing and deterioration",
+      "Smooth finish ideal for fountain pens, ball pens, and laser printing",
+      "Durable heavy fiber structure designed for frequent handling",
+      "500 Sheets full ream packaging"
+    ],
+    specifications: {
+      "Brand": "Sirpur Paper Mills",
+      "Usage": "Legal, Accounting, Auditing & Official Registers",
+      "Sheets per Ream": "500 Sheets",
+      "Origin": "Made in India"
+    },
+    bulkPricing: [
+      { minQty: 1, maxQty: 4, discountPercent: 0, pricePerUnit: 350 },
+      { minQty: 5, discountPercent: 10, pricePerUnit: 315 }
+    ]
+  },
+  {
+    id: "prod-jk-bond",
+    slug: "jk-bond-paper-100-sheets",
+    name: "JK Bond Paper (100 Sheets Executive Pack)",
+    category: "copier-paper",
+    subCategory: "Bond Paper",
+    price: 150,
+    originalPrice: 180,
+    rating: 4.9,
+    reviewCount: 96,
+    stock: 75,
+    isBestseller: false,
+    isEcoFriendly: false,
+    sku: "JK-BOND-100",
+    images: [
+      "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?q=80&w=900&auto=format&fit=crop"
+    ],
+    shortDescription: "Ultra-premium watermarked 85 GSM bond paper for corporate letterheads, agreements, and resumes.",
+    description: "JK Bond Paper represents the pinnacle of executive communication. Featuring authentic watermarking, cotton content feel, and remarkable crispness, it commands respect in every formal document.",
+    highlights: [
+      "Authentic watermark with luxury executive texture",
+      "85 GSM heavy feel with exceptional tactile finish",
+      "Perfect for corporate agreements, letters of intent, and certificates",
+      "100 sheets premium protective folder"
+    ],
+    specifications: {
+      "Brand": "JK Paper",
+      "GSM": "85 GSM",
+      "Pack Count": "100 Sheets",
+      "Watermark": "Yes",
+      "Origin": "Made in India"
+    },
+    bulkPricing: [
+      { minQty: 1, maxQty: 4, discountPercent: 0, pricePerUnit: 150 },
+      { minQty: 5, discountPercent: 10, pricePerUnit: 135 }
+    ]
+  },
+  {
+    id: "prod-jk-cedar",
+    slug: "jk-cedar-copier-paper",
+    name: "JK Cedar Ultra White Copier Paper (1 Packet / Ream - 500 Sheets)",
+    category: "copier-paper",
+    subCategory: "Cedar Paper",
+    price: 350,
+    originalPrice: 500,
+    rating: 4.9,
+    reviewCount: 118,
+    stock: 50,
+    isBestseller: false,
+    isEcoFriendly: false,
+    sku: "JK-CEDAR-500",
+    images: [
+      "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?q=80&w=900&auto=format&fit=crop"
+    ],
+    shortDescription: "Super-bright 80 GSM ultra-white copier paper for vivid presentations and graphic brochures.",
+    description: "JK Cedar delivers elite brightness and smoothness, specially calibrated for high-density color graphics, client pitch decks, architecture portfolios, and executive reporting.",
+    highlights: [
+      "80 GSM ultra-dense thickness with 100%+ whiteness index",
+      "Vivid color vibrancy with instantaneous ink absorption",
+      "Ideal for marketing proposals and client presentations",
+      "500 Sheets per ream"
+    ],
+    specifications: {
+      "Brand": "JK Paper",
+      "GSM": "80 GSM",
+      "Sheets per Ream": "500 Sheets",
+      "Origin": "Made in India"
+    },
+    bulkPricing: [
+      { minQty: 1, maxQty: 4, discountPercent: 0, pricePerUnit: 350 },
+      { minQty: 5, discountPercent: 10, pricePerUnit: 315 }
+    ]
+  },
+  {
+    id: "prod-orient-copier",
+    slug: "orient-copier-paper-ream",
+    name: "Orient Copier Paper (1 Packet / Ream - 500 Sheets)",
+    category: "copier-paper",
+    subCategory: "Orient Copier",
+    price: 210,
+    originalPrice: 350,
+    rating: 4.6,
+    reviewCount: 260,
+    stock: 120,
+    isBestseller: true,
+    isEcoFriendly: false,
+    sku: "ORIENT-COP-500",
+    images: [
+      "https://images.unsplash.com/photo-1607344645866-009c320c5ab8?q=80&w=900&auto=format&fit=crop"
+    ],
+    shortDescription: "Affordable, versatile 70 GSM multi-purpose copier paper for daily xerox, study materials, and office prints.",
+    description: "Orient Copier Paper provides exceptional value for commercial xerox centers, coaching institutes, schools, and offices requiring high-volume economical duplicating paper.",
+    highlights: [
+      "70 GSM lightweight economical printing standard",
+      "Smooth surface preventing machine jamming",
+      "500 Sheets bulk ream",
+      "Unbeatable bulk wholesale pricing"
+    ],
+    specifications: {
+      "Brand": "Orient Paper",
+      "Sheets per Ream": "500 Sheets",
+      "Origin": "Made in India"
+    },
+    bulkPricing: [
+      { minQty: 1, maxQty: 4, discountPercent: 0, pricePerUnit: 210 },
+      { minQty: 5, maxQty: 19, discountPercent: 7, pricePerUnit: 195 },
+      { minQty: 20, discountPercent: 14, pricePerUnit: 180 }
+    ]
+  },
+
+  // ==========================================
+  // 2. OFFICE STATIONERY & DESK SUPPLIES
+  // ==========================================
+  {
+    id: "prod-kangaro-pin-10",
+    slug: "kangaro-stapler-pin-no-10",
+    name: "Kangaro Stapler Pin No. 10 (1 Packet / Box - 1000 Staples)",
+    category: "office-stationery",
+    subCategory: "Stapler Pins",
+    price: 10,
+    originalPrice: 12,
+    rating: 4.9,
+    reviewCount: 512,
+    stock: 250,
+    isBestseller: true,
+    isEcoFriendly: false,
+    sku: "KANG-PIN-10",
+    images: [
       "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?q=80&w=900&auto=format&fit=crop"
     ],
-    shortDescription: "Vibrant Japanese gel inks with ultra-fast drying technology. Ideal for notes, bullet journaling, and sketching.",
-    description: "Experience effortless artistic expression and crisp note-taking. Each pen features a 0.7mm fine roller tip and quick-drying, smudge-proof water-resistant Japanese gel ink formulation.",
+    shortDescription: "Rust-resistant high-tensile steel staple pins for all standard No. 10 staplers.",
+    description: "Kangaro No. 10 Stapler Pins are precision-crafted from high-grade galvanized steel wire with sharp chisel points for effortless paper penetration without jamming.",
     highlights: [
-      "10 rich vibrant color spectrum",
-      "Quick-dry smudge-proof Japanese gel ink",
-      "0.7mm precision needle point",
-      "Cushioned rubberized comfort barrel"
+      "1,000 staples per pack",
+      "Rust-resistant anti-corrosive coating",
+      "Chisel point tips for clean, snag-free stapling",
+      "Fits all standard No. 10 desktop staplers"
     ],
     specifications: {
-      "Tip Size": "0.7mm Fine Needle Tip",
-      "Color Count": "10 Assorted Colors",
-      "Ink Type": "Waterproof Pigment Gel",
-      "Grip": "Contoured Soft Rubber Grip"
+      "Brand": "Kangaro",
+      "Model": "No. 10-1M",
+      "Count": "1000 Staples",
+      "Capacity": "Up to 20 Sheets",
+      "Origin": "Made in India"
     },
     bulkPricing: [
-      { minQty: 1, maxQty: 9, discountPercent: 0, pricePerUnit: 180 },
-      { minQty: 10, maxQty: 49, discountPercent: 17, pricePerUnit: 150 },
-      { minQty: 50, discountPercent: 33, pricePerUnit: 120 }
+      { minQty: 1, maxQty: 9, discountPercent: 0, pricePerUnit: 10 },
+      { minQty: 10, discountPercent: 20, pricePerUnit: 8 }
     ]
   },
   {
-    id: "prod-3",
-    slug: "wooden-pencil-hb-box",
-    name: "Wooden Pencil HB Box (12 Pieces)",
-    category: "pens-pencils",
-    subCategory: "pencils",
-    price: 45,
-    originalPrice: 55,
-    rating: 4.8,
-    reviewCount: 456,
-    stock: 1000,
-    sku: "GS-PENCIL-HB12",
-    images: [
-      "https://images.unsplash.com/photo-1585336261026-77cc7c97f266?q=80&w=900&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?q=80&w=900&auto=format&fit=crop"
-    ],
-    shortDescription: "Classic cedarwood HB pencils with smooth bonded graphite core. Comes with soft eraser tops.",
-    description: "Crafted from sustainably managed cedarwood with break-resistant bonded lead. Perfect for school examinations, sketching, and everyday office drafting.",
-    highlights: [
-      "FSC certified cedarwood",
-      "Smooth, dark HB bonded graphite",
-      "Non-smudge eraser tipped",
-      "Easy sharpening without breakage"
-    ],
-    specifications: {
-      "Hardness": "HB Grade",
-      "Pack Size": "12 Pencils per box",
-      "Length": "19 cm",
-      "Wood Type": "FSC Certified Softwood"
-    },
-    bulkPricing: [
-      { minQty: 1, maxQty: 11, discountPercent: 0, pricePerUnit: 45 },
-      { minQty: 12, maxQty: 49, discountPercent: 22, pricePerUnit: 35 },
-      { minQty: 50, discountPercent: 33, pricePerUnit: 30 }
-    ]
-  },
-  {
-    id: "prod-4",
-    slug: "mechanical-pencil-0-5mm",
-    name: "Precision Mechanical Pencil (0.5mm)",
-    category: "pens-pencils",
-    subCategory: "pencils",
+    id: "prod-kangaro-pin-24-6",
+    slug: "kangaro-stapler-pin-24-6",
+    name: "Kangaro Stapler Pin 24/6 (1 Packet / Box - 1000 Staples)",
+    category: "office-stationery",
+    subCategory: "Stapler Pins",
     price: 25,
-    originalPrice: 35,
-    rating: 4.7,
-    reviewCount: 456,
-    stock: 300,
-    sku: "GS-MECH-05",
+    originalPrice: 25,
+    rating: 4.9,
+    reviewCount: 340,
+    stock: 200,
+    isBestseller: true,
+    isEcoFriendly: false,
+    sku: "KANG-PIN-24-6",
     images: [
-      "https://images.unsplash.com/photo-1585336261026-77cc7c97f266?q=80&w=900&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?q=80&w=900&auto=format&fit=crop"
     ],
-    shortDescription: "Modern ergonomic mechanical pencil with cushioned shock-absorbing tip and metal clip.",
-    description: "Designed for architects, students, and engineers who demand consistent 0.5mm line width without sharpening.",
+    shortDescription: "Heavy-duty standard 24/6 chisel point staples for full-strip and half-strip desktop staplers.",
+    description: "Kangaro 24/6 Staples provide secure binding for up to 30 sheets of paper. Crafted with precision edge alignment for smooth gliding in corporate and institutional staplers.",
     highlights: [
-      "Consistent 0.5mm line width",
-      "Retractable stainless steel guide pipe",
-      "Integrated eraser under top cap",
-      "Comfort textured non-slip grip"
+      "Standard 24/6 size (6mm leg length)",
+      "High penetration strength for thick document stacks",
+      "1000 staples per box"
     ],
     specifications: {
-      "Lead Size": "0.5mm Polymer Lead",
-      "Clip": "Sturdy Chrome Metal Clip",
-      "Refillable": "Standard 0.5mm Leads"
+      "Brand": "Kangaro",
+      "Model": "24/6-1M",
+      "Capacity": "Up to 30 Sheets",
+      "Origin": "Made in India"
     },
     bulkPricing: [
       { minQty: 1, maxQty: 9, discountPercent: 0, pricePerUnit: 25 },
-      { minQty: 10, maxQty: 49, discountPercent: 20, pricePerUnit: 20 },
-      { minQty: 50, discountPercent: 40, pricePerUnit: 15 }
+      { minQty: 10, discountPercent: 12, pricePerUnit: 22 }
     ]
   },
   {
-    id: "prod-5",
-    slug: "highlighter-pen-set-5-colors",
-    name: "Fluorescent Highlighter Pen Set (5 Colors)",
-    category: "pens-pencils",
-    subCategory: "highlighters",
-    price: 45,
-    originalPrice: 60,
-    rating: 4.8,
-    reviewCount: 523,
-    stock: 400,
-    sku: "GS-HIGH-05",
-    images: [
-      "https://images.unsplash.com/photo-1585336261026-77cc7c97f266?q=80&w=900&auto=format&fit=crop"
-    ],
-    shortDescription: "Vibrant neon fluorescent highlighters with dual chisel tips for wide and narrow strokes.",
-    description: "Water-based odorless fluorescent ink designed not to bleed through standard notebook or copy paper.",
-    highlights: [
-      "5 luminous colors (Yellow, Pink, Green, Blue, Orange)",
-      "Chisel tip 1mm - 4mm line versatility",
-      "Non-bleed formula safe for textbooks",
-      "Anti-dry cap-off technology"
-    ],
-    specifications: {
-      "Tip Type": "Polyester Chisel Tip",
-      "Colors": "Yellow, Pink, Green, Blue, Orange",
-      "Ink Base": "Water-based Non-toxic"
-    },
-    bulkPricing: [
-      { minQty: 1, maxQty: 9, discountPercent: 0, pricePerUnit: 45 },
-      { minQty: 10, maxQty: 49, discountPercent: 16, pricePerUnit: 38 },
-      { minQty: 50, discountPercent: 33, pricePerUnit: 30 }
-    ]
-  },
-
-  // 2. Notebooks & Notepads
-  {
-    id: "prod-6",
-    slug: "gupta-school-notebook-200-pages",
-    name: "Gupta Classic School Notebook (200 Pages)",
-    category: "notebooks-notepads",
-    subCategory: "school-notebooks",
-    price: 85,
-    originalPrice: 100,
-    rating: 4.9,
-    reviewCount: 1089,
-    stock: 500,
-    isBestseller: true,
-    sku: "GS-NOTE-200",
-    images: [
-      "https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=900&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=900&auto=format&fit=crop"
-    ],
-    shortDescription: "Premium 60 GSM smooth ruled paper with durable spine binding. Academic essential.",
-    description: "Our signature school notebook features ultra-smooth paper that prevents ink feathering and show-through. Heavy laminated cover protects against backpack wear and tear.",
-    highlights: [
-      "200 crisp ruled pages",
-      "60 GSM smooth high-opacity paper",
-      "Reinforced heavy-duty spine stitching",
-      "Subject index & timetable pages included"
-    ],
-    specifications: {
-      "Page Count": "200 Pages",
-      "Paper Density": "60 GSM Bright White",
-      "Dimensions": "17 cm × 21 cm (Standard Academic Size)",
-      "Ruling": "Single Ruled with Margin",
-      "Cover": "Laminated Waterproof Soft Cover"
-    },
-    bulkPricing: [
-      { minQty: 1, maxQty: 9, discountPercent: 0, pricePerUnit: 85 },
-      { minQty: 10, maxQty: 49, discountPercent: 18, pricePerUnit: 70 },
-      { minQty: 50, discountPercent: 29, pricePerUnit: 60 }
-    ]
-  },
-  {
-    id: "prod-7",
-    slug: "eco-friendly-recycled-notebook-100-pages",
-    name: "Gupta Eco Notebook (100 Pages, Recycled Paper)",
-    category: "notebooks-notepads",
-    subCategory: "eco-notebooks",
-    price: 60,
+    id: "prod-kangaro-stapler-10",
+    slug: "kangaro-stapler-no-10",
+    name: "Kangaro Stapler No. 10 (Compact Desktop Stapler)",
+    category: "office-stationery",
+    subCategory: "Staplers",
+    price: 70,
     originalPrice: 75,
-    rating: 4.9,
-    reviewCount: 678,
-    stock: 250,
-    isEcoFriendly: true,
+    rating: 4.8,
+    reviewCount: 420,
+    stock: 90,
     isBestseller: true,
-    sku: "GS-ECO-100",
+    isEcoFriendly: false,
+    sku: "KANG-STAP-10",
     images: [
-      "https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=900&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=900&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?q=80&w=900&auto=format&fit=crop"
     ],
-    shortDescription: "100% post-consumer recycled paper with natural Kraft board cover and soy-based printing.",
-    description: "Make an eco-conscious statement without sacrificing writing pleasure. Crafted from 100% recycled unbleached fiber with zero plastic components.",
+    shortDescription: "Classic steel-mechanism compact desktop stapler with integrated staple remover.",
+    description: "The trusted Kangaro No. 10 Stapler features an ergonomic plastic cap with a rugged all-steel body mechanism. Includes a built-in rear staple remover and reload indicator window.",
     highlights: [
-      "100% post-consumer recycled paper",
-      "Chemical-free natural warm cream finish",
-      "Biodegradable cotton spine binding",
-      "Zero plastic packaging"
+      "Staples up to 20 sheets effortlessly",
+      "Built-in staple remover on tail",
+      "Quick drop-in top loading mechanism",
+      "Compact size fitting any desk organizer"
     ],
     specifications: {
-      "Pages": "100 Pages",
-      "Material": "100% Recycled Cotton-wood Pulp",
-      "Cover": "Kraft Unbleached 300 GSM Board",
-      "Dimensions": "A5 (14.8 × 21 cm)"
+      "Brand": "Kangaro",
+      "Compatible Pins": "No. 10",
+      "Stapling Capacity": "20 Sheets",
+      "Origin": "Made in India"
     },
     bulkPricing: [
-      { minQty: 1, maxQty: 9, discountPercent: 0, pricePerUnit: 60 },
-      { minQty: 10, maxQty: 49, discountPercent: 17, pricePerUnit: 50 },
-      { minQty: 50, discountPercent: 30, pricePerUnit: 42 }
+      { minQty: 1, maxQty: 4, discountPercent: 0, pricePerUnit: 70 },
+      { minQty: 5, discountPercent: 10, pricePerUnit: 63 }
     ]
   },
   {
-    id: "prod-8",
-    slug: "office-notepad-sticky-notes",
-    name: "Office Sticky Notes Pad (50 Pages, 3x3 Neon)",
-    category: "notebooks-notepads",
-    subCategory: "sticky-notes",
-    price: 35,
-    originalPrice: 45,
-    rating: 4.7,
-    reviewCount: 234,
-    stock: 600,
-    sku: "GS-STICKY-3X3",
-    images: [
-      "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?q=80&w=900&auto=format&fit=crop"
-    ],
-    shortDescription: "Self-adhesive repositionable sticky notes in vibrant neon shades. Leaves zero glue residue.",
-    description: "Keep your reminders, book markers, and office memos organized with strong adhesive backing that sticks securely to paper, walls, and monitors.",
-    highlights: [
-      "50 peel-and-stick sheets per pad",
-      "Repositionable adhesive backing",
-      "Assorted bright neon colors",
-      "Clean residue-free removal"
-    ],
-    specifications: {
-      "Dimensions": "3 × 3 inches (76 × 76 mm)",
-      "Sheet Count": "50 Sheets",
-      "Adhesion Type": "Clean Removable Acrylic"
-    },
-    bulkPricing: [
-      { minQty: 1, maxQty: 9, discountPercent: 0, pricePerUnit: 35 },
-      { minQty: 10, maxQty: 49, discountPercent: 20, pricePerUnit: 28 },
-      { minQty: 50, discountPercent: 37, pricePerUnit: 22 }
-    ]
-  },
-  {
-    id: "prod-9",
-    slug: "executive-diary-planner-365-pages",
-    name: "Executive Annual Diary & Planner (365 Pages)",
-    category: "notebooks-notepads",
-    subCategory: "diaries-planners",
-    price: 150,
-    originalPrice: 200,
-    rating: 4.9,
-    reviewCount: 445,
-    stock: 150,
-    isNew: true,
-    sku: "GS-PLANNER-365",
-    images: [
-      "https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=900&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=900&auto=format&fit=crop"
-    ],
-    shortDescription: "Hardbound luxury faux-leather diary with day-to-a-page layout, monthly calendars, and gold gilded ribbon marker.",
-    description: "The ideal tool for professionals, entrepreneurs, and busy students. Contains yearly planners, financial trackers, goal matrices, and daily appointment slots.",
-    highlights: [
-      "365 full daily scheduling pages",
-      "Premium hardbound leatherette finish",
-      "Silk ribbon bookmark + document pocket",
-      "70 GSM warm eye-comfort paper"
-    ],
-    specifications: {
-      "Pages": "365 Pages",
-      "Cover": "Padded Vegan Leather",
-      "Binding": "Section Sewn Hardcover",
-      "Dimensions": "A5 Executive Size"
-    },
-    bulkPricing: [
-      { minQty: 1, maxQty: 9, discountPercent: 0, pricePerUnit: 150 },
-      { minQty: 10, maxQty: 49, discountPercent: 17, pricePerUnit: 125 },
-      { minQty: 50, discountPercent: 33, pricePerUnit: 100 }
-    ]
-  },
-
-  // 3. Paper Products
-  {
-    id: "prod-10",
-    slug: "a4-copy-paper-ream-75gsm-500-sheets",
-    name: "A4 Copy Paper Ream (500 Sheets, 75 GSM)",
-    category: "paper-products",
-    subCategory: "copy-paper",
-    price: 320,
-    originalPrice: 380,
-    rating: 4.9,
-    reviewCount: 1567,
-    stock: 1000,
-    isBestseller: true,
-    sku: "GS-A4-75GSM",
-    images: [
-      "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?q=80&w=900&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=900&auto=format&fit=crop"
-    ],
-    shortDescription: "Ultra-bright 98% ISO certified multipurpose copy paper. Jam-free laser & inkjet printing.",
-    description: "Gupta Stationery's high-speed printing paper is calibrated for duplex laser, color inkjet, and heavy-volume xerox copying. Engineered with precision cut edges to prevent printer jams.",
-    highlights: [
-      "500 sheets per sealed moisture-proof ream",
-      "75 GSM high-opacity brightness (98% ISO)",
-      "Zero-jam guarantee across all printer brands",
-      "Acid-free for long archival durability"
-    ],
-    specifications: {
-      "Size": "A4 (210 × 297 mm)",
-      "Sheet Count": "500 Sheets per ream",
-      "GSM": "75 GSM",
-      "Brightness": "98% ISO Bright White",
-      "Certifications": "ISO 9001, ISO 14001"
-    },
-    bulkPricing: [
-      { minQty: 1, maxQty: 4, discountPercent: 0, pricePerUnit: 320 },
-      { minQty: 5, maxQty: 19, discountPercent: 6, pricePerUnit: 300 },
-      { minQty: 20, discountPercent: 12.5, pricePerUnit: 280 }
-    ]
-  },
-  {
-    id: "prod-11",
-    slug: "cardstock-cardboard-250gsm-50-sheets",
-    name: "Heavy Cardstock / Craft Board (250 GSM, 50 Sheets)",
-    category: "paper-products",
-    subCategory: "cardstock",
-    price: 185,
-    originalPrice: 220,
-    rating: 4.8,
-    reviewCount: 321,
-    stock: 300,
-    sku: "GS-CARD-250",
-    images: [
-      "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?q=80&w=900&auto=format&fit=crop"
-    ],
-    shortDescription: "Thick, premium 250 GSM smooth cardstock for greeting cards, scrapbooks, packaging, and printing.",
-    description: "Rigid yet pliable heavy paperboard suitable for die-cutting, embossing, calligraphy inks, and high-end brochure printing.",
-    highlights: [
-      "50 sheets of heavyweight 250 GSM stock",
-      "Matte smooth surface on both sides",
-      "Compatible with laser and inkjet card printers",
-      "Multiple color variants available"
-    ],
-    specifications: {
-      "GSM": "250 GSM",
-      "Dimensions": "A4 Size (21 × 29.7 cm)",
-      "Sheets": "50 Sheets"
-    },
-    bulkPricing: [
-      { minQty: 1, maxQty: 9, discountPercent: 0, pricePerUnit: 185 },
-      { minQty: 10, maxQty: 49, discountPercent: 13.5, pricePerUnit: 160 },
-      { minQty: 50, discountPercent: 24, pricePerUnit: 140 }
-    ]
-  },
-  {
-    id: "prod-12",
-    slug: "soft-tissue-paper-roll-2-ply",
-    name: "Soft Multi-Purpose Tissue Paper Roll (2-Ply, 400 Sheets)",
-    category: "paper-products",
-    subCategory: "tissue-paper",
-    price: 25,
-    originalPrice: 35,
-    rating: 4.8,
-    reviewCount: 892,
-    stock: 800,
-    isEcoFriendly: true,
-    sku: "GS-TISSUE-2PLY",
-    images: [
-      "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?q=80&w=900&auto=format&fit=crop"
-    ],
-    shortDescription: "Ultra-absorbent, hygienic 2-ply embossed tissue paper roll made from virgin biodegradable cellulose.",
-    description: "Soft on skin and tough on spills. Safe for office pantries, washrooms, kitchens, and daily table use.",
-    highlights: [
-      "400 soft 2-ply perforated sheets",
-      "100% biodegradable virgin pulp",
-      "Lint-free and ultra-absorbent",
-      "Hygienic individual wrap"
-    ],
-    specifications: {
-      "Ply": "2-Ply Extra Soft",
-      "Sheet Count": "400 Sheets / roll",
-      "Color": "Natural Pure White"
-    },
-    bulkPricing: [
-      { minQty: 1, maxQty: 11, discountPercent: 0, pricePerUnit: 25 },
-      { minQty: 12, maxQty: 49, discountPercent: 20, pricePerUnit: 20 },
-      { minQty: 50, discountPercent: 40, pricePerUnit: 15 }
-    ]
-  },
-
-  // 4. Office Supplies
-  {
-    id: "prod-13",
-    slug: "heavy-duty-stapler-combo-with-50-staples",
-    name: "Heavy-Duty Office Stapler + Staples Combo",
-    category: "office-supplies",
-    subCategory: "staplers",
-    price: 95,
-    originalPrice: 130,
-    rating: 4.9,
-    reviewCount: 567,
-    stock: 400,
-    isBestseller: true,
-    sku: "GS-STAPLE-SET",
-    images: [
-      "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?q=80&w=900&auto=format&fit=crop"
-    ],
-    shortDescription: "Jam-free steel mechanism stapler with 25-sheet capacity. Includes 50 starter staples free.",
-    description: "Workplace staple built with hardened steel internals and ergonomic non-slip rubber base. Features quick-loading spring channel.",
-    highlights: [
-      "Staples up to 25 sheets effortlessly",
-      "Anti-jamming guidance track",
-      "Built-in staple remover on back",
-      "Free 50 pin staples included"
-    ],
-    specifications: {
-      "Capacity": "25 Sheets (80 GSM)",
-      "Pin Size": "Standard No. 10 / 24/6",
-      "Body": "Steel Mechanism + High-impact ABS"
-    },
-    bulkPricing: [
-      { minQty: 1, maxQty: 9, discountPercent: 0, pricePerUnit: 95 },
-      { minQty: 10, maxQty: 49, discountPercent: 15.7, pricePerUnit: 80 },
-      { minQty: 50, discountPercent: 31.5, pricePerUnit: 65 }
-    ]
-  },
-  {
-    id: "prod-14",
-    slug: "metal-paper-clips-50-pack",
-    name: "Rust-Resistant Metal Paper Clips (50 Pcs/Box)",
-    category: "office-supplies",
-    subCategory: "clips-pins",
-    price: 28,
-    originalPrice: 35,
-    rating: 4.7,
-    reviewCount: 234,
-    stock: 600,
-    sku: "GS-CLIPS-50",
-    images: [
-      "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?q=80&w=900&auto=format&fit=crop"
-    ],
-    shortDescription: "Nickel-plated smooth steel paper clips. Non-tearing rounded edges.",
-    description: "Organize office documents cleanly without damaging page corners. Rust-resistant coating protects papers from staining.",
-    highlights: [
-      "50 pieces per storage box",
-      "28mm standard office length",
-      "Smooth nickel plating",
-      "Zero snagging or tearing"
-    ],
-    specifications: {
-      "Material": "Nickel Plated Spring Steel",
-      "Size": "28mm Length",
-      "Quantity": "50 Pieces"
-    },
-    bulkPricing: [
-      { minQty: 1, maxQty: 9, discountPercent: 0, pricePerUnit: 28 },
-      { minQty: 10, maxQty: 49, discountPercent: 21.4, pricePerUnit: 22 },
-      { minQty: 50, discountPercent: 46.4, pricePerUnit: 15 }
-    ]
-  },
-  {
-    id: "prod-15",
-    slug: "rubber-band-set-250-pieces",
-    name: "Assorted Elastic Rubber Bands (250 Pieces Box)",
-    category: "office-supplies",
-    subCategory: "clips-pins",
-    price: 40,
-    originalPrice: 50,
-    rating: 4.8,
-    reviewCount: 445,
-    stock: 350,
-    sku: "GS-RUBBER-250",
-    images: [
-      "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?q=80&w=900&auto=format&fit=crop"
-    ],
-    shortDescription: "High-elasticity durable natural rubber bands in multiple diameters for bundling cash, papers, and packages.",
-    description: "Premium flexibility that stretches up to 3x original size without snapping or degrading over time.",
-    highlights: [
-      "250 pieces multi-size assortment",
-      "Natural latex-free formula",
-      "High tensile rebound strength",
-      "Long shelf-life"
-    ],
-    specifications: {
-      "Count": "250 Pieces",
-      "Material": "Synthetic High Stretch Polymer",
-      "Sizes": "Assorted Small, Medium, Large"
-    },
-    bulkPricing: [
-      { minQty: 1, maxQty: 9, discountPercent: 0, pricePerUnit: 40 },
-      { minQty: 10, maxQty: 49, discountPercent: 20, pricePerUnit: 32 },
-      { minQty: 50, discountPercent: 40, pricePerUnit: 24 }
-    ]
-  },
-  {
-    id: "prod-16",
-    slug: "manila-file-folders-a4-pack-of-10",
-    name: "Heavy Manila Document File Folders (A4, Pack of 10)",
-    category: "office-supplies",
-    subCategory: "folders-files",
-    price: 180,
-    originalPrice: 220,
-    rating: 4.8,
-    reviewCount: 398,
-    stock: 500,
-    sku: "GS-FOLDER-10",
-    images: [
-      "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?q=80&w=900&auto=format&fit=crop"
-    ],
-    shortDescription: "180 GSM reinforced card file folders with indexing tabs for corporate and legal document management.",
-    description: "Keep critical paperwork categorized and crease-free. Features expand-gussets and write-on tab labels in assorted corporate hues.",
-    highlights: [
-      "Pack of 10 durable file folders",
-      "180 GSM thick tear-resistant board",
-      "Pre-scored for 1-inch expansion",
-      "Assorted color coding options"
-    ],
-    specifications: {
-      "Size": "A4 / Legal Size",
-      "Weight": "180 GSM Cardstock",
-      "Pack": "10 Folders"
-    },
-    bulkPricing: [
-      { minQty: 1, maxQty: 4, discountPercent: 0, pricePerUnit: 180 },
-      { minQty: 5, maxQty: 19, discountPercent: 16.6, pricePerUnit: 150 },
-      { minQty: 20, discountPercent: 33.3, pricePerUnit: 120 }
-    ]
-  },
-
-  // 5. School Supplies
-  {
-    id: "prod-17",
-    slug: "gupta-complete-geometry-box-15-pieces",
-    name: "Gupta Master Geometry Box (15 Precision Tools)",
-    category: "school-supplies",
-    subCategory: "geometry-sets",
+    id: "prod-kangaro-hd10d",
+    slug: "kangaro-stapler-hd10d",
+    name: "Kangaro Stapler HD-10D (Heavy Duty All-Metal)",
+    category: "office-stationery",
+    subCategory: "Staplers",
     price: 120,
-    originalPrice: 160,
+    originalPrice: 125,
     rating: 4.9,
-    reviewCount: 789,
-    stock: 600,
-    isBestseller: true,
-    sku: "GS-GEOM-15",
+    reviewCount: 195,
+    stock: 60,
+    isBestseller: false,
+    isEcoFriendly: false,
+    sku: "KANG-STAP-HD10D",
     images: [
-      "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?q=80&w=900&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1585336261026-77cc7c97f266?q=80&w=900&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?q=80&w=900&auto=format&fit=crop"
     ],
-    shortDescription: "Complete student drafting kit in a protective metal tin. Calibrated accurate scales and sturdy compass.",
-    description: "The preferred geometry box for CBSE and ICSE students in Raipur. Includes self-centering compass, divider, 15cm ruler, 45° and 60° set squares, 180° protractor, eraser, and pencil.",
+    shortDescription: "Heavy-duty ergonomic metal desktop stapler with dual-strip capacity for high-volume offices.",
+    description: "Kangaro HD-10D is designed for continuous daily office use. Boasting an all-metal chassis, smooth lever action, and extended throat depth for versatile document positioning.",
     highlights: [
-      "15 essential precision drafting instruments",
-      "Rust-proof zinc die-cast compass & divider",
-      "Laser-etched markings for ultra-clear reading",
-      "Sturdy vintage-style tin case"
+      "All-metal heavy gauge steel construction",
+      "Dual strip loading (100 staples capacity)",
+      "Tough build quality lasting years of rigorous use"
     ],
     specifications: {
-      "Case": "Metal Tin Protective Box",
-      "Tools Count": "15 Pieces",
-      "Scale Marking": "Metric (cm/mm) & Imperial (inches)",
-      "Accuracy": "±0.5mm Lab Calibrated"
+      "Brand": "Kangaro",
+      "Model": "HD-10D",
+      "Compatible Pins": "No. 10",
+      "Origin": "Made in India"
     },
     bulkPricing: [
-      { minQty: 1, maxQty: 9, discountPercent: 0, pricePerUnit: 120 },
-      { minQty: 10, maxQty: 49, discountPercent: 16.6, pricePerUnit: 100 },
-      { minQty: 50, discountPercent: 33.3, pricePerUnit: 80 }
+      { minQty: 1, maxQty: 4, discountPercent: 0, pricePerUnit: 120 },
+      { minQty: 5, discountPercent: 10, pricePerUnit: 108 }
     ]
   },
   {
-    id: "prod-18",
-    slug: "eraser-sharpener-duo-combo",
-    name: "Dust-Free Eraser & Steel Sharpener Combo",
-    category: "school-supplies",
-    subCategory: "erasers-sharpeners",
-    price: 35,
-    originalPrice: 45,
-    rating: 4.8,
-    reviewCount: 567,
-    stock: 450,
-    sku: "GS-ERASE-SHARP",
-    images: [
-      "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?q=80&w=900&auto=format&fit=crop"
-    ],
-    shortDescription: "2-in-1 student staple. Non-smudge polymer eraser paired with precision German steel blade sharpener.",
-    description: "Erases graphite effortlessly without rolling dust or tearing thin notebook paper. Sharpener creates clean needle points on standard 8mm pencils.",
-    highlights: [
-      "Roll-up dust-free eraser formula",
-      "Contoured single-hole sharpener with shavings canister",
-      "Non-toxic and phthalate-free",
-      "Pocket-friendly design"
-    ],
-    specifications: {
-      "Blade": "German Hardened Carbon Steel",
-      "Eraser": "Synthetic Polymer Dust-Free",
-      "Compatibility": "Standard 6-8mm Pencils"
-    },
-    bulkPricing: [
-      { minQty: 1, maxQty: 11, discountPercent: 0, pricePerUnit: 35 },
-      { minQty: 12, maxQty: 49, discountPercent: 20, pricePerUnit: 28 },
-      { minQty: 50, discountPercent: 42.8, pricePerUnit: 20 }
-    ]
-  },
-  {
-    id: "prod-19",
-    slug: "classic-wooden-pencil-box-12-slot",
-    name: "Handcrafted Wooden Pencil Box (12 Slots)",
-    category: "school-supplies",
-    subCategory: "pencil-boxes",
-    price: 45,
-    originalPrice: 65,
+    id: "prod-kangaro-hp45",
+    slug: "kangaro-plier-stapler-hp45",
+    name: "Kangaro Plier Heavy Duty Stapler HP-45",
+    category: "office-stationery",
+    subCategory: "Staplers",
+    price: 299,
+    originalPrice: 325,
     rating: 4.9,
-    reviewCount: 623,
-    stock: 300,
-    sku: "GS-WOOD-BOX",
+    reviewCount: 88,
+    stock: 40,
+    isBestseller: false,
+    isEcoFriendly: false,
+    sku: "KANG-PLIER-HP45",
     images: [
-      "https://images.unsplash.com/photo-1585336261026-77cc7c97f266?q=80&w=900&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?q=80&w=900&auto=format&fit=crop"
     ],
-    shortDescription: "Classic natural pine wooden pencil case with slide lid and velvet internal lining.",
-    description: "Ditch flimsy plastic boxes. This timeless wooden case safeguards pens, pencils, rulers, and compasses while adding warmth to school desks.",
+    shortDescription: "Plier-grip heavy duty packaging and binding stapler for courier parcels, tags, and bags.",
+    description: "Kangaro HP-45 Plier Stapler features an ergonomic squeeze handle that delivers powerful leverage with minimal hand strain. Widely utilized in dispatch centers, retail stores, and archives.",
     highlights: [
-      "Solid natural pine construction",
-      "Smooth sliding lid with thumb indent",
-      "Stores 12+ full-length pencils",
-      "Custom name engraving ready"
+      "Powerful plier squeeze mechanism for thick packages",
+      "All-steel chrome-plated corrosion resistant body",
+      "Throat depth of 45mm for deep stapling",
+      "Compatible with 24/6 and 26/6 staples"
     ],
     specifications: {
-      "Dimensions": "7 × 4 × 2 inches",
-      "Material": "Treated Natural Pine",
-      "Finish": "Eco Beeswax Polish"
+      "Brand": "Kangaro",
+      "Model": "HP-45",
+      "Compatible Pins": "24/6, 26/6",
+      "Capacity": "Up to 30 Sheets / Parcel Bags",
+      "Origin": "Made in India"
     },
     bulkPricing: [
-      { minQty: 1, maxQty: 9, discountPercent: 0, pricePerUnit: 45 },
-      { minQty: 10, maxQty: 49, discountPercent: 15.5, pricePerUnit: 38 },
-      { minQty: 50, discountPercent: 33.3, pricePerUnit: 30 }
+      { minQty: 1, maxQty: 2, discountPercent: 0, pricePerUnit: 299 },
+      { minQty: 3, discountPercent: 10, pricePerUnit: 269 }
     ]
   },
   {
-    id: "prod-20",
-    slug: "precision-metal-drafting-compass",
-    name: "Engineering Precision Metal Compass",
-    category: "school-supplies",
-    subCategory: "geometry-sets",
-    price: 50,
-    originalPrice: 70,
+    id: "prod-kangaro-tape-disp",
+    slug: "kangaro-desktop-tape-dispenser",
+    name: "Kangaro Heavy Weighted Desk Tape Dispenser",
+    category: "office-stationery",
+    subCategory: "Tape Dispensers",
+    price: 90,
+    originalPrice: 99,
     rating: 4.7,
-    reviewCount: 456,
-    stock: 250,
-    sku: "GS-COMPASS-MET",
+    reviewCount: 165,
+    stock: 55,
+    isBestseller: true,
+    isEcoFriendly: false,
+    sku: "KANG-TAPE-DISP-01",
     images: [
-      "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?q=80&w=900&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?q=80&w=900&auto=format&fit=crop"
     ],
-    shortDescription: "Heavy-duty all-metal compass with micro-adjustment thumbwheel for accurate circle arcs up to 15cm radius.",
-    description: "Rigid metal legs prevent flex during circle drawing. Supplied with replacement needle points and lead tubes.",
+    shortDescription: "Non-skid weighted desktop tape cutter dispenser with stainless steel serrated blade.",
+    description: "Kangaro Desktop Tape Dispenser stays firmly anchored on your workstation while you pull and cut adhesive tape with one hand. Features a high-precision anti-rust cutting blade.",
     highlights: [
-      "15cm maximum drawing radius",
-      "Central thumbwheel micro-adjustment",
-      "Includes spare lead tube and safety cap",
-      "All-metal matte chrome finish"
+      "Weighted rubberized base preventing sliding during single-handed use",
+      "Stainless steel high-durability serrated cutter",
+      "Accommodates standard 1-inch and 3-inch core tapes"
     ],
     specifications: {
-      "Max Radius": "15 cm (30 cm Diameter)",
-      "Adjustment": "Friction Gear + Center Wheel",
-      "Body": "Die-cast Zinc Alloy"
+      "Brand": "Kangaro",
+      "Blade Material": "Stainless Steel",
+      "Base": "Weighted Anti-Skid Rubber",
+      "Origin": "Made in India"
     },
     bulkPricing: [
-      { minQty: 1, maxQty: 9, discountPercent: 0, pricePerUnit: 50 },
-      { minQty: 10, maxQty: 49, discountPercent: 16, pricePerUnit: 42 },
-      { minQty: 50, discountPercent: 30, pricePerUnit: 35 }
+      { minQty: 1, maxQty: 4, discountPercent: 0, pricePerUnit: 90 },
+      { minQty: 5, discountPercent: 10, pricePerUnit: 81 }
+    ]
+  },
+  {
+    id: "prod-kangaro-td18y",
+    slug: "kangaro-handy-tape-dispenser-td18y",
+    name: "Kangaro Handy Tape Dispenser TD-18Y (1 Piece)",
+    category: "office-stationery",
+    subCategory: "Tape Dispensers",
+    price: 70,
+    originalPrice: 70,
+    rating: 4.8,
+    reviewCount: 130,
+    stock: 70,
+    isBestseller: false,
+    isEcoFriendly: false,
+    sku: "KANG-TD18Y",
+    images: [
+      "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?q=80&w=900&auto=format&fit=crop"
+    ],
+    shortDescription: "Compact hand-held tape cutter for quick box sealing, gift wrapping, and crafts.",
+    description: "Kangaro TD-18Y is a portable, lightweight tape dispenser designed for swift packaging, parcel sealing, and administrative duties on the go.",
+    highlights: [
+      "Handy ergonomic finger grip contour",
+      "Safe and efficient cutting blade",
+      "Ideal for desk drawers, retail counters, and dispatch desks"
+    ],
+    specifications: {
+      "Brand": "Kangaro",
+      "Model": "TD-18Y",
+      "Origin": "Made in India"
+    },
+    bulkPricing: [
+      { minQty: 1, maxQty: 4, discountPercent: 0, pricePerUnit: 70 },
+      { minQty: 5, discountPercent: 10, pricePerUnit: 63 }
+    ]
+  },
+  {
+    id: "prod-world-one-push-pin",
+    slug: "world-one-push-pins-packet",
+    name: "World One Push Pins (Assorted Colors Packet)",
+    category: "office-stationery",
+    subCategory: "Pins & Clips",
+    price: 35,
+    originalPrice: 35,
+    rating: 4.8,
+    reviewCount: 210,
+    stock: 150,
+    isBestseller: true,
+    isEcoFriendly: false,
+    sku: "WO-PIN-PUSH",
+    images: [
+      "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?q=80&w=900&auto=format&fit=crop"
+    ],
+    shortDescription: "Sharp stainless steel pin tips with vibrant transparent plastic heads for notice boards and maps.",
+    description: "World One Push Pins offer effortless pinning onto cork boards, soft fabric partitions, maps, and bulletin displays without bending.",
+    highlights: [
+      "Sturdy steel points that anchor securely without bending",
+      "Vibrant multicolored heads for color-coded organization",
+      "Reusable clear storage box included"
+    ],
+    specifications: {
+      "Brand": "World One",
+      "Quantity": "1 Packet (~50 Pins)",
+      "Head Colors": "Assorted (Red, Blue, Yellow, Green, White)",
+      "Origin": "Made in India"
+    },
+    bulkPricing: [
+      { minQty: 1, maxQty: 4, discountPercent: 0, pricePerUnit: 35 },
+      { minQty: 5, discountPercent: 14, pricePerUnit: 30 }
+    ]
+  },
+  {
+    id: "prod-world-one-all-pin",
+    slug: "world-one-all-pins-packet",
+    name: "World One All Pins / Paper Pins (2 Packets)",
+    category: "office-stationery",
+    subCategory: "Pins & Clips",
+    price: 35,
+    originalPrice: 35,
+    rating: 4.7,
+    reviewCount: 180,
+    stock: 150,
+    isBestseller: false,
+    isEcoFriendly: false,
+    sku: "WO-PIN-ALL-2PK",
+    images: [
+      "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?q=80&w=900&auto=format&fit=crop"
+    ],
+    shortDescription: "Nickel-plated rust-resistant smooth head paper pins for office files and tailoring.",
+    description: "World One All Pins are manufactured from polished high-grade steel wire with smooth round heads and ultra-sharp tips for fastening documents without tearing fibers.",
+    highlights: [
+      "Includes 2 full packets",
+      "Rust-proof nickel plating for long shelf life",
+      "Precision pointed for effortless piercing"
+    ],
+    specifications: {
+      "Brand": "World One",
+      "Quantity": "2 Packets",
+      "Finish": "Nickel Plated Steel",
+      "Origin": "Made in India"
+    },
+    bulkPricing: [
+      { minQty: 1, maxQty: 4, discountPercent: 0, pricePerUnit: 35 },
+      { minQty: 5, discountPercent: 14, pricePerUnit: 30 }
+    ]
+  },
+  {
+    id: "prod-world-one-t-pin",
+    slug: "world-one-t-pins-packet",
+    name: "World One Steel T-Pins (3 Packets)",
+    category: "office-stationery",
+    subCategory: "Pins & Clips",
+    price: 35,
+    originalPrice: 35,
+    rating: 4.8,
+    reviewCount: 95,
+    stock: 120,
+    isBestseller: false,
+    isEcoFriendly: false,
+    sku: "WO-PIN-T-3PK",
+    images: [
+      "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?q=80&w=900&auto=format&fit=crop"
+    ],
+    shortDescription: "Heavy-duty T-bar head steel pins for fabric, partition boards, crafts, and wig making.",
+    description: "World One T-Pins feature a wide T-bar head that is easy to grasp and push into dense surfaces such as cubicle fabric walls, cork boards, and model crafting.",
+    highlights: [
+      "Set of 3 packets",
+      "Strong T-bar head providing superior grip and leverage",
+      "Smooth sharp tip for clean fastening"
+    ],
+    specifications: {
+      "Brand": "World One",
+      "Quantity": "3 Packets",
+      "Material": "Hardened Steel",
+      "Origin": "Made in India"
+    },
+    bulkPricing: [
+      { minQty: 1, maxQty: 4, discountPercent: 0, pricePerUnit: 35 },
+      { minQty: 5, discountPercent: 14, pricePerUnit: 30 }
+    ]
+  },
+  {
+    id: "prod-world-one-color-clip",
+    slug: "world-one-color-coated-paper-clips",
+    name: "World One Color Coated Paper Clips (4 Packets)",
+    category: "office-stationery",
+    subCategory: "Pins & Clips",
+    price: 35,
+    originalPrice: 35,
+    rating: 4.9,
+    reviewCount: 230,
+    stock: 140,
+    isBestseller: true,
+    isEcoFriendly: false,
+    sku: "WO-CLIP-COLOR-4PK",
+    images: [
+      "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?q=80&w=900&auto=format&fit=crop"
+    ],
+    shortDescription: "Vinyl plastic coated colorful paper clips with smooth non-tear grip for file indexing.",
+    description: "World One Color Coated Paper Clips protect your important documents from scratches and rust stains while adding vibrant color-coded sorting to office and study files.",
+    highlights: [
+      "Set of 4 packets in assorted bright colors",
+      "Vinyl coating prevents paper tearing and rust marks",
+      "Strong spring tension holds up to 25 sheets"
+    ],
+    specifications: {
+      "Brand": "World One",
+      "Quantity": "4 Packets",
+      "Coating": "Protective Vinyl",
+      "Origin": "Made in India"
+    },
+    bulkPricing: [
+      { minQty: 1, maxQty: 4, discountPercent: 0, pricePerUnit: 35 },
+      { minQty: 5, discountPercent: 14, pricePerUnit: 30 }
+    ]
+  },
+  {
+    id: "prod-world-one-metal-clip",
+    slug: "world-one-metal-paper-clips",
+    name: "World One Heavy Duty Metal Paper Clips (5 Packets)",
+    category: "office-stationery",
+    subCategory: "Pins & Clips",
+    price: 35,
+    originalPrice: 35,
+    rating: 4.8,
+    reviewCount: 310,
+    stock: 180,
+    isBestseller: true,
+    isEcoFriendly: false,
+    sku: "WO-CLIP-METAL-5PK",
+    images: [
+      "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?q=80&w=900&auto=format&fit=crop"
+    ],
+    shortDescription: "Zinc-plated rust-resistant classic metal paper binder clips for daily office documentation.",
+    description: "World One Metal Paper Clips are forged from spring steel wire with smooth rounded edges to clamp documents securely without crimping or damaging pages.",
+    highlights: [
+      "Value bundle: 5 full packets",
+      "Zinc galvanized corrosion resistant finish",
+      "Firm non-slip grip holding documents neatly"
+    ],
+    specifications: {
+      "Brand": "World One",
+      "Quantity": "5 Packets",
+      "Material": "Spring Steel",
+      "Origin": "Made in India"
+    },
+    bulkPricing: [
+      { minQty: 1, maxQty: 4, discountPercent: 0, pricePerUnit: 35 },
+      { minQty: 5, discountPercent: 14, pricePerUnit: 30 }
+    ]
+  },
+  {
+    id: "prod-miles-stapler-gun",
+    slug: "miles-heavy-duty-stapler-gun",
+    name: "Miles Heavy Duty Industrial Stapler Tacker Gun",
+    category: "office-stationery",
+    subCategory: "Stapler Guns",
+    price: 990,
+    originalPrice: 1080,
+    rating: 4.9,
+    reviewCount: 76,
+    stock: 25,
+    isBestseller: false,
+    isEcoFriendly: false,
+    sku: "MILES-STAP-GUN-01",
+    images: [
+      "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?q=80&w=900&auto=format&fit=crop"
+    ],
+    shortDescription: "Professional all-steel manual staple gun for upholstery, wooden frames, canvas, and exhibition boards.",
+    description: "Miles Heavy Duty Tacker Stapler Gun delivers industrial-strength driving power. Constructed with an all-steel body, recoil-absorbing hand grip, and adjustable impact tension knob.",
+    highlights: [
+      "All-steel chrome plated construction for extreme durability",
+      "Force adjustment knob for soft and hard surfaces",
+      "Handle lock safety mechanism for compact storage",
+      "Widely used in framing, display boards, and packaging"
+    ],
+    specifications: {
+      "Brand": "Miles",
+      "Mechanism": "Heavy Duty Manual Spring Lever",
+      "Body": "Forged Chrome Steel",
+      "Origin": "Made in India"
+    },
+    bulkPricing: [
+      { minQty: 1, maxQty: 2, discountPercent: 0, pricePerUnit: 990 },
+      { minQty: 3, discountPercent: 10, pricePerUnit: 890 }
+    ]
+  },
+  {
+    id: "prod-sticky-notes-pad",
+    slug: "neon-sticky-notes-pad-100-sheets",
+    name: "Neon Self-Adhesive Sticky Notes Pad (100 Sheets, 3x3 Inch)",
+    category: "office-stationery",
+    subCategory: "Sticky Notes",
+    price: 45,
+    originalPrice: 55,
+    rating: 4.8,
+    reviewCount: 280,
+    stock: 110,
+    isBestseller: true,
+    isEcoFriendly: true,
+    sku: "STICKY-NOTE-100",
+    images: [
+      "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?q=80&w=900&auto=format&fit=crop"
+    ],
+    shortDescription: "Vibrant neon yellow/pink repositionable sticky notes for reminders, desk flags, and book annotations.",
+    description: "These self-adhesive memo pads feature clean-peel adhesive that sticks firmly to computer monitors, books, whiteboards, and files without leaving sticky residue.",
+    highlights: [
+      "100 sheets per pad (3 x 3 inches)",
+      "High-contrast neon colors for instant visibility",
+      "Removable adhesive allowing multiple repositioning without residue"
+    ],
+    specifications: {
+      "Brand": "Instant Stationery",
+      "Sheets": "100 Sheets",
+      "Size": "76 x 76 mm (3 x 3 in)",
+      "Origin": "Made in India"
+    },
+    bulkPricing: [
+      { minQty: 1, maxQty: 4, discountPercent: 0, pricePerUnit: 45 },
+      { minQty: 5, discountPercent: 15, pricePerUnit: 38 }
     ]
   },
 
-  // 6. Eco-Friendly Range
+  // ==========================================
+  // 3. MARKERS & WRITING INSTRUMENTS
+  // ==========================================
   {
-    id: "prod-21",
-    slug: "biodegradable-plantable-pen-set-10-pens",
-    name: "Gupta Biodegradable & Plantable Pen Set (10 Pens)",
-    category: "eco-friendly-range",
-    subCategory: "eco-pens",
-    price: 200,
-    originalPrice: 260,
-    rating: 4.9,
-    reviewCount: 523,
+    id: "prod-cd-marker",
+    slug: "luxor-doms-cd-dvd-marker",
+    name: "Luxor / Doms CD/DVD OHP Fine Tip Marker (1 Piece)",
+    category: "markers-writing",
+    subCategory: "CD/DVD Markers",
+    price: 10,
+    originalPrice: 10,
+    rating: 4.8,
+    reviewCount: 390,
     stock: 200,
-    isEcoFriendly: true,
     isBestseller: true,
-    sku: "GS-ECO-PEN10",
+    isEcoFriendly: false,
+    sku: "MARK-CD-DOMS",
     images: [
-      "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?q=80&w=900&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1569683795645-b62e50fbf103?q=80&w=900&auto=format&fit=crop"
     ],
-    shortDescription: "Plantable pens made from 100% recycled paper barrel with non-toxic biodegradable ink and seed capsules at the base.",
-    description: "Write your thoughts and plant the pen when it runs out! Each pen is embedded with organic seeds (Basil, Marigold, Tomato) that sprout into plants when planted in soil.",
+    shortDescription: "Waterproof fine point marker for plastic, glass, optical discs, metal, and transparency sheets.",
+    description: "Luxor / Doms Fine Tip CD Marker is engineered with specialized quick-drying alcohol-based ink that writes smoothly on non-porous surfaces without smudging or fading.",
     highlights: [
-      "100% plastic-free recycled paper barrel",
-      "Seed capsule on rear (Tomato, Basil, Marigold)",
-      "3000+ words smooth non-toxic writing",
-      "Popular corporate eco-gifting product"
+      "Ultra-fine durable bullet tip for precise labeling",
+      "Waterproof, smudge-proof, and fade-resistant formula",
+      "Writes effortlessly on CDs, DVDs, plastics, cables, and glassware"
     ],
     specifications: {
-      "Pack": "10 Plantable Pens",
-      "Barrel": "Compressed Recycled Newspaper",
-      "Seeds": "Non-GMO Organic Herb & Flower Seeds",
-      "Ink": "Non-Toxic High Capacity Blue Ink"
+      "Brand": "Luxor / Doms",
+      "Tip Size": "0.8mm Fine Tip",
+      "Ink Type": "Waterproof Alcohol Ink",
+      "Origin": "Made in India"
     },
     bulkPricing: [
-      { minQty: 1, maxQty: 9, discountPercent: 0, pricePerUnit: 200 },
-      { minQty: 10, maxQty: 49, discountPercent: 15, pricePerUnit: 170 },
-      { minQty: 50, discountPercent: 25, pricePerUnit: 150 }
+      { minQty: 1, maxQty: 9, discountPercent: 0, pricePerUnit: 10 },
+      { minQty: 10, discountPercent: 20, pricePerUnit: 8 }
     ]
   },
   {
-    id: "prod-22",
-    slug: "natural-rubber-eraser-pack-of-5",
-    name: "Natural Tree-Rubber Erasers (Pack of 5, PVC-Free)",
-    category: "eco-friendly-range",
-    subCategory: "eco-erasers",
-    price: 55,
-    originalPrice: 70,
-    rating: 4.8,
-    reviewCount: 412,
-    stock: 400,
-    isEcoFriendly: true,
-    sku: "GS-ECO-ERASE5",
-    images: [
-      "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?q=80&w=900&auto=format&fit=crop"
-    ],
-    shortDescription: "100% pure vulcanized natural rubber erasers. 0% PVC, zero synthetic plastics, completely safe for children.",
-    description: "Sustainably harvested from rubber trees. Leaves no chemical residue on paper and breaks down naturally in soil.",
-    highlights: [
-      "Pack of 5 tree-sap rubber erasers",
-      "100% PVC & phthalate free",
-      "Soft, velvety feel with non-tearing erasing",
-      "Completely biodegradable"
-    ],
-    specifications: {
-      "Count": "5 Erasers",
-      "Material": "100% Natural Hevea Rubber",
-      "Eco Label": "Zero Micro-plastics"
-    },
-    bulkPricing: [
-      { minQty: 1, maxQty: 9, discountPercent: 0, pricePerUnit: 55 },
-      { minQty: 10, maxQty: 49, discountPercent: 18, pricePerUnit: 45 },
-      { minQty: 50, discountPercent: 36, pricePerUnit: 35 }
-    ]
-  },
-  {
-    id: "prod-23",
-    slug: "recycled-paper-kraft-notebook-150-pages",
-    name: "Recycled Paper Kraft Notebook (150 Pages)",
-    category: "eco-friendly-range",
-    subCategory: "eco-notebooks",
-    price: 75,
-    originalPrice: 95,
+    id: "prod-perm-marker",
+    slug: "luxor-doms-permanent-marker",
+    name: "Luxor / Doms Waterproof Permanent Marker (1 Piece)",
+    category: "markers-writing",
+    subCategory: "Permanent Markers",
+    price: 20,
+    originalPrice: 20,
     rating: 4.9,
-    reviewCount: 667,
+    reviewCount: 450,
+    stock: 220,
+    isBestseller: true,
+    isEcoFriendly: false,
+    sku: "MARK-PERM-DOMS",
+    images: [
+      "https://images.unsplash.com/photo-1569683795645-b62e50fbf103?q=80&w=900&auto=format&fit=crop"
+    ],
+    shortDescription: "Heavy-duty waterproof permanent marker for shipping cartons, metal, wood, plastic, and stone.",
+    description: "Delivering deep indelible black/blue ink, this industrial-strength permanent marker withstands sun exposure, moisture, and rough handling across warehouses and classrooms.",
+    highlights: [
+      "Bold acrylic bullet tip that maintains shape under pressure",
+      "Instant dry indelible ink that resists water and sunlight",
+      "High ink reservoir for thousands of meters of writing"
+    ],
+    specifications: {
+      "Brand": "Luxor / Doms",
+      "Tip": "Acrylic Bullet Tip (2.0mm)",
+      "Ink": "Permanent Waterproof",
+      "Origin": "Made in India"
+    },
+    bulkPricing: [
+      { minQty: 1, maxQty: 9, discountPercent: 0, pricePerUnit: 20 },
+      { minQty: 10, discountPercent: 15, pricePerUnit: 17 }
+    ]
+  },
+  {
+    id: "prod-wb-marker",
+    slug: "luxor-doms-whiteboard-marker",
+    name: "Luxor / Doms Whiteboard Marker (Blue, Black, Red, Green)",
+    category: "markers-writing",
+    subCategory: "Whiteboard Markers",
+    price: 25,
+    originalPrice: 25,
+    rating: 4.9,
+    reviewCount: 520,
     stock: 300,
-    isEcoFriendly: true,
-    sku: "GS-ECO-KRAFT150",
+    isBestseller: true,
+    isEcoFriendly: false,
+    sku: "MARK-WB-DOMS-4CLR",
     images: [
-      "https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=900&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1569683795645-b62e50fbf103?q=80&w=900&auto=format&fit=crop"
     ],
-    shortDescription: "150 pages of unbleached post-consumer recycled paper bound in flexible natural Kraft board.",
-    description: "Saves trees, water, and energy with every page. Thread-sewn spine lays flat at 180° for easy writing and sketching.",
+    shortDescription: "Low-odor, easily dry-wipeable whiteboard marker with durable bullet tip for coaching & presentations.",
+    description: "Engineered specifically for coaching institutions, schools, and corporate boardrooms, Luxor / Doms whiteboard markers provide bold visibility with effortless residue-free dry erasing.",
     highlights: [
-      "150 pages 60 GSM recycled paper",
-      "Soy-ink printed unobtrusive dot grid",
-      "Flat-lay 180-degree open spine",
-      "Plastic-free paper band packaging"
+      "Available in 4 vibrant colors: Blue, Black, Red, Green",
+      "Wipes completely clean with dry duster without ghosting",
+      "Non-toxic low-odor Japanese formulation"
     ],
     specifications: {
-      "Pages": "150 Pages",
-      "Layout": "Dot Grid / Ruled",
-      "Binding": "Cotton Thread Sewn",
-      "Dimensions": "A5 (148 × 210 mm)"
+      "Brand": "Luxor / Doms",
+      "Ink Type": "Low Odor Dry Erase",
+      "Colors": "Blue, Black, Red, Green",
+      "Origin": "Made in India"
     },
     bulkPricing: [
-      { minQty: 1, maxQty: 9, discountPercent: 0, pricePerUnit: 75 },
-      { minQty: 10, maxQty: 49, discountPercent: 17.3, pricePerUnit: 62 },
-      { minQty: 50, discountPercent: 33.3, pricePerUnit: 50 }
+      { minQty: 1, maxQty: 9, discountPercent: 0, pricePerUnit: 25 },
+      { minQty: 10, discountPercent: 16, pricePerUnit: 21 }
+    ],
+    colors: [
+      { name: "Blue", hex: "#2563eb" },
+      { name: "Black", hex: "#111827" },
+      { name: "Red", hex: "#dc2626" },
+      { name: "Green", hex: "#16a34a" }
     ]
   },
-  {
-    id: "prod-24",
-    slug: "natural-bamboo-pencils-pack-of-10",
-    name: "Sustainable Bamboo HB Pencils (Pack of 10)",
-    category: "eco-friendly-range",
-    subCategory: "eco-pencils",
-    price: 65,
-    originalPrice: 85,
-    rating: 4.8,
-    reviewCount: 534,
-    stock: 250,
-    isEcoFriendly: true,
-    sku: "GS-ECO-BAMBOO10",
-    images: [
-      "https://images.unsplash.com/photo-1585336261026-77cc7c97f266?q=80&w=900&auto=format&fit=crop"
-    ],
-    shortDescription: "Fast-growing renewable bamboo body pencils with rich HB graphite and natural eraser tops.",
-    description: "Bamboo is a fast-regenerating grass that requires no deforestation. These pencils feel warm to the touch and sharpen smoothly.",
-    highlights: [
-      "Pack of 10 100% bamboo casing pencils",
-      "Deep dark HB smooth writing lead",
-      "Zero rainforest timber used",
-      "Biodegradable natural rubber eraser head"
-    ],
-    specifications: {
-      "Pack Size": "10 Pencils",
-      "Hardness": "HB Grade",
-      "Material": "100% Organically Grown Bamboo"
-    },
-    bulkPricing: [
-      { minQty: 1, maxQty: 9, discountPercent: 0, pricePerUnit: 65 },
-      { minQty: 10, maxQty: 49, discountPercent: 15.3, pricePerUnit: 55 },
-      { minQty: 50, discountPercent: 30.7, pricePerUnit: 45 }
-    ]
-  }
-];
 
-export const CATEGORIES = [
+  // ==========================================
+  // 4. REGISTERS & ACCOUNTING LEDGERS
+  // ==========================================
   {
-    id: "pens-pencils",
-    name: "Pens & Pencils",
-    slug: "pens-pencils",
-    description: "Ball pens, gel pens, wooden & mechanical pencils, highlighters",
-    itemCount: 5,
-    image: "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?q=80&w=800&auto=format&fit=crop",
-    subcategories: ["Ball Pens", "Gel Pens", "Wooden Pencils", "Mechanical Pencils", "Highlighters"]
+    id: "prod-mayank-jumbo-80",
+    slug: "mayank-jumbo-register-80-pages",
+    name: "Mayank Jumbo Register (80 Pages Hardbound)",
+    category: "registers-notebooks",
+    subCategory: "Jumbo 80 PG",
+    price: 59,
+    originalPrice: 59,
+    rating: 4.8,
+    reviewCount: 160,
+    stock: 150,
+    isBestseller: true,
+    isEcoFriendly: false,
+    sku: "MAYANK-JUMBO-80",
+    images: [
+      "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=900&auto=format&fit=crop"
+    ],
+    shortDescription: "Sturdy hardbound jumbo accounting and ledger register with 80 high-GSM ruled pages.",
+    description: "Mayank Jumbo 80 Page Register is constructed with heavy cardboard binding, premium spine cloth reinforcement, and ultra-smooth ruled paper for daily entry and records.",
+    highlights: [
+      "80 crisp, ledger-ruled pages with margin guides",
+      "Rigid hardbound cover with durable spine reinforcement",
+      "Paper absorbs ink smoothly with zero ink bleed"
+    ],
+    specifications: {
+      "Brand": "Mayank",
+      "Pages": "80 Pages",
+      "Binding": "Hardbound Hard Cover with Cloth Spine",
+      "Origin": "Made in India"
+    },
+    bulkPricing: [
+      { minQty: 1, maxQty: 4, discountPercent: 0, pricePerUnit: 59 },
+      { minQty: 5, discountPercent: 10, pricePerUnit: 53 }
+    ]
   },
   {
-    id: "notebooks-notepads",
-    name: "Notebooks & Notepads",
-    slug: "notebooks-notepads",
-    description: "School notebooks, office notepads, diaries, planners & sticky notes",
-    itemCount: 4,
-    image: "https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=800&auto=format&fit=crop",
-    subcategories: ["School Notebooks", "Office Notebooks", "Sticky Notes", "Diaries & Planners"]
+    id: "prod-mayank-jumbo-170",
+    slug: "mayank-jumbo-register-170-pages",
+    name: "Mayank Jumbo Register (170 Pages Hardbound)",
+    category: "registers-notebooks",
+    subCategory: "Jumbo 170 PG",
+    price: 80,
+    originalPrice: 80,
+    rating: 4.8,
+    reviewCount: 190,
+    stock: 130,
+    isBestseller: true,
+    isEcoFriendly: false,
+    sku: "MAYANK-JUMBO-170",
+    images: [
+      "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=900&auto=format&fit=crop"
+    ],
+    shortDescription: "170 pages hardbound ledger register for office accounts, inventory logs, and school records.",
+    description: "The 170-page Mayank Jumbo Register provides substantial capacity for monthly accounting logs, store inventory registers, and institutional student records.",
+    highlights: [
+      "170 durable ruled pages with clear line hierarchy",
+      "Heavy card outer bound for archival longevity",
+      "Flat-opening binding for convenient writing across the page"
+    ],
+    specifications: {
+      "Brand": "Mayank",
+      "Pages": "170 Pages",
+      "Binding": "Hardbound Cloth Spine",
+      "Origin": "Made in India"
+    },
+    bulkPricing: [
+      { minQty: 1, maxQty: 4, discountPercent: 0, pricePerUnit: 80 },
+      { minQty: 5, discountPercent: 10, pricePerUnit: 72 }
+    ]
   },
   {
-    id: "paper-products",
-    name: "Paper Products",
-    slug: "paper-products",
-    description: "A4 copy paper, heavy cardstock, cardboard sheets, tissue paper",
-    itemCount: 3,
-    image: "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?q=80&w=800&auto=format&fit=crop",
-    subcategories: ["Copy Paper (A4)", "Cardstock & Board", "Tissue Paper"]
+    id: "prod-mayank-jumbo-240",
+    slug: "mayank-jumbo-register-240-pages",
+    name: "Mayank Jumbo Register (240 Pages Hardbound)",
+    category: "registers-notebooks",
+    subCategory: "Jumbo 240 PG",
+    price: 110,
+    originalPrice: 110,
+    rating: 4.9,
+    reviewCount: 140,
+    stock: 100,
+    isBestseller: false,
+    isEcoFriendly: false,
+    sku: "MAYANK-JUMBO-240",
+    images: [
+      "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=900&auto=format&fit=crop"
+    ],
+    shortDescription: "High-capacity 240 pages master hardbound register for comprehensive business and financial records.",
+    description: "Mayank Jumbo 240-page register is built for multi-month financial book-keeping, factory attendance logs, and school registers.",
+    highlights: [
+      "240 thick ledger pages",
+      "Heavy duty reinforced hard binding",
+      "Bleed-proof paper suitable for fountain and gel pens"
+    ],
+    specifications: {
+      "Brand": "Mayank",
+      "Pages": "240 Pages",
+      "Binding": "Hardbound",
+      "Origin": "Made in India"
+    },
+    bulkPricing: [
+      { minQty: 1, maxQty: 4, discountPercent: 0, pricePerUnit: 110 },
+      { minQty: 5, discountPercent: 10, pricePerUnit: 99 }
+    ]
   },
   {
-    id: "office-supplies",
-    name: "Office Supplies",
-    slug: "office-supplies",
-    description: "Staplers, metal paper clips, elastic bands, folders & files",
-    itemCount: 4,
-    image: "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?q=80&w=800&auto=format&fit=crop",
-    subcategories: ["Staplers & Pins", "Clips & Bands", "Folders & Files"]
+    id: "prod-mayank-jumbo-300",
+    slug: "mayank-jumbo-register-300-pages",
+    name: "Mayank Jumbo Register (300 Pages Master Ledger)",
+    category: "registers-notebooks",
+    subCategory: "Jumbo 300 PG",
+    price: 159,
+    originalPrice: 159,
+    rating: 4.9,
+    reviewCount: 175,
+    stock: 85,
+    isBestseller: true,
+    isEcoFriendly: false,
+    sku: "MAYANK-JUMBO-300",
+    images: [
+      "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=900&auto=format&fit=crop"
+    ],
+    shortDescription: "Flagship 300 pages master volume accounting register for annual business financial ledgers.",
+    description: "Mayank Jumbo 300 Page Ledger Register is the ultimate accounting volume for yearly financial auditing, factory logs, institutional records, and heavy-volume registers.",
+    highlights: [
+      "Massive 300-page capacity for complete annual records",
+      "Reinforced heavy binder board and spine binding",
+      "Archival quality ledger ruling"
+    ],
+    specifications: {
+      "Brand": "Mayank",
+      "Pages": "300 Pages",
+      "Binding": "Heavy Reinforced Hardbound",
+      "Origin": "Made in India"
+    },
+    bulkPricing: [
+      { minQty: 1, maxQty: 4, discountPercent: 0, pricePerUnit: 159 },
+      { minQty: 5, discountPercent: 10, pricePerUnit: 143 }
+    ]
   },
   {
-    id: "school-supplies",
-    name: "School Supplies",
-    slug: "school-supplies",
-    description: "Geometry boxes, erasers, sharpeners, pencil boxes, compasses",
-    itemCount: 4,
-    image: "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?q=80&w=800&auto=format&fit=crop",
-    subcategories: ["Geometry Sets", "Erasers & Sharpeners", "Pencil Boxes", "Compasses"]
-  },
-  {
-    id: "eco-friendly-range",
-    name: "Eco-Friendly Range",
-    slug: "eco-friendly-range",
-    description: "Biodegradable pens, recycled paper, natural rubber erasers, bamboo pencils",
-    itemCount: 4,
-    image: "https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=800&auto=format&fit=crop",
-    subcategories: ["Biodegradable Pens", "Natural Rubber Erasers", "Recycled Notebooks", "Bamboo Pencils"]
+    id: "prod-mayank-king-size",
+    slug: "mayank-deluxe-king-size-register",
+    name: "Mayank Deluxe King Size Long Format Register",
+    category: "registers-notebooks",
+    subCategory: "King Size Register",
+    price: 130,
+    originalPrice: 145,
+    rating: 4.8,
+    reviewCount: 110,
+    stock: 70,
+    isBestseller: false,
+    isEcoFriendly: false,
+    sku: "MAYANK-KING-SIZE",
+    images: [
+      "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=900&auto=format&fit=crop"
+    ],
+    shortDescription: "Extra-large long format folio register for school attendance, hospital logs, and showroom entries.",
+    description: "Mayank King Size Register offers an expanded long folio layout with wide columns, perfect for visitor logs, attendance tracking, and multi-column dispatch record-keeping.",
+    highlights: [
+      "Extra wide folio king-size layout",
+      "Hardbound cover protecting records against dust and wear",
+      "High-grade white ledger paper"
+    ],
+    specifications: {
+      "Brand": "Mayank",
+      "Format": "King Size Long Folio",
+      "Origin": "Made in India"
+    },
+    bulkPricing: [
+      { minQty: 1, maxQty: 4, discountPercent: 0, pricePerUnit: 130 },
+      { minQty: 5, discountPercent: 10, pricePerUnit: 117 }
+    ]
   }
 ];

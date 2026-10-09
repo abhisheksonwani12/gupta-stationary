@@ -21,21 +21,21 @@ export default function TermsAndConditionsPage() {
           <h1 className="font-serif text-3xl sm:text-4xl font-bold uppercase text-gray-900 mt-1">
             Terms & Conditions
           </h1>
-          <p className="text-xs text-gray-400 mt-1">Gupta Stationery • Est. 1990, Raipur</p>
+          <p className="text-xs text-gray-400 mt-1">Instant Stationary • Est. 1990, Raipur</p>
         </div>
 
         <div className="prose prose-neutral max-w-none text-xs sm:text-sm text-gray-700 leading-relaxed space-y-6">
           <section className="space-y-2">
             <h2 className="font-serif text-lg font-bold uppercase text-gray-900">1. Website Use</h2>
             <p>
-              By accessing and using this website or placing orders with Gupta Stationery, you agree to comply with and be bound by these terms. All product descriptions, photography, pricing tables, and blog resources are proprietary to Gupta Stationery.
+              By accessing and using this website or placing orders with Instant Stationary, you agree to comply with and be bound by these terms. All product descriptions, photography, pricing tables, and blog resources are proprietary to Instant Stationary.
             </p>
           </section>
 
           <section className="space-y-2">
             <h2 className="font-serif text-lg font-bold uppercase text-gray-900">2. Product Information & Pricing</h2>
             <p>
-              We strive for complete accuracy in pricing, GSM specifications, and product dimensions. In the rare event of a typographical error, Gupta Stationery reserves the right to correct prices or cancel affected orders before dispatch with full instant refund.
+              We strive for complete accuracy in pricing, GSM specifications, and product dimensions. In the rare event of a typographical error, Instant Stationary reserves the right to correct prices or cancel affected orders before dispatch with full instant refund.
             </p>
           </section>
 

@@ -21,6 +21,7 @@ import SearchModal from "@/components/search/SearchModal";
 import CartDrawer from "@/components/cart/CartDrawer";
 import { useCart } from "@/context/CartContext";
 import { useWishlist } from "@/context/WishlistContext";
+import { useAuth } from "@/context/AuthContext";
 import { CATEGORIES } from "@/data/products";
 
 export default function Navbar() {
@@ -28,10 +29,17 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [activeMegaMenu, setActiveMegaMenu] = useState<string | null>(null);
+  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
 
   const { totalItems, setIsCartOpen } = useCart();
   const { wishlist } = useWishlist();
+  const { user, isAuthenticated, logout } = useAuth();
   const pathname = usePathname();
+
+  // Hide customer navbar inside admin panel
+  if (pathname?.startsWith("/admin")) {
+    return null;
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -66,18 +74,15 @@ export default function Navbar() {
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
 
-            {/* Brand Logo with Official Image */}
-            <Link href="/" className="flex items-center gap-3 group shrink-0">
-              <div className="relative flex items-center py-1">
-                <Image
-                  src="/images/logo.png"
-                  alt="Gupta Paper and Stationery"
-                  width={220}
-                  height={130}
-                  priority
-                  unoptimized
-                  className="h-11 sm:h-13 md:h-14 w-auto object-contain transition-transform group-hover:scale-105 duration-200"
-                />
+            {/* Brand Logo */}
+            <Link href="/" className="flex items-center gap-3 group shrink-0 py-1">
+              <div className="flex flex-col">
+                <span className="font-serif text-xl sm:text-2xl font-black uppercase tracking-tight text-[#1C1C1C] leading-none group-hover:text-[#B38E5D] transition-colors">
+                  Instant <span className="text-[#B38E5D]">Stationary</span>
+                </span>
+                <span className="text-[9px] font-mono uppercase tracking-[0.25em] text-gray-400 mt-0.5 font-medium">
+                  Fast Dispatch • Raipur
+                </span>
               </div>
             </Link>
 
@@ -112,7 +117,7 @@ export default function Navbar() {
                             {cat.name}
                           </Link>
                           <ul className="space-y-1.5 text-xs text-[#706E6B]">
-                            {cat.subcategories.map((sub) => (
+                            {cat.subcategories.map((sub: string) => (
                               <li key={sub}>
                                 <Link
                                   href={`/shop/${cat.slug}`}
@@ -210,14 +215,76 @@ export default function Navbar() {
                 <Search className="w-5 h-5" />
               </button>
 
-              {/* User Account */}
-              <Link
-                href="/account"
-                className="p-2 text-gray-700 hover:text-[#B38E5D] hover:bg-[#FAF8F5] rounded-full transition-colors hidden sm:block"
-                aria-label="User Account"
-              >
-                <User className="w-5 h-5" />
-              </Link>
+              {/* User Account / Profile Menu */}
+              <div className="relative hidden sm:block">
+                {isAuthenticated && user ? (
+                  <button
+                    onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
+                    className="flex items-center gap-1.5 p-1 hover:bg-[#FAF8F5] rounded transition-colors text-xs font-bold"
+                  >
+                    <div className="w-7 h-7 rounded-full bg-[#1C1C1C] text-white flex items-center justify-center text-[10px] font-mono font-bold">
+                      {user.name.slice(0, 2).toUpperCase()}
+                    </div>
+                    <ChevronDown className="w-3 h-3 text-gray-400" />
+                  </button>
+                ) : (
+                  <Link
+                    href="/login"
+                    className="p-2 text-gray-700 hover:text-[#B38E5D] hover:bg-[#FAF8F5] rounded-full transition-colors flex items-center gap-1.5 text-xs font-semibold"
+                    aria-label="User Login"
+                  >
+                    <User className="w-5 h-5" />
+                  </Link>
+                )}
+
+                {/* User Dropdown Menu */}
+                {isUserMenuOpen && isAuthenticated && user && (
+                  <div
+                    className="absolute right-0 top-full mt-2 w-56 bg-white border border-[#E8E3DA] shadow-xl p-2 z-50 text-xs animate-in fade-in"
+                    onMouseLeave={() => setIsUserMenuOpen(false)}
+                  >
+                    <div className="p-2 border-b border-gray-100 mb-1">
+                      <p className="font-bold text-gray-900 truncate">{user.name}</p>
+                      <p className="text-[10px] text-gray-500 truncate">{user.email}</p>
+                      <div className="flex items-center justify-between pt-1 mt-1 border-t border-gray-50 text-[10px]">
+                        <span className="text-gray-500">Points: {user.loyaltyPoints}</span>
+                        <span className="text-emerald-700 font-bold">₹{user.pendingRewards} Cash</span>
+                      </div>
+                    </div>
+
+                    <Link
+                      href="/account"
+                      onClick={() => setIsUserMenuOpen(false)}
+                      className="block p-2 text-gray-700 hover:bg-[#FAF8F5] hover:text-black rounded"
+                    >
+                      Dashboard & Profile
+                    </Link>
+                    <Link
+                      href="/account?tab=orders"
+                      onClick={() => setIsUserMenuOpen(false)}
+                      className="block p-2 text-gray-700 hover:bg-[#FAF8F5] hover:text-black rounded"
+                    >
+                      My Orders & Shipments
+                    </Link>
+                    <Link
+                      href="/account?tab=addresses"
+                      onClick={() => setIsUserMenuOpen(false)}
+                      className="block p-2 text-gray-700 hover:bg-[#FAF8F5] hover:text-black rounded"
+                    >
+                      Saved Addresses
+                    </Link>
+                    <button
+                      onClick={() => {
+                        logout();
+                        setIsUserMenuOpen(false);
+                      }}
+                      className="w-full text-left p-2 text-red-600 hover:bg-red-50 rounded mt-1 border-t border-gray-100"
+                    >
+                      Sign Out
+                    </button>
+                  </div>
+                )}
+              </div>
 
               {/* Wishlist */}
               <Link
@@ -251,15 +318,13 @@ export default function Navbar() {
           <div className="lg:hidden fixed inset-0 top-[105px] z-50 bg-white border-t border-[#E8E3DA] overflow-y-auto p-5 animate-fadeIn">
             <div className="space-y-4">
               {/* Drawer Brand Header */}
-              <div className="flex items-center justify-center pb-4 border-b border-[#E8E3DA]">
-                <Image
-                  src="/images/logo.png"
-                  alt="Gupta Paper and Stationery"
-                  width={200}
-                  height={120}
-                  unoptimized
-                  className="h-12 sm:h-14 w-auto object-contain"
-                />
+              <div className="flex flex-col items-center justify-center pb-4 border-b border-[#E8E3DA] text-center">
+                <span className="font-serif text-2xl font-black uppercase tracking-tight text-[#1C1C1C]">
+                  Instant <span className="text-[#B38E5D]">Stationary</span>
+                </span>
+                <span className="text-[10px] font-mono uppercase tracking-[0.25em] text-gray-400 mt-1">
+                  Fast Dispatch • Raipur
+                </span>
               </div>
 
               <div className="pb-3 border-b border-[#E8E3DA]">
@@ -288,7 +353,7 @@ export default function Navbar() {
                   💼 Wholesale & Bulk Orders (Up to 60% Off)
                 </Link>
                 <Link href="/about" className="block py-2 border-b border-gray-100">
-                  About Gupta Stationery (Since 1990)
+                  About Instant Stationary
                 </Link>
                 <Link href="/testimonials" className="block py-2 border-b border-gray-100">
                   Customer Reviews

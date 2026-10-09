@@ -39,12 +39,12 @@ export default function CartPage() {
 
   const handleApplyCoupon = (e: React.FormEvent) => {
     e.preventDefault();
-    if (couponCode.toUpperCase() === "GUPTA10") {
+    if (couponCode.toUpperCase() === "INSTANT10" || couponCode.toUpperCase() === "GUPTA10") {
       const discount = Math.round((subtotal - bulkDiscount) * 0.1);
       setCouponDiscount(discount);
       setCouponApplied(true);
     } else {
-      alert("Invalid coupon code. Try 'GUPTA10' for 10% off!");
+      alert("Invalid coupon code. Try 'INSTANT10' for 10% off!");
     }
   };
 
@@ -260,7 +260,7 @@ export default function CartPage() {
                     type="text"
                     value={couponCode}
                     onChange={(e) => setCouponCode(e.target.value)}
-                    placeholder="e.g. GUPTA10"
+                    placeholder="e.g. INSTANT10"
                     className="w-full bg-white border border-[#E8E3DA] p-2 text-xs uppercase focus:outline-none focus:border-black font-semibold"
                   />
                   <button
