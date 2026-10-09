@@ -35,22 +35,62 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
   const resolvedParams = use(params);
   const slug = resolvedParams.slug;
   const { getProductBySlug, products } = useInventory();
-  
-  const product = getProductBySlug(slug) || PRODUCTS.find((p) => p.slug === slug);
-
-  if (!product) {
-    notFound();
-  }
+  const { addToCart } = useCart();
+  const { toggleWishlist, isInWishlist } = useWishlist();
 
   const [selectedImage, setSelectedImage] = useState(0);
   const [quantity, setQuantity] = useState(1);
-  const [selectedColor, setSelectedColor] = useState(
-    product.colors && product.colors.length > 0 ? product.colors[0].name : undefined
-  );
   const [activeTab, setActiveTab] = useState<"specs" | "why" | "faqs" | "reviews">("specs");
 
-  const { addToCart } = useCart();
-  const { toggleWishlist, isInWishlist } = useWishlist();
+  const product = getProductBySlug(slug) || PRODUCTS.find((p) => p.slug === slug);
+  const [selectedColor, setSelectedColor] = useState(
+    product?.colors && product.colors.length > 0 ? product.colors[0].name : undefined
+  );
+
+  if (!product) {
+    const liveList = products.length > 0 ? products : PRODUCTS;
+    return (
+      <div className="bg-[#FAF8F5] min-h-[75vh] flex flex-col items-center justify-center px-4 py-16 text-center">
+        <div className="max-w-md mx-auto space-y-4">
+          <span className="text-[11px] uppercase tracking-[0.25em] font-bold text-[#B38E5D]">
+            Instant Catalog
+          </span>
+          <h1 className="font-serif text-3xl font-bold text-[#1C1C1C]">
+            Product Not Found
+          </h1>
+          <p className="text-sm text-[#706E6B] leading-relaxed">
+            This item is no longer in our active stock list or was updated with our new verified spreadsheet inventory.
+          </p>
+          <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <Link
+              href="/shop"
+              className="w-full sm:w-auto px-6 py-3 bg-[#1C1C1C] text-white text-xs font-bold uppercase tracking-widest hover:bg-[#B38E5D] transition-colors"
+            >
+              Browse Active Catalog
+            </Link>
+            <Link
+              href="/"
+              className="w-full sm:w-auto px-6 py-3 bg-white border border-[#E8E3DA] text-[#1C1C1C] text-xs font-bold uppercase tracking-widest hover:border-black transition-colors"
+            >
+              Back to Home
+            </Link>
+          </div>
+        </div>
+
+        {/* Featured Products */}
+        <div className="max-w-6xl mx-auto mt-16 text-left w-full">
+          <h2 className="font-serif text-xl font-bold text-[#1C1C1C] mb-6">
+            Explore Available Stationery & Paper
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {liveList.slice(0, 4).map((p) => (
+              <ProductCard key={p.id} product={p} />
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   const isFavorited = isInWishlist(product.id);
   const isOutOfStock = (product.stock ?? 0) <= 0;

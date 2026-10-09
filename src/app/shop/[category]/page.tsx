@@ -20,7 +20,30 @@ export default function CategoryPage({ params }: CategoryPageProps) {
   const category = CATEGORIES.find((c) => c.slug === categorySlug);
 
   if (!category) {
-    notFound();
+    const liveList = products.length > 0 ? products : PRODUCTS;
+    return (
+      <div className="bg-[#FAF8F5] min-h-[75vh] flex flex-col items-center justify-center px-4 py-16 text-center">
+        <div className="max-w-md mx-auto space-y-4">
+          <span className="text-[11px] uppercase tracking-[0.25em] font-bold text-[#B38E5D]">
+            Instant Catalog
+          </span>
+          <h1 className="font-serif text-3xl font-bold text-[#1C1C1C]">
+            Category Not Found
+          </h1>
+          <p className="text-sm text-[#706E6B] leading-relaxed">
+            This collection has been updated or organized into our primary categories.
+          </p>
+          <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <Link
+              href="/shop"
+              className="w-full sm:w-auto px-6 py-3 bg-[#1C1C1C] text-white text-xs font-bold uppercase tracking-widest hover:bg-[#B38E5D] transition-colors"
+            >
+              Browse All Categories
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
   }
 
   const liveList = products.length > 0 ? products : PRODUCTS;
