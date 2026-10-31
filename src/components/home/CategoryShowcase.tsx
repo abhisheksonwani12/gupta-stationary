@@ -4,58 +4,54 @@ import { ArrowUpRight } from "lucide-react";
 import { CATEGORIES } from "@/data/products";
 
 export default function CategoryShowcase() {
+  const coreCategories = CATEGORIES.slice(0, 6);
+
   return (
-    <section className="py-16 sm:py-24 bg-white">
+    <section className="py-16 sm:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
           <div>
-            <span className="text-[11px] uppercase tracking-[0.25em] font-bold text-[#B38E5D]">
+            <span className="text-[11px] uppercase tracking-[0.18em] font-medium text-[#967448]">
               Curated Catalog
             </span>
-            <h2 className="font-serif text-2xl sm:text-4xl font-bold uppercase tracking-tight text-[#1C1C1C] mt-2">
-              Explore Our Collections
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-[#141416] mt-1.5">
+              Shop by Category
             </h2>
           </div>
           <Link
             href="/shop"
-            className="text-xs font-bold uppercase tracking-luxury text-[#1C1C1C] hover:text-[#B38E5D] transition-colors inline-flex items-center gap-1 border-b border-black pb-0.5 self-start sm:self-auto"
+            className="text-xs font-semibold uppercase tracking-wider text-[#18181B] hover:text-[#967448] transition-colors inline-flex items-center gap-1 self-start sm:self-auto"
           >
-            <span>View All Categories</span>
-            <ArrowUpRight className="w-4 h-4" />
+            <span>All 142 Products</span>
+            <ArrowUpRight className="w-3.5 h-3.5" />
           </Link>
         </div>
 
         {/* 6 Category Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6">
-          {CATEGORIES.map((category) => (
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-5">
+          {coreCategories.map((category) => (
             <Link
               key={category.id}
               href={`/shop/${category.slug}`}
-              className="group flex flex-col items-center text-center"
+              className="group flex flex-col"
             >
-              {/* Image Circle / Card Container */}
-              <div className="relative w-full aspect-square bg-[#FAF8F5] border border-[#E8E3DA] overflow-hidden transition-all duration-300 group-hover:shadow-luxury group-hover:border-[#1C1C1C]">
+              <div className="relative aspect-square bg-[#F7F5F0] border border-[#EAE6DF] rounded-md overflow-hidden transition-all duration-300 group-hover:border-[#18181B] group-hover:shadow-luxury">
                 <img
                   src={category.image}
                   alt={category.name}
-                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-colors" />
-                
-                {/* Count Badge */}
-                <span className="absolute bottom-2 right-2 bg-white/90 text-black text-[10px] font-bold px-1.5 py-0.5">
-                  {category.itemCount} Items
-                </span>
               </div>
 
-              {/* Title & Subcategory Summary */}
-              <h3 className="mt-3 text-xs sm:text-sm font-bold uppercase tracking-wider text-gray-900 group-hover:text-[#B38E5D] transition-colors">
-                {category.name}
-              </h3>
-              <p className="text-[11px] text-gray-500 line-clamp-1 mt-0.5 hidden sm:block">
-                {category.subcategories.slice(0, 2).join(", ")} & more
-              </p>
+              <div className="mt-2.5">
+                <h3 className="text-xs sm:text-sm font-medium text-[#18181B] group-hover:text-[#967448] transition-colors line-clamp-1">
+                  {category.name}
+                </h3>
+                <span className="text-[11px] text-[#8A8780] lowercase">
+                  {category.itemCount} items
+                </span>
+              </div>
             </Link>
           ))}
         </div>

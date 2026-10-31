@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postinstall": "node -e 'const fs=require(\"fs\"); [\"node_modules/next/dist/build/swc/index.js\",\"node_modules/next/dist/esm/build/swc/index.js\"].forEach(p=>{if(fs.existsSync(p)){let c=fs.readFileSync(p,\"utf8\");if(!c.includes(\"disablePageConfig\")){c=c.replace(\"function toBuffer(t) {\",\"function toBuffer(t) { if(t && typeof t===\\\"object\\\") delete t.disablePageConfig;\");fs.writeFileSync(p,c,\"utf8\");}}});'"
   },
   "dependencies": {
     "@supabase/ssr": "^0.5.2",
@@ -32,6 +33,6 @@
     "typescript": "^5"
   },
   "optionalDependencies": {
-    "@next/swc-darwin-arm64": "^16.4.0"
+    "@next/swc-darwin-arm64": "15.5.26"
   }
 }

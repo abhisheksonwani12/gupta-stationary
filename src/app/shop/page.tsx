@@ -3,11 +3,10 @@
 import React, { useState, useMemo, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { Filter, SlidersHorizontal, ChevronDown, Check, X, RotateCcw } from "lucide-react";
+import { SlidersHorizontal, RotateCcw, X } from "lucide-react";
 import ProductCard from "@/components/products/ProductCard";
 import { CATEGORIES } from "@/data/products";
 import { useInventory } from "@/context/InventoryContext";
-import { Product } from "@/types";
 
 function ShopContent() {
   const { products: liveProducts } = useInventory();
@@ -30,6 +29,16 @@ function ShopContent() {
     { label: "₹500 & Above", value: "500+", min: 500, max: 99999 },
   ];
 
+  // Quick Category Pills
+  const quickPills = [
+    { label: "All", slug: "all", count: liveProducts.length },
+    { label: "Pens & Writing", slug: "pens-pencils" },
+    { label: "Notebooks", slug: "notebooks-notepads" },
+    { label: "Copier Paper", slug: "copier-paper" },
+    { label: "Office Supplies", slug: "office-stationery" },
+    { label: "Registers", slug: "registers-notebooks" },
+  ];
+
   // Filtering Logic
   const filteredProducts = useMemo(() => {
     let list = [...liveProducts];
@@ -39,10 +48,10 @@ function ShopContent() {
       const q = initialSearch.toLowerCase();
       list = list.filter(
         (p) =>
-          p.name.toLowerCase().includes(q) ||
-          p.category.toLowerCase().includes(q) ||
-          p.sku.toLowerCase().includes(q) ||
-          p.description.toLowerCase().includes(q)
+          p.name?.toLowerCase().includes(q) ||
+          p.category?.toLowerCase().includes(q) ||
+          p.sku?.toLowerCase().includes(q) ||
+          p.description?.toLowerCase().includes(q)
       );
     }
 
@@ -79,12 +88,11 @@ function ShopContent() {
     } else if (sortBy === "reviews") {
       list.sort((a, b) => b.reviewCount - a.reviewCount);
     } else {
-      // Default: bestsellers first
       list.sort((a, b) => (b.isBestseller ? 1 : 0) - (a.isBestseller ? 1 : 0));
     }
 
     return list;
-  }, [initialSearch, selectedCategory, onlyEcoFriendly, selectedPriceRange, selectedRating, sortBy]);
+  }, [liveProducts, initialSearch, selectedCategory, onlyEcoFriendly, selectedPriceRange, selectedRating, sortBy]);
 
   const resetFilters = () => {
     setSelectedCategory("all");
@@ -103,51 +111,71 @@ function ShopContent() {
   return (
     <div className="bg-white min-h-screen">
       {/* Catalog Banner Header */}
-      <div className="bg-[#FAF8F5] border-b border-[#E8E3DA] py-10 sm:py-14">
+      <div className="bg-[#FBFBFA] border-b border-[#EAE6DF] py-10 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-2 text-xs text-[#706E6B] mb-2 uppercase tracking-wider">
+          <div className="flex items-center gap-2 text-xs text-[#8A8780] mb-2">
             <Link href="/" className="hover:text-black">
               Home
             </Link>
             <span>/</span>
-            <span className="text-[#1C1C1C] font-semibold">Catalog</span>
+            <span className="text-[#18181B] font-medium">Catalog</span>
             {initialSearch && <span>/ Search: &quot;{initialSearch}&quot;</span>}
           </div>
 
-          <h1 className="font-serif text-3xl sm:text-4xl font-bold uppercase tracking-tight text-[#1C1C1C]">
-            All Stationery Products & Supplies
+          <h1 className="font-serif text-2xl sm:text-4xl font-bold tracking-tight text-[#141416]">
+            Stationery & Supplies Catalog
           </h1>
-          <p className="text-xs sm:text-sm text-[#706E6B] mt-2 max-w-2xl">
-            Explore 24+ high quality writing instruments, notebooks, paper reams, office filing systems, school geometry sets, and eco-friendly products at direct-from-manufacturer prices.
+          <p className="text-xs sm:text-sm text-[#78716C] mt-1.5 max-w-xl">
+            Explore {liveProducts.length} certified stationery items, pens, notebooks, paper reams, and institutional office supplies at direct manufacturer rates.
           </p>
+
+          {/* Quick Category Chips */}
+          <div className="flex items-center gap-2 mt-6 overflow-x-auto pb-1 scrollbar-none">
+            {quickPills.map((pill) => {
+              const isActive = selectedCategory === pill.slug;
+              return (
+                <button
+                  key={pill.slug}
+                  onClick={() => setSelectedCategory(pill.slug)}
+                  className={`px-3.5 py-1.5 text-xs font-medium rounded-full transition-all whitespace-nowrap ${
+                    isActive
+                      ? "bg-[#18181B] text-white shadow-xs"
+                      : "bg-white text-[#57534E] hover:text-black border border-[#EAE6DF]"
+                  }`}
+                >
+                  {pill.label}
+                </button>
+              );
+            })}
+          </div>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-        {/* Filter Controls Bar (Mobile & Desktop Top) */}
-        <div className="flex flex-wrap items-center justify-between pb-6 mb-8 border-b border-[#E8E3DA] gap-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
+        {/* Filter Controls Bar */}
+        <div className="flex flex-wrap items-center justify-between pb-5 mb-8 border-b border-[#EAE6DF] gap-4">
           <div className="flex items-center gap-3">
             <button
               onClick={() => setMobileFilterOpen(true)}
-              className="lg:hidden flex items-center gap-1.5 px-4 py-2 border border-[#E8E3DA] bg-[#FAF8F5] text-xs font-bold uppercase tracking-wider"
+              className="lg:hidden flex items-center gap-1.5 px-3.5 py-1.5 border border-[#EAE6DF] bg-[#FBFBFA] text-xs font-medium rounded"
             >
               <SlidersHorizontal className="w-3.5 h-3.5" />
               <span>Filters</span>
             </button>
-            <span className="text-xs font-semibold text-[#706E6B]">
-              Showing <strong className="text-black">{filteredProducts.length}</strong> of {liveProducts.length} products
+            <span className="text-xs text-[#78716C]">
+              Showing <strong className="text-[#18181B] font-semibold">{filteredProducts.length}</strong> items
             </span>
           </div>
 
           {/* Sort Dropdown */}
-          <div className="flex items-center gap-2 text-xs font-medium">
-            <span className="text-gray-500 uppercase tracking-wider">Sort by:</span>
+          <div className="flex items-center gap-2 text-xs">
+            <span className="text-[#8A8780]">Sort:</span>
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
-              className="bg-[#FAF8F5] border border-[#E8E3DA] px-3 py-1.5 text-xs font-semibold text-gray-900 focus:outline-none focus:border-black cursor-pointer"
+              className="bg-[#FBFBFA] border border-[#EAE6DF] px-3 py-1.5 text-xs font-medium text-[#18181B] rounded focus:outline-none focus:border-[#18181B] cursor-pointer"
             >
-              <option value="bestselling">⭐ Best Selling</option>
+              <option value="bestselling">Best Selling</option>
               <option value="price-low">Price: Low to High</option>
               <option value="price-high">Price: High to Low</option>
               <option value="rating">Highest Rated</option>
@@ -160,45 +188,46 @@ function ShopContent() {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           {/* Desktop Filter Sidebar */}
           <div className="hidden lg:block space-y-6 text-xs">
-            {/* Header / Clear */}
-            <div className="flex items-center justify-between pb-3 border-b border-[#E8E3DA]">
-              <span className="font-bold uppercase tracking-luxury text-[#1C1C1C]">
-                Filter Products
+            <div className="flex items-center justify-between pb-3 border-b border-[#EAE6DF]">
+              <span className="font-semibold uppercase tracking-wider text-[#18181B]">
+                Filters
               </span>
               {hasActiveFilters && (
                 <button
                   onClick={resetFilters}
-                  className="flex items-center gap-1 text-[11px] text-[#B38E5D] hover:underline font-medium"
+                  className="flex items-center gap-1 text-[11px] text-[#967448] hover:underline font-medium"
                 >
                   <RotateCcw className="w-3 h-3" />
-                  <span>Reset All</span>
+                  <span>Reset</span>
                 </button>
               )}
             </div>
 
             {/* Category Filter */}
             <div className="space-y-2">
-              <h4 className="font-bold uppercase tracking-wider text-gray-900">Categories</h4>
+              <h4 className="font-semibold uppercase tracking-wider text-[#18181B] text-[11px]">
+                Category
+              </h4>
               <div className="space-y-1">
                 <button
                   onClick={() => setSelectedCategory("all")}
-                  className={`w-full text-left py-1.5 px-2 text-xs flex justify-between rounded transition-colors ${
+                  className={`w-full text-left py-1.5 px-2.5 text-xs flex justify-between rounded transition-colors ${
                     selectedCategory === "all"
-                      ? "bg-[#1C1C1C] text-white font-bold"
-                      : "text-gray-700 hover:bg-[#FAF8F5]"
+                      ? "bg-[#18181B] text-white font-medium"
+                      : "text-[#57534E] hover:bg-[#FBFBFA]"
                   }`}
                 >
                   <span>All Categories</span>
                   <span>{liveProducts.length}</span>
                 </button>
-                {CATEGORIES.map((cat) => (
+                {CATEGORIES.slice(0, 7).map((cat) => (
                   <button
                     key={cat.id}
                     onClick={() => setSelectedCategory(cat.slug)}
-                    className={`w-full text-left py-1.5 px-2 text-xs flex justify-between rounded transition-colors ${
+                    className={`w-full text-left py-1.5 px-2.5 text-xs flex justify-between rounded transition-colors ${
                       selectedCategory === cat.slug
-                        ? "bg-[#1C1C1C] text-white font-bold"
-                        : "text-gray-700 hover:bg-[#FAF8F5]"
+                        ? "bg-[#18181B] text-white font-medium"
+                        : "text-[#57534E] hover:bg-[#FBFBFA]"
                     }`}
                   >
                     <span>{cat.name}</span>
@@ -208,8 +237,8 @@ function ShopContent() {
               </div>
             </div>
 
-            {/* Eco-Friendly Toggle */}
-            <div className="pt-4 border-t border-[#E8E3DA]">
+            {/* Eco Filter */}
+            <div className="pt-4 border-t border-[#EAE6DF]">
               <label className="flex items-center gap-2.5 cursor-pointer select-none">
                 <input
                   type="checkbox"
@@ -217,18 +246,20 @@ function ShopContent() {
                   onChange={(e) => setOnlyEcoFriendly(e.target.checked)}
                   className="w-4 h-4 rounded text-black focus:ring-0 cursor-pointer"
                 />
-                <span className="font-semibold text-emerald-800">
-                  🌱 Eco-Friendly Range Only
+                <span className="font-medium text-emerald-800">
+                  Eco-Friendly Only
                 </span>
               </label>
             </div>
 
-            {/* Price Range Filter */}
-            <div className="pt-4 border-t border-[#E8E3DA] space-y-2">
-              <h4 className="font-bold uppercase tracking-wider text-gray-900">Price Range</h4>
+            {/* Price Range */}
+            <div className="pt-4 border-t border-[#EAE6DF] space-y-2">
+              <h4 className="font-semibold uppercase tracking-wider text-[#18181B] text-[11px]">
+                Price
+              </h4>
               <div className="space-y-1">
                 {PRICE_RANGES.map((r) => (
-                  <label key={r.value} className="flex items-center gap-2 text-gray-700 cursor-pointer py-1">
+                  <label key={r.value} className="flex items-center gap-2 text-[#57534E] cursor-pointer py-1">
                     <input
                       type="radio"
                       name="price-range"
@@ -242,44 +273,19 @@ function ShopContent() {
               </div>
             </div>
 
-            {/* Rating Filter */}
-            <div className="pt-4 border-t border-[#E8E3DA] space-y-2">
-              <h4 className="font-bold uppercase tracking-wider text-gray-900">Customer Rating</h4>
-              <div className="space-y-1">
-                {[
-                  { label: "4.5★ and above", val: 4.5 },
-                  { label: "4.0★ and above", val: 4.0 },
-                  { label: "3.5★ and above", val: 3.5 },
-                  { label: "All Ratings", val: 0 },
-                ].map((rate) => (
-                  <label key={rate.val} className="flex items-center gap-2 text-gray-700 cursor-pointer py-1">
-                    <input
-                      type="radio"
-                      name="rating-filter"
-                      checked={selectedRating === rate.val}
-                      onChange={() => setSelectedRating(rate.val)}
-                      className="cursor-pointer"
-                    />
-                    <span>{rate.label}</span>
-                  </label>
-                ))}
-              </div>
-            </div>
-
-            {/* Bulk Banner Card */}
-            <div className="p-4 bg-[#FAF8F5] border border-[#E8E3DA] text-xs space-y-2">
-              <span className="text-[10px] uppercase font-bold text-[#B38E5D] tracking-wider block">
-                Wholesale Orders
+            {/* Bulk Assistance Box */}
+            <div className="p-4 bg-[#FBFBFA] border border-[#EAE6DF] rounded text-xs space-y-1.5">
+              <span className="text-[10px] uppercase font-semibold text-[#967448] tracking-wider block">
+                Wholesale Desk
               </span>
-              <h5 className="font-bold text-gray-900">Buying 50+ Units?</h5>
-              <p className="text-gray-500">
-                Get up to 60% off retail pricing plus same-day delivery in Raipur.
+              <p className="text-[#57534E]">
+                Need cartons or institutional supply? Get quotes with GST invoice in 2 hours.
               </p>
               <Link
                 href="/bulk-orders"
-                className="inline-block mt-2 font-bold text-black hover:underline"
+                className="inline-block pt-1 font-semibold text-[#18181B] hover:text-[#967448]"
               >
-                Request Bulk Quote →
+                Request Custom Quote →
               </Link>
             </div>
           </div>
@@ -287,20 +293,20 @@ function ShopContent() {
           {/* Product Grid Area */}
           <div className="lg:col-span-3">
             {filteredProducts.length === 0 ? (
-              <div className="bg-[#FAF8F5] border border-[#E8E3DA] p-12 text-center rounded-none">
-                <h3 className="text-base font-bold text-gray-900 mb-2">No products found</h3>
-                <p className="text-xs text-gray-500 mb-6 max-w-sm mx-auto">
-                  No products matched your active filters. Try clearing some filters to see all available stationery items.
+              <div className="bg-[#FBFBFA] border border-[#EAE6DF] p-12 text-center rounded">
+                <h3 className="text-sm font-semibold text-gray-900 mb-1">No products found</h3>
+                <p className="text-xs text-gray-500 mb-5 max-w-sm mx-auto">
+                  No products matched your filter selection. Try clearing filters to see all available items.
                 </p>
                 <button
                   onClick={resetFilters}
-                  className="px-6 py-3 bg-[#1C1C1C] text-white text-xs font-bold uppercase tracking-luxury hover:bg-[#333333] transition-colors"
+                  className="px-5 py-2.5 bg-[#18181B] hover:bg-[#967448] text-white text-xs font-semibold uppercase tracking-wider transition-colors rounded-sm"
                 >
-                  Reset All Filters
+                  Reset Filters
                 </button>
               </div>
             ) : (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
                 {filteredProducts.map((product) => (
                   <ProductCard key={product.id} product={product} />
                 ))}
@@ -309,13 +315,74 @@ function ShopContent() {
           </div>
         </div>
       </div>
+
+      {/* Mobile Filter Drawer */}
+      {mobileFilterOpen && (
+        <div className="fixed inset-0 z-50 bg-black/40 flex justify-end">
+          <div className="w-80 max-w-full bg-white h-full p-6 overflow-y-auto space-y-6">
+            <div className="flex items-center justify-between pb-3 border-b border-[#EAE6DF]">
+              <span className="font-semibold text-sm">Filters</span>
+              <button
+                onClick={() => setMobileFilterOpen(false)}
+                className="p-1 hover:text-black text-gray-500"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            {/* Mobile Category Select */}
+            <div className="space-y-2">
+              <h4 className="text-xs font-semibold uppercase tracking-wider text-gray-500">
+                Category
+              </h4>
+              <div className="space-y-1">
+                <button
+                  onClick={() => {
+                    setSelectedCategory("all");
+                    setMobileFilterOpen(false);
+                  }}
+                  className={`w-full text-left py-2 px-3 text-xs rounded ${
+                    selectedCategory === "all" ? "bg-black text-white font-medium" : "bg-gray-50"
+                  }`}
+                >
+                  All Categories ({liveProducts.length})
+                </button>
+                {CATEGORIES.slice(0, 7).map((cat) => (
+                  <button
+                    key={cat.id}
+                    onClick={() => {
+                      setSelectedCategory(cat.slug);
+                      setMobileFilterOpen(false);
+                    }}
+                    className={`w-full text-left py-2 px-3 text-xs rounded ${
+                      selectedCategory === cat.slug ? "bg-black text-white font-medium" : "bg-gray-50"
+                    }`}
+                  >
+                    {cat.name} ({cat.itemCount})
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <button
+              onClick={() => {
+                resetFilters();
+                setMobileFilterOpen(false);
+              }}
+              className="w-full py-2.5 bg-gray-100 text-gray-800 text-xs font-medium rounded hover:bg-gray-200"
+            >
+              Reset All Filters
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
 
 export default function ShopPage() {
   return (
-    <Suspense fallback={<div className="p-12 text-center">Loading catalog...</div>}>
+    <Suspense fallback={<div className="p-12 text-center text-sm text-gray-500">Loading catalog...</div>}>
       <ShopContent />
     </Suspense>
   );

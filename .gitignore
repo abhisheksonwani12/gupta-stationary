@@ -42,3 +42,4 @@ supabase_backup/
 .agents/
 
 
+firebase-debug.log*

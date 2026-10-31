@@ -35,9 +35,9 @@ export default function AdminInventoryPage() {
   const filteredProducts = useMemo(() => {
     return products.filter((p) => {
       const matchesSearch =
-        p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        p.sku.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        p.category.toLowerCase().includes(searchQuery.toLowerCase());
+        p.name?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        p.sku?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        p.category?.toLowerCase().includes(searchQuery.toLowerCase());
 
       const matchesCategory =
         categoryFilter === "all" || p.category === categoryFilter;
@@ -259,7 +259,7 @@ export default function AdminInventoryPage() {
                       {/* Category */}
                       <td className="p-4">
                         <span className="capitalize text-gray-700 bg-gray-100 px-2 py-0.5 rounded text-[11px]">
-                          {product.category.replace("-", " ")}
+                          {product.category?.replace(/-/g, " ") || "—"}
                         </span>
                       </td>
 

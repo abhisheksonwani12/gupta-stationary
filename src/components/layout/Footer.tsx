@@ -90,8 +90,8 @@ export default function Footer() {
           <div className="lg:col-span-2 space-y-4">
             <div className="space-y-2">
               <Link href="/" className="inline-block group">
-                <span className="font-serif text-2xl sm:text-3xl font-black uppercase tracking-tight text-white leading-none group-hover:text-[#B38E5D] transition-colors">
-                  Instant <span className="text-[#B38E5D]">Stationary</span>
+                <span className="font-['Playfair_Display',Georgia,serif] text-2xl sm:text-3xl font-semibold tracking-[-0.01em] text-white leading-none group-hover:text-[#E5C388] transition-colors">
+                  Instant Stationary
                 </span>
               </Link>
               <p className="text-[10px] uppercase tracking-[0.25em] text-[#B38E5D] font-semibold">
@@ -148,22 +148,22 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/shop/paper-products" className="hover:text-white transition-colors">
+                <Link href="/shop/copier-paper" className="hover:text-white transition-colors">
                   A4 Copy & Cardstock
                 </Link>
               </li>
               <li>
-                <Link href="/shop/office-supplies" className="hover:text-white transition-colors">
+                <Link href="/shop/office-stationery" className="hover:text-white transition-colors">
                   Office Supplies
                 </Link>
               </li>
               <li>
-                <Link href="/shop/school-supplies" className="hover:text-white transition-colors">
+                <Link href="/shop/notebooks-notepads" className="hover:text-white transition-colors">
                   School & Geometry
                 </Link>
               </li>
               <li>
-                <Link href="/shop/eco-friendly-range" className="hover:text-white transition-colors text-emerald-400 font-medium">
+                <Link href="/shop?eco=true" className="hover:text-white transition-colors text-emerald-400 font-medium">
                   Eco-Friendly Range 🌱
                 </Link>
               </li>

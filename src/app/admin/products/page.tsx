@@ -138,7 +138,7 @@ export default function AdminProductsPage() {
                       {/* Category */}
                       <td className="p-4">
                         <span className="capitalize text-gray-700 bg-gray-100 px-2 py-0.5 rounded text-[11px]">
-                          {product.category.replace("-", " ")}
+                          {product.category?.replace(/-/g, " ") || "—"}
                         </span>
                       </td>
 

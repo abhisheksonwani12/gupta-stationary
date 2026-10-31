@@ -77,14 +77,14 @@ export default function HeroSlider() {
   const IconComponent = slide.icon;
 
   return (
-    <section className="relative w-full min-h-[calc(100vh-80px)] lg:min-h-[calc(100vh-90px)] flex items-center overflow-hidden border-b border-[#E8E3DA] select-none">
-      {/* Full-Bleed Background Images with Smooth Fade */}
-      <div className="absolute inset-0 z-0">
+    <section className="relative w-full min-h-[calc(100vh-80px)] lg:min-h-[calc(100vh-90px)] flex items-center overflow-hidden border-b border-[#EAE6DF] select-none bg-[#FAF8F5]">
+      {/* Photo Showcase - Shifted towards the right side */}
+      <div className="absolute inset-y-0 right-0 w-full md:w-[60%] lg:w-[55%] z-0 overflow-hidden">
         {HERO_SLIDES.map((s, idx) => (
           <div
             key={s.id}
             className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
-              idx === currentSlide ? "opacity-100 scale-100 z-0" : "opacity-0 pointer-events-none scale-102 z-0"
+              idx === currentSlide ? "opacity-100 scale-100" : "opacity-0 pointer-events-none scale-105"
             }`}
           >
             <Image
@@ -93,60 +93,34 @@ export default function HeroSlider() {
               fill
               priority={idx === 0}
               unoptimized
-              sizes="100vw"
-              className="object-cover object-right md:object-center"
+              sizes="(max-width: 768px) 100vw, 55vw"
+              className="object-cover object-right md:object-[90%_center]"
             />
           </div>
         ))}
 
-        {/* Luminous left gradient for text contrast, keeping the single item on right completely bright and crisp */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-transparent sm:w-3/4 md:w-3/5 lg:w-1/2 z-[1]" />
-        {/* Mobile ambient veil */}
-        <div className="absolute inset-0 bg-white/70 backdrop-blur-[1px] md:hidden z-[1]" />
+        {/* Soft edge blend from solid left background into right photo */}
+        <div className="hidden md:block absolute inset-y-0 left-0 w-32 lg:w-44 bg-gradient-to-r from-[#FAF8F5] via-[#FAF8F5]/60 to-transparent z-[1]" />
+        {/* Mobile ambient veil for text readability */}
+        <div className="absolute inset-0 bg-[#FAF8F5]/85 backdrop-blur-[1px] md:hidden z-[1]" />
       </div>
 
-      {/* Floating Left Edge Navigation Button */}
-      <button
-        type="button"
-        onClick={(e) => {
-          e.preventDefault();
-          prevSlide();
-        }}
-        className="hidden md:flex absolute left-4 lg:left-8 z-30 p-3.5 rounded-full bg-white/90 hover:bg-[#1C1C1C] text-[#1C1C1C] hover:text-white border border-[#E8E3DA] backdrop-blur-md transition-all shadow-md hover:scale-110 cursor-pointer active:scale-95"
-        aria-label="Previous Slide"
-      >
-        <ChevronLeft className="w-5 h-5" />
-      </button>
-
-      {/* Floating Right Edge Navigation Button */}
-      <button
-        type="button"
-        onClick={(e) => {
-          e.preventDefault();
-          nextSlide();
-        }}
-        className="hidden md:flex absolute right-4 lg:right-8 z-30 p-3.5 rounded-full bg-white/90 hover:bg-[#1C1C1C] text-[#1C1C1C] hover:text-white border border-[#E8E3DA] backdrop-blur-md transition-all shadow-md hover:scale-110 cursor-pointer active:scale-95"
-        aria-label="Next Slide"
-      >
-        <ChevronRight className="w-5 h-5" />
-      </button>
-
-      {/* Content Container (Overlaying on top of the background photo) */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-28 w-full">
-        <div className="max-w-2xl space-y-6">
-          {/* Tagline / Pill Badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white/90 backdrop-blur-md border border-[#E8E3DA] text-[#B38E5D] text-xs uppercase tracking-widest font-bold shadow-soft rounded-sm animate-fadeIn">
-            <IconComponent className="w-3.5 h-3.5 text-[#B38E5D]" />
+      {/* Content Container (Overlaying on top of the left canvas) */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-32 w-full">
+        <div className="max-w-xl lg:max-w-2xl space-y-6">
+          {/* Tagline / Minimal Pill Badge */}
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/90 backdrop-blur-md border border-[#EAE6DF] text-[#967448] text-[11px] uppercase tracking-[0.16em] font-medium rounded-full shadow-xs">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#967448]" />
             <span>{slide.tagline}</span>
           </div>
 
           {/* Headline */}
-          <h1 className="font-serif text-3xl sm:text-5xl lg:text-[58px] font-bold tracking-tight text-[#1C1C1C] uppercase leading-[1.06] drop-shadow-xs">
+          <h1 className="font-serif text-3xl sm:text-5xl lg:text-[54px] font-bold tracking-tight text-[#141416] leading-[1.08]">
             {slide.title}
           </h1>
 
           {/* Subheadline */}
-          <p className="text-sm sm:text-base text-gray-700 leading-relaxed max-w-xl font-normal">
+          <p className="text-sm sm:text-base text-[#57534E] leading-relaxed max-w-lg font-normal">
             {slide.subtitle}
           </p>
 
@@ -154,84 +128,50 @@ export default function HeroSlider() {
           <div className="pt-2 flex flex-wrap gap-4 items-center">
             <Link
               href={slide.ctaPrimary.link}
-              className="px-8 py-4 bg-[#1C1C1C] text-white text-xs font-bold uppercase tracking-luxury hover:bg-[#B38E5D] transition-all duration-300 shadow-xl flex items-center gap-2 rounded-sm"
+              className="px-7 py-3.5 bg-[#18181B] text-white text-xs font-semibold tracking-wider uppercase hover:bg-[#967448] transition-all duration-200 shadow-md flex items-center gap-2 rounded-sm"
             >
               <span>{slide.ctaPrimary.text}</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-3.5 h-3.5" />
             </Link>
             <Link
               href={slide.ctaSecondary.link}
-              className="px-8 py-4 bg-white/95 border border-[#1C1C1C] text-[#1C1C1C] text-xs font-bold uppercase tracking-luxury hover:bg-[#1C1C1C] hover:text-white transition-all duration-300 backdrop-blur-sm shadow-soft rounded-sm"
+              className="px-6 py-3.5 text-[#18181B] hover:text-[#967448] text-xs font-semibold tracking-wider uppercase transition-colors"
             >
-              {slide.ctaSecondary.text}
+              {slide.ctaSecondary.text} →
             </Link>
           </div>
 
           {/* Trust Highlights Strip */}
-          <div className="pt-4 flex flex-wrap items-center gap-6 text-xs font-medium text-gray-700 border-t border-[#E8E3DA]">
-            <span className="flex items-center gap-1.5 bg-white/80 px-2.5 py-1 rounded backdrop-blur-xs">
-              <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-              <span>Free Raipur Delivery &gt; ₹500</span>
+          <div className="pt-6 flex flex-wrap items-center gap-6 text-xs text-[#78716C] border-t border-[#EAE6DF]/80">
+            <span className="flex items-center gap-1.5">
+              <CheckCircle2 className="w-4 h-4 text-[#967448]" />
+              <span>Complimentary Raipur Delivery &gt; ₹500</span>
             </span>
-            <span className="flex items-center gap-1.5 bg-white/80 px-2.5 py-1 rounded backdrop-blur-xs">
-              <ShieldCheck className="w-4 h-4 text-emerald-600" />
-              <span>100% Genuine & ISI Certified</span>
+            <span className="flex items-center gap-1.5">
+              <ShieldCheck className="w-4 h-4 text-[#967448]" />
+              <span>100% Verified Genuine Products</span>
             </span>
           </div>
         </div>
       </div>
 
-      {/* Floating Bottom Slider Controls & Item Label */}
-      <div className="absolute bottom-6 right-6 lg:right-12 z-30 flex items-center gap-3 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-lg border border-[#E8E3DA] shadow-xl">
-        {/* Item Label */}
-        <span className="hidden sm:inline-block text-[11px] font-semibold text-gray-500 uppercase tracking-wider pr-3 border-r border-gray-200">
-          {slide.itemLabel}
+      {/* Floating Bottom Slider Controls */}
+      <div className="absolute bottom-8 right-6 lg:right-12 z-20 flex items-center gap-3 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full border border-[#EAE6DF] shadow-sm">
+        <span className="text-[11px] font-mono text-[#8A8780] font-medium">
+          0{currentSlide + 1} / 0{HERO_SLIDES.length}
         </span>
-
-        {/* Dot Indicators */}
-        <div className="flex items-center gap-1.5 pr-2 border-r border-gray-200">
+        <div className="flex items-center gap-1.5">
           {HERO_SLIDES.map((s, idx) => (
             <button
               key={s.id}
               type="button"
               onClick={() => setCurrentSlide(idx)}
-              className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                idx === currentSlide ? "w-6 bg-[#B38E5D]" : "w-2 bg-gray-300 hover:bg-gray-500"
+              aria-label={`Slide ${idx + 1}`}
+              className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
+                idx === currentSlide ? "w-5 bg-[#18181B]" : "w-1.5 bg-[#D4D2CD] hover:bg-[#9A9890]"
               }`}
-              aria-label={`Go to slide ${idx + 1}`}
             />
           ))}
-        </div>
-
-        {/* Counter */}
-        <div className="text-xs font-bold tracking-widest text-[#1C1C1C]">
-          0{currentSlide + 1} / 0{HERO_SLIDES.length}
-        </div>
-
-        {/* Mini Arrows */}
-        <div className="flex items-center gap-1">
-          <button
-            type="button"
-            onClick={(e) => {
-              e.preventDefault();
-              prevSlide();
-            }}
-            className="p-1.5 rounded hover:bg-[#1C1C1C] text-[#1C1C1C] hover:text-white transition-colors cursor-pointer active:scale-90"
-            aria-label="Previous Slide"
-          >
-            <ChevronLeft className="w-4 h-4" />
-          </button>
-          <button
-            type="button"
-            onClick={(e) => {
-              e.preventDefault();
-              nextSlide();
-            }}
-            className="p-1.5 rounded hover:bg-[#1C1C1C] text-[#1C1C1C] hover:text-white transition-colors cursor-pointer active:scale-90"
-            aria-label="Next Slide"
-          >
-            <ChevronRight className="w-4 h-4" />
-          </button>
         </div>
       </div>
     </section>

@@ -138,8 +138,8 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
               Catalog
             </Link>
             <ChevronRight className="w-3 h-3 text-gray-400 flex-shrink-0" />
-            <Link href={`/shop/${product.category}`} className="hover:text-black truncate">
-              {product.category.replace("-", " ")}
+            <Link href={product.category ? `/shop/${product.category}` : "/shop"} className="hover:text-black truncate">
+              {product.category ? product.category.replace(/-/g, " ") : "Catalog"}
             </Link>
             <ChevronRight className="w-3 h-3 text-gray-400 flex-shrink-0" />
             <span className="text-black font-semibold truncate">{product.name}</span>
@@ -176,7 +176,7 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
             </div>
 
             {/* Thumbnail Row */}
-            {product.images.length > 1 && (
+            {product.images?.length > 1 && (
               <div className="flex gap-3 overflow-x-auto pb-2">
                 {product.images.map((img, idx) => (
                   <button

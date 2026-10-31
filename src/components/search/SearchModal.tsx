@@ -39,10 +39,10 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
     const q = query.toLowerCase();
     const filtered = liveList.filter(
       (p) =>
-        p.name.toLowerCase().includes(q) ||
-        p.category.toLowerCase().includes(q) ||
-        p.sku.toLowerCase().includes(q) ||
-        p.description.toLowerCase().includes(q)
+        p.name?.toLowerCase().includes(q) ||
+        p.category?.toLowerCase().includes(q) ||
+        p.sku?.toLowerCase().includes(q) ||
+        p.description?.toLowerCase().includes(q)
     );
     setResults(filtered);
   }, [query, products]);
@@ -114,7 +114,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                 >
                   <div className="relative w-16 h-16 bg-gray-100 flex-shrink-0 overflow-hidden border border-[#E8E3DA]">
                     <img
-                      src={product.images[0]}
+                      src={product.images?.[0] || "/images/products/classmate_longbook_29x21_1793397538084.jpg"}
                       alt={product.name}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform"
                     />
@@ -137,7 +137,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                   </div>
                   <div className="text-right flex-shrink-0">
                     <div className="text-sm font-bold text-gray-900">{formatPrice(product.price)}</div>
-                    {product.bulkPricing.length > 1 && (
+                    {product.bulkPricing && product.bulkPricing.length > 1 && (
                       <div className="text-[10px] text-emerald-700 font-medium">
                         Bulk from {formatPrice(product.bulkPricing[product.bulkPricing.length - 1].pricePerUnit)}
                       </div>

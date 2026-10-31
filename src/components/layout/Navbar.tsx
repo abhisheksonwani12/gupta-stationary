@@ -75,20 +75,15 @@ export default function Navbar() {
             </button>
 
             {/* Brand Logo */}
-            <Link href="/" className="flex items-center gap-3 group shrink-0 py-1">
-              <div className="flex flex-col">
-                <span className="font-serif text-xl sm:text-2xl font-black uppercase tracking-tight text-[#1C1C1C] leading-none group-hover:text-[#B38E5D] transition-colors">
-                  Instant <span className="text-[#B38E5D]">Stationary</span>
-                </span>
-                <span className="text-[9px] font-mono uppercase tracking-[0.25em] text-gray-400 mt-0.5 font-medium">
-                  Fast Dispatch • Raipur
-                </span>
-              </div>
+            <Link href="/" className="flex items-center shrink-0 py-1 group">
+              <span className="font-['Playfair_Display',Georgia,serif] text-2xl sm:text-[26px] font-semibold tracking-[-0.01em] text-[#18181B] group-hover:text-[#967448] transition-colors leading-none">
+                Instant Stationary
+              </span>
             </Link>
 
-            {/* Desktop Navigation Links with Clean Geist Font */}
-            <nav className="hidden lg:flex items-center space-x-6 text-[13px] font-medium tracking-wide uppercase text-[#1C1C1C]">
-              {/* Shop Mega Menu Trigger */}
+            {/* Desktop Navigation Links */}
+            <nav className="hidden lg:flex items-center space-x-8 text-xs font-medium tracking-[0.08em] uppercase text-[#18181B]">
+              {/* Shop Dropdown Trigger */}
               <div
                 className="relative py-2 group"
                 onMouseEnter={() => setActiveMegaMenu("shop")}
@@ -96,61 +91,47 @@ export default function Navbar() {
               >
                 <Link
                   href="/shop"
-                  className={`flex items-center gap-1.5 hover:text-[#B38E5D] transition-colors py-1 ${
-                    pathname.startsWith("/shop") ? "text-[#B38E5D] font-bold" : ""
+                  className={`flex items-center gap-1 hover:text-[#967448] transition-colors py-1 ${
+                    pathname.startsWith("/shop") ? "text-[#967448] font-semibold" : ""
                   }`}
                 >
-                  <span>Collections</span>
-                  <ChevronDown className="w-3.5 h-3.5 group-hover:rotate-180 transition-transform duration-200" />
+                  <span>Shop</span>
+                  <ChevronDown className="w-3 h-3 group-hover:rotate-180 transition-transform duration-200 opacity-60" />
                 </Link>
 
-                {/* Mega Menu Dropdown - Aligned safely to prevent clipping */}
+                {/* Minimal Mega Menu Dropdown */}
                 {activeMegaMenu === "shop" && (
-                  <div className="absolute top-full -left-6 w-[820px] bg-white border border-[#E8E3DA] shadow-2xl p-6 grid grid-cols-4 gap-6 animate-fadeIn rounded-b-md z-50">
-                    <div className="col-span-3 grid grid-cols-3 gap-6">
-                      {CATEGORIES.map((cat) => (
-                        <div key={cat.id} className="space-y-2">
-                          <Link
-                            href={`/shop/${cat.slug}`}
-                            className="font-bold text-xs uppercase tracking-wider text-[#1C1C1C] hover:text-[#B38E5D] transition-colors block pb-1 border-b border-[#E8E3DA]"
-                          >
-                            {cat.name}
-                          </Link>
-                          <ul className="space-y-1.5 text-xs text-[#706E6B]">
-                            {cat.subcategories.map((sub: string) => (
-                              <li key={sub}>
-                                <Link
-                                  href={`/shop/${cat.slug}`}
-                                  className="hover:text-black hover:translate-x-1 transition-transform inline-block py-0.5"
-                                >
-                                  {sub}
-                                </Link>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* Featured Mega Menu Card */}
-                    <div className="col-span-1 bg-[#FAF8F5] border border-[#E8E3DA] p-4 flex flex-col justify-between rounded">
-                      <div>
-                        <div className="flex items-center gap-1.5 text-[10px] uppercase font-bold tracking-widest text-[#B38E5D]">
-                          <Sparkles className="w-3 h-3" />
-                          <span>Eco Initiative</span>
-                        </div>
-                        <h4 className="text-sm font-bold text-gray-900 mt-1.5">
-                          Plantable Seed Pens
-                        </h4>
-                        <p className="text-xs text-gray-500 mt-1 leading-relaxed">
-                          100% recycled newspaper with organic basil & marigold seeds.
-                        </p>
-                      </div>
+                  <div className="absolute top-full -left-8 w-[720px] bg-white border border-[#EAE6DF] shadow-luxury p-6 grid grid-cols-3 gap-6 rounded-md z-50">
+                    {CATEGORIES.slice(0, 6).map((cat) => (
                       <Link
-                        href="/shop/eco-friendly-range"
-                        className="mt-4 inline-flex items-center justify-center gap-1.5 py-2 px-3 bg-[#1C1C1C] text-white text-[11px] font-semibold uppercase tracking-wider hover:bg-[#333333] transition-colors rounded"
+                        key={cat.id}
+                        href={`/shop/${cat.slug}`}
+                        className="group/item flex items-start gap-3 p-2 rounded hover:bg-[#FBFBFA] transition-colors"
                       >
-                        <span>Explore Range</span>
+                        <div className="w-12 h-12 rounded bg-[#F7F5F0] overflow-hidden shrink-0 border border-[#EAE6DF]">
+                          <img
+                            src={cat.image}
+                            alt={cat.name}
+                            className="w-full h-full object-cover group-hover/item:scale-105 transition-transform duration-300"
+                          />
+                        </div>
+                        <div className="flex flex-col">
+                          <span className="text-xs font-semibold text-[#18181B] group-hover/item:text-[#967448] transition-colors">
+                            {cat.name}
+                          </span>
+                          <span className="text-[11px] text-[#8A8780] lowercase">
+                            {cat.itemCount} items
+                          </span>
+                        </div>
+                      </Link>
+                    ))}
+                    <div className="col-span-3 pt-3 border-t border-[#F0ECE4] flex items-center justify-between text-xs">
+                      <span className="text-[#8A8780]">Free same-day delivery in Raipur &gt; ₹500</span>
+                      <Link
+                        href="/shop"
+                        className="font-semibold text-[#18181B] hover:text-[#967448] inline-flex items-center gap-1 transition-colors"
+                      >
+                        <span>View all 142 products</span>
                         <ArrowRight className="w-3.5 h-3.5" />
                       </Link>
                     </div>
@@ -160,44 +141,26 @@ export default function Navbar() {
 
               <Link
                 href="/bulk-orders"
-                className={`flex items-center gap-1.5 hover:text-[#B38E5D] transition-colors py-1 ${
-                  pathname === "/bulk-orders" ? "text-[#B38E5D] font-bold" : ""
+                className={`hover:text-[#967448] transition-colors py-1 ${
+                  pathname === "/bulk-orders" ? "text-[#967448] font-semibold" : ""
                 }`}
               >
-                <span className="text-emerald-800 font-semibold">Wholesale (Up to 60% Off)</span>
+                Wholesale
               </Link>
 
               <Link
                 href="/about"
-                className={`hover:text-[#B38E5D] transition-colors py-1 ${
-                  pathname === "/about" ? "text-[#B38E5D] font-bold" : ""
+                className={`hover:text-[#967448] transition-colors py-1 ${
+                  pathname === "/about" ? "text-[#967448] font-semibold" : ""
                 }`}
               >
-                About Us
-              </Link>
-
-              <Link
-                href="/testimonials"
-                className={`hover:text-[#B38E5D] transition-colors py-1 ${
-                  pathname === "/testimonials" ? "text-[#B38E5D] font-bold" : ""
-                }`}
-              >
-                Reviews
-              </Link>
-
-              <Link
-                href="/blog"
-                className={`hover:text-[#B38E5D] transition-colors py-1 ${
-                  pathname.startsWith("/blog") ? "text-[#B38E5D] font-bold" : ""
-                }`}
-              >
-                Blog
+                About
               </Link>
 
               <Link
                 href="/contact"
-                className={`hover:text-[#B38E5D] transition-colors py-1 ${
-                  pathname === "/contact" ? "text-[#B38E5D] font-bold" : ""
+                className={`hover:text-[#967448] transition-colors py-1 ${
+                  pathname === "/contact" ? "text-[#967448] font-semibold" : ""
                 }`}
               >
                 Contact
@@ -303,11 +266,11 @@ export default function Navbar() {
               {/* Cart Drawer Trigger */}
               <button
                 onClick={() => setIsCartOpen(true)}
-                className="relative p-2 bg-[#FAF8F5] border border-[#E8E3DA] hover:border-black text-gray-900 rounded transition-colors flex items-center gap-1.5 px-3"
+                className="relative py-1.5 px-3 bg-[#18181B] hover:bg-[#967448] text-white rounded-sm transition-colors flex items-center gap-2"
                 aria-label="Shopping Bag"
               >
-                <ShoppingBag className="w-4 h-4 text-[#1C1C1C]" />
-                <span className="text-xs font-bold text-[#1C1C1C]">{totalItems}</span>
+                <ShoppingBag className="w-3.5 h-3.5" />
+                <span className="text-xs font-semibold">{totalItems}</span>
               </button>
             </div>
           </div>
@@ -315,69 +278,52 @@ export default function Navbar() {
 
         {/* Mobile Navigation Drawer */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden fixed inset-0 top-[105px] z-50 bg-white border-t border-[#E8E3DA] overflow-y-auto p-5 animate-fadeIn">
-            <div className="space-y-4">
-              {/* Drawer Brand Header */}
-              <div className="flex flex-col items-center justify-center pb-4 border-b border-[#E8E3DA] text-center">
-                <span className="font-serif text-2xl font-black uppercase tracking-tight text-[#1C1C1C]">
-                  Instant <span className="text-[#B38E5D]">Stationary</span>
-                </span>
-                <span className="text-[10px] font-mono uppercase tracking-[0.25em] text-gray-400 mt-1">
-                  Fast Dispatch • Raipur
-                </span>
-              </div>
-
-              <div className="pb-3 border-b border-[#E8E3DA]">
-                <h4 className="text-xs font-bold tracking-wider uppercase text-gray-400 mb-2">
-                  Browse Categories
+          <div className="lg:hidden fixed inset-0 top-[100px] z-50 bg-white border-t border-[#EAE6DF] overflow-y-auto p-6 animate-fadeIn">
+            <div className="space-y-6">
+              <div className="pb-4 border-b border-[#F0ECE4]">
+                <h4 className="text-[10px] font-semibold tracking-[0.16em] uppercase text-[#8A8780] mb-3">
+                  Categories
                 </h4>
-                <div className="grid grid-cols-1 gap-2">
-                  {CATEGORIES.map((cat) => (
+                <div className="grid grid-cols-2 gap-2">
+                  {CATEGORIES.slice(0, 6).map((cat) => (
                     <Link
                       key={cat.id}
                       href={`/shop/${cat.slug}`}
-                      className="py-2.5 px-3 bg-[#FAF8F5] border border-[#E8E3DA] text-sm font-medium flex items-center justify-between text-[#1C1C1C] rounded"
+                      className="py-2 px-3 bg-[#FBFBFA] border border-[#EAE6DF] text-xs font-medium text-[#18181B] rounded hover:border-[#18181B] transition-colors"
                     >
-                      <span>{cat.name}</span>
-                      <span className="text-xs text-gray-400">{cat.itemCount} items</span>
+                      {cat.name}
                     </Link>
                   ))}
                 </div>
               </div>
 
-              <div className="space-y-2 text-sm font-medium tracking-wide">
+              <div className="space-y-3 text-sm font-medium tracking-wide">
+                <Link
+                  href="/shop"
+                  className="block py-2 text-[#18181B] border-b border-[#F0ECE4]"
+                >
+                  All 142 Products
+                </Link>
                 <Link
                   href="/bulk-orders"
-                  className="block py-2.5 px-3 bg-emerald-50 text-emerald-900 border border-emerald-200 font-bold rounded"
+                  className="block py-2 text-[#18181B] border-b border-[#F0ECE4]"
                 >
-                  💼 Wholesale & Bulk Orders (Up to 60% Off)
+                  Wholesale & Bulk Orders
                 </Link>
-                <Link href="/about" className="block py-2 border-b border-gray-100">
-                  About Instant Stationary
+                <Link href="/about" className="block py-2 text-[#18181B] border-b border-[#F0ECE4]">
+                  About Us
                 </Link>
-                <Link href="/testimonials" className="block py-2 border-b border-gray-100">
-                  Customer Reviews
+                <Link href="/contact" className="block py-2 text-[#18181B] border-b border-[#F0ECE4]">
+                  Contact & Store Location
                 </Link>
-                <Link href="/blog" className="block py-2 border-b border-gray-100">
-                  Stationery Guides & Articles
-                </Link>
-                <Link href="/faq" className="block py-2 border-b border-gray-100">
-                  Frequently Asked Questions (FAQ)
-                </Link>
-                <Link href="/contact" className="block py-2 border-b border-gray-100">
-                  Store Location & Contact Us
-                </Link>
-                <Link href="/account" className="block py-2 border-b border-gray-100">
-                  My Account & Orders
+                <Link href="/account" className="block py-2 text-[#18181B] border-b border-[#F0ECE4]">
+                  My Account
                 </Link>
               </div>
 
-              <div className="pt-4 border-t border-[#E8E3DA] text-xs text-gray-500 space-y-2">
-                <div className="flex items-center gap-2">
-                  <Phone className="w-4 h-4 text-[#B38E5D]" />
-                  <span>Call: 8839715995 (Mon-Sat 10 AM - 11 PM)</span>
-                </div>
-                <div>📍 Mowa, Dubey Colony, Near Durga Temple, Raipur</div>
+              <div className="pt-4 border-t border-[#F0ECE4] text-xs text-[#8A8780] space-y-1.5">
+                <div>Raipur Store: +91 8839715995</div>
+                <div>Mon–Sat • 10:00 AM – 10:00 PM</div>
               </div>
             </div>
           </div>

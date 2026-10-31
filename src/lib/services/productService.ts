@@ -23,6 +23,40 @@ export const productService = {
       if (stored) {
         const parsed = JSON.parse(stored);
         if (Array.isArray(parsed) && parsed.length > 0) {
+          let hasImageUpdates = false;
+          const initialMap = new Map(INITIAL_PRODUCTS.map(p => [p.slug, p]));
+          
+          // Ensure stored items use valid category, bulkPricing and updated product images
+          const updated = parsed.map((p: Product) => {
+            const initial = initialMap.get(p.slug);
+            let item = { ...p };
+            if (!item.category && initial?.category) {
+              item.category = initial.category;
+            }
+            if (!item.bulkPricing) {
+              item.bulkPricing = initial?.bulkPricing || [];
+            }
+            if (initial && initial.images && initial.images[0] && (!item.images || !item.images[0] || item.images[0].includes("unsplash.com"))) {
+              hasImageUpdates = true;
+              item.images = initial.images;
+            }
+            return item;
+          });
+
+          // If stored catalog is missing new initial products, merge them in automatically
+          if (updated.length < INITIAL_PRODUCTS.length) {
+            const storedSlugs = new Set(updated.map((p: Product) => p.slug));
+            const newToAdd = INITIAL_PRODUCTS.filter(p => !storedSlugs.has(p.slug));
+            const merged = [...updated, ...newToAdd];
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(merged));
+            return merged;
+          }
+
+          if (hasImageUpdates) {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
+            return updated;
+          }
+
           return parsed;
         }
       }
@@ -74,13 +108,55 @@ export const productService = {
         console.warn("Supabase products fetch note (using local cache):", error.message);
       } else if (data && data.length > 0) {
         // Map data from Supabase records
-        const loadedProducts: Product[] = data.map((item: any) => {
-          if (item.data && typeof item.data === "object") {
-            return { ...item.data, id: item.id };
-          }
-          return item as Product;
+        const dbProductMap = new Map<string, Product>();
+        data.forEach((item: any) => {
+          const raw = item.data && typeof item.data === "object" ? { ...item.data, id: item.id } : (item as Product);
+          const prod: Product = {
+            ...raw,
+            category: raw.category || item.category || "office-stationery",
+            subCategory: raw.subCategory || (raw as any).sub_category || item.sub_category || "",
+            bulkPricing: Array.isArray(raw.bulkPricing) ? raw.bulkPricing : [],
+            images: Array.isArray(raw.images) && raw.images.length > 0 ? raw.images : ["/images/products/classmate_longbook_29x21_1793397538084.jpg"],
+          };
+          dbProductMap.set(prod.slug, prod);
         });
-        this.saveProducts(loadedProducts);
+
+        // Merge INITIAL_PRODUCTS with DB products so newly added catalog items are seeded
+        const mergedList: Product[] = [];
+        const initialSlugs = new Set(INITIAL_PRODUCTS.map((p) => p.slug));
+
+        for (const initProd of INITIAL_PRODUCTS) {
+          if (dbProductMap.has(initProd.slug)) {
+            mergedList.push(dbProductMap.get(initProd.slug)!);
+          } else {
+            mergedList.push(initProd);
+            // Upsert new initial product to Supabase so it's persisted in the DB
+            supabase.from("products").upsert({
+              id: initProd.id,
+              name: initProd.name,
+              slug: initProd.slug,
+              category: initProd.category,
+              sub_category: initProd.subCategory,
+              description: initProd.description,
+              brand: initProd.specifications?.Brand,
+              sku: initProd.sku,
+              stock: initProd.stock,
+              price: initProd.price,
+              original_price: initProd.originalPrice || initProd.price,
+              mrp: initProd.originalPrice || initProd.price,
+              data: sanitizeForDb(initProd),
+            }).then(() => {});
+          }
+        }
+
+        // Include any custom products created by user in admin panel
+        for (const [slug, prod] of dbProductMap.entries()) {
+          if (!initialSlugs.has(slug)) {
+            mergedList.push(prod);
+          }
+        }
+
+        this.saveProducts(mergedList);
       } else {
         // Seed initial spreadsheet products into Supabase
         const currentProducts = this.getProducts();
@@ -91,10 +167,14 @@ export const productService = {
               name: prod.name,
               slug: prod.slug,
               category: prod.category,
+              sub_category: prod.subCategory,
               description: prod.description,
+              brand: prod.specifications?.Brand,
               sku: prod.sku,
               stock: prod.stock,
               price: prod.price,
+              original_price: prod.originalPrice || prod.price,
+              mrp: prod.originalPrice || prod.price,
               data: sanitizeForDb(prod),
             });
           } catch (seedErr) {

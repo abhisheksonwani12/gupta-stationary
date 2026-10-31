@@ -29,23 +29,17 @@ export default function AuthCard({
   const [method, setMethod] = useState<"phone" | "email">(initialMethod);
 
   return (
-    <div className="bg-white border border-[#E8E3DA] p-6 sm:p-8 shadow-luxury space-y-6 max-w-md w-full relative">
-      {/* Top Accent Strip */}
-      <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-[#B38E5D] via-[#D4AF37] to-[#B38E5D]" />
-
+    <div className="bg-white border border-[#EAE6DF] rounded-md p-6 sm:p-8 shadow-xs space-y-6 max-w-md w-full">
       {/* Heading */}
       <div className="text-center space-y-1">
-        <span className="text-[10px] font-mono uppercase font-bold text-[#B38E5D] tracking-widest">
-          Instant Stationary Member Club
-        </span>
-        <h2 className="font-serif text-2xl font-bold uppercase tracking-tight text-gray-900">
+        <h2 className="text-xl sm:text-2xl font-serif text-[#18181B] tracking-tight">
           {title || (mode === "login" ? "Welcome Back" : "Create Account")}
         </h2>
-        <p className="text-xs text-gray-500">
+        <p className="text-xs text-[#706E6B]">
           {subtitle ||
             (mode === "login"
-              ? "Access order tracking, saved wishlist & member discounts"
-              : "Sign up today and get 100 loyalty welcome reward points")}
+              ? "Sign in to access your orders and account settings."
+              : "Sign up to track orders, save items, and view invoices.")}
         </p>
       </div>
 
@@ -118,7 +112,7 @@ export default function AuthCard({
             <button
               type="button"
               onClick={() => setMode("signup")}
-              className="text-black font-bold hover:underline"
+              className="text-black font-semibold hover:underline"
             >
               Create an Account →
             </button>
@@ -129,25 +123,12 @@ export default function AuthCard({
             <button
               type="button"
               onClick={() => setMode("login")}
-              className="text-black font-bold hover:underline"
+              className="text-black font-semibold hover:underline"
             >
               Sign In Instead →
             </button>
           </p>
         )}
-      </div>
-
-      {/* Trust & Security Badges */}
-      <div className="flex items-center justify-center gap-4 text-[10px] text-gray-400 pt-1">
-        <span className="flex items-center gap-1">
-          <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-          <span>256-Bit SSL Encrypted</span>
-        </span>
-        <span>•</span>
-        <span className="flex items-center gap-1">
-          <Sparkles className="w-3 h-3 text-[#B38E5D]" />
-          <span>Instant WhatsApp OTP</span>
-        </span>
       </div>
     </div>
   );
