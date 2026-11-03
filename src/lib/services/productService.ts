@@ -108,15 +108,47 @@ export const productService = {
         console.warn("Supabase products fetch note (using local cache):", error.message);
       } else if (data && data.length > 0) {
         // Map data from Supabase records
+        const catMap: Record<string, string> = {
+          "c0000000-0000-0000-0000-000000000001": "pens-pencils",
+          "c0000000-0000-0000-0000-000000000002": "notebooks-notepads",
+          "c0000000-0000-0000-0000-000000000003": "paper-products",
+          "c0000000-0000-0000-0000-000000000004": "office-supplies",
+          "c0000000-0000-0000-0000-000000000005": "school-supplies",
+          "c0000000-0000-0000-0000-000000000006": "eco-friendly-range",
+        };
+
         const dbProductMap = new Map<string, Product>();
         data.forEach((item: any) => {
           const raw = item.data && typeof item.data === "object" ? { ...item.data, id: item.id } : (item as Product);
+          const images = Array.isArray(item.images) && item.images.length > 0
+            ? item.images
+            : Array.isArray(raw.images) && raw.images.length > 0
+            ? raw.images
+            : [`/images/products/${item.slug || raw.slug}.jpg`];
+
+          const category = raw.category || item.category || catMap[item.category_id] || "office-stationery";
+
           const prod: Product = {
             ...raw,
-            category: raw.category || item.category || "office-stationery",
+            id: item.id || raw.id,
+            name: item.name || raw.name,
+            slug: item.slug || raw.slug,
+            price: Number(item.price ?? raw.price ?? 0),
+            originalPrice: Number(item.original_price ?? raw.originalPrice ?? item.price ?? 0),
+            stock: Number(item.stock_quantity ?? item.stock ?? raw.stock ?? 100),
+            isBestseller: Boolean(item.is_bestseller ?? raw.isBestseller),
+            isEcoFriendly: Boolean(item.is_eco_friendly ?? raw.isEcoFriendly),
+            isNew: Boolean(item.is_new ?? raw.isNew),
+            rating: Number(item.rating ?? raw.rating ?? 4.8),
+            reviewCount: Number(item.review_count ?? raw.reviewCount ?? 0),
+            shortDescription: item.short_description || raw.shortDescription || "",
+            description: item.description || raw.description || "",
+            highlights: item.highlights || raw.highlights || [],
+            specifications: item.specifications || raw.specifications || {},
+            category,
             subCategory: raw.subCategory || (raw as any).sub_category || item.sub_category || "",
-            bulkPricing: Array.isArray(raw.bulkPricing) ? raw.bulkPricing : [],
-            images: Array.isArray(raw.images) && raw.images.length > 0 ? raw.images : ["/images/products/classmate_longbook_29x21_1793397538084.jpg"],
+            bulkPricing: Array.isArray(raw.bulkPricing) ? raw.bulkPricing : Array.isArray(item.bulk_pricing) ? item.bulk_pricing : [],
+            images,
           };
           dbProductMap.set(prod.slug, prod);
         });

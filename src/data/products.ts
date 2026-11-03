@@ -94,6 +94,1260 @@ export const CATEGORIES: Category[] = [
 ];
 
 export const PRODUCTS: Product[] = [
+{
+  "id": "6dffe05e-637a-4cfd-b9ab-4dd8eb7486f1",
+  "slug": "gupta-premium-ball-pen-blue",
+  "name": "Gupta Premium Ball Pen (Blue)",
+  "category": "pens-pencils",
+  "subCategory": "pens-pencils",
+  "price": 15,
+  "originalPrice": 20,
+  "rating": 4.8,
+  "reviewCount": 1247,
+  "stock": 500,
+  "isBestseller": true,
+  "isEcoFriendly": false,
+  "isNew": false,
+  "sku": "GS-PEN-01",
+  "images": [
+    "/images/products/gupta-premium-ball-pen-blue.jpg"
+  ],
+  "shortDescription": "Smooth, continuous writing experience with refillable cartridge. Perfect for daily office and academic use.",
+  "description": "The Gupta Premium Ball Pen is our signature bestselling writing instrument, trusted by thousands of students, teachers, and business professionals across Raipur since 1995. Crafted for effortless ink flow with zero leakage and ergonomic grip.",
+  "highlights": [
+    "Smooth, continuous writing experience",
+    "2000+ words capacity per pen",
+    "Refillable cartridge (saves money & reduces plastic)",
+    "Durable break-resistant body",
+    "Perfect ergonomic grip for long writing sessions"
+  ],
+  "specifications": {
+    "Length": "14 cm",
+    "Origin": "Made in India",
+    "Ink Type": "Oil-based Low Viscosity Ink",
+    "Tip Size": "1.0mm Swiss Carbide Tip",
+    "Ink Color": "Vibrant Blue",
+    "Refillable": "Yes (Spare refills at ₹5 each)",
+    "Body Material": "High-Grade Impact Polymer",
+    "Certification": "ISI Certified",
+    "Word Capacity": "2000+ words"
+  },
+  "bulkPricing": [
+    {
+      "maxQty": 9,
+      "minQty": 1,
+      "pricePerUnit": 15,
+      "discountPercent": 0
+    },
+    {
+      "maxQty": 49,
+      "minQty": 10,
+      "pricePerUnit": 12,
+      "discountPercent": 20
+    },
+    {
+      "maxQty": 99,
+      "minQty": 50,
+      "pricePerUnit": 10,
+      "discountPercent": 33
+    },
+    {
+      "maxQty": 499,
+      "minQty": 100,
+      "pricePerUnit": 8,
+      "discountPercent": 47
+    },
+    {
+      "minQty": 500,
+      "pricePerUnit": 6,
+      "discountPercent": 60
+    }
+  ]
+},
+{
+  "id": "010e80d2-ab87-46a3-80a7-e98a054fde6e",
+  "slug": "gupta-gel-pen-set-10-colors",
+  "name": "Gupta Gel Pen Set (10 Colors)",
+  "category": "pens-pencils",
+  "subCategory": "pens-pencils",
+  "price": 180,
+  "originalPrice": 220,
+  "rating": 4.9,
+  "reviewCount": 892,
+  "stock": 200,
+  "isBestseller": true,
+  "isEcoFriendly": false,
+  "isNew": false,
+  "sku": "GS-GEL-10",
+  "images": [
+    "/images/products/gupta-gel-pen-set-10-colors.jpg"
+  ],
+  "shortDescription": "Vibrant Japanese gel inks with ultra-fast drying technology. Ideal for notes, bullet journaling, and sketching.",
+  "description": "Experience effortless artistic expression and crisp note-taking. Each pen features a 0.7mm fine roller tip and quick-drying, smudge-proof water-resistant Japanese gel ink formulation.",
+  "highlights": [
+    "10 rich vibrant color spectrum",
+    "Quick-dry smudge-proof Japanese gel ink",
+    "0.7mm precision needle point",
+    "Cushioned rubberized comfort barrel"
+  ],
+  "specifications": {
+    "Grip": "Contoured Soft Rubber Grip",
+    "Ink Type": "Waterproof Pigment Gel",
+    "Tip Size": "0.7mm Fine Needle Tip",
+    "Color Count": "10 Assorted Colors"
+  },
+  "bulkPricing": [
+    {
+      "maxQty": 9,
+      "minQty": 1,
+      "pricePerUnit": 180,
+      "discountPercent": 0
+    },
+    {
+      "maxQty": 49,
+      "minQty": 10,
+      "pricePerUnit": 150,
+      "discountPercent": 17
+    },
+    {
+      "minQty": 50,
+      "pricePerUnit": 120,
+      "discountPercent": 33
+    }
+  ]
+},
+{
+  "id": "52f381ae-b2ca-4866-8683-4d7729a4dd3b",
+  "slug": "wooden-pencil-hb-box",
+  "name": "Wooden Pencil HB Box (12 Pieces)",
+  "category": "pens-pencils",
+  "subCategory": "pens-pencils",
+  "price": 45,
+  "originalPrice": 55,
+  "rating": 4.8,
+  "reviewCount": 456,
+  "stock": 1000,
+  "isBestseller": false,
+  "isEcoFriendly": false,
+  "isNew": false,
+  "sku": "GS-PENCIL-HB12",
+  "images": [
+    "/images/products/wooden-pencil-hb-box.jpg"
+  ],
+  "shortDescription": "Classic cedarwood HB pencils with smooth bonded graphite core. Comes with soft eraser tops.",
+  "description": "Crafted from sustainably managed cedarwood with break-resistant bonded lead. Perfect for school examinations, sketching, and everyday office drafting.",
+  "highlights": [
+    "FSC certified cedarwood",
+    "Smooth, dark HB bonded graphite",
+    "Non-smudge eraser tipped",
+    "Easy sharpening without breakage"
+  ],
+  "specifications": {
+    "Length": "19 cm",
+    "Hardness": "HB Grade",
+    "Pack Size": "12 Pencils per box",
+    "Wood Type": "FSC Certified Softwood"
+  },
+  "bulkPricing": [
+    {
+      "maxQty": 11,
+      "minQty": 1,
+      "pricePerUnit": 45,
+      "discountPercent": 0
+    },
+    {
+      "maxQty": 49,
+      "minQty": 12,
+      "pricePerUnit": 35,
+      "discountPercent": 22
+    },
+    {
+      "minQty": 50,
+      "pricePerUnit": 30,
+      "discountPercent": 33
+    }
+  ]
+},
+{
+  "id": "ac40ea57-5df1-48fa-a74a-cf86a34f6148",
+  "slug": "mechanical-pencil-0-5mm",
+  "name": "Precision Mechanical Pencil (0.5mm)",
+  "category": "pens-pencils",
+  "subCategory": "pens-pencils",
+  "price": 25,
+  "originalPrice": 35,
+  "rating": 4.7,
+  "reviewCount": 456,
+  "stock": 300,
+  "isBestseller": false,
+  "isEcoFriendly": false,
+  "isNew": false,
+  "sku": "GS-MECH-05",
+  "images": [
+    "/images/products/mechanical-pencil-0-5mm.jpg"
+  ],
+  "shortDescription": "Modern ergonomic mechanical pencil with cushioned shock-absorbing tip and metal clip.",
+  "description": "Designed for architects, students, and engineers who demand consistent 0.5mm line width without sharpening.",
+  "highlights": [
+    "Consistent 0.5mm line width",
+    "Retractable stainless steel guide pipe",
+    "Integrated eraser under top cap",
+    "Comfort textured non-slip grip"
+  ],
+  "specifications": {
+    "Clip": "Sturdy Chrome Metal Clip",
+    "Lead Size": "0.5mm Polymer Lead",
+    "Refillable": "Standard 0.5mm Leads"
+  },
+  "bulkPricing": [
+    {
+      "maxQty": 9,
+      "minQty": 1,
+      "pricePerUnit": 25,
+      "discountPercent": 0
+    },
+    {
+      "maxQty": 49,
+      "minQty": 10,
+      "pricePerUnit": 20,
+      "discountPercent": 20
+    },
+    {
+      "minQty": 50,
+      "pricePerUnit": 15,
+      "discountPercent": 40
+    }
+  ]
+},
+{
+  "id": "08ba40b0-c870-44da-b937-91bfd0914d37",
+  "slug": "highlighter-pen-set-5-colors",
+  "name": "Fluorescent Highlighter Pen Set (5 Colors)",
+  "category": "pens-pencils",
+  "subCategory": "pens-pencils",
+  "price": 45,
+  "originalPrice": 60,
+  "rating": 4.8,
+  "reviewCount": 523,
+  "stock": 400,
+  "isBestseller": false,
+  "isEcoFriendly": false,
+  "isNew": false,
+  "sku": "GS-HIGH-05",
+  "images": [
+    "/images/products/highlighter-pen-set-5-colors.jpg"
+  ],
+  "shortDescription": "Vibrant neon fluorescent highlighters with dual chisel tips for wide and narrow strokes.",
+  "description": "Water-based odorless fluorescent ink designed not to bleed through standard notebook or copy paper.",
+  "highlights": [
+    "5 luminous colors (Yellow, Pink, Green, Blue, Orange)",
+    "Chisel tip 1mm - 4mm line versatility",
+    "Non-bleed formula safe for textbooks",
+    "Anti-dry cap-off technology"
+  ],
+  "specifications": {
+    "Colors": "Yellow, Pink, Green, Blue, Orange",
+    "Ink Base": "Water-based Non-toxic",
+    "Tip Type": "Polyester Chisel Tip"
+  },
+  "bulkPricing": [
+    {
+      "maxQty": 9,
+      "minQty": 1,
+      "pricePerUnit": 45,
+      "discountPercent": 0
+    },
+    {
+      "maxQty": 49,
+      "minQty": 10,
+      "pricePerUnit": 38,
+      "discountPercent": 16
+    },
+    {
+      "minQty": 50,
+      "pricePerUnit": 30,
+      "discountPercent": 33
+    }
+  ]
+},
+{
+  "id": "310bb8ea-6508-4c70-b52a-0450ee284a67",
+  "slug": "gupta-school-notebook-200-pages",
+  "name": "Gupta Classic School Notebook (200 Pages)",
+  "category": "notebooks-notepads",
+  "subCategory": "notebooks-notepads",
+  "price": 85,
+  "originalPrice": 100,
+  "rating": 4.9,
+  "reviewCount": 1089,
+  "stock": 500,
+  "isBestseller": true,
+  "isEcoFriendly": false,
+  "isNew": false,
+  "sku": "GS-NOTE-200",
+  "images": [
+    "/images/products/gupta-school-notebook-200-pages.jpg"
+  ],
+  "shortDescription": "Premium 60 GSM smooth ruled paper with durable spine binding. Academic essential.",
+  "description": "Our signature school notebook features ultra-smooth paper that prevents ink feathering and show-through. Heavy laminated cover protects against backpack wear and tear.",
+  "highlights": [
+    "200 crisp ruled pages",
+    "60 GSM smooth high-opacity paper",
+    "Reinforced heavy-duty spine stitching",
+    "Subject index & timetable pages included"
+  ],
+  "specifications": {
+    "Cover": "Laminated Waterproof Soft Cover",
+    "Ruling": "Single Ruled with Margin",
+    "Dimensions": "17 cm × 21 cm (Standard Academic Size)",
+    "Page Count": "200 Pages",
+    "Paper Density": "60 GSM Bright White"
+  },
+  "bulkPricing": [
+    {
+      "maxQty": 9,
+      "minQty": 1,
+      "pricePerUnit": 85,
+      "discountPercent": 0
+    },
+    {
+      "maxQty": 49,
+      "minQty": 10,
+      "pricePerUnit": 70,
+      "discountPercent": 18
+    },
+    {
+      "minQty": 50,
+      "pricePerUnit": 60,
+      "discountPercent": 29
+    }
+  ]
+},
+{
+  "id": "978091e7-94ea-454f-ac91-229dc65756cd",
+  "slug": "eco-friendly-recycled-notebook-100-pages",
+  "name": "Gupta Eco Notebook (100 Pages, Recycled Paper)",
+  "category": "notebooks-notepads",
+  "subCategory": "notebooks-notepads",
+  "price": 60,
+  "originalPrice": 75,
+  "rating": 4.9,
+  "reviewCount": 678,
+  "stock": 250,
+  "isBestseller": true,
+  "isEcoFriendly": true,
+  "isNew": false,
+  "sku": "GS-ECO-100",
+  "images": [
+    "/images/products/eco-friendly-recycled-notebook-100-pages.jpg"
+  ],
+  "shortDescription": "100% post-consumer recycled paper with natural Kraft board cover and soy-based printing.",
+  "description": "Make an eco-conscious statement without sacrificing writing pleasure. Crafted from 100% recycled unbleached fiber with zero plastic components.",
+  "highlights": [
+    "100% post-consumer recycled paper",
+    "Chemical-free natural warm cream finish",
+    "Biodegradable cotton spine binding",
+    "Zero plastic packaging"
+  ],
+  "specifications": {
+    "Cover": "Kraft Unbleached 300 GSM Board",
+    "Pages": "100 Pages",
+    "Material": "100% Recycled Cotton-wood Pulp",
+    "Dimensions": "A5 (14.8 × 21 cm)"
+  },
+  "bulkPricing": [
+    {
+      "maxQty": 9,
+      "minQty": 1,
+      "pricePerUnit": 60,
+      "discountPercent": 0
+    },
+    {
+      "maxQty": 49,
+      "minQty": 10,
+      "pricePerUnit": 50,
+      "discountPercent": 17
+    },
+    {
+      "minQty": 50,
+      "pricePerUnit": 42,
+      "discountPercent": 30
+    }
+  ]
+},
+{
+  "id": "e5834492-27a1-46ec-b737-1a2a6e2474b5",
+  "slug": "office-notepad-sticky-notes",
+  "name": "Office Sticky Notes Pad (50 Pages, 3x3 Neon)",
+  "category": "notebooks-notepads",
+  "subCategory": "notebooks-notepads",
+  "price": 35,
+  "originalPrice": 45,
+  "rating": 4.7,
+  "reviewCount": 234,
+  "stock": 600,
+  "isBestseller": false,
+  "isEcoFriendly": false,
+  "isNew": false,
+  "sku": "GS-STICKY-3X3",
+  "images": [
+    "/images/products/office-notepad-sticky-notes.jpg"
+  ],
+  "shortDescription": "Self-adhesive repositionable sticky notes in vibrant neon shades. Leaves zero glue residue.",
+  "description": "Keep your reminders, book markers, and office memos organized with strong adhesive backing that sticks securely to paper, walls, and monitors.",
+  "highlights": [
+    "50 peel-and-stick sheets per pad",
+    "Repositionable adhesive backing",
+    "Assorted bright neon colors",
+    "Clean residue-free removal"
+  ],
+  "specifications": {
+    "Dimensions": "3 × 3 inches (76 × 76 mm)",
+    "Sheet Count": "50 Sheets",
+    "Adhesion Type": "Clean Removable Acrylic"
+  },
+  "bulkPricing": [
+    {
+      "maxQty": 9,
+      "minQty": 1,
+      "pricePerUnit": 35,
+      "discountPercent": 0
+    },
+    {
+      "maxQty": 49,
+      "minQty": 10,
+      "pricePerUnit": 28,
+      "discountPercent": 20
+    },
+    {
+      "minQty": 50,
+      "pricePerUnit": 22,
+      "discountPercent": 37
+    }
+  ]
+},
+{
+  "id": "212ec687-a41c-4103-8de4-bcd7dbde3d1f",
+  "slug": "executive-diary-planner-365-pages",
+  "name": "Executive Annual Diary & Planner (365 Pages)",
+  "category": "notebooks-notepads",
+  "subCategory": "notebooks-notepads",
+  "price": 150,
+  "originalPrice": 200,
+  "rating": 4.9,
+  "reviewCount": 445,
+  "stock": 150,
+  "isBestseller": false,
+  "isEcoFriendly": false,
+  "isNew": true,
+  "sku": "GS-PLANNER-365",
+  "images": [
+    "/images/products/executive-diary-planner-365-pages.jpg"
+  ],
+  "shortDescription": "Hardbound luxury faux-leather diary with day-to-a-page layout, monthly calendars, and gold gilded ribbon marker.",
+  "description": "The ideal tool for professionals, entrepreneurs, and busy students. Contains yearly planners, financial trackers, goal matrices, and daily appointment slots.",
+  "highlights": [
+    "365 full daily scheduling pages",
+    "Premium hardbound leatherette finish",
+    "Silk ribbon bookmark + document pocket",
+    "70 GSM warm eye-comfort paper"
+  ],
+  "specifications": {
+    "Cover": "Padded Vegan Leather",
+    "Pages": "365 Pages",
+    "Binding": "Section Sewn Hardcover",
+    "Dimensions": "A5 Executive Size"
+  },
+  "bulkPricing": [
+    {
+      "maxQty": 9,
+      "minQty": 1,
+      "pricePerUnit": 150,
+      "discountPercent": 0
+    },
+    {
+      "maxQty": 49,
+      "minQty": 10,
+      "pricePerUnit": 125,
+      "discountPercent": 17
+    },
+    {
+      "minQty": 50,
+      "pricePerUnit": 100,
+      "discountPercent": 33
+    }
+  ]
+},
+{
+  "id": "32da45cb-02b0-498d-8c59-8290b65daad2",
+  "slug": "a4-copy-paper-ream-75gsm-500-sheets",
+  "name": "A4 Copy Paper Ream (500 Sheets, 75 GSM)",
+  "category": "paper-products",
+  "subCategory": "paper-products",
+  "price": 320,
+  "originalPrice": 380,
+  "rating": 4.9,
+  "reviewCount": 1567,
+  "stock": 1000,
+  "isBestseller": true,
+  "isEcoFriendly": false,
+  "isNew": false,
+  "sku": "GS-A4-75GSM",
+  "images": [
+    "/images/products/a4-copy-paper-ream-75gsm-500-sheets.jpg"
+  ],
+  "shortDescription": "Ultra-bright 98% ISO certified multipurpose copy paper. Jam-free laser & inkjet printing.",
+  "description": "Gupta Stationery's high-speed printing paper is calibrated for duplex laser, color inkjet, and heavy-volume xerox copying. Engineered with precision cut edges to prevent printer jams.",
+  "highlights": [
+    "500 sheets per sealed moisture-proof ream",
+    "75 GSM high-opacity brightness (98% ISO)",
+    "Zero-jam guarantee across all printer brands",
+    "Acid-free for long archival durability"
+  ],
+  "specifications": {
+    "GSM": "75 GSM",
+    "Size": "A4 (210 × 297 mm)",
+    "Brightness": "98% ISO Bright White",
+    "Sheet Count": "500 Sheets per ream",
+    "Certifications": "ISO 9001, ISO 14001"
+  },
+  "bulkPricing": [
+    {
+      "maxQty": 4,
+      "minQty": 1,
+      "pricePerUnit": 320,
+      "discountPercent": 0
+    },
+    {
+      "maxQty": 19,
+      "minQty": 5,
+      "pricePerUnit": 300,
+      "discountPercent": 6
+    },
+    {
+      "minQty": 20,
+      "pricePerUnit": 280,
+      "discountPercent": 12.5
+    }
+  ]
+},
+{
+  "id": "72784a52-438e-4997-a303-5916ffae55ac",
+  "slug": "cardstock-cardboard-250gsm-50-sheets",
+  "name": "Heavy Cardstock / Craft Board (250 GSM, 50 Sheets)",
+  "category": "paper-products",
+  "subCategory": "paper-products",
+  "price": 185,
+  "originalPrice": 220,
+  "rating": 4.8,
+  "reviewCount": 321,
+  "stock": 300,
+  "isBestseller": false,
+  "isEcoFriendly": false,
+  "isNew": false,
+  "sku": "GS-CARD-250",
+  "images": [
+    "/images/products/cardstock-cardboard-250gsm-50-sheets.jpg"
+  ],
+  "shortDescription": "Thick, premium 250 GSM smooth cardstock for greeting cards, scrapbooks, packaging, and printing.",
+  "description": "Rigid yet pliable heavy paperboard suitable for die-cutting, embossing, calligraphy inks, and high-end brochure printing.",
+  "highlights": [
+    "50 sheets of heavyweight 250 GSM stock",
+    "Matte smooth surface on both sides",
+    "Compatible with laser and inkjet card printers",
+    "Multiple color variants available"
+  ],
+  "specifications": {
+    "GSM": "250 GSM",
+    "Sheets": "50 Sheets",
+    "Dimensions": "A4 Size (21 × 29.7 cm)"
+  },
+  "bulkPricing": [
+    {
+      "maxQty": 9,
+      "minQty": 1,
+      "pricePerUnit": 185,
+      "discountPercent": 0
+    },
+    {
+      "maxQty": 49,
+      "minQty": 10,
+      "pricePerUnit": 160,
+      "discountPercent": 13.5
+    },
+    {
+      "minQty": 50,
+      "pricePerUnit": 140,
+      "discountPercent": 24
+    }
+  ]
+},
+{
+  "id": "bf31f58d-35e8-470c-9e37-dc8b50d1a7d9",
+  "slug": "soft-tissue-paper-roll-2-ply",
+  "name": "Soft Multi-Purpose Tissue Paper Roll (2-Ply, 400 Sheets)",
+  "category": "paper-products",
+  "subCategory": "paper-products",
+  "price": 25,
+  "originalPrice": 35,
+  "rating": 4.8,
+  "reviewCount": 892,
+  "stock": 800,
+  "isBestseller": false,
+  "isEcoFriendly": true,
+  "isNew": false,
+  "sku": "GS-TISSUE-2PLY",
+  "images": [
+    "/images/products/soft-tissue-paper-roll-2-ply.jpg"
+  ],
+  "shortDescription": "Ultra-absorbent, hygienic 2-ply embossed tissue paper roll made from virgin biodegradable cellulose.",
+  "description": "Soft on skin and tough on spills. Safe for office pantries, washrooms, kitchens, and daily table use.",
+  "highlights": [
+    "400 soft 2-ply perforated sheets",
+    "100% biodegradable virgin pulp",
+    "Lint-free and ultra-absorbent",
+    "Hygienic individual wrap"
+  ],
+  "specifications": {
+    "Ply": "2-Ply Extra Soft",
+    "Color": "Natural Pure White",
+    "Sheet Count": "400 Sheets / roll"
+  },
+  "bulkPricing": [
+    {
+      "maxQty": 11,
+      "minQty": 1,
+      "pricePerUnit": 25,
+      "discountPercent": 0
+    },
+    {
+      "maxQty": 49,
+      "minQty": 12,
+      "pricePerUnit": 20,
+      "discountPercent": 20
+    },
+    {
+      "minQty": 50,
+      "pricePerUnit": 15,
+      "discountPercent": 40
+    }
+  ]
+},
+{
+  "id": "89782796-1cb4-44ce-aaae-04aca2bb25b0",
+  "slug": "heavy-duty-stapler-combo-with-50-staples",
+  "name": "Heavy-Duty Office Stapler + Staples Combo",
+  "category": "office-supplies",
+  "subCategory": "office-supplies",
+  "price": 95,
+  "originalPrice": 130,
+  "rating": 4.9,
+  "reviewCount": 567,
+  "stock": 400,
+  "isBestseller": true,
+  "isEcoFriendly": false,
+  "isNew": false,
+  "sku": "GS-STAPLE-SET",
+  "images": [
+    "/images/products/heavy-duty-stapler-combo-with-50-staples.jpg"
+  ],
+  "shortDescription": "Jam-free steel mechanism stapler with 25-sheet capacity. Includes 50 starter staples free.",
+  "description": "Workplace staple built with hardened steel internals and ergonomic non-slip rubber base. Features quick-loading spring channel.",
+  "highlights": [
+    "Staples up to 25 sheets effortlessly",
+    "Anti-jamming guidance track",
+    "Built-in staple remover on back",
+    "Free 50 pin staples included"
+  ],
+  "specifications": {
+    "Body": "Steel Mechanism + High-impact ABS",
+    "Capacity": "25 Sheets (80 GSM)",
+    "Pin Size": "Standard No. 10 / 24/6"
+  },
+  "bulkPricing": [
+    {
+      "maxQty": 9,
+      "minQty": 1,
+      "pricePerUnit": 95,
+      "discountPercent": 0
+    },
+    {
+      "maxQty": 49,
+      "minQty": 10,
+      "pricePerUnit": 80,
+      "discountPercent": 15.7
+    },
+    {
+      "minQty": 50,
+      "pricePerUnit": 65,
+      "discountPercent": 31.5
+    }
+  ]
+},
+{
+  "id": "502fa304-db50-404a-9532-08e06dfe0592",
+  "slug": "metal-paper-clips-50-pack",
+  "name": "Rust-Resistant Metal Paper Clips (50 Pcs/Box)",
+  "category": "office-supplies",
+  "subCategory": "office-supplies",
+  "price": 28,
+  "originalPrice": 35,
+  "rating": 4.7,
+  "reviewCount": 234,
+  "stock": 600,
+  "isBestseller": false,
+  "isEcoFriendly": false,
+  "isNew": false,
+  "sku": "GS-CLIPS-50",
+  "images": [
+    "/images/products/metal-paper-clips-50-pack.jpg"
+  ],
+  "shortDescription": "Nickel-plated smooth steel paper clips. Non-tearing rounded edges.",
+  "description": "Organize office documents cleanly without damaging page corners. Rust-resistant coating protects papers from staining.",
+  "highlights": [
+    "50 pieces per storage box",
+    "28mm standard office length",
+    "Smooth nickel plating",
+    "Zero snagging or tearing"
+  ],
+  "specifications": {
+    "Size": "28mm Length",
+    "Material": "Nickel Plated Spring Steel",
+    "Quantity": "50 Pieces"
+  },
+  "bulkPricing": [
+    {
+      "maxQty": 9,
+      "minQty": 1,
+      "pricePerUnit": 28,
+      "discountPercent": 0
+    },
+    {
+      "maxQty": 49,
+      "minQty": 10,
+      "pricePerUnit": 22,
+      "discountPercent": 21.4
+    },
+    {
+      "minQty": 50,
+      "pricePerUnit": 15,
+      "discountPercent": 46.4
+    }
+  ]
+},
+{
+  "id": "8861d294-8aec-4a72-bca7-cc717a40797d",
+  "slug": "rubber-band-set-250-pieces",
+  "name": "Assorted Elastic Rubber Bands (250 Pieces Box)",
+  "category": "office-supplies",
+  "subCategory": "office-supplies",
+  "price": 40,
+  "originalPrice": 50,
+  "rating": 4.8,
+  "reviewCount": 445,
+  "stock": 350,
+  "isBestseller": false,
+  "isEcoFriendly": false,
+  "isNew": false,
+  "sku": "GS-RUBBER-250",
+  "images": [
+    "/images/products/rubber-band-set-250-pieces.jpg"
+  ],
+  "shortDescription": "High-elasticity durable natural rubber bands in multiple diameters for bundling cash, papers, and packages.",
+  "description": "Premium flexibility that stretches up to 3x original size without snapping or degrading over time.",
+  "highlights": [
+    "250 pieces multi-size assortment",
+    "Natural latex-free formula",
+    "High tensile rebound strength",
+    "Long shelf-life"
+  ],
+  "specifications": {
+    "Count": "250 Pieces",
+    "Sizes": "Assorted Small, Medium, Large",
+    "Material": "Synthetic High Stretch Polymer"
+  },
+  "bulkPricing": [
+    {
+      "maxQty": 9,
+      "minQty": 1,
+      "pricePerUnit": 40,
+      "discountPercent": 0
+    },
+    {
+      "maxQty": 49,
+      "minQty": 10,
+      "pricePerUnit": 32,
+      "discountPercent": 20
+    },
+    {
+      "minQty": 50,
+      "pricePerUnit": 24,
+      "discountPercent": 40
+    }
+  ]
+},
+{
+  "id": "4f32e6f2-b264-4db9-9979-e769982fb1b9",
+  "slug": "manila-file-folders-a4-pack-of-10",
+  "name": "Heavy Manila Document File Folders (A4, Pack of 10)",
+  "category": "office-supplies",
+  "subCategory": "office-supplies",
+  "price": 180,
+  "originalPrice": 220,
+  "rating": 4.8,
+  "reviewCount": 398,
+  "stock": 500,
+  "isBestseller": false,
+  "isEcoFriendly": false,
+  "isNew": false,
+  "sku": "GS-FOLDER-10",
+  "images": [
+    "/images/products/manila-file-folders-a4-pack-of-10.jpg"
+  ],
+  "shortDescription": "180 GSM reinforced card file folders with indexing tabs for corporate and legal document management.",
+  "description": "Keep critical paperwork categorized and crease-free. Features expand-gussets and write-on tab labels in assorted corporate hues.",
+  "highlights": [
+    "Pack of 10 durable file folders",
+    "180 GSM thick tear-resistant board",
+    "Pre-scored for 1-inch expansion",
+    "Assorted color coding options"
+  ],
+  "specifications": {
+    "Pack": "10 Folders",
+    "Size": "A4 / Legal Size",
+    "Weight": "180 GSM Cardstock"
+  },
+  "bulkPricing": [
+    {
+      "maxQty": 4,
+      "minQty": 1,
+      "pricePerUnit": 180,
+      "discountPercent": 0
+    },
+    {
+      "maxQty": 19,
+      "minQty": 5,
+      "pricePerUnit": 150,
+      "discountPercent": 16.6
+    },
+    {
+      "minQty": 20,
+      "pricePerUnit": 120,
+      "discountPercent": 33.3
+    }
+  ]
+},
+{
+  "id": "de838a46-1e96-49a7-a476-eab8c820220b",
+  "slug": "gupta-complete-geometry-box-15-pieces",
+  "name": "Gupta Master Geometry Box (15 Precision Tools)",
+  "category": "school-supplies",
+  "subCategory": "school-supplies",
+  "price": 120,
+  "originalPrice": 160,
+  "rating": 4.9,
+  "reviewCount": 789,
+  "stock": 600,
+  "isBestseller": true,
+  "isEcoFriendly": false,
+  "isNew": false,
+  "sku": "GS-GEOM-15",
+  "images": [
+    "/images/products/gupta-complete-geometry-box-15-pieces.jpg"
+  ],
+  "shortDescription": "Complete student drafting kit in a protective metal tin. Calibrated accurate scales and sturdy compass.",
+  "description": "The preferred geometry box for CBSE and ICSE students in Raipur. Includes self-centering compass, divider, 15cm ruler, 45° and 60° set squares, 180° protractor, eraser, and pencil.",
+  "highlights": [
+    "15 essential precision drafting instruments",
+    "Rust-proof zinc die-cast compass & divider",
+    "Laser-etched markings for ultra-clear reading",
+    "Sturdy vintage-style tin case"
+  ],
+  "specifications": {
+    "Case": "Metal Tin Protective Box",
+    "Accuracy": "±0.5mm Lab Calibrated",
+    "Tools Count": "15 Pieces",
+    "Scale Marking": "Metric (cm/mm) & Imperial (inches)"
+  },
+  "bulkPricing": [
+    {
+      "maxQty": 9,
+      "minQty": 1,
+      "pricePerUnit": 120,
+      "discountPercent": 0
+    },
+    {
+      "maxQty": 49,
+      "minQty": 10,
+      "pricePerUnit": 100,
+      "discountPercent": 16.6
+    },
+    {
+      "minQty": 50,
+      "pricePerUnit": 80,
+      "discountPercent": 33.3
+    }
+  ]
+},
+{
+  "id": "17aa99fd-1ce6-4e66-a16f-f617d4eb4aec",
+  "slug": "eraser-sharpener-duo-combo",
+  "name": "Dust-Free Eraser & Steel Sharpener Combo",
+  "category": "school-supplies",
+  "subCategory": "school-supplies",
+  "price": 35,
+  "originalPrice": 45,
+  "rating": 4.8,
+  "reviewCount": 567,
+  "stock": 450,
+  "isBestseller": false,
+  "isEcoFriendly": false,
+  "isNew": false,
+  "sku": "GS-ERASE-SHARP",
+  "images": [
+    "/images/products/eraser-sharpener-duo-combo.jpg"
+  ],
+  "shortDescription": "2-in-1 student staple. Non-smudge polymer eraser paired with precision German steel blade sharpener.",
+  "description": "Erases graphite effortlessly without rolling dust or tearing thin notebook paper. Sharpener creates clean needle points on standard 8mm pencils.",
+  "highlights": [
+    "Roll-up dust-free eraser formula",
+    "Contoured single-hole sharpener with shavings canister",
+    "Non-toxic and phthalate-free",
+    "Pocket-friendly design"
+  ],
+  "specifications": {
+    "Blade": "German Hardened Carbon Steel",
+    "Eraser": "Synthetic Polymer Dust-Free",
+    "Compatibility": "Standard 6-8mm Pencils"
+  },
+  "bulkPricing": [
+    {
+      "maxQty": 11,
+      "minQty": 1,
+      "pricePerUnit": 35,
+      "discountPercent": 0
+    },
+    {
+      "maxQty": 49,
+      "minQty": 12,
+      "pricePerUnit": 28,
+      "discountPercent": 20
+    },
+    {
+      "minQty": 50,
+      "pricePerUnit": 20,
+      "discountPercent": 42.8
+    }
+  ]
+},
+{
+  "id": "ec74a2a6-077f-4b53-abc6-22e09077f91f",
+  "slug": "classic-wooden-pencil-box-12-slot",
+  "name": "Handcrafted Wooden Pencil Box (12 Slots)",
+  "category": "school-supplies",
+  "subCategory": "school-supplies",
+  "price": 45,
+  "originalPrice": 65,
+  "rating": 4.9,
+  "reviewCount": 623,
+  "stock": 300,
+  "isBestseller": false,
+  "isEcoFriendly": false,
+  "isNew": false,
+  "sku": "GS-WOOD-BOX",
+  "images": [
+    "/images/products/classic-wooden-pencil-box-12-slot.jpg"
+  ],
+  "shortDescription": "Classic natural pine wooden pencil case with slide lid and velvet internal lining.",
+  "description": "Ditch flimsy plastic boxes. This timeless wooden case safeguards pens, pencils, rulers, and compasses while adding warmth to school desks.",
+  "highlights": [
+    "Solid natural pine construction",
+    "Smooth sliding lid with thumb indent",
+    "Stores 12+ full-length pencils",
+    "Custom name engraving ready"
+  ],
+  "specifications": {
+    "Finish": "Eco Beeswax Polish",
+    "Material": "Treated Natural Pine",
+    "Dimensions": "7 × 4 × 2 inches"
+  },
+  "bulkPricing": [
+    {
+      "maxQty": 9,
+      "minQty": 1,
+      "pricePerUnit": 45,
+      "discountPercent": 0
+    },
+    {
+      "maxQty": 49,
+      "minQty": 10,
+      "pricePerUnit": 38,
+      "discountPercent": 15.5
+    },
+    {
+      "minQty": 50,
+      "pricePerUnit": 30,
+      "discountPercent": 33.3
+    }
+  ]
+},
+{
+  "id": "c61d416c-76c9-45ec-a4b3-d4aece0e5b21",
+  "slug": "precision-metal-drafting-compass",
+  "name": "Engineering Precision Metal Compass",
+  "category": "school-supplies",
+  "subCategory": "school-supplies",
+  "price": 50,
+  "originalPrice": 70,
+  "rating": 4.7,
+  "reviewCount": 456,
+  "stock": 250,
+  "isBestseller": false,
+  "isEcoFriendly": false,
+  "isNew": false,
+  "sku": "GS-COMPASS-MET",
+  "images": [
+    "/images/products/precision-metal-drafting-compass.jpg"
+  ],
+  "shortDescription": "Heavy-duty all-metal compass with micro-adjustment thumbwheel for accurate circle arcs up to 15cm radius.",
+  "description": "Rigid metal legs prevent flex during circle drawing. Supplied with replacement needle points and lead tubes.",
+  "highlights": [
+    "15cm maximum drawing radius",
+    "Central thumbwheel micro-adjustment",
+    "Includes spare lead tube and safety cap",
+    "All-metal matte chrome finish"
+  ],
+  "specifications": {
+    "Body": "Die-cast Zinc Alloy",
+    "Adjustment": "Friction Gear + Center Wheel",
+    "Max Radius": "15 cm (30 cm Diameter)"
+  },
+  "bulkPricing": [
+    {
+      "maxQty": 9,
+      "minQty": 1,
+      "pricePerUnit": 50,
+      "discountPercent": 0
+    },
+    {
+      "maxQty": 49,
+      "minQty": 10,
+      "pricePerUnit": 42,
+      "discountPercent": 16
+    },
+    {
+      "minQty": 50,
+      "pricePerUnit": 35,
+      "discountPercent": 30
+    }
+  ]
+},
+{
+  "id": "fe04de24-df39-463a-97c4-6ed8f467fa60",
+  "slug": "biodegradable-plantable-pen-set-10-pens",
+  "name": "Gupta Biodegradable & Plantable Pen Set (10 Pens)",
+  "category": "eco-friendly-range",
+  "subCategory": "eco-friendly-range",
+  "price": 200,
+  "originalPrice": 260,
+  "rating": 4.9,
+  "reviewCount": 523,
+  "stock": 200,
+  "isBestseller": true,
+  "isEcoFriendly": true,
+  "isNew": false,
+  "sku": "GS-ECO-PEN10",
+  "images": [
+    "/images/products/biodegradable-plantable-pen-set-10-pens.jpg"
+  ],
+  "shortDescription": "Plantable pens made from 100% recycled paper barrel with non-toxic biodegradable ink and seed capsules at the base.",
+  "description": "Write your thoughts and plant the pen when it runs out! Each pen is embedded with organic seeds (Basil, Marigold, Tomato) that sprout into plants when planted in soil.",
+  "highlights": [
+    "100% plastic-free recycled paper barrel",
+    "Seed capsule on rear (Tomato, Basil, Marigold)",
+    "3000+ words smooth non-toxic writing",
+    "Popular corporate eco-gifting product"
+  ],
+  "specifications": {
+    "Ink": "Non-Toxic High Capacity Blue Ink",
+    "Pack": "10 Plantable Pens",
+    "Seeds": "Non-GMO Organic Herb & Flower Seeds",
+    "Barrel": "Compressed Recycled Newspaper"
+  },
+  "bulkPricing": [
+    {
+      "maxQty": 9,
+      "minQty": 1,
+      "pricePerUnit": 200,
+      "discountPercent": 0
+    },
+    {
+      "maxQty": 49,
+      "minQty": 10,
+      "pricePerUnit": 170,
+      "discountPercent": 15
+    },
+    {
+      "minQty": 50,
+      "pricePerUnit": 150,
+      "discountPercent": 25
+    }
+  ]
+},
+{
+  "id": "f58298ff-f9a7-413d-aed4-3e48613a0e9a",
+  "slug": "natural-rubber-eraser-pack-of-5",
+  "name": "Natural Tree-Rubber Erasers (Pack of 5, PVC-Free)",
+  "category": "eco-friendly-range",
+  "subCategory": "eco-friendly-range",
+  "price": 55,
+  "originalPrice": 70,
+  "rating": 4.8,
+  "reviewCount": 412,
+  "stock": 400,
+  "isBestseller": false,
+  "isEcoFriendly": true,
+  "isNew": false,
+  "sku": "GS-ECO-ERASE5",
+  "images": [
+    "/images/products/natural-rubber-eraser-pack-of-5.jpg"
+  ],
+  "shortDescription": "100% pure vulcanized natural rubber erasers. 0% PVC, zero synthetic plastics, completely safe for children.",
+  "description": "Sustainably harvested from rubber trees. Leaves no chemical residue on paper and breaks down naturally in soil.",
+  "highlights": [
+    "Pack of 5 tree-sap rubber erasers",
+    "100% PVC & phthalate free",
+    "Soft, velvety feel with non-tearing erasing",
+    "Completely biodegradable"
+  ],
+  "specifications": {
+    "Count": "5 Erasers",
+    "Material": "100% Natural Hevea Rubber",
+    "Eco Label": "Zero Micro-plastics"
+  },
+  "bulkPricing": [
+    {
+      "maxQty": 9,
+      "minQty": 1,
+      "pricePerUnit": 55,
+      "discountPercent": 0
+    },
+    {
+      "maxQty": 49,
+      "minQty": 10,
+      "pricePerUnit": 45,
+      "discountPercent": 18
+    },
+    {
+      "minQty": 50,
+      "pricePerUnit": 35,
+      "discountPercent": 36
+    }
+  ]
+},
+{
+  "id": "82812173-d7d5-4eea-bb7e-7f2cba667828",
+  "slug": "recycled-paper-kraft-notebook-150-pages",
+  "name": "Recycled Paper Kraft Notebook (150 Pages)",
+  "category": "eco-friendly-range",
+  "subCategory": "eco-friendly-range",
+  "price": 75,
+  "originalPrice": 95,
+  "rating": 4.9,
+  "reviewCount": 667,
+  "stock": 300,
+  "isBestseller": false,
+  "isEcoFriendly": true,
+  "isNew": false,
+  "sku": "GS-ECO-KRAFT150",
+  "images": [
+    "/images/products/recycled-paper-kraft-notebook-150-pages.jpg"
+  ],
+  "shortDescription": "150 pages of unbleached post-consumer recycled paper bound in flexible natural Kraft board.",
+  "description": "Saves trees, water, and energy with every page. Thread-sewn spine lays flat at 180° for easy writing and sketching.",
+  "highlights": [
+    "150 pages 60 GSM recycled paper",
+    "Soy-ink printed unobtrusive dot grid",
+    "Flat-lay 180-degree open spine",
+    "Plastic-free paper band packaging"
+  ],
+  "specifications": {
+    "Pages": "150 Pages",
+    "Layout": "Dot Grid / Ruled",
+    "Binding": "Cotton Thread Sewn",
+    "Dimensions": "A5 (148 × 210 mm)"
+  },
+  "bulkPricing": [
+    {
+      "maxQty": 9,
+      "minQty": 1,
+      "pricePerUnit": 75,
+      "discountPercent": 0
+    },
+    {
+      "maxQty": 49,
+      "minQty": 10,
+      "pricePerUnit": 62,
+      "discountPercent": 17.3
+    },
+    {
+      "minQty": 50,
+      "pricePerUnit": 50,
+      "discountPercent": 33.3
+    }
+  ]
+},
+{
+  "id": "7788fbb9-1e32-4f7f-89e0-5e166ea5e199",
+  "slug": "natural-bamboo-pencils-pack-of-10",
+  "name": "Sustainable Bamboo HB Pencils (Pack of 10)",
+  "category": "eco-friendly-range",
+  "subCategory": "eco-friendly-range",
+  "price": 65,
+  "originalPrice": 85,
+  "rating": 4.8,
+  "reviewCount": 534,
+  "stock": 250,
+  "isBestseller": false,
+  "isEcoFriendly": true,
+  "isNew": false,
+  "sku": "GS-ECO-BAMBOO10",
+  "images": [
+    "/images/products/natural-bamboo-pencils-pack-of-10.jpg"
+  ],
+  "shortDescription": "Fast-growing renewable bamboo body pencils with rich HB graphite and natural eraser tops.",
+  "description": "Bamboo is a fast-regenerating grass that requires no deforestation. These pencils feel warm to the touch and sharpen smoothly.",
+  "highlights": [
+    "Pack of 10 100% bamboo casing pencils",
+    "Deep dark HB smooth writing lead",
+    "Zero rainforest timber used",
+    "Biodegradable natural rubber eraser head"
+  ],
+  "specifications": {
+    "Hardness": "HB Grade",
+    "Material": "100% Organically Grown Bamboo",
+    "Pack Size": "10 Pencils"
+  },
+  "bulkPricing": [
+    {
+      "maxQty": 9,
+      "minQty": 1,
+      "pricePerUnit": 65,
+      "discountPercent": 0
+    },
+    {
+      "maxQty": 49,
+      "minQty": 10,
+      "pricePerUnit": 55,
+      "discountPercent": 15.3
+    },
+    {
+      "minQty": 50,
+      "pricePerUnit": 45,
+      "discountPercent": 30.7
+    }
+  ]
+},
   {
     "id": "prod-jk-red-75",
     "slug": "jk-red-copier-paper-75-gsm",

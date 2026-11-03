@@ -2,20 +2,8 @@
 
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { ShippingAddress } from "@/types";
-import { auth, googleProvider } from "@/lib/firebase/client";
-import {
-  signInWithPopup,
-  signInWithEmailAndPassword,
-  createUserWithEmailAndPassword,
-  signOut,
-  onAuthStateChanged,
-  updateProfile as updateFirebaseProfile,
-  sendPasswordResetEmail,
-  User as FirebaseUser,
-  RecaptchaVerifier,
-  signInWithPhoneNumber,
-  ConfirmationResult,
-} from "firebase/auth";
+import { supabase } from "@/lib/supabase/client";
+import type { User as SupabaseUser } from "@supabase/supabase-js";
 
 export interface UserProfile {
   id: string;
@@ -36,7 +24,8 @@ export interface UserProfile {
 
 interface AuthContextType {
   user: UserProfile | null;
-  firebaseUser: FirebaseUser | null;
+  supabaseUser: SupabaseUser | null;
+  firebaseUser?: any; // Backwards compatibility alias
   isAuthenticated: boolean;
   isLoading: boolean;
   // Auth methods
@@ -69,11 +58,8 @@ const AUTH_STORAGE_KEY = "instant_auth_profile_meta";
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-// Confirmation result holder for Phone OTP
-let phoneConfirmationResult: ConfirmationResult | null = null;
-
 export function AuthProvider({ children }: { children: React.ReactNode }) {
-  const [firebaseUser, setFirebaseUser] = useState<FirebaseUser | null>(null);
+  const [supabaseUser, setSupabaseUser] = useState<SupabaseUser | null>(null);
   const [user, setUser] = useState<UserProfile | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -81,7 +67,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const getStoredMetadata = (uid: string) => {
     if (typeof window === "undefined") return null;
     try {
-      const stored = localStorage.getItem(`${AUTH_STORAGE_KEY}_${uid}`) || localStorage.getItem(`gupta_auth_profile_meta_${uid}`);
+      const stored =
+        localStorage.getItem(`${AUTH_STORAGE_KEY}_${uid}`) ||
+        localStorage.getItem(`gupta_auth_profile_meta_${uid}`);
       return stored ? JSON.parse(stored) : null;
     } catch (e) {
       return null;
@@ -99,108 +87,224 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
-  // Listen to Firebase Auth state change across page loads and sessions
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (fbUser) => {
-      setFirebaseUser(fbUser);
+  // Helper to construct a unified UserProfile from Supabase User + profiles table + cached metadata
+  const buildUserProfile = async (sbUser: SupabaseUser): Promise<UserProfile> => {
+    const meta = getStoredMetadata(sbUser.id) || {};
 
-      if (fbUser) {
-        const meta = getStoredMetadata(fbUser.uid) || {};
-        const providerId = fbUser.providerData[0]?.providerId || "email";
-        const provider: "email" | "phone" | "google" =
-          providerId.includes("google")
-            ? "google"
-            : providerId.includes("phone")
-            ? "phone"
-            : "email";
+    let dbProfile: any = null;
+    try {
+      const { data, error } = await supabase
+        .from("profiles")
+        .select("*")
+        .eq("id", sbUser.id)
+        .maybeSingle();
 
-        const profile: UserProfile = {
-          id: fbUser.uid,
-          name: fbUser.displayName || meta.name || fbUser.email?.split("@")[0] || "Customer",
-          email: fbUser.email || meta.email || `${fbUser.phoneNumber || fbUser.uid}@instantstationary.user`,
-          phone: fbUser.phoneNumber || meta.phone || "+91 8839715995",
-          avatar: fbUser.photoURL || meta.avatar || "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop",
-          role: meta.role || "customer",
-          companyName: meta.companyName,
-          gstNumber: meta.gstNumber,
-          loyaltyPoints: meta.loyaltyPoints ?? 150,
-          pendingRewards: meta.pendingRewards ?? 50,
-          memberDiscountPercent: meta.memberDiscountPercent ?? 5,
-          memberSince: meta.memberSince || new Date().toLocaleDateString("en-IN", { month: "long", year: "numeric" }),
-          provider,
-          addresses: meta.addresses || [
-            {
-              id: "addr-1",
-              label: "Home (Default)",
-              fullName: fbUser.displayName || "Customer",
-              phone: fbUser.phoneNumber || "+91 8839715995",
-              email: fbUser.email || "",
-              addressLine1: "Civil Lines, Near Raj Bhavan",
-              city: "Raipur",
-              state: "Chhattisgarh",
-              pincode: "492001",
-              isDefault: true,
-            },
-          ],
-        };
-
-        setUser(profile);
-        saveStoredMetadata(fbUser.uid, profile);
-      } else {
-        setUser(null);
+      if (!error && data) {
+        dbProfile = data;
       }
+    } catch (err) {
+      // Table may not exist yet or offline; fallback cleanly
+    }
 
-      setIsLoading(false);
+    const providerId = (sbUser.app_metadata?.provider || (sbUser.phone ? "phone" : "email")) as string;
+    const provider: "email" | "phone" | "google" =
+      providerId.includes("google")
+        ? "google"
+        : providerId.includes("phone")
+        ? "phone"
+        : "email";
+
+    const fullName =
+      dbProfile?.full_name ||
+      sbUser.user_metadata?.full_name ||
+      sbUser.user_metadata?.name ||
+      meta.name ||
+      sbUser.email?.split("@")[0] ||
+      "Customer";
+
+    const email =
+      sbUser.email ||
+      dbProfile?.email ||
+      meta.email ||
+      `${sbUser.phone || sbUser.id}@instantstationary.user`;
+
+    const phone =
+      dbProfile?.phone ||
+      sbUser.phone ||
+      sbUser.user_metadata?.phone ||
+      meta.phone ||
+      "";
+
+    const avatar =
+      dbProfile?.avatar_url ||
+      sbUser.user_metadata?.avatar_url ||
+      sbUser.user_metadata?.picture ||
+      meta.avatar ||
+      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop";
+
+    const role =
+      (dbProfile?.role as "customer" | "wholesale_partner" | "admin") ||
+      (sbUser.user_metadata?.role as "customer" | "wholesale_partner" | "admin") ||
+      meta.role ||
+      "customer";
+
+    const companyName = dbProfile?.company_name || sbUser.user_metadata?.company_name || meta.companyName;
+    const gstNumber = dbProfile?.gst_number || sbUser.user_metadata?.gst_number || meta.gstNumber;
+    const loyaltyPoints = dbProfile?.loyalty_points ?? meta.loyaltyPoints ?? 100;
+    const pendingRewards = dbProfile?.pending_rewards ?? meta.pendingRewards ?? 50;
+    const memberDiscountPercent =
+      dbProfile?.member_discount_percent ??
+      meta.memberDiscountPercent ??
+      (role === "wholesale_partner" ? 15 : 5);
+
+    const memberSince = dbProfile?.created_at
+      ? new Date(dbProfile.created_at).toLocaleDateString("en-IN", { month: "long", year: "numeric" })
+      : meta.memberSince || new Date().toLocaleDateString("en-IN", { month: "long", year: "numeric" });
+
+    const addresses = dbProfile?.addresses || meta.addresses || [
+      {
+        id: "addr-1",
+        label: "Home (Default)",
+        fullName,
+        phone: phone || "+91 8839715995",
+        email,
+        addressLine1: "Civil Lines, Near Raj Bhavan",
+        city: "Raipur",
+        state: "Chhattisgarh",
+        pincode: "492001",
+        isDefault: true,
+      },
+    ];
+
+    const profile: UserProfile = {
+      id: sbUser.id,
+      name: fullName,
+      email,
+      phone,
+      avatar,
+      role,
+      companyName,
+      gstNumber,
+      loyaltyPoints,
+      pendingRewards,
+      memberDiscountPercent,
+      memberSince,
+      provider,
+      addresses,
+    };
+
+    saveStoredMetadata(sbUser.id, profile);
+    return profile;
+  };
+
+  // Listen to Supabase Auth state changes across sessions & page navigations
+  useEffect(() => {
+    let isMounted = true;
+
+    const syncSession = async (sbUser: SupabaseUser | null) => {
+      if (!isMounted) return;
+      setSupabaseUser(sbUser);
+
+      if (sbUser) {
+        const profile = await buildUserProfile(sbUser);
+        if (isMounted) setUser(profile);
+      } else {
+        // Fallback check for demo phone user session
+        if (typeof window !== "undefined") {
+          const demoActive = localStorage.getItem("instant_demo_phone_user");
+          if (demoActive) {
+            try {
+              const parsed = JSON.parse(demoActive);
+              if (parsed?.id) {
+                if (isMounted) setUser(parsed);
+                if (isMounted) setIsLoading(false);
+                return;
+              }
+            } catch (e) {}
+          }
+        }
+        if (isMounted) setUser(null);
+      }
+      if (isMounted) setIsLoading(false);
+    };
+
+    // 1. Initial check
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      syncSession(session?.user ?? null);
+    }).catch(() => {
+      if (isMounted) setIsLoading(false);
     });
 
-    return () => unsubscribe();
+    // 2. Auth listener
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      syncSession(session?.user ?? null);
+    });
+
+    return () => {
+      isMounted = false;
+      subscription.unsubscribe();
+    };
   }, []);
 
-  // 1. Google Sign-In via Firebase
+  // 1. Google Sign-In via Supabase OAuth
   const loginWithGoogle = async () => {
     try {
-      const result = await signInWithPopup(auth, googleProvider);
-      const fbUser = result.user;
-
-      const profile: Partial<UserProfile> = {
-        name: fbUser.displayName || "Google User",
-        email: fbUser.email || "",
-        avatar: fbUser.photoURL || undefined,
+      const origin = typeof window !== "undefined" ? window.location.origin : "";
+      const { error } = await supabase.auth.signInWithOAuth({
         provider: "google",
-      };
-      saveStoredMetadata(fbUser.uid, profile);
+        options: {
+          redirectTo: `${origin}/auth/callback`,
+          queryParams: {
+            access_type: "offline",
+            prompt: "select_account",
+          },
+        },
+      });
 
+      if (error) throw error;
       return { success: true };
     } catch (error: any) {
       console.error("Google sign in error:", error);
-      let msg = "Google sign-in failed. Please try again.";
-      if (error.code === "auth/popup-closed-by-user") {
-        msg = "Sign-in popup closed before completing.";
-      } else if (error.code === "auth/unauthorized-domain") {
-        msg = "Authorized domain error in Firebase console. Please ensure localhost is authorized.";
-      }
-      return { success: false, message: msg };
+      return {
+        success: false,
+        message: error.message || "Google sign-in failed. Please try again.",
+      };
     }
   };
 
-  // 2. Email Login via Firebase
+  // 2. Email Login via Supabase
   const loginWithEmail = async (email: string, pass: string) => {
     try {
-      const result = await signInWithEmailAndPassword(auth, email.trim(), pass);
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email: email.trim(),
+        password: pass,
+      });
+
+      if (error) {
+        let msg = error.message;
+        if (msg.includes("Invalid login credentials")) {
+          msg = "Invalid email or password.";
+        } else if (msg.includes("Email not confirmed")) {
+          msg = "Please verify your email address to sign in.";
+        }
+        return { success: false, message: msg };
+      }
+
+      if (data.user) {
+        const profile = await buildUserProfile(data.user);
+        setUser(profile);
+      }
+
       return { success: true };
     } catch (error: any) {
       console.error("Email login error:", error);
-      let msg = "Failed to sign in. Please check your email and password.";
-      if (error.code === "auth/user-not-found" || error.code === "auth/wrong-password" || error.code === "auth/invalid-credential") {
-        msg = "Invalid email or password.";
-      } else if (error.code === "auth/too-many-requests") {
-        msg = "Too many failed attempts. Please try again later or reset password.";
-      }
-      return { success: false, message: msg };
+      return { success: false, message: error.message || "Failed to sign in. Please try again." };
     }
   };
 
-  // 3. Email Signup via Firebase
+  // 3. Email Signup via Supabase
   const signupWithEmail = async (data: {
     name: string;
     email: string;
@@ -211,48 +315,101 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     isWholesale?: boolean;
   }) => {
     try {
-      const result = await createUserWithEmailAndPassword(auth, data.email.trim(), data.password);
-      const fbUser = result.user;
+      const cleanPhone = data.phone.startsWith("+91") ? data.phone : `+91 ${data.phone}`;
+      const role: "customer" | "wholesale_partner" = data.isWholesale ? "wholesale_partner" : "customer";
 
-      // Update display name
-      if (data.name) {
-        await updateFirebaseProfile(fbUser, { displayName: data.name });
+      // 1. Try server-side register endpoint (auto-confirms account & prevents SMTP rate limit issues)
+      let registered = false;
+      try {
+        const res = await fetch("/api/auth/register", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            email: data.email.trim(),
+            password: data.password,
+            data: {
+              full_name: data.name,
+              name: data.name,
+              phone: cleanPhone,
+              company_name: data.companyName,
+              gst_number: data.gstNumber,
+              role,
+              is_wholesale: data.isWholesale,
+            },
+          }),
+        });
+
+        const resData = await res.json();
+        if (res.ok && resData.success) {
+          registered = true;
+        } else if (
+          resData.message?.includes("already registered") ||
+          resData.message?.includes("already been registered") ||
+          resData.message?.includes("User already registered")
+        ) {
+          return { success: false, message: "An account with this email already exists. Please sign in." };
+        } else {
+          console.warn("Server register fallback note:", resData.message);
+        }
+      } catch (e) {
+        console.warn("Server register network issue, attempting client signup fallback:", e);
       }
 
-      // Store initial custom metadata
-      const meta: Partial<UserProfile> = {
-        name: data.name,
-        email: data.email,
-        phone: data.phone.startsWith("+91") ? data.phone : `+91 ${data.phone}`,
-        role: data.isWholesale ? "wholesale_partner" : "customer",
-        companyName: data.companyName,
-        gstNumber: data.gstNumber,
-        loyaltyPoints: 100, // 100 Welcome Points
-        pendingRewards: 50,
-        memberDiscountPercent: data.isWholesale ? 15 : 5,
-        memberSince: new Date().toLocaleDateString("en-IN", { month: "long", year: "numeric" }),
-        provider: "email",
-        addresses: [],
-      };
-      saveStoredMetadata(fbUser.uid, meta);
+      // 2. Client-side fallback if server register did not complete
+      if (!registered) {
+        const { error } = await supabase.auth.signUp({
+          email: data.email.trim(),
+          password: data.password,
+          options: {
+            data: {
+              full_name: data.name,
+              name: data.name,
+              phone: cleanPhone,
+              company_name: data.companyName,
+              gst_number: data.gstNumber,
+              role,
+              is_wholesale: data.isWholesale,
+            },
+          },
+        });
+
+        if (error) {
+          let msg = error.message;
+          if (
+            msg.includes("already registered") ||
+            msg.includes("already been registered") ||
+            msg.includes("User already registered")
+          ) {
+            msg = "An account with this email already exists. Please sign in.";
+          }
+          return { success: false, message: msg };
+        }
+      }
+
+      // 3. Immediately sign in the new user
+      const loginRes = await loginWithEmail(data.email, data.password);
+      if (!loginRes.success) {
+        return { success: true, message: "Account created! Please sign in with your credentials." };
+      }
 
       return { success: true };
     } catch (error: any) {
       console.error("Email signup error:", error);
-      let msg = "Failed to create account. Please try again.";
-      if (error.code === "auth/email-already-in-use") {
-        msg = "An account with this email already exists. Please sign in.";
-      } else if (error.code === "auth/weak-password") {
-        msg = "Password is too weak. Please use at least 6 characters.";
-      }
-      return { success: false, message: msg };
+      return { success: false, message: error.message || "Failed to create account. Please try again." };
     }
   };
 
-  // 4. Password Reset via Firebase
+  // 4. Password Reset via Supabase
   const sendPasswordReset = async (email: string) => {
     try {
-      await sendPasswordResetEmail(auth, email.trim());
+      const origin = typeof window !== "undefined" ? window.location.origin : "";
+      const { error } = await supabase.auth.resetPasswordForEmail(email.trim(), {
+        redirectTo: `${origin}/account`,
+      });
+
+      if (error) {
+        return { success: false, message: error.message };
+      }
       return { success: true, message: "Password reset link sent to your email." };
     } catch (error: any) {
       console.error("Password reset error:", error);
@@ -260,43 +417,54 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
-  // 5. Phone OTP via Firebase
+  // 5. Phone OTP via Supabase (with seamless demo fallback)
   const sendPhoneOtp = async (phone: string, containerId = "recaptcha-container") => {
     try {
       const cleanPhone = phone.replace(/[^0-9]/g, "").slice(-10);
       const fullPhone = `+91${cleanPhone}`;
 
-      // In browser environment, initialize RecaptchaVerifier if container exists
-      if (typeof window !== "undefined" && document.getElementById(containerId)) {
-        const verifier = new RecaptchaVerifier(auth, containerId, {
-          size: "invisible",
-        });
-        phoneConfirmationResult = await signInWithPhoneNumber(auth, fullPhone, verifier);
+      // Attempt Supabase OTP
+      const { error } = await supabase.auth.signInWithOtp({
+        phone: fullPhone,
+      });
+
+      if (!error) {
         return { success: true, message: `OTP sent to ${fullPhone}` };
       }
 
-      // Demo fallback if reCAPTCHA element is not present
-      return { success: true, otp: "1990", message: `Demo OTP sent to ${fullPhone}` };
+      // Demo fallback if SMS gateway is not configured yet in Supabase
+      console.info("Supabase SMS provider not active, falling back to demo mode (1990):", error?.message);
+      return { success: true, otp: "1990", message: `Demo OTP sent to ${fullPhone} (Code: 1990)` };
     } catch (error: any) {
-      console.error("Phone OTP error:", error);
-      // Seamless demo fallback if Firebase phone quota/reCAPTCHA isn't configured in console yet
       return { success: true, otp: "1990", message: "OTP sent (Demo code: 1990)" };
     }
   };
 
   const verifyPhoneOtp = async (phone: string, otp: string, name?: string) => {
     try {
-      if (phoneConfirmationResult) {
-        const result = await phoneConfirmationResult.confirm(otp);
-        if (name && result.user) {
-          await updateFirebaseProfile(result.user, { displayName: name });
+      const cleanPhone = phone.replace(/[^0-9]/g, "").slice(-10);
+      const fullPhone = `+91${cleanPhone}`;
+
+      // Attempt Supabase OTP verify
+      const { data, error } = await supabase.auth.verifyOtp({
+        phone: fullPhone,
+        token: otp,
+        type: "sms",
+      });
+
+      if (!error && data?.user) {
+        if (name) {
+          await supabase.auth.updateUser({
+            data: { full_name: name, name },
+          });
         }
+        const profile = await buildUserProfile(data.user);
+        setUser(profile);
         return { success: true };
       }
 
-      // Fallback verification
+      // Fallback verification for demo code 1990
       if (otp === "1990" || otp.length === 4 || otp.length === 6) {
-        const cleanPhone = phone.replace(/[^0-9]/g, "").slice(-10);
         const demoUser: UserProfile = {
           id: `phone-${cleanPhone}`,
           name: name || `Customer ${cleanPhone.slice(-4)}`,
@@ -311,6 +479,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           addresses: [],
         };
         setUser(demoUser);
+        if (typeof window !== "undefined") {
+          localStorage.setItem("instant_demo_phone_user", JSON.stringify(demoUser));
+        }
         return { success: true };
       }
 
@@ -324,12 +495,15 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   // 6. Sign Out
   const logout = async () => {
     try {
-      await signOut(auth);
+      await supabase.auth.signOut();
     } catch (e) {
       console.error("Sign out error", e);
     } finally {
+      if (typeof window !== "undefined") {
+        localStorage.removeItem("instant_demo_phone_user");
+      }
       setUser(null);
-      setFirebaseUser(null);
+      setSupabaseUser(null);
     }
   };
 
@@ -339,6 +513,20 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const updated = { ...user, ...updates };
     setUser(updated);
     saveStoredMetadata(user.id, updated);
+
+    // Sync to Supabase table asynchronously if authenticated user
+    if (supabaseUser) {
+      supabase.from("profiles").update({
+        full_name: updated.name,
+        phone: updated.phone,
+        avatar_url: updated.avatar,
+        company_name: updated.companyName,
+        gst_number: updated.gstNumber,
+        updated_at: new Date().toISOString(),
+      }).eq("id", supabaseUser.id).then(({ error }) => {
+        if (error) console.warn("Supabase profile sync notice:", error.message);
+      });
+    }
   };
 
   const addAddress = (address: ShippingAddress & { label: string; isDefault?: boolean }) => {
@@ -374,8 +562,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     <AuthContext.Provider
       value={{
         user,
-        firebaseUser,
-        isAuthenticated: Boolean(user || firebaseUser),
+        supabaseUser,
+        firebaseUser: supabaseUser, // Alias for backward compatibility
+        isAuthenticated: Boolean(user || supabaseUser),
         isLoading,
         loginWithGoogle,
         loginWithEmail,

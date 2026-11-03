@@ -29,43 +29,63 @@ function TrackOrderContent() {
   const [query, setQuery] = useState(initialOrderId);
   const [activeOrder, setActiveOrder] = useState<any>(null);
   const [searched, setSearched] = useState(false);
+  const [isSearching, setIsSearching] = useState(false);
+
+  const resolveOrder = async (searchTerm: string) => {
+    if (!searchTerm.trim()) return;
+    const clean = searchTerm.trim().toLowerCase();
+    const phoneDigits = clean.replace(/[^0-9]/g, "");
+
+    // 1. Search in local state first
+    const localMatch = orders.find((o) => {
+      const matchId = o.id.toLowerCase() === clean;
+      const matchNum = o.orderNumber?.toLowerCase().includes(clean);
+      const matchTrack = o.trackingNumber?.toLowerCase().includes(clean);
+      const matchEmail = o.customerEmail?.toLowerCase().includes(clean);
+      const matchPhone =
+        phoneDigits.length >= 4 &&
+        o.customerPhone?.replace(/[^0-9]/g, "").includes(phoneDigits);
+      return matchId || matchNum || matchTrack || matchEmail || matchPhone;
+    });
+
+    if (localMatch) {
+      setActiveOrder(localMatch);
+      setSearched(true);
+      return;
+    }
+
+    // 2. Query tracking API endpoint (safely queries database across sessions & guest checkouts)
+    setIsSearching(true);
+    try {
+      const res = await fetch(`/api/orders/track?q=${encodeURIComponent(clean)}`);
+      const resData = await res.json();
+
+      if (res.ok && resData.success && resData.order) {
+        setActiveOrder(resData.order);
+      } else {
+        setActiveOrder(null);
+      }
+    } catch {
+      setActiveOrder(null);
+    } finally {
+      setIsSearching(false);
+      setSearched(true);
+    }
+  };
 
   useEffect(() => {
-    if (initialOrderId && orders.length > 0) {
-      const match = orders.find(
-        (o) =>
-          o.id.toLowerCase() === initialOrderId.toLowerCase() ||
-          o.customerPhone.includes(initialOrderId)
-      );
-      if (match) {
-        setActiveOrder(match);
-        setSearched(true);
-      } else {
-        // Fallback to most recent order if query exists
-        setActiveOrder(orders[0]);
-        setSearched(true);
-      }
+    if (initialOrderId) {
+      resolveOrder(initialOrderId);
     } else if (orders.length > 0 && !searched) {
-      // Default to latest demo order
+      // Default to latest demo order if available
       setActiveOrder(orders[0]);
     }
-  }, [initialOrderId, orders, searched]);
+  }, [initialOrderId, orders.length]);
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     if (!query.trim()) return;
-
-    setSearched(true);
-    const cleanQuery = query.trim().toLowerCase();
-    const match = orders.find(
-      (o) =>
-        o.id.toLowerCase() === cleanQuery ||
-        o.id.toLowerCase().includes(cleanQuery) ||
-        o.customerPhone.includes(cleanQuery) ||
-        o.customerEmail.toLowerCase().includes(cleanQuery)
-    );
-
-    setActiveOrder(match || null);
+    resolveOrder(query);
   };
 
   // Determine active step index from status
@@ -132,9 +152,10 @@ function TrackOrderContent() {
           </div>
           <button
             type="submit"
-            className="px-6 py-2.5 bg-[#1C1C1C] hover:bg-[#B38E5D] text-white text-xs font-bold uppercase tracking-wider transition-colors shrink-0"
+            disabled={isSearching}
+            className="px-6 py-2.5 bg-[#1C1C1C] hover:bg-[#B38E5D] text-white text-xs font-bold uppercase tracking-wider transition-colors shrink-0 disabled:opacity-50"
           >
-            Track Shipment
+            {isSearching ? "Searching..." : "Track Shipment"}
           </button>
         </form>
 

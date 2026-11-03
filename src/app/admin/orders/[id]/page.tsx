@@ -32,7 +32,7 @@ export default function AdminOrderDetailPage({ params }: OrderDetailPageProps) {
   const resolvedParams = use(params);
   const id = resolvedParams.id;
   const router = useRouter();
-  const { orders, updateOrderStatus } = useInventory();
+  const { orders, updateOrderStatus, isLoading } = useInventory();
 
   const order = orders.find((o) => o.id === id || o.orderNumber === id);
 
@@ -41,6 +41,14 @@ export default function AdminOrderDetailPage({ params }: OrderDetailPageProps) {
   const [trackingNumber, setTrackingNumber] = useState(order?.trackingNumber || "");
   const [isInvoiceOpen, setIsInvoiceOpen] = useState(false);
   const [isSaved, setIsSaved] = useState(false);
+
+  if (!order && isLoading) {
+    return (
+      <div className="p-16 text-center">
+        <div className="w-8 h-8 border-2 border-black border-t-transparent rounded-full animate-spin mx-auto" />
+      </div>
+    );
+  }
 
   if (!order) {
     return (

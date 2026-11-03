@@ -6,7 +6,7 @@ const ORDERS_EVENT_KEY = "instant_orders_updated";
 
 const INITIAL_ORDERS: Order[] = [
   {
-    id: "ord-101",
+    id: "d1010000-0000-4000-8000-000000000101",
     orderNumber: "IS-2026-89456",
     createdAt: new Date(Date.now() - 3600 * 1000 * 3).toISOString(), // 3 hours ago
     customerName: "Anmol Sharma",
@@ -58,7 +58,7 @@ const INITIAL_ORDERS: Order[] = [
     customerNotes: "Please deliver before 1 PM at residential address.",
   },
   {
-    id: "ord-102",
+    id: "d1020000-0000-4000-8000-000000000102",
     orderNumber: "IS-2026-89412",
     createdAt: new Date(Date.now() - 3600 * 1000 * 24).toISOString(), // 1 day ago
     customerName: "Pooja Verma",
@@ -107,7 +107,7 @@ const INITIAL_ORDERS: Order[] = [
     courierPartner: "BlueDart Express",
   },
   {
-    id: "ord-103",
+    id: "d1030000-0000-4000-8000-000000000103",
     orderNumber: "IS-2026-89300",
     createdAt: new Date(Date.now() - 3600 * 1000 * 48).toISOString(), // 2 days ago
     customerName: "Rajesh Agrawal",
@@ -149,10 +149,49 @@ const INITIAL_ORDERS: Order[] = [
 
 let supabaseOrdersInitialized = false;
 
-function sanitizeForDb<T>(obj: T): T {
-  return JSON.parse(
-    JSON.stringify(obj, (k, v) => (v === undefined ? null : v))
-  );
+function generateOrderId(): string {
+  if (typeof crypto !== "undefined" && typeof crypto.randomUUID === "function") {
+    return crypto.randomUUID();
+  }
+  return "d" + Date.now().toString(16).padStart(7, "0") + "-0000-4000-8000-000000000000";
+}
+
+function mapSupabaseOrder(row: any): Order {
+  return {
+    id: row.id,
+    orderNumber: row.order_number,
+    createdAt: row.created_at,
+    customerName: row.customer_name,
+    customerEmail: row.customer_email,
+    customerPhone: row.customer_phone,
+    shippingAddress: row.shipping_address || {},
+    deliverySlot: row.delivery_time_slot,
+    deliveryFee: Number(row.delivery_fee) || 0,
+    subtotal: Number(row.subtotal) || 0,
+    bulkDiscount: Number(row.bulk_discount) || 0,
+    couponCode: row.coupon_code,
+    couponDiscount: Number(row.coupon_discount) || 0,
+    taxAmount: Math.round((Number(row.total) || 0) * 0.12),
+    total: Number(row.total) || 0,
+    paymentMethod: row.payment_method || "cod",
+    paymentStatus: row.payment_status || "pending",
+    orderStatus: row.order_status || "processing",
+    trackingNumber: row.tracking_number,
+    courierPartner: row.courier_partner || "Instant Express Surface",
+    customerNotes: row.customer_notes,
+    items: Array.isArray(row.order_items)
+      ? row.order_items.map((it: any) => ({
+          id: it.id,
+          productId: it.product_id,
+          productName: it.product_name,
+          sku: it.sku,
+          quantity: it.quantity,
+          unitPrice: Number(it.unit_price) || 0,
+          totalPrice: Number(it.total_price) || 0,
+          selectedColor: it.selected_color,
+        }))
+      : [],
+  };
 }
 
 export const orderService = {
@@ -183,7 +222,13 @@ export const orderService = {
 
   getOrderById(id: string): Order | undefined {
     const orders = this.getOrders();
-    return orders.find((o) => o.id === id || o.orderNumber === id);
+    const clean = id.trim().toLowerCase();
+    return orders.find(
+      (o) =>
+        o.id.toLowerCase() === clean ||
+        o.orderNumber.toLowerCase() === clean ||
+        (o.trackingNumber && o.trackingNumber.toLowerCase() === clean)
+    );
   },
 
   saveOrders(orders: Order[]): void {
@@ -204,63 +249,71 @@ export const orderService = {
       // 1. Fetch live orders from Supabase
       const { data, error } = await supabase
         .from("orders")
-        .select("*")
+        .select("*, order_items(*)")
         .order("created_at", { ascending: false });
 
       if (error) {
-        console.warn("Supabase orders fetch note (using local orders):", error.message);
+        console.warn("Supabase orders fetch note:", error.message);
       } else if (data && data.length > 0) {
-        const loadedOrders: Order[] = data.map((item: any) => {
-          if (item.data && typeof item.data === "object") {
-            return { ...item.data, id: item.id };
-          }
-          return item as Order;
-        });
+        const loadedOrders: Order[] = data.map(mapSupabaseOrder);
         this.saveOrders(loadedOrders);
       } else {
-        // Seed initial orders into Supabase
-        const currentOrders = this.getOrders();
-        for (const ord of currentOrders) {
+        // Seed initial orders into Supabase if DB table is currently empty
+        for (const ord of INITIAL_ORDERS) {
           try {
-            await supabase.from("orders").upsert({
+            const { error: seedErr } = await supabase.from("orders").insert({
               id: ord.id,
               order_number: ord.orderNumber,
               customer_name: ord.customerName,
               customer_email: ord.customerEmail,
+              customer_phone: ord.customerPhone,
+              shipping_address: ord.shippingAddress,
+              delivery_time_slot: ord.deliverySlot || "evening",
+              delivery_type: "standard",
+              delivery_fee: ord.deliveryFee || 0,
+              subtotal: ord.subtotal,
+              bulk_discount: ord.bulkDiscount || 0,
+              coupon_code: ord.couponCode || null,
+              coupon_discount: ord.couponDiscount || 0,
               total: ord.total,
-              order_status: ord.orderStatus,
+              payment_method: ord.paymentMethod,
               payment_status: ord.paymentStatus,
-              data: sanitizeForDb(ord),
+              order_status: ord.orderStatus,
+              tracking_number: ord.trackingNumber || null,
+              customer_notes: ord.customerNotes || null,
             });
+
+            if (!seedErr && ord.items && ord.items.length > 0) {
+              const itemsToSeed = ord.items.map((it) => ({
+                order_id: ord.id,
+                product_name: it.productName,
+                sku: it.sku,
+                quantity: it.quantity,
+                unit_price: it.unitPrice,
+                total_price: it.totalPrice,
+                selected_color: it.selectedColor || null,
+              }));
+              await supabase.from("order_items").insert(itemsToSeed);
+            }
           } catch (seedErr) {
             console.warn("Supabase order seed notice:", ord.id, seedErr);
           }
         }
       }
 
-      // 2. Realtime subscription for instant orders updates across admin & user tabs
+      // 2. Realtime subscription for instant orders updates across tabs & devices
       supabase
         .channel("public:orders")
         .on(
           "postgres_changes",
           { event: "*", schema: "public", table: "orders" },
-          (payload: any) => {
-            const current = this.getOrders();
-            if (payload.eventType === "INSERT") {
-              const newOrd = (payload.new.data || payload.new) as Order;
-              if (!current.some((o) => o.id === newOrd.id)) {
-                this.saveOrders([newOrd, ...current]);
-              }
-            } else if (payload.eventType === "UPDATE") {
-              const updatedOrd = (payload.new.data || payload.new) as Order;
-              const idx = current.findIndex((o) => o.id === updatedOrd.id);
-              if (idx > -1) {
-                current[idx] = { ...current[idx], ...updatedOrd };
-                this.saveOrders([...current]);
-              }
-            } else if (payload.eventType === "DELETE") {
-              const deletedId = payload.old.id;
-              this.saveOrders(current.filter((o) => o.id !== deletedId));
+          async () => {
+            const { data: refreshed } = await supabase
+              .from("orders")
+              .select("*, order_items(*)")
+              .order("created_at", { ascending: false });
+            if (refreshed && refreshed.length > 0) {
+              this.saveOrders(refreshed.map(mapSupabaseOrder));
             }
           }
         )
@@ -270,7 +323,6 @@ export const orderService = {
     }
   },
 
-  // Backward compatibility alias
   async syncWithFirestore(): Promise<void> {
     return this.syncWithSupabase();
   },
@@ -278,13 +330,16 @@ export const orderService = {
   createOrder(orderData: Omit<Order, "id" | "orderNumber" | "createdAt">): Order {
     const orders = this.getOrders();
     const count = orders.length + 89460;
-    const rawOrder: Order = {
+    const newOrderId = generateOrderId();
+    const newOrderNumber = `IS-2026-${count}`;
+
+    const newOrder: Order = {
       ...orderData,
-      id: `ord-${Date.now()}`,
-      orderNumber: `IS-2026-${count}`,
+      id: newOrderId,
+      orderNumber: newOrderNumber,
       createdAt: new Date().toISOString(),
     };
-    const newOrder = sanitizeForDb(rawOrder);
+
     const updated = [newOrder, ...orders];
     this.saveOrders(updated);
 
@@ -292,18 +347,42 @@ export const orderService = {
     if (typeof window !== "undefined" && supabase) {
       supabase
         .from("orders")
-        .upsert({
+        .insert({
           id: newOrder.id,
           order_number: newOrder.orderNumber,
           customer_name: newOrder.customerName,
           customer_email: newOrder.customerEmail,
+          customer_phone: newOrder.customerPhone,
+          shipping_address: newOrder.shippingAddress,
+          delivery_time_slot: newOrder.deliverySlot || "evening",
+          delivery_type: "standard",
+          delivery_fee: newOrder.deliveryFee || 0,
+          subtotal: newOrder.subtotal,
+          bulk_discount: newOrder.bulkDiscount || 0,
+          coupon_code: newOrder.couponCode || null,
+          coupon_discount: newOrder.couponDiscount || 0,
           total: newOrder.total,
-          order_status: newOrder.orderStatus,
+          payment_method: newOrder.paymentMethod,
           payment_status: newOrder.paymentStatus,
-          data: sanitizeForDb(newOrder),
+          order_status: newOrder.orderStatus,
+          tracking_number: newOrder.trackingNumber || null,
+          customer_notes: newOrder.customerNotes || null,
         })
-        .then(({ error }: { error: any }) => {
-          if (error) console.warn("Supabase order write warning:", error.message);
+        .then(async ({ error }: { error: any }) => {
+          if (error) {
+            console.warn("Supabase order write warning:", error.message);
+          } else if (newOrder.items && newOrder.items.length > 0) {
+            const itemsToInsert = newOrder.items.map((it) => ({
+              order_id: newOrder.id,
+              product_name: it.productName,
+              sku: it.sku,
+              quantity: it.quantity,
+              unit_price: it.unitPrice,
+              total_price: it.totalPrice,
+              selected_color: it.selectedColor || null,
+            }));
+            await supabase.from("order_items").insert(itemsToInsert);
+          }
         });
     }
 
@@ -336,7 +415,8 @@ export const orderService = {
         .from("orders")
         .update({
           order_status: status,
-          data: sanitizeForDb(updatedOrder),
+          ...(trackingNumber !== undefined && { tracking_number: trackingNumber }),
+          updated_at: new Date().toISOString(),
         })
         .eq("id", orderId)
         .then(({ error }: { error: any }) => {
@@ -366,7 +446,7 @@ export const orderService = {
         .from("orders")
         .update({
           payment_status: status,
-          data: sanitizeForDb(updatedOrder),
+          updated_at: new Date().toISOString(),
         })
         .eq("id", orderId)
         .then(({ error }: { error: any }) => {
