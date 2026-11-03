@@ -228,12 +228,40 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       if (isMounted) setIsLoading(false);
     };
 
-    // 1. Initial check
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      syncSession(session?.user ?? null);
-    }).catch(() => {
-      if (isMounted) setIsLoading(false);
-    });
+    // 1. Initial check & PKCE code exchange if redirected with ?code=
+    if (typeof window !== "undefined") {
+      const currentUrl = new URL(window.location.href);
+      const authCode = currentUrl.searchParams.get("code");
+      if (authCode) {
+        supabase.auth.exchangeCodeForSession(authCode).then(({ data, error }) => {
+          if (!error && data?.session) {
+            syncSession(data.session.user);
+            currentUrl.searchParams.delete("code");
+            window.history.replaceState({}, "", currentUrl.pathname + (currentUrl.search || ""));
+          } else {
+            supabase.auth.getSession().then(({ data: { session } }) => {
+              syncSession(session?.user ?? null);
+            });
+          }
+        }).catch(() => {
+          supabase.auth.getSession().then(({ data: { session } }) => {
+            syncSession(session?.user ?? null);
+          });
+        });
+      } else {
+        supabase.auth.getSession().then(({ data: { session } }) => {
+          syncSession(session?.user ?? null);
+        }).catch(() => {
+          if (isMounted) setIsLoading(false);
+        });
+      }
+    } else {
+      supabase.auth.getSession().then(({ data: { session } }) => {
+        syncSession(session?.user ?? null);
+      }).catch(() => {
+        if (isMounted) setIsLoading(false);
+      });
+    }
 
     // 2. Auth listener
     const {
