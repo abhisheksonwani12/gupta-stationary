@@ -12,7 +12,8 @@ import {
   EyeOff,
   ShieldCheck,
 } from "lucide-react";
-import { supabase } from "@/lib/supabase/client";
+import { auth } from "@/lib/firebase/client";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { isAuthorizedAdminEmail } from "@/lib/auth/adminAuth";
 
 export default function AdminLoginPage() {
@@ -29,18 +30,13 @@ export default function AdminLoginPage() {
     setError("");
 
     try {
-      // 1. Authenticate with Supabase Auth
-      const { data, error: signInError } = await supabase.auth.signInWithPassword({
-        email: email.trim(),
-        password,
-      });
-
-      if (signInError) throw signInError;
-      const userEmail = data.user?.email || email.trim();
+      // 1. Authenticate with Firebase Auth
+      const userCredential = await signInWithEmailAndPassword(auth, email.trim(), password);
+      const userEmail = userCredential.user.email || email.trim();
 
       // 2. Strict Admin Role / Whitelist check
       if (!isAuthorizedAdminEmail(userEmail)) {
-        await supabase.auth.signOut();
+        await auth.signOut();
         sessionStorage.removeItem("instant_admin_session");
         sessionStorage.removeItem("gupta_admin_session");
         sessionStorage.removeItem("admin_email");
@@ -57,9 +53,17 @@ export default function AdminLoginPage() {
       router.push("/admin/dashboard");
     } catch (err: any) {
       console.error("Admin Auth Error:", err);
-      let msg = err.message || "Invalid admin credentials. Please check your email and password.";
-      if (msg.includes("Invalid login credentials")) {
+      let msg = "Invalid admin credentials. Please check your email and password.";
+      if (err.code === "auth/invalid-credential" || err.code === "auth/wrong-password") {
         msg = "Incorrect password or email address.";
+      } else if (err.code === "auth/user-not-found") {
+        msg = "No user found with this email. Please create the admin user in the Firebase Console.";
+      } else if (err.code === "auth/invalid-email") {
+        msg = "Please enter a valid email address.";
+      } else if (err.code === "auth/too-many-requests") {
+        msg = "Too many failed attempts. Please try again later or reset your password.";
+      } else if (err.message) {
+        msg = err.message;
       }
       setError(msg);
       setIsLoading(false);
