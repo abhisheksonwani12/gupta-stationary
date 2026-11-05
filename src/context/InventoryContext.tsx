@@ -13,6 +13,10 @@ interface InventoryContextType {
   quotes: BulkQuoteLead[];
   coupons: Coupon[];
   isLoading: boolean;
+  isDbConnected: boolean;
+  isSyncing: boolean;
+  lastSyncedAt: Date | null;
+  syncWithDatabase: () => Promise<void>;
   // Product & Inventory actions
   updateStock: (productId: string, newStock: number) => void;
   adjustStock: (productId: string, delta: number) => void;
@@ -48,6 +52,9 @@ export function InventoryProvider({ children }: { children: React.ReactNode }) {
   const [quotes, setQuotes] = useState<BulkQuoteLead[]>([]);
   const [coupons, setCoupons] = useState<Coupon[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [isDbConnected, setIsDbConnected] = useState(true);
+  const [isSyncing, setIsSyncing] = useState(false);
+  const [lastSyncedAt, setLastSyncedAt] = useState<Date | null>(null);
 
   const refreshAll = useCallback(() => {
     setProducts(productService.getProducts());
@@ -57,14 +64,47 @@ export function InventoryProvider({ children }: { children: React.ReactNode }) {
     setIsLoading(false);
   }, []);
 
+  const syncWithDatabase = useCallback(async () => {
+    if (typeof window === "undefined") return;
+    setIsSyncing(true);
+    try {
+      const res = await fetch("/api/admin/sync");
+      if (res.ok) {
+        const json = await res.json();
+        if (json.success && json.data) {
+          const { products: dbProds, orders: dbOrds, quotes: dbQuotes, coupons: dbCoupons } = json.data;
+
+          if (Array.isArray(dbProds) && dbProds.length > 0) {
+            productService.saveProducts(dbProds);
+            setProducts(dbProds);
+          }
+          if (Array.isArray(dbOrds) && dbOrds.length > 0) {
+            orderService.saveOrders(dbOrds);
+            setOrders(dbOrds);
+          }
+          if (Array.isArray(dbQuotes) && dbQuotes.length > 0) {
+            quoteService.saveQuotes(dbQuotes);
+            setQuotes(dbQuotes);
+          }
+          if (Array.isArray(dbCoupons) && dbCoupons.length > 0) {
+            couponService.saveCoupons(dbCoupons);
+            setCoupons(dbCoupons);
+          }
+
+          setIsDbConnected(true);
+          setLastSyncedAt(new Date());
+        }
+      }
+    } catch (e) {
+      console.warn("Database sync background fetch notice:", e);
+    } finally {
+      setIsSyncing(false);
+    }
+  }, []);
+
   useEffect(() => {
     refreshAll();
-
-    // Trigger Supabase background real-time synchronization
-    productService.syncWithSupabase();
-    orderService.syncWithSupabase();
-    quoteService.syncWithSupabase();
-    couponService.syncWithSupabase();
+    syncWithDatabase();
 
     const handleInventoryChange = () => setProducts(productService.getProducts());
     const handleOrdersChange = () => setOrders(orderService.getOrders());
@@ -92,17 +132,33 @@ export function InventoryProvider({ children }: { children: React.ReactNode }) {
       window.removeEventListener("gupta_coupons_updated", handleCouponsChange);
       window.removeEventListener("storage", refreshAll);
     };
-  }, [refreshAll]);
+  }, [refreshAll, syncWithDatabase]);
 
   // Product & Inventory Methods
   const updateStock = (productId: string, newStock: number) => {
     productService.updateStock(productId, newStock);
     setProducts(productService.getProducts());
+
+    // Push to database asynchronously
+    fetch("/api/admin/sync", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ action: "update_stock", productId, stock: newStock }),
+    }).catch(() => {});
   };
 
   const adjustStock = (productId: string, delta: number) => {
     productService.adjustStock(productId, delta);
-    setProducts(productService.getProducts());
+    const updated = productService.getProducts();
+    setProducts(updated);
+    const prod = updated.find((p) => p.id === productId);
+    if (prod) {
+      fetch("/api/admin/sync", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ action: "update_stock", productId, stock: prod.stock }),
+      }).catch(() => {});
+    }
   };
 
   const addProduct = (productData: Omit<Product, "id">) => {
@@ -140,14 +196,20 @@ export function InventoryProvider({ children }: { children: React.ReactNode }) {
 
   // Order Methods
   const createOrder = (orderData: Omit<Order, "id" | "orderNumber" | "createdAt">) => {
-    // 1. Create order
     const created = orderService.createOrder(orderData);
-    // 2. Decrement live stock
     productService.decrementStockForOrder(
       orderData.items.map((it) => ({ productId: it.productId, quantity: it.quantity }))
     );
     setOrders(orderService.getOrders());
     setProducts(productService.getProducts());
+
+    // Push to database asynchronously
+    fetch("/api/admin/sync", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ action: "create_order", order: created }),
+    }).catch(() => {});
+
     return created;
   };
 
@@ -159,6 +221,19 @@ export function InventoryProvider({ children }: { children: React.ReactNode }) {
   ) => {
     orderService.updateOrderStatus(orderId, status, trackingNumber, courierPartner);
     setOrders(orderService.getOrders());
+
+    // Push to database asynchronously
+    fetch("/api/admin/sync", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        action: "update_order_status",
+        orderId,
+        status,
+        trackingNumber,
+        courierPartner,
+      }),
+    }).catch(() => {});
   };
 
   // Quote Methods
@@ -176,6 +251,19 @@ export function InventoryProvider({ children }: { children: React.ReactNode }) {
   ) => {
     quoteService.updateQuoteStatus(id, status, estimatedValue, internalNotes);
     setQuotes(quoteService.getQuotes());
+
+    // Push to database asynchronously
+    fetch("/api/admin/sync", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        action: "update_quote_status",
+        quoteId: id,
+        status,
+        estimatedValue,
+        internalNotes,
+      }),
+    }).catch(() => {});
   };
 
   // Coupon Methods
@@ -212,6 +300,10 @@ export function InventoryProvider({ children }: { children: React.ReactNode }) {
         quotes,
         coupons,
         isLoading,
+        isDbConnected,
+        isSyncing,
+        lastSyncedAt,
+        syncWithDatabase,
         updateStock,
         adjustStock,
         addProduct,

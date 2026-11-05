@@ -12,6 +12,7 @@ import {
   TrendingUp,
   Store,
   ExternalLink,
+  RefreshCw,
 } from "lucide-react";
 import { useInventory } from "@/context/InventoryContext";
 
@@ -28,8 +29,7 @@ export default function AdminHeader({
   onToggleSidebar,
   actions,
 }: AdminHeaderProps) {
-  const { lowStockCount, outOfStockCount, pendingOrdersCount } = useInventory();
-  const [showNotifications, setShowNotifications] = useState(false);
+  const { lowStockCount, outOfStockCount, pendingOrdersCount, syncWithDatabase, isSyncing } = useInventory();
 
   return (
     <header className="sticky top-0 z-30 bg-white border-b border-[#E8E3DA] px-4 sm:px-8 py-4">
@@ -78,6 +78,16 @@ export default function AdminHeader({
               <Package className="w-3.5 h-3.5 text-[#B38E5D]" />
               <span>{pendingOrdersCount} Pending Orders</span>
             </Link>
+
+            <button
+              onClick={() => syncWithDatabase()}
+              disabled={isSyncing}
+              title="Sync with Supabase Cloud DB"
+              className="px-2.5 py-1.5 bg-[#FAF8F5] border border-[#E8E3DA] hover:bg-[#1C1C1C] hover:text-white text-gray-700 rounded text-xs font-semibold flex items-center gap-1.5 transition-colors disabled:opacity-50"
+            >
+              <RefreshCw className={`w-3.5 h-3.5 ${isSyncing ? "animate-spin text-[#B38E5D]" : ""}`} />
+              <span className="hidden lg:inline">{isSyncing ? "Syncing..." : "Sync DB"}</span>
+            </button>
           </div>
 
           {/* Action slots */}

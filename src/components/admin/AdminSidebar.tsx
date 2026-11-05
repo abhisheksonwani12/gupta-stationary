@@ -10,12 +10,15 @@ import {
   PackageCheck,
   Building2,
   TicketPercent,
+  Users,
+  BarChart3,
   Settings,
   ExternalLink,
-  ShieldCheck,
   LogOut,
   ChevronRight,
   AlertTriangle,
+  RefreshCw,
+  Database,
 } from "lucide-react";
 import { useInventory } from "@/context/InventoryContext";
 
@@ -26,10 +29,23 @@ interface AdminSidebarProps {
 
 export default function AdminSidebar({ isMobileOpen, onCloseMobile }: AdminSidebarProps) {
   const pathname = usePathname();
-  const { lowStockCount, outOfStockCount, pendingOrdersCount, quotes } = useInventory();
+  const {
+    lowStockCount,
+    outOfStockCount,
+    pendingOrdersCount,
+    quotes,
+    orders,
+    syncWithDatabase,
+    isSyncing,
+    lastSyncedAt,
+    isDbConnected,
+  } = useInventory();
 
   const newQuotesCount = quotes.filter((q) => q.status === "received").length;
   const criticalStockAlerts = lowStockCount + outOfStockCount;
+
+  // Derive unique customer count
+  const customerCount = new Set(orders.map((o) => o.customerEmail || o.customerPhone).filter(Boolean)).size;
 
   const NAV_ITEMS = [
     {
@@ -64,9 +80,26 @@ export default function AdminSidebar({ isMobileOpen, onCloseMobile }: AdminSideb
       badgeColor: "bg-blue-600 text-white",
     },
     {
+      label: "Customers & CRM",
+      href: "/admin/customers",
+      icon: Users,
+      badge: customerCount > 0 ? `${customerCount}` : undefined,
+      badgeColor: "bg-emerald-700 text-white",
+    },
+    {
+      label: "Sales & Analytics",
+      href: "/admin/analytics",
+      icon: BarChart3,
+    },
+    {
       label: "Coupons & Discounts",
       href: "/admin/coupons",
       icon: TicketPercent,
+    },
+    {
+      label: "Store Settings",
+      href: "/admin/settings",
+      icon: Settings,
     },
   ];
 
@@ -76,7 +109,7 @@ export default function AdminSidebar({ isMobileOpen, onCloseMobile }: AdminSideb
         isMobileOpen ? "translate-x-0 shadow-2xl" : "-translate-x-full"
       }`}
     >
-      <div>
+      <div className="overflow-y-auto">
         {/* Brand Header */}
         <div className="p-5 border-b border-[#262626]">
           <div className="flex items-center justify-between">
@@ -96,8 +129,34 @@ export default function AdminSidebar({ isMobileOpen, onCloseMobile }: AdminSideb
           </div>
         </div>
 
+        {/* Database Live Sync Banner */}
+        <div className="px-4 pt-3 pb-1">
+          <div className="p-2.5 bg-[#1C1C1C] border border-[#2D2D2D] rounded flex items-center justify-between gap-2 text-xs">
+            <div className="flex items-center gap-2 min-w-0">
+              <span className="relative flex h-2 w-2 shrink-0">
+                <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${isDbConnected ? "bg-emerald-400" : "bg-amber-400"}`} />
+                <span className={`relative inline-flex rounded-full h-2 w-2 ${isDbConnected ? "bg-emerald-500" : "bg-amber-500"}`} />
+              </span>
+              <div className="truncate">
+                <span className="text-[11px] font-bold text-white block">Supabase Synced</span>
+                <span className="text-[9px] text-gray-400 block font-mono">
+                  {lastSyncedAt ? `${lastSyncedAt.toLocaleTimeString("en-IN", { hour: "2-digit", minute: "2-digit" })}` : "Live Cloud"}
+                </span>
+              </div>
+            </div>
+            <button
+              onClick={() => syncWithDatabase()}
+              disabled={isSyncing}
+              title="Force Sync with Cloud Database"
+              className="p-1.5 hover:bg-[#2A2A2A] text-gray-300 hover:text-white rounded border border-[#3A3A3A] transition-colors disabled:opacity-50"
+            >
+              <RefreshCw className={`w-3.5 h-3.5 ${isSyncing ? "animate-spin text-[#B38E5D]" : ""}`} />
+            </button>
+          </div>
+        </div>
+
         {/* Storefront Quick Access */}
-        <div className="px-4 pt-4 pb-2">
+        <div className="px-4 pt-2 pb-2">
           <Link
             href="/"
             target="_blank"
