@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Mail, Lock, Eye, EyeOff, ArrowRight, AlertCircle } from "lucide-react";
 import { useAuth } from "@/context/AuthContext";
+import { executeRecaptcha, verifyRecaptchaToken } from "@/lib/recaptcha";
 
 interface EmailLoginFormProps {
   redirectTo?: string;
@@ -32,6 +33,10 @@ export default function EmailLoginForm({ redirectTo, onSuccess }: EmailLoginForm
     }
 
     setLoading(true);
+    const token = await executeRecaptcha("LOGIN");
+    if (token) {
+      verifyRecaptchaToken(token, "LOGIN").catch(() => {});
+    }
     const res = await loginWithEmail(email, password);
     setLoading(false);
 

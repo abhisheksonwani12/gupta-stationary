@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { Phone, ArrowRight, AlertCircle, Edit2, Clock } from "lucide-react";
 import { useAuth } from "@/context/AuthContext";
+import { executeRecaptcha, verifyRecaptchaToken } from "@/lib/recaptcha";
 
 interface PhoneLoginFormProps {
   redirectTo?: string;
@@ -67,6 +68,12 @@ export default function PhoneLoginForm({
     }
 
     setLoading(true);
+    // Execute Google reCAPTCHA Enterprise risk assessment token
+    const token = await executeRecaptcha("LOGIN");
+    if (token) {
+      verifyRecaptchaToken(token, "LOGIN").catch(() => {});
+    }
+
     const res = await sendPhoneOtp(clean, "recaptcha-container");
     setLoading(false);
 

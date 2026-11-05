@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import "./globals.css";
@@ -38,6 +39,10 @@ export default function RootLayout({
         <link
           href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Cormorant+Garamond:wght@500;600;700&family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500;600&display=swap"
           rel="stylesheet"
+        />
+        <Script
+          src="https://www.google.com/recaptcha/enterprise.js?render=6Lct3RAuAAAAAGnOLFw_1sAuC36F0bQugphvOWzm"
+          strategy="afterInteractive"
         />
       </head>
       <body className="min-h-screen flex flex-col font-sans bg-white text-[#1C1C1C] antialiased selection:bg-[#B38E5D] selection:text-white">
