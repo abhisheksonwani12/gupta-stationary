@@ -114,7 +114,7 @@ export default function InvoicePrintModal({
               </p>
               {order.trackingNumber && (
                 <p className="font-mono text-gray-800 mt-1">
-                  Courier: {order.courierPartner || "Delhivery"} (AWB: {order.trackingNumber})
+                  Courier: {order.courierPartner || "Delhivery"} (Tracking: {order.trackingNumber})
                 </p>
               )}
             </div>

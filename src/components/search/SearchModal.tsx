@@ -61,7 +61,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
               type="text"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search by product name, category, SKU (e.g. ball pen, notebook, copy paper)..."
+              placeholder="Search stationery by name, category, or code (e.g. ball pen, notebook, copy paper)..."
               className="w-full text-base sm:text-lg focus:outline-none placeholder:text-[#A09D96] font-medium"
             />
           </div>

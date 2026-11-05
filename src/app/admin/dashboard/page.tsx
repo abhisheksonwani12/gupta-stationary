@@ -84,7 +84,7 @@ export default function AdminDashboardPage() {
             </div>
             <div className="flex items-center gap-1 text-[11px] text-emerald-700 font-semibold">
               <span>{orders.filter((o) => o.paymentStatus === "paid").length} settled orders</span>
-              <span className="text-gray-400 font-normal">• Live Supabase</span>
+              <span className="text-gray-400 font-normal">• Live Updates</span>
             </div>
           </div>
 

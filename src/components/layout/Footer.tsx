@@ -211,6 +211,11 @@ export default function Footer() {
                   User Account & Orders
                 </Link>
               </li>
+              <li>
+                <Link href="/track-order" className="hover:text-white transition-colors text-[#E5C388] font-medium">
+                  Track Your Order 🚚
+                </Link>
+              </li>
             </ul>
           </div>
 

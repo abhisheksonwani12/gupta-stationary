@@ -245,7 +245,7 @@ export default function AdminOrderDetailPage({ params }: OrderDetailPageProps) {
               </div>
 
               <div>
-                <label className="block font-bold text-gray-700 mb-1">Tracking Number / AWB</label>
+                <label className="block font-bold text-gray-700 mb-1">Tracking Number</label>
                 <input
                   type="text"
                   value={trackingNumber}

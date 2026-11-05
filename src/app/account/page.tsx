@@ -27,6 +27,7 @@ import {
   Mail,
   X,
   Printer,
+  Truck,
 } from "lucide-react";
 import { useAuth } from "@/context/AuthContext";
 import { useWishlist } from "@/context/WishlistContext";
@@ -120,8 +121,8 @@ function AccountDashboardContent() {
                 <span className="text-[10px] uppercase font-bold text-[#B38E5D] tracking-widest">
                   {user.role === "wholesale_partner" ? "Wholesale Partner" : "Verified Customer"}
                 </span>
-                <span className="text-[9px] bg-gray-100 text-gray-600 px-1.5 py-0.2 rounded font-mono capitalize">
-                  via {user.provider}
+                <span className="text-[9px] bg-gray-100 text-gray-600 px-1.5 py-0.5 rounded capitalize">
+                  {user.provider === "google" ? "Google Account" : user.provider === "phone" ? "Mobile Verified" : "Email Verified"}
                 </span>
               </div>
               <h1 className="font-serif text-2xl sm:text-3xl font-bold uppercase text-gray-900 mt-0.5">
@@ -267,6 +268,13 @@ function AccountDashboardContent() {
                           </div>
 
                           <div className="flex gap-2">
+                            <Link
+                              href={`/track-order?id=${o.id}`}
+                              className="px-3 py-1.5 border border-[#1C1C1C] text-[#1C1C1C] hover:bg-[#1C1C1C] hover:text-white text-[11px] font-bold uppercase tracking-wider transition-colors flex items-center gap-1.5"
+                            >
+                              <Truck className="w-3.5 h-3.5" />
+                              <span>Track</span>
+                            </Link>
                             <button
                               onClick={() => setSelectedOrderForInvoice(o)}
                               className="px-3 py-1.5 bg-[#1C1C1C] text-white text-[11px] font-bold uppercase tracking-wider hover:bg-[#B38E5D] transition-colors flex items-center gap-1.5"

@@ -88,11 +88,11 @@ export default function AdminHeader({
             <button
               onClick={() => syncWithDatabase()}
               disabled={isSyncing}
-              title="Sync with Supabase Cloud DB"
+              title="Sync Store Data"
               className="px-2.5 py-1.5 bg-[#FAF8F5] border border-[#E8E3DA] hover:bg-[#1C1C1C] hover:text-white text-gray-700 rounded text-xs font-semibold flex items-center gap-1.5 transition-colors disabled:opacity-50"
             >
               <RefreshCw className={`w-3.5 h-3.5 ${isSyncing ? "animate-spin text-[#B38E5D]" : ""}`} />
-              <span className="hidden lg:inline">{isSyncing ? "Syncing..." : "Sync DB"}</span>
+              <span className="hidden lg:inline">{isSyncing ? "Syncing..." : "Sync Data"}</span>
             </button>
           </div>
 

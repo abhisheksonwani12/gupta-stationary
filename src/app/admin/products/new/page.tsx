@@ -116,7 +116,7 @@ export default function AdminNewProductPage() {
     e.preventDefault();
 
     if (!name || !sku || !slug) {
-      alert("Please fill in the Product Name, Slug, and SKU.");
+      alert("Please fill in the Product Name, Web Address, and Item Code (SKU).");
       return;
     }
 
@@ -188,7 +188,7 @@ export default function AdminNewProductPage() {
             </div>
 
             <div>
-              <label className="block font-bold text-gray-700 mb-1">URL Slug (URL Address) *</label>
+              <label className="block font-bold text-gray-700 mb-1">Web Address (URL) *</label>
               <input
                 type="text"
                 required

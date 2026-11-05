@@ -57,7 +57,7 @@ export default function AdminLoginPage() {
       if (err.code === "auth/invalid-credential" || err.code === "auth/wrong-password") {
         msg = "Incorrect password or email address.";
       } else if (err.code === "auth/user-not-found") {
-        msg = "No user found with this email. Please create the admin user in the Firebase Console.";
+        msg = "No administrator account found with this email address.";
       } else if (err.code === "auth/invalid-email") {
         msg = "Please enter a valid email address.";
       } else if (err.code === "auth/too-many-requests") {
@@ -88,7 +88,7 @@ export default function AdminLoginPage() {
             Merchant Admin Access
           </h1>
           <p className="text-xs text-gray-400">
-            Sign in with authorized Firebase credentials created in your console
+            Sign in with authorized administrator credentials
           </p>
         </div>
 
@@ -129,7 +129,7 @@ export default function AdminLoginPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className="w-full bg-[#121212] border border-[#333333] text-white p-3 pr-10 focus:outline-none focus:border-[#B38E5D] transition-colors tracking-wide"
-                placeholder="Enter Firebase password"
+                placeholder="Enter admin password"
               />
               <button
                 type="button"
@@ -147,7 +147,7 @@ export default function AdminLoginPage() {
             disabled={isLoading}
             className="w-full py-3.5 bg-[#B38E5D] hover:bg-[#9E7A4A] text-white text-xs font-bold uppercase tracking-widest transition-all flex items-center justify-center gap-2 mt-2 shadow-lg disabled:opacity-50 active:scale-[0.99]"
           >
-            <span>{isLoading ? "Authenticating with Firebase..." : "Sign In to Admin Portal"}</span>
+            <span>{isLoading ? "Signing in..." : "Sign In to Admin Portal"}</span>
             <ArrowRight className="w-4 h-4" />
           </button>
         </form>
@@ -156,7 +156,7 @@ export default function AdminLoginPage() {
         <div className="p-3 bg-[#161616] border border-[#2A2A2A] rounded text-[11px] text-gray-400 flex items-start gap-2">
           <ShieldCheck className="w-4 h-4 text-[#B38E5D] shrink-0 mt-0.5" />
           <span>
-            Admin accounts must be created and provisioned directly in the <strong>Firebase Console</strong> (Authentication &gt; Users).
+            Access is strictly restricted to verified store administrators.
           </span>
         </div>
 
@@ -169,7 +169,7 @@ export default function AdminLoginPage() {
             <Store className="w-3.5 h-3.5 text-[#B38E5D]" />
             <span>Return to Store</span>
           </Link>
-          <span className="text-[11px] text-gray-500 font-mono">Firebase Protected</span>
+          <span className="text-[11px] text-gray-500 font-mono">Secure Access</span>
         </div>
       </div>
     </div>

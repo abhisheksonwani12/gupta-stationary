@@ -148,7 +148,7 @@ export default function AdminEditProductPage({ params }: EditProductPageProps) {
     <div className="pb-16">
       <AdminHeader
         title={`Edit: ${product.name}`}
-        subtitle={`SKU: ${product.sku} • Real-time catalog update`}
+        subtitle={`Item Code: ${product.sku} • Real-time catalog update`}
         actions={
           <Link
             href="/admin/products"
@@ -180,7 +180,7 @@ export default function AdminEditProductPage({ params }: EditProductPageProps) {
             </div>
 
             <div>
-              <label className="block font-bold text-gray-700 mb-1">URL Slug</label>
+              <label className="block font-bold text-gray-700 mb-1">Web Address (URL)</label>
               <input
                 type="text"
                 required
@@ -191,7 +191,7 @@ export default function AdminEditProductPage({ params }: EditProductPageProps) {
             </div>
 
             <div>
-              <label className="block font-bold text-gray-700 mb-1">SKU Barcode</label>
+              <label className="block font-bold text-gray-700 mb-1">Item Code (SKU)</label>
               <input
                 type="text"
                 required

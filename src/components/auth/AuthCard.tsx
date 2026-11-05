@@ -60,32 +60,32 @@ export default function AuthCard({
         </span>
       </div>
 
-      {/* Option 2 & 3: Method Selector (Phone OTP vs Email) */}
-      <div className="grid grid-cols-2 p-1 bg-[#FAF8F5] border border-[#E8E3DA] rounded text-xs">
+      {/* Option 2 & 3: Method Selector (Mobile Number vs Email) */}
+      <div className="grid grid-cols-2 p-1 bg-[#FAF8F5] border border-[#E8E3DA] rounded-md text-xs">
         <button
           type="button"
           onClick={() => setMethod("phone")}
-          className={`py-2 px-3 font-bold uppercase tracking-wider text-[11px] flex items-center justify-center gap-1.5 transition-all rounded ${
+          className={`py-2 px-3 font-medium text-xs flex items-center justify-center gap-1.5 transition-all rounded ${
             method === "phone"
-              ? "bg-[#1C1C1C] text-white shadow-xs"
+              ? "bg-[#1C1C1C] text-white shadow-xs font-semibold"
               : "text-gray-600 hover:text-black"
           }`}
         >
           <Phone className="w-3.5 h-3.5" />
-          <span>Phone OTP</span>
+          <span>Mobile Number</span>
         </button>
 
         <button
           type="button"
           onClick={() => setMethod("email")}
-          className={`py-2 px-3 font-bold uppercase tracking-wider text-[11px] flex items-center justify-center gap-1.5 transition-all rounded ${
+          className={`py-2 px-3 font-medium text-xs flex items-center justify-center gap-1.5 transition-all rounded ${
             method === "email"
-              ? "bg-[#1C1C1C] text-white shadow-xs"
+              ? "bg-[#1C1C1C] text-white shadow-xs font-semibold"
               : "text-gray-600 hover:text-black"
           }`}
         >
           <Mail className="w-3.5 h-3.5" />
-          <span>Email & Pass</span>
+          <span>Email</span>
         </button>
       </div>
 

@@ -40,7 +40,10 @@ export async function GET(request: Request) {
       queryBuilder = queryBuilder.or(orConditions.join(","));
     }
 
-    const { data, error } = await queryBuilder.limit(1).maybeSingle();
+    const { data, error } = await queryBuilder
+      .order("created_at", { ascending: false })
+      .limit(1)
+      .maybeSingle();
 
     if (error) {
       return NextResponse.json(

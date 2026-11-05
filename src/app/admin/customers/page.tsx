@@ -94,7 +94,7 @@ export default function AdminCustomersPage() {
   return (
     <div className="p-4 sm:p-8 space-y-6">
       <AdminHeader
-        title="Customer Directory & CRM"
+        title="Customer Directory & Accounts"
         subtitle="Manage shopper accounts, B2B wholesale partners, and lifetime loyalty profiles."
       />
 

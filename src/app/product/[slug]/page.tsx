@@ -199,7 +199,7 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
           <div className="lg:col-span-5 space-y-6">
             <div>
               <div className="flex items-center justify-between text-xs text-gray-500 uppercase tracking-wider mb-2">
-                <span>SKU: {product.sku}</span>
+                <span>Item Code: {product.sku}</span>
                 {isOutOfStock ? (
                   <span className="text-red-700 font-bold flex items-center gap-1">
                     <XCircle className="w-3.5 h-3.5" />

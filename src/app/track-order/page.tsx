@@ -6,6 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import {
   PackageCheck,
+  Package,
   Truck,
   MapPin,
   Clock,
@@ -19,12 +20,18 @@ import {
   ExternalLink,
 } from "lucide-react";
 import { useInventory } from "@/context/InventoryContext";
+import { useAuth } from "@/context/AuthContext";
 import { formatPrice } from "@/lib/utils";
 
 function TrackOrderContent() {
   const searchParams = useSearchParams();
-  const initialOrderId = searchParams.get("id") || "";
+  const initialOrderId =
+    searchParams.get("id") ||
+    searchParams.get("orderId") ||
+    searchParams.get("q") ||
+    "";
   const { orders } = useInventory();
+  const { user } = useAuth();
 
   const [query, setQuery] = useState(initialOrderId);
   const [activeOrder, setActiveOrder] = useState<any>(null);
@@ -75,12 +82,26 @@ function TrackOrderContent() {
 
   useEffect(() => {
     if (initialOrderId) {
+      setQuery(initialOrderId);
       resolveOrder(initialOrderId);
-    } else if (orders.length > 0 && !searched) {
-      // Default to latest demo order if available
-      setActiveOrder(orders[0]);
+    } else if (user) {
+      // If user is authenticated, resolve their most recent order
+      const cleanEmail = user.email?.toLowerCase().trim();
+      const cleanPhone = user.phone?.replace(/[^0-9]/g, "").slice(-10);
+      const userLatestOrder = orders.find((o) => {
+        const matchEmail = Boolean(cleanEmail && o.customerEmail?.toLowerCase().trim() === cleanEmail);
+        const matchPhone = Boolean(
+          cleanPhone && cleanPhone.length >= 8 && o.customerPhone?.replace(/[^0-9]/g, "").includes(cleanPhone)
+        );
+        return matchEmail || matchPhone;
+      });
+      if (userLatestOrder) {
+        setQuery(userLatestOrder.orderNumber || userLatestOrder.id);
+        setActiveOrder(userLatestOrder);
+        setSearched(true);
+      }
     }
-  }, [initialOrderId, orders.length]);
+  }, [initialOrderId, orders, user]);
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -111,7 +132,7 @@ function TrackOrderContent() {
 
   const steps = [
     { title: "Order Placed", desc: "Received & Authorized" },
-    { title: "Packed & QA", desc: "Inspected at Raipur Hub" },
+    { title: "Packed & Verified", desc: "Inspected at Raipur Hub" },
     { title: "Dispatched", desc: "Assigned to Logistics" },
     { title: "Out for Delivery", desc: "Rider in Transit" },
     { title: "Delivered", desc: "Received by Customer" },
@@ -349,10 +370,24 @@ function TrackOrderContent() {
               No Order Found for &ldquo;{query}&rdquo;
             </h3>
             <p className="text-xs text-gray-500 max-w-sm mx-auto">
-              Please double check the order reference number or contact our customer support for assistance.
+              Please double check the order number or mobile number, or contact our Raipur dispatch helpline at +91 8839715995 for assistance.
             </p>
           </div>
-        ) : null}
+        ) : (
+          <div className="bg-white p-8 sm:p-12 text-center border border-[#E8E3DA] space-y-4">
+            <div className="w-12 h-12 rounded-full bg-[#FAF8F5] border border-[#E8E3DA] flex items-center justify-center mx-auto text-[#B38E5D]">
+              <Package className="w-6 h-6" />
+            </div>
+            <div>
+              <h3 className="font-serif text-lg font-bold text-gray-900">
+                Track Any Shipment in Real-Time
+              </h3>
+              <p className="text-xs text-gray-500 max-w-md mx-auto mt-1 leading-relaxed">
+                Enter your Order Number (e.g. <code>IS-2026-89456</code>), courier tracking number, or your registered 10-digit mobile number above to see live dispatch and rider transit updates.
+              </p>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

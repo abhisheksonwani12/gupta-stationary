@@ -149,6 +149,15 @@ export default function Navbar() {
               </Link>
 
               <Link
+                href="/track-order"
+                className={`hover:text-[#967448] transition-colors py-1 ${
+                  pathname === "/track-order" ? "text-[#967448] font-semibold" : ""
+                }`}
+              >
+                Track Order
+              </Link>
+
+              <Link
                 href="/about"
                 className={`hover:text-[#967448] transition-colors py-1 ${
                   pathname === "/about" ? "text-[#967448] font-semibold" : ""
@@ -230,6 +239,13 @@ export default function Navbar() {
                       My Orders & Shipments
                     </Link>
                     <Link
+                      href="/track-order"
+                      onClick={() => setIsUserMenuOpen(false)}
+                      className="block p-2 text-gray-700 hover:bg-[#FAF8F5] hover:text-black rounded"
+                    >
+                      Track Shipment
+                    </Link>
+                    <Link
                       href="/account?tab=addresses"
                       onClick={() => setIsUserMenuOpen(false)}
                       className="block p-2 text-gray-700 hover:bg-[#FAF8F5] hover:text-black rounded"
@@ -309,6 +325,12 @@ export default function Navbar() {
                   className="block py-2 text-[#18181B] border-b border-[#F0ECE4]"
                 >
                   Wholesale & Bulk Orders
+                </Link>
+                <Link
+                  href="/track-order"
+                  className="block py-2 text-[#18181B] border-b border-[#F0ECE4]"
+                >
+                  Track Order
                 </Link>
                 <Link href="/about" className="block py-2 text-[#18181B] border-b border-[#F0ECE4]">
                   About Us

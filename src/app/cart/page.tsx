@@ -142,7 +142,7 @@ export default function CartPage() {
                         {item.product.name}
                       </Link>
                       <div className="text-xs text-gray-500 mt-0.5">
-                        <span>SKU: {item.product.sku}</span>
+                        <span>Item Code: {item.product.sku}</span>
                         {item.selectedColor && <span> • Color: {item.selectedColor}</span>}
                       </div>
                       {item.discountPercentage > 0 && (

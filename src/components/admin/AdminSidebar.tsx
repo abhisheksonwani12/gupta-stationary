@@ -166,7 +166,7 @@ export default function AdminSidebar({ isMobileOpen, onCloseMobile }: AdminSideb
                 />
               </span>
               <div className="truncate">
-                <span className="text-[11px] font-bold text-white block">Supabase Synced</span>
+                <span className="text-[11px] font-bold text-white block">Cloud Synced</span>
                 <span className="text-[9px] text-gray-400 block font-mono">
                   {lastSyncedAt
                     ? `${lastSyncedAt.toLocaleTimeString("en-IN", {
@@ -180,7 +180,7 @@ export default function AdminSidebar({ isMobileOpen, onCloseMobile }: AdminSideb
             <button
               onClick={() => syncWithDatabase()}
               disabled={isSyncing}
-              title="Force Sync with Cloud Database"
+              title="Sync Store Data"
               className="p-1.5 hover:bg-[#2A2A2A] text-gray-300 hover:text-white rounded border border-[#3A3A3A] transition-colors disabled:opacity-50"
             >
               <RefreshCw

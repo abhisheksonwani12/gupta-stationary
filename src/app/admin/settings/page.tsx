@@ -40,8 +40,8 @@ export default function AdminSettingsPage() {
   return (
     <div className="p-4 sm:p-8 space-y-6">
       <AdminHeader
-        title="Store & Database Settings"
-        subtitle="Configure business details, delivery rules, and cloud database connectivity."
+        title="Store Settings"
+        subtitle="Configure business details, delivery rules, and cloud data sync."
       />
 
       {savedSuccess && (
@@ -52,13 +52,13 @@ export default function AdminSettingsPage() {
       )}
 
       <form onSubmit={handleSave} className="space-y-6">
-        {/* 1. Cloud Database Status */}
+        {/* 1. Cloud Sync Status */}
         <div className="bg-white border border-[#E8E3DA] p-6 shadow-soft space-y-4">
           <div className="flex items-center justify-between border-b border-[#E8E3DA] pb-3">
             <div className="flex items-center gap-2.5">
               <Database className="w-5 h-5 text-[#B38E5D]" />
               <h2 className="font-serif text-base font-bold text-gray-900 uppercase">
-                Cloud Database Integration (Supabase)
+                Cloud Data Sync
               </h2>
             </div>
             <button
@@ -68,7 +68,7 @@ export default function AdminSettingsPage() {
               className="flex items-center gap-1.5 px-3 py-1.5 bg-[#FAF8F5] border border-[#E8E3DA] text-xs font-bold text-gray-800 hover:bg-[#1C1C1C] hover:text-white transition-colors disabled:opacity-50"
             >
               <RefreshCw className={`w-3.5 h-3.5 ${isSyncing ? "animate-spin" : ""}`} />
-              <span>{isSyncing ? "Syncing..." : "Sync Database Now"}</span>
+              <span>{isSyncing ? "Syncing..." : "Sync Data Now"}</span>
             </button>
           </div>
 
@@ -77,19 +77,19 @@ export default function AdminSettingsPage() {
               <span className="text-gray-500 uppercase font-mono text-[10px] block">Connection Status</span>
               <span className="font-bold text-emerald-700 flex items-center gap-1.5 mt-1">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                Connected (PostgreSQL / Supabase)
+                Connected & Synced
               </span>
             </div>
 
             <div className="p-3 bg-[#FAF8F5] border border-[#E8E3DA]">
-              <span className="text-gray-500 uppercase font-mono text-[10px] block">Project Host</span>
+              <span className="text-gray-500 uppercase font-mono text-[10px] block">Cloud Server</span>
               <span className="font-mono font-bold text-gray-900 block mt-1 truncate">
-                ggumahzbwhgvgortfnvz.supabase.co
+                Active Cloud Server
               </span>
             </div>
 
             <div className="p-3 bg-[#FAF8F5] border border-[#E8E3DA]">
-              <span className="text-gray-500 uppercase font-mono text-[10px] block">Last Real-time Sync</span>
+              <span className="text-gray-500 uppercase font-mono text-[10px] block">Last Synchronized</span>
               <span className="font-bold text-gray-900 block mt-1">
                 {lastSyncedAt ? lastSyncedAt.toLocaleTimeString("en-IN") : "Active Live Session"}
               </span>
@@ -217,7 +217,7 @@ export default function AdminSettingsPage() {
             className="flex items-center gap-2 px-6 py-2.5 bg-[#1C1C1C] hover:bg-[#B38E5D] text-white text-xs font-bold uppercase tracking-wider transition-colors"
           >
             <Save className="w-4 h-4" />
-            <span>Save Configuration</span>
+            <span>Save Settings</span>
           </button>
         </div>
       </form>

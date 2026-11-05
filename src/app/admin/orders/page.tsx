@@ -54,7 +54,7 @@ export default function AdminOrdersPage() {
     <div className="pb-16">
       <AdminHeader
         title="Orders & Fulfillment"
-        subtitle="Process customer orders, assign courier tracking AWB numbers, and generate tax invoices"
+        subtitle="Process customer orders, assign courier tracking numbers, and generate tax invoices"
         actions={
           <button
             onClick={() => alert("Bulk export of all dispatch manifests generated.")}
@@ -106,7 +106,7 @@ export default function AdminOrdersPage() {
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search by Order #, Customer Name, Phone, or Courier AWB..."
+              placeholder="Search by Order #, Customer Name, Phone, or Tracking #..."
               className="w-full text-xs pl-9 pr-3 py-2.5 bg-[#FAF8F5] border border-[#E8E3DA] focus:outline-none focus:border-black"
             />
           </div>
@@ -211,7 +211,7 @@ export default function AdminOrdersPage() {
 
                         {order.trackingNumber && (
                           <span className="text-[10px] font-mono text-gray-500 block mt-1">
-                            AWB: {order.trackingNumber}
+                            Tracking: {order.trackingNumber}
                           </span>
                         )}
                       </td>
