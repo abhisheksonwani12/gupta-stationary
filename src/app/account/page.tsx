@@ -46,6 +46,21 @@ function AccountDashboardContent() {
   const { addToCart } = useCart();
   const { orders } = useInventory();
 
+  // Filter orders strictly for this customer
+  const userOrders = React.useMemo(() => {
+    if (!user) return [];
+    const cleanEmail = user.email?.toLowerCase().trim();
+    const cleanPhone = user.phone?.replace(/[^0-9]/g, "");
+
+    return orders.filter((o) => {
+      const emailMatch = Boolean(cleanEmail && o.customerEmail?.toLowerCase().trim() === cleanEmail);
+      const phoneMatch = Boolean(
+        cleanPhone && cleanPhone.length >= 8 && o.customerPhone?.replace(/[^0-9]/g, "").includes(cleanPhone)
+      );
+      return emailMatch || phoneMatch;
+    });
+  }, [orders, user]);
+
   const [activeTab, setActiveTab] = useState<string>(initialTab);
   const [selectedOrderForInvoice, setSelectedOrderForInvoice] = useState<Order | null>(null);
 
@@ -113,7 +128,8 @@ function AccountDashboardContent() {
                 Welcome back, {user.name}
               </h1>
               <p className="text-xs text-gray-500 mt-1">
-                Member Since {user.memberSince} • {user.email} • {user.phone}
+                Member Since {user.memberSince} • {user.email}
+                {user.phone ? ` • ${user.phone}` : ""}
               </p>
             </div>
           </div>
@@ -142,7 +158,7 @@ function AccountDashboardContent() {
           {/* Sidebar Nav */}
           <div className="lg:col-span-3 bg-white border border-[#E8E3DA] p-4 space-y-1 text-xs font-semibold">
             {[
-              { id: "orders", label: "Order History", icon: Package, count: orders.length },
+              { id: "orders", label: "Order History", icon: Package, count: userOrders.length },
               { id: "wishlist", label: "Saved Wishlist", icon: Heart, count: wishlist.length },
               { id: "addresses", label: "Delivery Addresses", icon: MapPin, count: user.addresses?.length || 0 },
               { id: "loyalty", label: "Loyalty & Rewards", icon: Award, badge: `${user.memberDiscountPercent}% OFF` },
@@ -195,16 +211,24 @@ function AccountDashboardContent() {
                 </div>
 
                 <div className="space-y-4">
-                  {orders.length === 0 ? (
-                    <div className="text-center py-12 text-xs text-gray-500">
-                      <Package className="w-8 h-8 mx-auto text-gray-300 mb-2" />
-                      <p>You have not placed any orders yet.</p>
-                      <Link href="/shop" className="font-bold text-black hover:underline mt-2 inline-block">
+                  {userOrders.length === 0 ? (
+                    <div className="text-center py-16 text-xs text-gray-500 space-y-3">
+                      <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mx-auto text-gray-400">
+                        <Package className="w-6 h-6" />
+                      </div>
+                      <h4 className="font-serif text-base font-bold text-gray-900">No Orders Placed Yet</h4>
+                      <p className="max-w-xs mx-auto text-gray-500">
+                        You haven&apos;t placed any orders with this account yet. When you place an order, live tracking and tax invoices will appear right here.
+                      </p>
+                      <Link
+                        href="/shop"
+                        className="inline-block mt-2 px-6 py-2.5 bg-[#1C1C1C] hover:bg-[#B38E5D] text-white font-bold uppercase tracking-wider text-[11px] transition-colors"
+                      >
                         Explore Stationery Catalog →
                       </Link>
                     </div>
                   ) : (
-                    orders.map((o) => (
+                    userOrders.map((o) => (
                       <div
                         key={o.id}
                         className="border border-[#E8E3DA] p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-[#FAF8F5] hover:bg-white transition-colors"

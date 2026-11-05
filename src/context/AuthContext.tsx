@@ -121,7 +121,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           id: fbUser.uid,
           name: fbUser.displayName || meta.name || fbUser.email?.split("@")[0] || "Customer",
           email: fbUser.email || meta.email || `${fbUser.phoneNumber || fbUser.uid}@instantstationary.user`,
-          phone: fbUser.phoneNumber || meta.phone || "+91 8839715995",
+          phone: fbUser.phoneNumber || meta.phone || "",
           avatar:
             fbUser.photoURL ||
             meta.avatar ||
@@ -136,20 +136,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
             meta.memberSince ||
             new Date().toLocaleDateString("en-IN", { month: "long", year: "numeric" }),
           provider,
-          addresses: meta.addresses || [
-            {
-              id: "addr-1",
-              label: "Home (Default)",
-              fullName: fbUser.displayName || "Customer",
-              phone: fbUser.phoneNumber || "+91 8839715995",
-              email: fbUser.email || "",
-              addressLine1: "Civil Lines, Near Raj Bhavan",
-              city: "Raipur",
-              state: "Chhattisgarh",
-              pincode: "492001",
-              isDefault: true,
-            },
-          ],
+          addresses: meta.addresses || [],
         };
 
         setUser(profile);
