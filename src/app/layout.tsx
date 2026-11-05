@@ -9,6 +9,7 @@ import { AuthProvider } from "@/context/AuthContext";
 import { InventoryProvider } from "@/context/InventoryContext";
 import { CartProvider } from "@/context/CartContext";
 import { WishlistProvider } from "@/context/WishlistContext";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: "Instant Stationary | Quality Stationery & Office Supplies — Raipur",
@@ -57,6 +58,7 @@ export default function RootLayout({
             </CartProvider>
           </InventoryProvider>
         </AuthProvider>
+        <SpeedInsights />
       </body>
     </html>
   );
