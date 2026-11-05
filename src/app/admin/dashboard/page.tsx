@@ -83,8 +83,8 @@ export default function AdminDashboardPage() {
               {formatPrice(totalRevenue)}
             </div>
             <div className="flex items-center gap-1 text-[11px] text-emerald-700 font-semibold">
-              <span>+18.4%</span>
-              <span className="text-gray-400 font-normal">vs previous period</span>
+              <span>{orders.filter((o) => o.paymentStatus === "paid").length} settled orders</span>
+              <span className="text-gray-400 font-normal">• Live Supabase</span>
             </div>
           </div>
 

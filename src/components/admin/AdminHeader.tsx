@@ -37,7 +37,13 @@ export default function AdminHeader({
         {/* Left: Mobile Toggle & Page Title */}
         <div className="flex items-center gap-3">
           <button
-            onClick={onToggleSidebar}
+            onClick={() => {
+              if (onToggleSidebar) {
+                onToggleSidebar();
+              } else if (typeof window !== "undefined") {
+                window.dispatchEvent(new CustomEvent("toggle_admin_sidebar"));
+              }
+            }}
             className="lg:hidden p-2 text-gray-700 hover:bg-gray-100 rounded border border-gray-200"
             aria-label="Toggle Sidebar"
           >

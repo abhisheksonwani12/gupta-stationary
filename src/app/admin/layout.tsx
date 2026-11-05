@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import AdminSidebar from "@/components/admin/AdminSidebar";
-
 import { isAuthorizedAdminEmail } from "@/lib/auth/adminAuth";
 
 export default function AdminLayout({
@@ -38,6 +37,25 @@ export default function AdminLayout({
     }
   }, [pathname, router]);
 
+  // Global listener for opening/closing mobile sidebar from any header or child
+  useEffect(() => {
+    const handleToggle = () => setIsMobileSidebarOpen((prev) => !prev);
+    const handleClose = () => setIsMobileSidebarOpen(false);
+
+    window.addEventListener("toggle_admin_sidebar", handleToggle);
+    window.addEventListener("close_admin_sidebar", handleClose);
+
+    return () => {
+      window.removeEventListener("toggle_admin_sidebar", handleToggle);
+      window.removeEventListener("close_admin_sidebar", handleClose);
+    };
+  }, []);
+
+  // Close mobile sidebar on route change
+  useEffect(() => {
+    setIsMobileSidebarOpen(false);
+  }, [pathname]);
+
   if (pathname === "/admin/login") {
     return <>{children}</>;
   }
@@ -61,7 +79,7 @@ export default function AdminLayout({
       {/* Backdrop for mobile */}
       {isMobileSidebarOpen && (
         <div
-          className="fixed inset-0 z-30 bg-black/60 lg:hidden"
+          className="fixed inset-0 z-40 bg-black/60 lg:hidden backdrop-blur-sm"
           onClick={() => setIsMobileSidebarOpen(false)}
         />
       )}
