@@ -78,11 +78,11 @@ export default function ProductCard({ product }: ProductCardProps) {
         </button>
 
         {/* Product Image Link */}
-        <Link href={`/product/${product.slug}`} className="block w-full h-full">
+        <Link href={`/product/${product.slug}`} className="block w-full h-full p-2 flex items-center justify-center">
           <img
             src={isHovered ? secondImage : product.images[0]}
             alt={product.name}
-            className={`w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105 ${
+            className={`w-full h-full object-contain transition-transform duration-500 ease-out group-hover:scale-105 ${
               isOutOfStock ? "grayscale contrast-75" : ""
             }`}
           />
@@ -127,7 +127,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           {/* Product Title */}
           <Link
             href={`/product/${product.slug}`}
-            className="block text-[13px] sm:text-sm font-medium text-[#18181B] group-hover:text-[#967448] transition-colors line-clamp-1 leading-snug"
+            className="block text-[13px] sm:text-sm font-medium text-[#18181B] group-hover:text-[#967448] transition-colors line-clamp-2 min-h-[2.5rem] leading-snug"
           >
             {product.name}
           </Link>

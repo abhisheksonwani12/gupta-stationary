@@ -698,8 +698,8 @@ export const PRODUCTS: Product[] = [
   "isNew": false,
   "sku": "GS-TISSUE-2PLY",
   "images": [
-    "/images/products/soft-tissue-paper-roll-2-ply.jpg"
-  ],
+      "/images/products/soft-tissue-paper-roll-2-ply.jpg"
+    ],
   "shortDescription": "Ultra-absorbent, hygienic 2-ply embossed tissue paper roll made from virgin biodegradable cellulose.",
   "description": "Soft on skin and tough on spills. Safe for office pantries, washrooms, kitchens, and daily table use.",
   "highlights": [
@@ -1005,8 +1005,8 @@ export const PRODUCTS: Product[] = [
   "isNew": false,
   "sku": "GS-ERASE-SHARP",
   "images": [
-    "/images/products/eraser-sharpener-duo-combo.jpg"
-  ],
+      "/images/products/eraser-sharpener-duo-combo.jpg"
+    ],
   "shortDescription": "2-in-1 student staple. Non-smudge polymer eraser paired with precision German steel blade sharpener.",
   "description": "Erases graphite effortlessly without rolling dust or tearing thin notebook paper. Sharpener creates clean needle points on standard 8mm pencils.",
   "highlights": [
@@ -1363,8 +1363,7 @@ export const PRODUCTS: Product[] = [
     "isEcoFriendly": false,
     "sku": "JK-COP-75-RED",
     "images": [
-      "/images/products/copier-paper.jpg",
-      "/images/products/office-supplies.jpg"
+      "/images/products/jk-red-copier-paper-75-gsm.jpg"
     ],
     "shortDescription": "JK Red 75 GSM premium multipurpose copier paper for ultra-sharp laser, color inkjet, and duplex printing.",
     "description": "JK Red 75 GSM Copier Paper is India's leading office paper engineered for jam-free high-speed performance across all printers, copiers, and digital duplication machines. Precision cut edges and optimal brightness ensure crisp text and high-contrast color reproduction.",
@@ -1425,8 +1424,7 @@ export const PRODUCTS: Product[] = [
     "isEcoFriendly": true,
     "sku": "JK-ECO-RISE",
     "images": [
-      "/images/products/copier-paper.jpg",
-      "/images/products/office-supplies.jpg"
+      "/images/products/jk-ecorise-copier-paper.jpg"
     ],
     "shortDescription": "Eco-friendly, cost-effective copier paper engineered for high-volume office and institutional printing.",
     "description": "JK Ecorise is an environmentally conscious copier paper crafted using agro-residue pulping processes. Ideal for everyday printing, draft copies, school assignments, and high-volume corporate document distribution.",
@@ -1478,8 +1476,7 @@ export const PRODUCTS: Product[] = [
     "isEcoFriendly": false,
     "sku": "SIRPUR-LEDGER-01",
     "images": [
-      "/images/products/copier-paper.jpg",
-      "/images/products/office-supplies.jpg"
+      "/images/products/sirpur-ledger-paper-ream.jpg"
     ],
     "shortDescription": "Heavy-duty archival quality Sirpur ledger paper for official legal, audit, and accounting records.",
     "description": "Sirpur Ledger Paper is renowned across courts, legal chambers, accounting firms, and government offices for its enduring strength, smooth surface, and resistance to aging.",
@@ -1524,8 +1521,7 @@ export const PRODUCTS: Product[] = [
     "isEcoFriendly": false,
     "sku": "JK-BOND-100",
     "images": [
-      "/images/products/copier-paper.jpg",
-      "/images/products/office-supplies.jpg"
+      "/images/products/jk-bond-paper-100-sheets.jpg"
     ],
     "shortDescription": "Ultra-premium watermarked 85 GSM bond paper for corporate letterheads, agreements, and resumes.",
     "description": "JK Bond Paper represents the pinnacle of executive communication. Featuring authentic watermarking, cotton content feel, and remarkable crispness, it commands respect in every formal document.",
@@ -1571,8 +1567,7 @@ export const PRODUCTS: Product[] = [
     "isEcoFriendly": false,
     "sku": "JK-CEDAR-500",
     "images": [
-      "/images/products/copier-paper.jpg",
-      "/images/products/office-supplies.jpg"
+      "/images/products/jk-cedar-copier-paper.jpg"
     ],
     "shortDescription": "Super-bright 80 GSM ultra-white copier paper for vivid presentations and graphic brochures.",
     "description": "JK Cedar delivers elite brightness and smoothness, specially calibrated for high-density color graphics, client pitch decks, architecture portfolios, and executive reporting.",
@@ -1617,8 +1612,7 @@ export const PRODUCTS: Product[] = [
     "isEcoFriendly": false,
     "sku": "ORIENT-COP-500",
     "images": [
-      "/images/products/copier-paper.jpg",
-      "/images/products/office-supplies.jpg"
+      "/images/products/orient-copier-paper-ream.jpg"
     ],
     "shortDescription": "Affordable, versatile 70 GSM multi-purpose copier paper for daily xerox, study materials, and office prints.",
     "description": "Orient Copier Paper provides exceptional value for commercial xerox centers, coaching institutes, schools, and offices requiring high-volume economical duplicating paper.",
@@ -1668,8 +1662,7 @@ export const PRODUCTS: Product[] = [
     "isEcoFriendly": false,
     "sku": "KANG-PIN-10",
     "images": [
-      "/images/products/office-supplies.jpg",
-      "/images/products/copier-paper.jpg"
+      "/images/products/kangaro-stapler-pin-no-10.jpg"
     ],
     "shortDescription": "Rust-resistant high-tensile steel staple pins for all standard No. 10 staplers.",
     "description": "Kangaro No. 10 Stapler Pins are precision-crafted from high-grade galvanized steel wire with sharp chisel points for effortless paper penetration without jamming.",
@@ -1715,8 +1708,7 @@ export const PRODUCTS: Product[] = [
     "isEcoFriendly": false,
     "sku": "KANG-PIN-24-6",
     "images": [
-      "/images/products/office-supplies.jpg",
-      "/images/products/copier-paper.jpg"
+      "/images/products/kangaro-stapler-pin-24-6.jpg"
     ],
     "shortDescription": "Heavy-duty standard 24/6 chisel point staples for full-strip and half-strip desktop staplers.",
     "description": "Kangaro 24/6 Staples provide secure binding for up to 30 sheets of paper. Crafted with precision edge alignment for smooth gliding in corporate and institutional staplers.",
@@ -1760,8 +1752,7 @@ export const PRODUCTS: Product[] = [
     "isEcoFriendly": false,
     "sku": "KANG-STAP-10",
     "images": [
-      "/images/products/office-supplies.jpg",
-      "/images/products/copier-paper.jpg"
+      "/images/products/kangaro-stapler-no-10.jpg"
     ],
     "shortDescription": "Classic steel-mechanism compact desktop stapler with integrated staple remover.",
     "description": "The trusted Kangaro No. 10 Stapler features an ergonomic plastic cap with a rugged all-steel body mechanism. Includes a built-in rear staple remover and reload indicator window.",
@@ -1806,8 +1797,7 @@ export const PRODUCTS: Product[] = [
     "isEcoFriendly": false,
     "sku": "KANG-STAP-HD10D",
     "images": [
-      "/images/products/office-supplies.jpg",
-      "/images/products/copier-paper.jpg"
+      "/images/products/kangaro-stapler-hd10d.jpg"
     ],
     "shortDescription": "Heavy-duty ergonomic metal desktop stapler with dual-strip capacity for high-volume offices.",
     "description": "Kangaro HD-10D is designed for continuous daily office use. Boasting an all-metal chassis, smooth lever action, and extended throat depth for versatile document positioning.",
@@ -1851,8 +1841,7 @@ export const PRODUCTS: Product[] = [
     "isEcoFriendly": false,
     "sku": "KANG-PLIER-HP45",
     "images": [
-      "/images/products/office-supplies.jpg",
-      "/images/products/copier-paper.jpg"
+      "/images/products/kangaro-plier-stapler-hp45.jpg"
     ],
     "shortDescription": "Plier-grip heavy duty packaging and binding stapler for courier parcels, tags, and bags.",
     "description": "Kangaro HP-45 Plier Stapler features an ergonomic squeeze handle that delivers powerful leverage with minimal hand strain. Widely utilized in dispatch centers, retail stores, and archives.",
@@ -1898,8 +1887,7 @@ export const PRODUCTS: Product[] = [
     "isEcoFriendly": false,
     "sku": "KANG-TAPE-DISP-01",
     "images": [
-      "/images/products/office-supplies.jpg",
-      "/images/products/copier-paper.jpg"
+      "/images/products/kangaro-desktop-tape-dispenser.jpg"
     ],
     "shortDescription": "Non-skid weighted desktop tape cutter dispenser with stainless steel serrated blade.",
     "description": "Kangaro Desktop Tape Dispenser stays firmly anchored on your workstation while you pull and cut adhesive tape with one hand. Features a high-precision anti-rust cutting blade.",
@@ -1943,8 +1931,7 @@ export const PRODUCTS: Product[] = [
     "isEcoFriendly": false,
     "sku": "KANG-TD18Y",
     "images": [
-      "/images/products/office-supplies.jpg",
-      "/images/products/copier-paper.jpg"
+      "/images/products/kangaro-handy-tape-dispenser-td18y.jpg"
     ],
     "shortDescription": "Compact hand-held tape cutter for quick box sealing, gift wrapping, and crafts.",
     "description": "Kangaro TD-18Y is a portable, lightweight tape dispenser designed for swift packaging, parcel sealing, and administrative duties on the go.",
@@ -1987,8 +1974,7 @@ export const PRODUCTS: Product[] = [
     "isEcoFriendly": false,
     "sku": "WO-PIN-PUSH",
     "images": [
-      "/images/products/office-supplies.jpg",
-      "/images/products/copier-paper.jpg"
+      "/images/products/world-one-push-pins-packet.jpg"
     ],
     "shortDescription": "Sharp stainless steel pin tips with vibrant transparent plastic heads for notice boards and maps.",
     "description": "World One Push Pins offer effortless pinning onto cork boards, soft fabric partitions, maps, and bulletin displays without bending.",
@@ -2032,8 +2018,7 @@ export const PRODUCTS: Product[] = [
     "isEcoFriendly": false,
     "sku": "WO-PIN-ALL-2PK",
     "images": [
-      "/images/products/copier-paper.jpg",
-      "/images/products/office-supplies.jpg"
+      "/images/products/world-one-all-pins-packet.jpg"
     ],
     "shortDescription": "Nickel-plated rust-resistant smooth head paper pins for office files and tailoring.",
     "description": "World One All Pins are manufactured from polished high-grade steel wire with smooth round heads and ultra-sharp tips for fastening documents without tearing fibers.",
@@ -2077,8 +2062,7 @@ export const PRODUCTS: Product[] = [
     "isEcoFriendly": false,
     "sku": "WO-PIN-T-3PK",
     "images": [
-      "/images/products/office-supplies.jpg",
-      "/images/products/copier-paper.jpg"
+      "/images/products/world-one-t-pins-packet.jpg"
     ],
     "shortDescription": "Heavy-duty T-bar head steel pins for fabric, partition boards, crafts, and wig making.",
     "description": "World One T-Pins feature a wide T-bar head that is easy to grasp and push into dense surfaces such as cubicle fabric walls, cork boards, and model crafting.",
@@ -2122,8 +2106,7 @@ export const PRODUCTS: Product[] = [
     "isEcoFriendly": false,
     "sku": "WO-CLIP-COLOR-4PK",
     "images": [
-      "/images/products/copier-paper.jpg",
-      "/images/products/office-supplies.jpg"
+      "/images/products/world-one-color-coated-paper-clips.jpg"
     ],
     "shortDescription": "Vinyl plastic coated colorful paper clips with smooth non-tear grip for file indexing.",
     "description": "World One Color Coated Paper Clips protect your important documents from scratches and rust stains while adding vibrant color-coded sorting to office and study files.",
@@ -2167,8 +2150,7 @@ export const PRODUCTS: Product[] = [
     "isEcoFriendly": false,
     "sku": "WO-CLIP-METAL-5PK",
     "images": [
-      "/images/products/copier-paper.jpg",
-      "/images/products/office-supplies.jpg"
+      "/images/products/world-one-metal-paper-clips.jpg"
     ],
     "shortDescription": "Zinc-plated rust-resistant classic metal paper binder clips for daily office documentation.",
     "description": "World One Metal Paper Clips are forged from spring steel wire with smooth rounded edges to clamp documents securely without crimping or damaging pages.",
@@ -2212,8 +2194,7 @@ export const PRODUCTS: Product[] = [
     "isEcoFriendly": false,
     "sku": "MILES-STAP-GUN-01",
     "images": [
-      "/images/products/office-supplies.jpg",
-      "/images/products/copier-paper.jpg"
+      "/images/products/miles-heavy-duty-stapler-gun.jpg"
     ],
     "shortDescription": "Professional all-steel manual staple gun for upholstery, wooden frames, canvas, and exhibition boards.",
     "description": "Miles Heavy Duty Tacker Stapler Gun delivers industrial-strength driving power. Constructed with an all-steel body, recoil-absorbing hand grip, and adjustable impact tension knob.",
@@ -2258,8 +2239,7 @@ export const PRODUCTS: Product[] = [
     "isEcoFriendly": true,
     "sku": "STICKY-NOTE-100",
     "images": [
-      "/images/products/office-supplies.jpg",
-      "/images/products/copier-paper.jpg"
+      "/images/products/neon-sticky-notes-pad-100-sheets.jpg"
     ],
     "shortDescription": "Vibrant neon yellow/pink repositionable sticky notes for reminders, desk flags, and book annotations.",
     "description": "These self-adhesive memo pads feature clean-peel adhesive that sticks firmly to computer monitors, books, whiteboards, and files without leaving sticky residue.",
@@ -2303,8 +2283,7 @@ export const PRODUCTS: Product[] = [
     "isEcoFriendly": false,
     "sku": "MARK-CD-DOMS",
     "images": [
-      "/images/products/office-supplies.jpg",
-      "/images/products/copier-paper.jpg"
+      "/images/products/luxor-doms-cd-dvd-marker.jpg"
     ],
     "shortDescription": "Waterproof fine point marker for plastic, glass, optical discs, metal, and transparency sheets.",
     "description": "Luxor / Doms Fine Tip CD Marker is engineered with specialized quick-drying alcohol-based ink that writes smoothly on non-porous surfaces without smudging or fading.",
@@ -2348,8 +2327,7 @@ export const PRODUCTS: Product[] = [
     "isEcoFriendly": false,
     "sku": "MARK-PERM-DOMS",
     "images": [
-      "/images/products/office-supplies.jpg",
-      "/images/products/copier-paper.jpg"
+      "/images/products/luxor-doms-permanent-marker.jpg"
     ],
     "shortDescription": "Heavy-duty waterproof permanent marker for shipping cartons, metal, wood, plastic, and stone.",
     "description": "Delivering deep indelible black/blue ink, this industrial-strength permanent marker withstands sun exposure, moisture, and rough handling across warehouses and classrooms.",
@@ -2393,8 +2371,7 @@ export const PRODUCTS: Product[] = [
     "isEcoFriendly": false,
     "sku": "MARK-WB-DOMS-4CLR",
     "images": [
-      "/images/products/office-supplies.jpg",
-      "/images/products/copier-paper.jpg"
+      "/images/products/luxor-doms-whiteboard-marker.jpg"
     ],
     "shortDescription": "Low-odor, easily dry-wipeable whiteboard marker with durable bullet tip for coaching & presentations.",
     "description": "Engineered specifically for coaching institutions, schools, and corporate boardrooms, Luxor / Doms whiteboard markers provide bold visibility with effortless residue-free dry erasing.",
@@ -2456,8 +2433,7 @@ export const PRODUCTS: Product[] = [
     "isEcoFriendly": false,
     "sku": "MAYANK-JUMBO-80",
     "images": [
-      "/images/products/mayank-jumbo-register.jpg",
-      "/images/products/classmate-longbook.jpg"
+      "/images/products/mayank-jumbo-register-80-pages.jpg"
     ],
     "shortDescription": "Sturdy hardbound jumbo accounting and ledger register with 80 high-GSM ruled pages.",
     "description": "Mayank Jumbo 80 Page Register is constructed with heavy cardboard binding, premium spine cloth reinforcement, and ultra-smooth ruled paper for daily entry and records.",
@@ -2501,8 +2477,7 @@ export const PRODUCTS: Product[] = [
     "isEcoFriendly": false,
     "sku": "MAYANK-JUMBO-170",
     "images": [
-      "/images/products/mayank-jumbo-register.jpg",
-      "/images/products/classmate-longbook.jpg"
+      "/images/products/mayank-jumbo-register-170-pages.jpg"
     ],
     "shortDescription": "170 pages hardbound ledger register for office accounts, inventory logs, and school records.",
     "description": "The 170-page Mayank Jumbo Register provides substantial capacity for monthly accounting logs, store inventory registers, and institutional student records.",
@@ -2546,8 +2521,7 @@ export const PRODUCTS: Product[] = [
     "isEcoFriendly": false,
     "sku": "MAYANK-JUMBO-240",
     "images": [
-      "/images/products/mayank-jumbo-register.jpg",
-      "/images/products/classmate-longbook.jpg"
+      "/images/products/mayank-jumbo-register-240-pages.jpg"
     ],
     "shortDescription": "High-capacity 240 pages master hardbound register for comprehensive business and financial records.",
     "description": "Mayank Jumbo 240-page register is built for multi-month financial book-keeping, factory attendance logs, and school registers.",
@@ -2591,8 +2565,7 @@ export const PRODUCTS: Product[] = [
     "isEcoFriendly": false,
     "sku": "MAYANK-JUMBO-300",
     "images": [
-      "/images/products/mayank-jumbo-register.jpg",
-      "/images/products/classmate-longbook.jpg"
+      "/images/products/mayank-jumbo-register-300-pages.jpg"
     ],
     "shortDescription": "Flagship 300 pages master volume accounting register for annual business financial ledgers.",
     "description": "Mayank Jumbo 300 Page Ledger Register is the ultimate accounting volume for yearly financial auditing, factory logs, institutional records, and heavy-volume registers.",
@@ -2636,8 +2609,7 @@ export const PRODUCTS: Product[] = [
     "isEcoFriendly": false,
     "sku": "MAYANK-KING-SIZE",
     "images": [
-      "/images/products/mayank-jumbo-register.jpg",
-      "/images/products/classmate-longbook.jpg"
+      "/images/products/mayank-deluxe-king-size-register.jpg"
     ],
     "shortDescription": "Extra-large long format folio register for school attendance, hospital logs, and showroom entries.",
     "description": "Mayank King Size Register offers an expanded long folio layout with wide columns, perfect for visitor logs, attendance tracking, and multi-column dispatch record-keeping.",
@@ -2681,8 +2653,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "PID-FEV-5",
     "images": [
-      "/images/products/fevicol-mr.jpg",
-      "/images/products/office-supplies.jpg"
+      "/images/products/fevicol-mr-general-purpose-adhesive-10g-squeezy-bottle-3.jpg"
     ],
     "shortDescription": "Fevicol MR all-purpose white craft and paper adhesive (10g Squeezy Bottle) by Pidilite.",
     "description": "Fevicol MR is India's leading non-staining craft adhesive for bonding paper, cardboard, thermocol, fabrics, and craft embellishments with superior initial tack and bond strength.",
@@ -2735,8 +2706,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "PID-FEV-10",
     "images": [
-      "/images/products/fevicol-mr.jpg",
-      "/images/products/office-supplies.jpg"
+      "/images/products/fevicol-mr-general-purpose-adhesive-22-5g-squeezy-bottle-3.jpg"
     ],
     "shortDescription": "Fevicol MR all-purpose white craft and paper adhesive (22.5g Squeezy Bottle) by Pidilite.",
     "description": "Fevicol MR is India's leading non-staining craft adhesive for bonding paper, cardboard, thermocol, fabrics, and craft embellishments with superior initial tack and bond strength.",
@@ -2789,8 +2759,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "PID-FEV-25",
     "images": [
-      "/images/products/fevicol-mr.jpg",
-      "/images/products/office-supplies.jpg"
+      "/images/products/fevicol-mr-general-purpose-adhesive-50g-bottle-3.jpg"
     ],
     "shortDescription": "Fevicol MR all-purpose white craft and paper adhesive (50g Bottle) by Pidilite.",
     "description": "Fevicol MR is India's leading non-staining craft adhesive for bonding paper, cardboard, thermocol, fabrics, and craft embellishments with superior initial tack and bond strength.",
@@ -2843,8 +2812,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "PID-FEV-60",
     "images": [
-      "/images/products/fevicol-mr.jpg",
-      "/images/products/office-supplies.jpg"
+      "/images/products/fevicol-mr-general-purpose-adhesive-100g-bottle-3.jpg"
     ],
     "shortDescription": "Fevicol MR all-purpose white craft and paper adhesive (100g Bottle) by Pidilite.",
     "description": "Fevicol MR is India's leading non-staining craft adhesive for bonding paper, cardboard, thermocol, fabrics, and craft embellishments with superior initial tack and bond strength.",
@@ -2897,8 +2865,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "PID-FEV-100",
     "images": [
-      "/images/products/fevicol-mr.jpg",
-      "/images/products/office-supplies.jpg"
+      "/images/products/fevicol-mr-general-purpose-adhesive-200g-jar-3.jpg"
     ],
     "shortDescription": "Fevicol MR all-purpose white craft and paper adhesive (200g Jar) by Pidilite.",
     "description": "Fevicol MR is India's leading non-staining craft adhesive for bonding paper, cardboard, thermocol, fabrics, and craft embellishments with superior initial tack and bond strength.",
@@ -2951,8 +2918,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "PID-FEV-200",
     "images": [
-      "/images/products/fevicol-mr.jpg",
-      "/images/products/office-supplies.jpg"
+      "/images/products/fevicol-mr-general-purpose-adhesive-500g-dispenser-jar-3.jpg"
     ],
     "shortDescription": "Fevicol MR all-purpose white craft and paper adhesive (500g Dispenser Jar) by Pidilite.",
     "description": "Fevicol MR is India's leading non-staining craft adhesive for bonding paper, cardboard, thermocol, fabrics, and craft embellishments with superior initial tack and bond strength.",
@@ -3005,8 +2971,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "PID-ALLFIX-50",
     "images": [
-      "/images/products/pidilite-allfix.jpg",
-      "/images/products/fevicol-mr.jpg"
+      "/images/products/pidilite-all-fix-clear-synthetic-adhesive-50ml-3.jpg"
     ],
     "shortDescription": "Pidilite All Fix all-purpose clear transparent contact adhesive tube.",
     "description": "All Fix is an all-purpose transparent adhesive that leaves no residue. Ideal for joining glass, ceramics, wood, leather, metal, and hard plastics.",
@@ -3059,8 +3024,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "PID-BONDFIX-20",
     "images": [
-      "/images/products/pidilite-allfix.jpg",
-      "/images/products/fevicol-mr.jpg"
+      "/images/products/pidilite-bondfix-multipurpose-adhesive-20ml-3.jpg"
     ],
     "shortDescription": "Pidilite Bondfix high-strength solvent-based multipurpose adhesive (20ml).",
     "description": "Pidilite Bondfix is a quick-setting solvent-based contact adhesive formulated for quick, permanent joints in stationery, wood craft, leather, and plastics.",
@@ -3113,8 +3077,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "PID-BONDFIX-30",
     "images": [
-      "/images/products/pidilite-allfix.jpg",
-      "/images/products/fevicol-mr.jpg"
+      "/images/products/pidilite-bondfix-multipurpose-adhesive-30ml-3.jpg"
     ],
     "shortDescription": "Pidilite Bondfix high-strength solvent-based multipurpose adhesive (30ml).",
     "description": "Pidilite Bondfix is a quick-setting solvent-based contact adhesive formulated for quick, permanent joints in stationery, wood craft, leather, and plastics.",
@@ -3167,8 +3130,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "CAMEL-GUM-30",
     "images": [
-      "/images/products/camel-office-gum.jpg",
-      "/images/products/office-supplies.jpg"
+      "/images/products/camel-synthetic-office-gum-30ml-3.jpg"
     ],
     "shortDescription": "Camel non-toxic transparent paper gum adhesive (30ml) for office envelopes & documents.",
     "description": "Camel Office Gum is a classic transparent adhesive crafted for smooth, ripple-free gluing of envelopes, paper documents, labels, and receipts without page wrinkling.",
@@ -3221,8 +3183,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "CAMEL-GUM-50",
     "images": [
-      "/images/products/camel-office-gum.jpg",
-      "/images/products/office-supplies.jpg"
+      "/images/products/camel-synthetic-office-gum-50ml-3.jpg"
     ],
     "shortDescription": "Camel non-toxic transparent paper gum adhesive (50ml) for office envelopes & documents.",
     "description": "Camel Office Gum is a classic transparent adhesive crafted for smooth, ripple-free gluing of envelopes, paper documents, labels, and receipts without page wrinkling.",
@@ -3329,8 +3290,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "PID-FEV-KWIK-5",
     "images": [
-      "/images/products/fevikwik-tube.jpg",
-      "/images/products/fevicol-mr.jpg"
+      "/images/products/fevikwik-instant-adhesive-0-5g-3.jpg"
     ],
     "shortDescription": "Pidilite Fevikwik instant bonding adhesive (0.5g) for home, office, and quick fixes.",
     "description": "One drop is all it takes! Fevikwik instantly fixes broken ceramics, plastics, metals, and rubber accessories in just 5 seconds.",
@@ -3382,8 +3342,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "PID-FEV-KWIK-10",
     "images": [
-      "/images/products/fevikwik-tube.jpg",
-      "/images/products/fevicol-mr.jpg"
+      "/images/products/fevikwik-instant-adhesive-1g-single-drop-tube-3.jpg"
     ],
     "shortDescription": "Pidilite Fevikwik instant bonding adhesive (1g Single Drop Tube) for home, office, and quick fixes.",
     "description": "One drop is all it takes! Fevikwik instantly fixes broken ceramics, plastics, metals, and rubber accessories in just 5 seconds.",
@@ -3435,8 +3394,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "PID-FEV-GEL-15",
     "images": [
-      "/images/products/fevikwik-tube.jpg",
-      "/images/products/fevicol-mr.jpg"
+      "/images/products/fevikwik-gel-instant-adhesive-tube-3g-3.jpg"
     ],
     "shortDescription": "Pidilite Fevikwik Gel non-drip instant adhesive for porous and vertical surfaces.",
     "description": "Fevikwik Gel provides high-viscosity instant cyanoacrylate bonding that won't run or drip. Bonds metals, rubber, plastics, and wood in seconds.",
@@ -3488,8 +3446,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "LINC-PENTON-BP",
     "images": [
-      "/images/products/linc-pentonic-ball.jpg",
-      "/images/products/pentel-energel.jpg"
+      "/images/products/linc-pentonic-ball-pen-pack-of-10-3.jpg"
     ],
     "shortDescription": "LINC PENTONIC Ball Pen (Pack of 10) engineered for smooth, smudge-free writing with durable tungsten carbide tip.",
     "description": "The LINC PENTONIC Ball Pen (Pack of 10) delivers dependable, fluid ink flow with an ergonomic grip designed for extended exams, office documentation, and daily classroom notes.",
@@ -3544,8 +3501,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "LINC-GLYCER-BP",
     "images": [
-      "/images/products/linc-pentonic-ball.jpg",
-      "/images/products/hauser-xo-ball.jpg"
+      "/images/products/linc-glycer-ball-pen-pack-of-10-3.jpg"
     ],
     "shortDescription": "LINC GLYCER Ball Pen (Pack of 10) engineered for smooth, smudge-free writing with durable tungsten carbide tip.",
     "description": "The LINC GLYCER Ball Pen (Pack of 10) delivers dependable, fluid ink flow with an ergonomic grip designed for extended exams, office documentation, and daily classroom notes.",
@@ -3600,8 +3556,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "LINC-CLR-BP",
     "images": [
-      "/images/products/linc-pentonic-ball.jpg",
-      "/images/products/hauser-xo-ball.jpg"
+      "/images/products/linc-clr-ball-pen-pack-of-10-3.jpg"
     ],
     "shortDescription": "LINC CLR Ball Pen (Pack of 10) engineered for smooth, smudge-free writing with durable tungsten carbide tip.",
     "description": "The LINC CLR Ball Pen (Pack of 10) delivers dependable, fluid ink flow with an ergonomic grip designed for extended exams, office documentation, and daily classroom notes.",
@@ -3656,8 +3611,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "LINC-BRT-BP",
     "images": [
-      "/images/products/linc-pentonic-ball.jpg",
-      "/images/products/hauser-xo-ball.jpg"
+      "/images/products/linc-brt-ball-pen-pack-of-10-3.jpg"
     ],
     "shortDescription": "LINC Brt Ball Pen (Pack of 10) engineered for smooth, smudge-free writing with durable tungsten carbide tip.",
     "description": "The LINC Brt Ball Pen (Pack of 10) delivers dependable, fluid ink flow with an ergonomic grip designed for extended exams, office documentation, and daily classroom notes.",
@@ -3712,8 +3666,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "HAUS-XO-BP",
     "images": [
-      "/images/products/hauser-xo-ball.jpg",
-      "/images/products/linc-pentonic-ball.jpg"
+      "/images/products/hauser-xo-ball-pen-pack-of-10-3.jpg"
     ],
     "shortDescription": "HAUSER XO Ball Pen (Pack of 10) engineered for smooth, smudge-free writing with durable tungsten carbide tip.",
     "description": "The HAUSER XO Ball Pen (Pack of 10) delivers dependable, fluid ink flow with an ergonomic grip designed for extended exams, office documentation, and daily classroom notes.",
@@ -3768,8 +3721,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "HAUS-AUTOCL-BP",
     "images": [
-      "/images/products/hauser-xo-ball.jpg",
-      "/images/products/linc-pentonic-ball.jpg"
+      "/images/products/hauser-autoclick-ball-pen-pack-of-10-3.jpg"
     ],
     "shortDescription": "HAUSER AUTOCLICK Ball Pen (Pack of 10) engineered for smooth, smudge-free writing with durable tungsten carbide tip.",
     "description": "The HAUSER AUTOCLICK Ball Pen (Pack of 10) delivers dependable, fluid ink flow with an ergonomic grip designed for extended exams, office documentation, and daily classroom notes.",
@@ -3880,8 +3832,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "CLAS-OCTANE-BP",
     "images": [
-      "/images/products/classmate-octane.jpg",
-      "/images/products/hauser-xo-ball.jpg"
+      "/images/products/classmate-octane-ball-pen-pack-of-10-3.jpg"
     ],
     "shortDescription": "Classmate Octane Ball Pen (Pack of 10) engineered for smooth, smudge-free writing with durable tungsten carbide tip.",
     "description": "The Classmate Octane Ball Pen (Pack of 10) delivers dependable, fluid ink flow with an ergonomic grip designed for extended exams, office documentation, and daily classroom notes.",
@@ -3936,8 +3887,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "CLAS-SPIN-BP",
     "images": [
-      "/images/products/classmate-octane.jpg",
-      "/images/products/hauser-xo-ball.jpg"
+      "/images/products/classmate-spin-ball-pen-pack-of-10-3.jpg"
     ],
     "shortDescription": "Classmate Spin Ball Pen (Pack of 10) engineered for smooth, smudge-free writing with durable tungsten carbide tip.",
     "description": "The Classmate Spin Ball Pen (Pack of 10) delivers dependable, fluid ink flow with an ergonomic grip designed for extended exams, office documentation, and daily classroom notes.",
@@ -3992,8 +3942,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "CLAS-HOOK-BP",
     "images": [
-      "/images/products/classmate-octane.jpg",
-      "/images/products/hauser-xo-ball.jpg"
+      "/images/products/classmate-hook-ball-pen-pack-of-10-3.jpg"
     ],
     "shortDescription": "Classmate Hook Ball Pen (Pack of 10) engineered for smooth, smudge-free writing with durable tungsten carbide tip.",
     "description": "The Classmate Hook Ball Pen (Pack of 10) delivers dependable, fluid ink flow with an ergonomic grip designed for extended exams, office documentation, and daily classroom notes.",
@@ -4048,8 +3997,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "FLAI-CLICK-BP",
     "images": [
-      "/images/products/uniball-eye.jpg",
-      "/images/products/pentel-energel.jpg"
+      "/images/products/flair-click-ball-pen-pack-of-10-3.jpg"
     ],
     "shortDescription": "FLair Click Ball Pen (Pack of 10) engineered for smooth, smudge-free writing with durable tungsten carbide tip.",
     "description": "The FLair Click Ball Pen (Pack of 10) delivers dependable, fluid ink flow with an ergonomic grip designed for extended exams, office documentation, and daily classroom notes.",
@@ -4104,8 +4052,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "FLAI-WRITO--BP",
     "images": [
-      "/images/products/uniball-eye.jpg",
-      "/images/products/pentel-energel.jpg"
+      "/images/products/flair-writo-meter-ball-pen-pack-of-10-3.jpg"
     ],
     "shortDescription": "FLair Writo-meter Ball Pen (Pack of 10) engineered for smooth, smudge-free writing with durable tungsten carbide tip.",
     "description": "The FLair Writo-meter Ball Pen (Pack of 10) delivers dependable, fluid ink flow with an ergonomic grip designed for extended exams, office documentation, and daily classroom notes.",
@@ -4160,8 +4107,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "FLAI-SRX-BP",
     "images": [
-      "/images/products/uniball-eye.jpg",
-      "/images/products/pentel-energel.jpg"
+      "/images/products/flair-srx-ball-pen-pack-of-10-3.jpg"
     ],
     "shortDescription": "FLair SRX Ball Pen (Pack of 10) engineered for smooth, smudge-free writing with durable tungsten carbide tip.",
     "description": "The FLair SRX Ball Pen (Pack of 10) delivers dependable, fluid ink flow with an ergonomic grip designed for extended exams, office documentation, and daily classroom notes.",
@@ -4216,8 +4162,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "FLAI-YOLO-BP",
     "images": [
-      "/images/products/uniball-eye.jpg",
-      "/images/products/pentel-energel.jpg"
+      "/images/products/flair-yolo-ball-pen-pack-of-10-3.jpg"
     ],
     "shortDescription": "FLair YOLO Ball Pen (Pack of 10) engineered for smooth, smudge-free writing with durable tungsten carbide tip.",
     "description": "The FLair YOLO Ball Pen (Pack of 10) delivers dependable, fluid ink flow with an ergonomic grip designed for extended exams, office documentation, and daily classroom notes.",
@@ -4272,8 +4217,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "RORI-FIBER--BP",
     "images": [
-      "/images/products/hauser-xo-ball.jpg",
-      "/images/products/linc-pentonic-ball.jpg"
+      "/images/products/rorito-fiber-point-ball-pen-pack-of-10-3.jpg"
     ],
     "shortDescription": "RORITO Fiber Point Ball Pen (Pack of 10) engineered for smooth, smudge-free writing with durable tungsten carbide tip.",
     "description": "The RORITO Fiber Point Ball Pen (Pack of 10) delivers dependable, fluid ink flow with an ergonomic grip designed for extended exams, office documentation, and daily classroom notes.",
@@ -4328,8 +4272,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "MONT-MEGA-T-BP",
     "images": [
-      "/images/products/hauser-xo-ball.jpg",
-      "/images/products/linc-pentonic-ball.jpg"
+      "/images/products/montex-mega-top-ball-pen-pack-of-10-3.jpg"
     ],
     "shortDescription": "MONtex Mega Top Ball Pen (Pack of 10) engineered for smooth, smudge-free writing with durable tungsten carbide tip.",
     "description": "The MONtex Mega Top Ball Pen (Pack of 10) delivers dependable, fluid ink flow with an ergonomic grip designed for extended exams, office documentation, and daily classroom notes.",
@@ -4384,8 +4327,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "LUXO-FINEWR-BP",
     "images": [
-      "/images/products/hauser-xo-ball.jpg",
-      "/images/products/linc-pentonic-ball.jpg"
+      "/images/products/luxor-finewriter-ball-pen-pack-of-10-3.jpg"
     ],
     "shortDescription": "LUXOR Finewriter Ball Pen (Pack of 10) engineered for smooth, smudge-free writing with durable tungsten carbide tip.",
     "description": "The LUXOR Finewriter Ball Pen (Pack of 10) delivers dependable, fluid ink flow with an ergonomic grip designed for extended exams, office documentation, and daily classroom notes.",
@@ -4440,8 +4382,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "LUXO-UNIFLO-BP",
     "images": [
-      "/images/products/hauser-xo-ball.jpg",
-      "/images/products/linc-pentonic-ball.jpg"
+      "/images/products/luxor-uniflow-ball-pen-pack-of-10-3.jpg"
     ],
     "shortDescription": "LUXOR Uniflow Ball Pen (Pack of 10) engineered for smooth, smudge-free writing with durable tungsten carbide tip.",
     "description": "The LUXOR Uniflow Ball Pen (Pack of 10) delivers dependable, fluid ink flow with an ergonomic grip designed for extended exams, office documentation, and daily classroom notes.",
@@ -4496,8 +4437,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "UNOM-ULTRON-BP",
     "images": [
-      "/images/products/uniball-eye.jpg",
-      "/images/products/hauser-xo-ball.jpg"
+      "/images/products/unomax-ultron-2x-ball-pen-pack-of-10-3.jpg"
     ],
     "shortDescription": "UNOMAX Ultron 2X Ball Pen (Pack of 10) engineered for smooth, smudge-free writing with durable tungsten carbide tip.",
     "description": "The UNOMAX Ultron 2X Ball Pen (Pack of 10) delivers dependable, fluid ink flow with an ergonomic grip designed for extended exams, office documentation, and daily classroom notes.",
@@ -4552,8 +4492,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "UNOM-ULTRON-BP",
     "images": [
-      "/images/products/uniball-eye.jpg",
-      "/images/products/hauser-xo-ball.jpg"
+      "/images/products/unomax-ultron-neo-2x-ball-pen-pack-of-10-3.jpg"
     ],
     "shortDescription": "UNOMAX ULTRON NEO 2X Ball Pen (Pack of 10) engineered for smooth, smudge-free writing with durable tungsten carbide tip.",
     "description": "The UNOMAX ULTRON NEO 2X Ball Pen (Pack of 10) delivers dependable, fluid ink flow with an ergonomic grip designed for extended exams, office documentation, and daily classroom notes.",
@@ -4608,8 +4547,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "UNOM-BOLDTR-BP",
     "images": [
-      "/images/products/uniball-eye.jpg",
-      "/images/products/hauser-xo-ball.jpg"
+      "/images/products/unomax-boldtron-ball-pen-pack-of-10-3.jpg"
     ],
     "shortDescription": "UNOMAX Boldtron Ball Pen (Pack of 10) engineered for smooth, smudge-free writing with durable tungsten carbide tip.",
     "description": "The UNOMAX Boldtron Ball Pen (Pack of 10) delivers dependable, fluid ink flow with an ergonomic grip designed for extended exams, office documentation, and daily classroom notes.",
@@ -4664,8 +4602,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "UNOM-I-BALL-BP",
     "images": [
-      "/images/products/uniball-eye.jpg",
-      "/images/products/hauser-xo-ball.jpg"
+      "/images/products/unomax-i-ball-2x-ball-pen-pack-of-10-3.jpg"
     ],
     "shortDescription": "UNOMAX i-Ball 2X Ball Pen (Pack of 10) engineered for smooth, smudge-free writing with durable tungsten carbide tip.",
     "description": "The UNOMAX i-Ball 2X Ball Pen (Pack of 10) delivers dependable, fluid ink flow with an ergonomic grip designed for extended exams, office documentation, and daily classroom notes.",
@@ -4720,8 +4657,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "ADD--CLASSI-BP",
     "images": [
-      "/images/products/hauser-xo-ball.jpg",
-      "/images/products/linc-pentonic-ball.jpg"
+      "/images/products/add-gel-classic-ball-pen-1-piece-3.jpg"
     ],
     "shortDescription": "ADD GEL Classic Ball Pen (1 Piece) engineered for smooth, smudge-free writing with durable tungsten carbide tip.",
     "description": "The ADD GEL Classic Ball Pen (1 Piece) delivers dependable, fluid ink flow with an ergonomic grip designed for extended exams, office documentation, and daily classroom notes.",
@@ -4776,8 +4712,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "UNIB-JETSRE-BP",
     "images": [
-      "/images/products/uniball-eye.jpg",
-      "/images/products/pentel-energel.jpg"
+      "/images/products/uniball-jetsreeam-ball-pen-1-piece-3.jpg"
     ],
     "shortDescription": "UNIBALL JETSREEAM Ball Pen (1 Piece) engineered for smooth, smudge-free writing with durable tungsten carbide tip.",
     "description": "The UNIBALL JETSREEAM Ball Pen (1 Piece) delivers dependable, fluid ink flow with an ergonomic grip designed for extended exams, office documentation, and daily classroom notes.",
@@ -4832,8 +4767,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "LINC-OCEAN--GEL",
     "images": [
-      "/images/products/linc-pentonic-ball.jpg",
-      "/images/products/hauser-xo-ball.jpg"
+      "/images/products/linc-ocean-gel-pack-of-10-3.jpg"
     ],
     "shortDescription": "LINC Ocean Gel (Pack of 10) with vibrant Japanese waterproof gel ink technology and instant quick-dry formula.",
     "description": "Experience bold, effortless handwriting with the LINC Ocean Gel (Pack of 10). Engineered with fast-drying water-resistant pigment gel ink that will not smudge or feather on standard notebook paper.",
@@ -4888,8 +4822,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "LINC-PENTON-GEL",
     "images": [
-      "/images/products/linc-pentonic-ball.jpg",
-      "/images/products/pentel-energel.jpg"
+      "/images/products/linc-pentonic-gel-pack-of-10-3.jpg"
     ],
     "shortDescription": "LINC Pentonic Gel (Pack of 10) with vibrant Japanese waterproof gel ink technology and instant quick-dry formula.",
     "description": "Experience bold, effortless handwriting with the LINC Pentonic Gel (Pack of 10). Engineered with fast-drying water-resistant pigment gel ink that will not smudge or feather on standard notebook paper.",
@@ -4944,8 +4877,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "LINC-GLYCER-GEL",
     "images": [
-      "/images/products/linc-pentonic-ball.jpg",
-      "/images/products/hauser-xo-ball.jpg"
+      "/images/products/linc-glycer-gel-pack-of-10-3.jpg"
     ],
     "shortDescription": "LINC Glycer Gel (Pack of 10) with vibrant Japanese waterproof gel ink technology and instant quick-dry formula.",
     "description": "Experience bold, effortless handwriting with the LINC Glycer Gel (Pack of 10). Engineered with fast-drying water-resistant pigment gel ink that will not smudge or feather on standard notebook paper.",
@@ -5000,8 +4932,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "LINC-EVO-GE-GEL",
     "images": [
-      "/images/products/linc-pentonic-ball.jpg",
-      "/images/products/hauser-xo-ball.jpg"
+      "/images/products/linc-evo-gel-1-piece-3.jpg"
     ],
     "shortDescription": "LINC Evo gel (1 Piece) with vibrant Japanese waterproof gel ink technology and instant quick-dry formula.",
     "description": "Experience bold, effortless handwriting with the LINC Evo gel (1 Piece). Engineered with fast-drying water-resistant pigment gel ink that will not smudge or feather on standard notebook paper.",
@@ -5056,8 +4987,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "LINC-GRT-GEL",
     "images": [
-      "/images/products/linc-pentonic-ball.jpg",
-      "/images/products/hauser-xo-ball.jpg"
+      "/images/products/linc-grt-gel-pen-1-piece-3.jpg"
     ],
     "shortDescription": "LINC GRT Gel Pen (1 Piece) with vibrant Japanese waterproof gel ink technology and instant quick-dry formula.",
     "description": "Experience bold, effortless handwriting with the LINC GRT Gel Pen (1 Piece). Engineered with fast-drying water-resistant pigment gel ink that will not smudge or feather on standard notebook paper.",
@@ -5112,8 +5042,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "HAUS-XO-GEL-GEL",
     "images": [
-      "/images/products/hauser-xo-ball.jpg",
-      "/images/products/linc-pentonic-ball.jpg"
+      "/images/products/hauser-xo-gel-pack-of-10-3.jpg"
     ],
     "shortDescription": "HAUSER Xo gel (Pack of 10) with vibrant Japanese waterproof gel ink technology and instant quick-dry formula.",
     "description": "Experience bold, effortless handwriting with the HAUSER Xo gel (Pack of 10). Engineered with fast-drying water-resistant pigment gel ink that will not smudge or feather on standard notebook paper.",
@@ -5168,8 +5097,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "HAUS-JUMBO--GEL",
     "images": [
-      "/images/products/hauser-xo-ball.jpg",
-      "/images/products/linc-pentonic-ball.jpg"
+      "/images/products/hauser-jumbo-gel-1-piece-3.jpg"
     ],
     "shortDescription": "HAUSER JUMBO GEL (1 Piece) with vibrant Japanese waterproof gel ink technology and instant quick-dry formula.",
     "description": "Experience bold, effortless handwriting with the HAUSER JUMBO GEL (1 Piece). Engineered with fast-drying water-resistant pigment gel ink that will not smudge or feather on standard notebook paper.",
@@ -5224,8 +5152,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "HAUS-CLICK--GEL",
     "images": [
-      "/images/products/hauser-xo-ball.jpg",
-      "/images/products/linc-pentonic-ball.jpg"
+      "/images/products/hauser-click-gel-1-piece-3.jpg"
     ],
     "shortDescription": "HAUSER CLICK GEL (1 Piece) with vibrant Japanese waterproof gel ink technology and instant quick-dry formula.",
     "description": "Experience bold, effortless handwriting with the HAUSER CLICK GEL (1 Piece). Engineered with fast-drying water-resistant pigment gel ink that will not smudge or feather on standard notebook paper.",
@@ -5336,8 +5263,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "FLAI-WRITO--GEL",
     "images": [
-      "/images/products/uniball-eye.jpg",
-      "/images/products/pentel-energel.jpg"
+      "/images/products/flair-writo-meter-gel-1-piece-3.jpg"
     ],
     "shortDescription": "FLair Writo-meter Gel (1 Piece) with vibrant Japanese waterproof gel ink technology and instant quick-dry formula.",
     "description": "Experience bold, effortless handwriting with the FLair Writo-meter Gel (1 Piece). Engineered with fast-drying water-resistant pigment gel ink that will not smudge or feather on standard notebook paper.",
@@ -5392,8 +5318,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "FLAI-V2-GEL-GEL",
     "images": [
-      "/images/products/uniball-eye.jpg",
-      "/images/products/pentel-energel.jpg"
+      "/images/products/flair-v2-gel-1-piece-3.jpg"
     ],
     "shortDescription": "FLair V2 gel (1 Piece) with vibrant Japanese waterproof gel ink technology and instant quick-dry formula.",
     "description": "Experience bold, effortless handwriting with the FLair V2 gel (1 Piece). Engineered with fast-drying water-resistant pigment gel ink that will not smudge or feather on standard notebook paper.",
@@ -5448,8 +5373,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "FLAI-GLASS--GEL",
     "images": [
-      "/images/products/uniball-eye.jpg",
-      "/images/products/pentel-energel.jpg"
+      "/images/products/flair-glass-gel-pack-of-10-3.jpg"
     ],
     "shortDescription": "FLair Glass gel (Pack of 10) with vibrant Japanese waterproof gel ink technology and instant quick-dry formula.",
     "description": "Experience bold, effortless handwriting with the FLair Glass gel (Pack of 10). Engineered with fast-drying water-resistant pigment gel ink that will not smudge or feather on standard notebook paper.",
@@ -5504,8 +5428,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "MONT-TEXTA--GEL",
     "images": [
-      "/images/products/pentel-energel.jpg",
-      "/images/products/hauser-xo-ball.jpg"
+      "/images/products/montex-texta-gel-pack-of-10-3.jpg"
     ],
     "shortDescription": "MONtex TEXTA GEL (Pack of 10) with vibrant Japanese waterproof gel ink technology and instant quick-dry formula.",
     "description": "Experience bold, effortless handwriting with the MONtex TEXTA GEL (Pack of 10). Engineered with fast-drying water-resistant pigment gel ink that will not smudge or feather on standard notebook paper.",
@@ -5560,8 +5483,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "LUXO-GELONE-GEL",
     "images": [
-      "/images/products/pentel-energel.jpg",
-      "/images/products/hauser-xo-ball.jpg"
+      "/images/products/luxor-gelone-pack-of-10-3.jpg"
     ],
     "shortDescription": "LUXOR GELONE (Pack of 10) with vibrant Japanese waterproof gel ink technology and instant quick-dry formula.",
     "description": "Experience bold, effortless handwriting with the LUXOR GELONE (Pack of 10). Engineered with fast-drying water-resistant pigment gel ink that will not smudge or feather on standard notebook paper.",
@@ -5616,8 +5538,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "LUXO-FINE-L-GEL",
     "images": [
-      "/images/products/pentel-energel.jpg",
-      "/images/products/hauser-xo-ball.jpg"
+      "/images/products/luxor-fine-line-gel-pen-pack-of-10-3.jpg"
     ],
     "shortDescription": "LUXOR FINE LINE Gel Pen (Pack of 10) with vibrant Japanese waterproof gel ink technology and instant quick-dry formula.",
     "description": "Experience bold, effortless handwriting with the LUXOR FINE LINE Gel Pen (Pack of 10). Engineered with fast-drying water-resistant pigment gel ink that will not smudge or feather on standard notebook paper.",
@@ -5672,8 +5593,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "UNOM-GELTRO-GEL",
     "images": [
-      "/images/products/uniball-eye.jpg",
-      "/images/products/hauser-xo-ball.jpg"
+      "/images/products/unomax-geltron-pack-of-10-3.jpg"
     ],
     "shortDescription": "UNOMAX Geltron (Pack of 10) with vibrant Japanese waterproof gel ink technology and instant quick-dry formula.",
     "description": "Experience bold, effortless handwriting with the UNOMAX Geltron (Pack of 10). Engineered with fast-drying water-resistant pigment gel ink that will not smudge or feather on standard notebook paper.",
@@ -5728,8 +5648,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "UNOM-GELTRO-GEL",
     "images": [
-      "/images/products/uniball-eye.jpg",
-      "/images/products/hauser-xo-ball.jpg"
+      "/images/products/unomax-geltron-pop-pack-of-10-3.jpg"
     ],
     "shortDescription": "UNOMAX GELTRON POP (Pack of 10) with vibrant Japanese waterproof gel ink technology and instant quick-dry formula.",
     "description": "Experience bold, effortless handwriting with the UNOMAX GELTRON POP (Pack of 10). Engineered with fast-drying water-resistant pigment gel ink that will not smudge or feather on standard notebook paper.",
@@ -5784,8 +5703,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "UNOM-CLICK--GEL",
     "images": [
-      "/images/products/uniball-eye.jpg",
-      "/images/products/hauser-xo-ball.jpg"
+      "/images/products/unomax-click-gel-pack-of-10-3.jpg"
     ],
     "shortDescription": "UNOMAX CLICK & GEL (Pack of 10) with vibrant Japanese waterproof gel ink technology and instant quick-dry formula.",
     "description": "Experience bold, effortless handwriting with the UNOMAX CLICK & GEL (Pack of 10). Engineered with fast-drying water-resistant pigment gel ink that will not smudge or feather on standard notebook paper.",
@@ -5840,8 +5758,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "UNOM-FROSTR-GEL",
     "images": [
-      "/images/products/uniball-eye.jpg",
-      "/images/products/hauser-xo-ball.jpg"
+      "/images/products/unomax-frostron-gel-pack-of-10-3.jpg"
     ],
     "shortDescription": "UNOMAX FROSTRON GEL (Pack of 10) with vibrant Japanese waterproof gel ink technology and instant quick-dry formula.",
     "description": "Experience bold, effortless handwriting with the UNOMAX FROSTRON GEL (Pack of 10). Engineered with fast-drying water-resistant pigment gel ink that will not smudge or feather on standard notebook paper.",
@@ -5896,8 +5813,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "UNOM-GELTRO-GEL",
     "images": [
-      "/images/products/uniball-eye.jpg",
-      "/images/products/hauser-xo-ball.jpg"
+      "/images/products/unomax-geltron-pearl-pack-of-10-3.jpg"
     ],
     "shortDescription": "UNOMAX Geltron Pearl (Pack of 10) with vibrant Japanese waterproof gel ink technology and instant quick-dry formula.",
     "description": "Experience bold, effortless handwriting with the UNOMAX Geltron Pearl (Pack of 10). Engineered with fast-drying water-resistant pigment gel ink that will not smudge or feather on standard notebook paper.",
@@ -5952,8 +5868,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "UNOM-CANDY--GEL",
     "images": [
-      "/images/products/uniball-eye.jpg",
-      "/images/products/hauser-xo-ball.jpg"
+      "/images/products/unomax-candy-gel-pack-of-10-3.jpg"
     ],
     "shortDescription": "UNOMAX CANDY GEL (Pack of 10) with vibrant Japanese waterproof gel ink technology and instant quick-dry formula.",
     "description": "Experience bold, effortless handwriting with the UNOMAX CANDY GEL (Pack of 10). Engineered with fast-drying water-resistant pigment gel ink that will not smudge or feather on standard notebook paper.",
@@ -6008,8 +5923,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "UNOM-ALL-CL-GEL",
     "images": [
-      "/images/products/uniball-eye.jpg",
-      "/images/products/hauser-xo-ball.jpg"
+      "/images/products/unomax-all-clear-gel-pen-pack-of-10-3.jpg"
     ],
     "shortDescription": "UNOMAX All Clear Gel Pen (Pack of 10) with vibrant Japanese waterproof gel ink technology and instant quick-dry formula.",
     "description": "Experience bold, effortless handwriting with the UNOMAX All Clear Gel Pen (Pack of 10). Engineered with fast-drying water-resistant pigment gel ink that will not smudge or feather on standard notebook paper.",
@@ -6064,8 +5978,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "PENT-ENERGE-GEL",
     "images": [
-      "/images/products/pentel-energel.jpg",
-      "/images/products/uniball-eye.jpg"
+      "/images/products/pentel-energel-1-piece-3.jpg"
     ],
     "shortDescription": "PENTEL ENERGEL (1 Piece) with vibrant Japanese waterproof gel ink technology and instant quick-dry formula.",
     "description": "Experience bold, effortless handwriting with the PENTEL ENERGEL (1 Piece). Engineered with fast-drying water-resistant pigment gel ink that will not smudge or feather on standard notebook paper.",
@@ -6120,8 +6033,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "PENT-ENERGE-GEL",
     "images": [
-      "/images/products/pentel-energel.jpg",
-      "/images/products/uniball-eye.jpg"
+      "/images/products/pentel-energel-click-1-piece-3.jpg"
     ],
     "shortDescription": "PENTEL ENERGEL CLICK (1 Piece) with vibrant Japanese waterproof gel ink technology and instant quick-dry formula.",
     "description": "Experience bold, effortless handwriting with the PENTEL ENERGEL CLICK (1 Piece). Engineered with fast-drying water-resistant pigment gel ink that will not smudge or feather on standard notebook paper.",
@@ -6176,8 +6088,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "PENT-BOLD-GEL",
     "images": [
-      "/images/products/pentel-energel.jpg",
-      "/images/products/uniball-eye.jpg"
+      "/images/products/pentel-bold-gel-pen-1-piece-3.jpg"
     ],
     "shortDescription": "PENTEL BOLD Gel Pen (1 Piece) with vibrant Japanese waterproof gel ink technology and instant quick-dry formula.",
     "description": "Experience bold, effortless handwriting with the PENTEL BOLD Gel Pen (1 Piece). Engineered with fast-drying water-resistant pigment gel ink that will not smudge or feather on standard notebook paper.",
@@ -6232,8 +6143,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "UNIB-CLICK--GEL",
     "images": [
-      "/images/products/uniball-eye.jpg",
-      "/images/products/pentel-energel.jpg"
+      "/images/products/uniball-click-gel-1-piece-3.jpg"
     ],
     "shortDescription": "UNIBALL CLICK GEL (1 Piece) with vibrant Japanese waterproof gel ink technology and instant quick-dry formula.",
     "description": "Experience bold, effortless handwriting with the UNIBALL CLICK GEL (1 Piece). Engineered with fast-drying water-resistant pigment gel ink that will not smudge or feather on standard notebook paper.",
@@ -6288,8 +6198,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "UNOM-ROLLTE-ROL",
     "images": [
-      "/images/products/uniball-eye.jpg",
-      "/images/products/hauser-xo-ball.jpg"
+      "/images/products/unomax-rolltek-liquid-ink-roller-pen-1-piece-3.jpg"
     ],
     "shortDescription": "UNOMAX ROLLTEK Liquid Ink Roller Pen (1 Piece) engineered with Uni-Flow liquid ink system for skip-free continuous writing.",
     "description": "The UNOMAX ROLLTEK Liquid Ink Roller Pen (1 Piece) features advanced liquid ink technology ensuring steady ink flow right down to the last drop. Micro-cushioned tip adapts to your writing angle for frictionless gliding.",
@@ -6344,8 +6253,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "HAUS-FLOAT-ROL",
     "images": [
-      "/images/products/hauser-xo-ball.jpg",
-      "/images/products/linc-pentonic-ball.jpg"
+      "/images/products/hauser-float-liquid-ink-roller-pen-1-piece-3.jpg"
     ],
     "shortDescription": "Hauser FLOAT Liquid Ink Roller Pen (1 Piece) engineered with Uni-Flow liquid ink system for skip-free continuous writing.",
     "description": "The Hauser FLOAT Liquid Ink Roller Pen (1 Piece) features advanced liquid ink technology ensuring steady ink flow right down to the last drop. Micro-cushioned tip adapts to your writing angle for frictionless gliding.",
@@ -6400,8 +6308,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "UNIB-EYE-ROL",
     "images": [
-      "/images/products/uniball-eye.jpg",
-      "/images/products/pentel-energel.jpg"
+      "/images/products/uniball-eye-liquid-ink-roller-pen-1-piece-3.jpg"
     ],
     "shortDescription": "UNIBALL EYE Liquid Ink Roller Pen (1 Piece) engineered with Uni-Flow liquid ink system for skip-free continuous writing.",
     "description": "The UNIBALL EYE Liquid Ink Roller Pen (1 Piece) features advanced liquid ink technology ensuring steady ink flow right down to the last drop. Micro-cushioned tip adapts to your writing angle for frictionless gliding.",
@@ -6456,8 +6363,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "UNIB-AIR-ROL",
     "images": [
-      "/images/products/uniball-eye.jpg",
-      "/images/products/pentel-energel.jpg"
+      "/images/products/uniball-air-liquid-ink-roller-pen-1-piece-3.jpg"
     ],
     "shortDescription": "UNIBALL AIR Liquid Ink Roller Pen (1 Piece) engineered with Uni-Flow liquid ink system for skip-free continuous writing.",
     "description": "The UNIBALL AIR Liquid Ink Roller Pen (1 Piece) features advanced liquid ink technology ensuring steady ink flow right down to the last drop. Micro-cushioned tip adapts to your writing angle for frictionless gliding.",
@@ -6512,8 +6418,7 @@ export const PRODUCTS: Product[] = [
     "isNew": true,
     "sku": "PARK-JOTTER-BAL",
     "images": [
-      "/images/products/parker-luxury-pen.jpg",
-      "/images/products/pentel-energel.jpg"
+      "/images/products/parker-jotter-luxury-ball-pen-executive-gift-box-3.jpg"
     ],
     "shortDescription": "PARKER Jotter Luxury Ball Pen (Executive Gift Box) with gold-plated accents and luxury hard presentation case.",
     "description": "An icon of timeless executive elegance, the PARKER Jotter Luxury Ball Pen (Executive Gift Box) is crafted from heavy brass metal with precision-balanced weight distribution. Packaged in a cushioned designer gift box, it is the premier choice for corporate gifting and prestigious milestones.",
@@ -6568,8 +6473,7 @@ export const PRODUCTS: Product[] = [
     "isNew": true,
     "sku": "PARK-VECTOR-BAL",
     "images": [
-      "/images/products/parker-luxury-pen.jpg",
-      "/images/products/pentel-energel.jpg"
+      "/images/products/parker-vector-luxury-ball-pen-executive-gift-box-3.jpg"
     ],
     "shortDescription": "PARKER Vector Luxury Ball Pen (Executive Gift Box) with gold-plated accents and luxury hard presentation case.",
     "description": "An icon of timeless executive elegance, the PARKER Vector Luxury Ball Pen (Executive Gift Box) is crafted from heavy brass metal with precision-balanced weight distribution. Packaged in a cushioned designer gift box, it is the premier choice for corporate gifting and prestigious milestones.",
@@ -6624,8 +6528,7 @@ export const PRODUCTS: Product[] = [
     "isNew": true,
     "sku": "PARK-CLASSI-BAL",
     "images": [
-      "/images/products/parker-luxury-pen.jpg",
-      "/images/products/pentel-energel.jpg"
+      "/images/products/parker-classic-luxury-ball-pen-executive-gift-box-3.jpg"
     ],
     "shortDescription": "PARKER Classic Luxury Ball Pen (Executive Gift Box) with gold-plated accents and luxury hard presentation case.",
     "description": "An icon of timeless executive elegance, the PARKER Classic Luxury Ball Pen (Executive Gift Box) is crafted from heavy brass metal with precision-balanced weight distribution. Packaged in a cushioned designer gift box, it is the premier choice for corporate gifting and prestigious milestones.",
@@ -6680,8 +6583,7 @@ export const PRODUCTS: Product[] = [
     "isNew": true,
     "sku": "PIER-GOLDEN-BAL",
     "images": [
-      "/images/products/parker-luxury-pen.jpg",
-      "/images/products/pentel-energel.jpg"
+      "/images/products/pierre-cardin-golden-eye-luxury-ball-pen-executive-gift-box-3.jpg"
     ],
     "shortDescription": "Pierre Cardin Golden Eye Luxury Ball Pen (Executive Gift Box) with gold-plated accents and luxury hard presentation case.",
     "description": "An icon of timeless executive elegance, the Pierre Cardin Golden Eye Luxury Ball Pen (Executive Gift Box) is crafted from heavy brass metal with precision-balanced weight distribution. Packaged in a cushioned designer gift box, it is the premier choice for corporate gifting and prestigious milestones.",
@@ -6736,8 +6638,7 @@ export const PRODUCTS: Product[] = [
     "isNew": true,
     "sku": "PIER-GOLDEN-FOU",
     "images": [
-      "/images/products/parker-luxury-pen.jpg",
-      "/images/products/pentel-energel.jpg"
+      "/images/products/pierre-cardin-golden-eye-luxury-fountain-pen-executive-gift-box-3.jpg"
     ],
     "shortDescription": "Pierre Cardin Golden Eye Luxury Fountain Pen (Executive Gift Box) with gold-plated accents and luxury hard presentation case.",
     "description": "An icon of timeless executive elegance, the Pierre Cardin Golden Eye Luxury Fountain Pen (Executive Gift Box) is crafted from heavy brass metal with precision-balanced weight distribution. Packaged in a cushioned designer gift box, it is the premier choice for corporate gifting and prestigious milestones.",
@@ -6792,8 +6693,7 @@ export const PRODUCTS: Product[] = [
     "isNew": true,
     "sku": "PIER-KRISS--BAL",
     "images": [
-      "/images/products/parker-luxury-pen.jpg",
-      "/images/products/pentel-energel.jpg"
+      "/images/products/pierre-cardin-kriss-gold-luxury-ball-pen-executive-gift-box-3.jpg"
     ],
     "shortDescription": "Pierre Cardin Kriss Gold Luxury Ball Pen (Executive Gift Box) with gold-plated accents and luxury hard presentation case.",
     "description": "An icon of timeless executive elegance, the Pierre Cardin Kriss Gold Luxury Ball Pen (Executive Gift Box) is crafted from heavy brass metal with precision-balanced weight distribution. Packaged in a cushioned designer gift box, it is the premier choice for corporate gifting and prestigious milestones.",
@@ -6848,8 +6748,7 @@ export const PRODUCTS: Product[] = [
     "isNew": true,
     "sku": "PIER-KRISS--FOU",
     "images": [
-      "/images/products/parker-luxury-pen.jpg",
-      "/images/products/pentel-energel.jpg"
+      "/images/products/pierre-cardin-kriss-gold-luxury-fountain-pen-executive-gift-box-3.jpg"
     ],
     "shortDescription": "Pierre Cardin Kriss Gold Luxury Fountain Pen (Executive Gift Box) with gold-plated accents and luxury hard presentation case.",
     "description": "An icon of timeless executive elegance, the Pierre Cardin Kriss Gold Luxury Fountain Pen (Executive Gift Box) is crafted from heavy brass metal with precision-balanced weight distribution. Packaged in a cushioned designer gift box, it is the premier choice for corporate gifting and prestigious milestones.",
@@ -6904,8 +6803,7 @@ export const PRODUCTS: Product[] = [
     "isNew": true,
     "sku": "PIER-TRIGA-BAL",
     "images": [
-      "/images/products/parker-luxury-pen.jpg",
-      "/images/products/pentel-energel.jpg"
+      "/images/products/pierre-cardin-triga-luxury-ball-pen-executive-gift-box-3.jpg"
     ],
     "shortDescription": "Pierre Cardin Triga Luxury Ball Pen (Executive Gift Box) with gold-plated accents and luxury hard presentation case.",
     "description": "An icon of timeless executive elegance, the Pierre Cardin Triga Luxury Ball Pen (Executive Gift Box) is crafted from heavy brass metal with precision-balanced weight distribution. Packaged in a cushioned designer gift box, it is the premier choice for corporate gifting and prestigious milestones.",
@@ -6960,8 +6858,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "NB-24X18-SINGLE-72",
     "images": [
-      "/images/products/classmate-notebook-24x18.jpg",
-      "/images/products/classmate-longbook.jpg"
+      "/images/products/classmate-navneet-student-notebook-24x18-cm-single-line-72-pages-3.jpg"
     ],
     "shortDescription": "Classmate / Navneet standard school exercise notebook (24x18 cm, Single Line, 72 pages) with chlorine-free ozone friendly paper.",
     "description": "The Classmate / Navneet Student Notebook 24x18 cm (Single Line, 72 Pages) is crafted with ultra-smooth 58-60 GSM high-brightness paper that prevents ink penetration and feathering. Features heavy-duty spine pinning, subject index page, and fun trivia back cover.",
@@ -7017,8 +6914,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "NB-24X18-SINGLE-120",
     "images": [
-      "/images/products/classmate-notebook-24x18.jpg",
-      "/images/products/classmate-longbook.jpg"
+      "/images/products/classmate-navneet-student-notebook-24x18-cm-single-line-120-pages-3.jpg"
     ],
     "shortDescription": "Classmate / Navneet standard school exercise notebook (24x18 cm, Single Line, 120 pages) with chlorine-free ozone friendly paper.",
     "description": "The Classmate / Navneet Student Notebook 24x18 cm (Single Line, 120 Pages) is crafted with ultra-smooth 58-60 GSM high-brightness paper that prevents ink penetration and feathering. Features heavy-duty spine pinning, subject index page, and fun trivia back cover.",
@@ -7074,8 +6970,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "NB-24X18-SINGLE-172",
     "images": [
-      "/images/products/classmate-notebook-24x18.jpg",
-      "/images/products/classmate-longbook.jpg"
+      "/images/products/classmate-navneet-student-notebook-24x18-cm-single-line-172-pages-3.jpg"
     ],
     "shortDescription": "Classmate / Navneet standard school exercise notebook (24x18 cm, Single Line, 172 pages) with chlorine-free ozone friendly paper.",
     "description": "The Classmate / Navneet Student Notebook 24x18 cm (Single Line, 172 Pages) is crafted with ultra-smooth 58-60 GSM high-brightness paper that prevents ink penetration and feathering. Features heavy-duty spine pinning, subject index page, and fun trivia back cover.",
@@ -7131,8 +7026,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "NB-24X18-4-LINE-72",
     "images": [
-      "/images/products/classmate-notebook-24x18.jpg",
-      "/images/products/classmate-longbook.jpg"
+      "/images/products/classmate-navneet-student-notebook-24x18-cm-4-line-72-pages-3.jpg"
     ],
     "shortDescription": "Classmate / Navneet standard school exercise notebook (24x18 cm, 4 Line, 72 pages) with chlorine-free ozone friendly paper.",
     "description": "The Classmate / Navneet Student Notebook 24x18 cm (4 Line, 72 Pages) is crafted with ultra-smooth 58-60 GSM high-brightness paper that prevents ink penetration and feathering. Features heavy-duty spine pinning, subject index page, and fun trivia back cover.",
@@ -7188,8 +7082,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "NB-24X18-4-LINE-120",
     "images": [
-      "/images/products/classmate-notebook-24x18.jpg",
-      "/images/products/classmate-longbook.jpg"
+      "/images/products/classmate-navneet-student-notebook-24x18-cm-4-line-120-pages-3.jpg"
     ],
     "shortDescription": "Classmate / Navneet standard school exercise notebook (24x18 cm, 4 Line, 120 pages) with chlorine-free ozone friendly paper.",
     "description": "The Classmate / Navneet Student Notebook 24x18 cm (4 Line, 120 Pages) is crafted with ultra-smooth 58-60 GSM high-brightness paper that prevents ink penetration and feathering. Features heavy-duty spine pinning, subject index page, and fun trivia back cover.",
@@ -7245,8 +7138,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "NB-24X18-4-LINE-172",
     "images": [
-      "/images/products/classmate-notebook-24x18.jpg",
-      "/images/products/classmate-longbook.jpg"
+      "/images/products/classmate-navneet-student-notebook-24x18-cm-4-line-172-pages-3.jpg"
     ],
     "shortDescription": "Classmate / Navneet standard school exercise notebook (24x18 cm, 4 Line, 172 pages) with chlorine-free ozone friendly paper.",
     "description": "The Classmate / Navneet Student Notebook 24x18 cm (4 Line, 172 Pages) is crafted with ultra-smooth 58-60 GSM high-brightness paper that prevents ink penetration and feathering. Features heavy-duty spine pinning, subject index page, and fun trivia back cover.",
@@ -7302,8 +7194,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "NB-24X18-2-LINE-72",
     "images": [
-      "/images/products/classmate-notebook-24x18.jpg",
-      "/images/products/classmate-longbook.jpg"
+      "/images/products/classmate-navneet-student-notebook-24x18-cm-2-line-72-pages-3.jpg"
     ],
     "shortDescription": "Classmate / Navneet standard school exercise notebook (24x18 cm, 2 Line, 72 pages) with chlorine-free ozone friendly paper.",
     "description": "The Classmate / Navneet Student Notebook 24x18 cm (2 Line, 72 Pages) is crafted with ultra-smooth 58-60 GSM high-brightness paper that prevents ink penetration and feathering. Features heavy-duty spine pinning, subject index page, and fun trivia back cover.",
@@ -7359,8 +7250,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "NB-24X18-2-LINE-120",
     "images": [
-      "/images/products/classmate-notebook-24x18.jpg",
-      "/images/products/classmate-longbook.jpg"
+      "/images/products/classmate-navneet-student-notebook-24x18-cm-2-line-120-pages-3.jpg"
     ],
     "shortDescription": "Classmate / Navneet standard school exercise notebook (24x18 cm, 2 Line, 120 pages) with chlorine-free ozone friendly paper.",
     "description": "The Classmate / Navneet Student Notebook 24x18 cm (2 Line, 120 Pages) is crafted with ultra-smooth 58-60 GSM high-brightness paper that prevents ink penetration and feathering. Features heavy-duty spine pinning, subject index page, and fun trivia back cover.",
@@ -7416,8 +7306,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "NB-24X18-2-LINE-172",
     "images": [
-      "/images/products/classmate-notebook-24x18.jpg",
-      "/images/products/classmate-longbook.jpg"
+      "/images/products/classmate-navneet-student-notebook-24x18-cm-2-line-172-pages-3.jpg"
     ],
     "shortDescription": "Classmate / Navneet standard school exercise notebook (24x18 cm, 2 Line, 172 pages) with chlorine-free ozone friendly paper.",
     "description": "The Classmate / Navneet Student Notebook 24x18 cm (2 Line, 172 Pages) is crafted with ultra-smooth 58-60 GSM high-brightness paper that prevents ink penetration and feathering. Features heavy-duty spine pinning, subject index page, and fun trivia back cover.",
@@ -7473,8 +7362,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "NB-24X18-3-LINE-72",
     "images": [
-      "/images/products/classmate-notebook-24x18.jpg",
-      "/images/products/classmate-longbook.jpg"
+      "/images/products/classmate-navneet-student-notebook-24x18-cm-3-line-72-pages-3.jpg"
     ],
     "shortDescription": "Classmate / Navneet standard school exercise notebook (24x18 cm, 3 Line, 72 pages) with chlorine-free ozone friendly paper.",
     "description": "The Classmate / Navneet Student Notebook 24x18 cm (3 Line, 72 Pages) is crafted with ultra-smooth 58-60 GSM high-brightness paper that prevents ink penetration and feathering. Features heavy-duty spine pinning, subject index page, and fun trivia back cover.",
@@ -7530,8 +7418,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "NB-24X18-3-LINE-120",
     "images": [
-      "/images/products/classmate-notebook-24x18.jpg",
-      "/images/products/classmate-longbook.jpg"
+      "/images/products/classmate-navneet-student-notebook-24x18-cm-3-line-120-pages-3.jpg"
     ],
     "shortDescription": "Classmate / Navneet standard school exercise notebook (24x18 cm, 3 Line, 120 pages) with chlorine-free ozone friendly paper.",
     "description": "The Classmate / Navneet Student Notebook 24x18 cm (3 Line, 120 Pages) is crafted with ultra-smooth 58-60 GSM high-brightness paper that prevents ink penetration and feathering. Features heavy-duty spine pinning, subject index page, and fun trivia back cover.",
@@ -7587,8 +7474,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "NB-24X18-3-LINE-172",
     "images": [
-      "/images/products/classmate-notebook-24x18.jpg",
-      "/images/products/classmate-longbook.jpg"
+      "/images/products/classmate-navneet-student-notebook-24x18-cm-3-line-172-pages-3.jpg"
     ],
     "shortDescription": "Classmate / Navneet standard school exercise notebook (24x18 cm, 3 Line, 172 pages) with chlorine-free ozone friendly paper.",
     "description": "The Classmate / Navneet Student Notebook 24x18 cm (3 Line, 172 Pages) is crafted with ultra-smooth 58-60 GSM high-brightness paper that prevents ink penetration and feathering. Features heavy-duty spine pinning, subject index page, and fun trivia back cover.",
@@ -7644,8 +7530,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "NB-24X18-BOX-72",
     "images": [
-      "/images/products/classmate-notebook-24x18.jpg",
-      "/images/products/classmate-longbook.jpg"
+      "/images/products/classmate-navneet-student-notebook-24x18-cm-box-72-pages-3.jpg"
     ],
     "shortDescription": "Classmate / Navneet standard school exercise notebook (24x18 cm, Box, 72 pages) with chlorine-free ozone friendly paper.",
     "description": "The Classmate / Navneet Student Notebook 24x18 cm (Box, 72 Pages) is crafted with ultra-smooth 58-60 GSM high-brightness paper that prevents ink penetration and feathering. Features heavy-duty spine pinning, subject index page, and fun trivia back cover.",
@@ -7701,8 +7586,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "NB-24X18-BOX-120",
     "images": [
-      "/images/products/classmate-notebook-24x18.jpg",
-      "/images/products/classmate-longbook.jpg"
+      "/images/products/classmate-navneet-student-notebook-24x18-cm-box-120-pages-3.jpg"
     ],
     "shortDescription": "Classmate / Navneet standard school exercise notebook (24x18 cm, Box, 120 pages) with chlorine-free ozone friendly paper.",
     "description": "The Classmate / Navneet Student Notebook 24x18 cm (Box, 120 Pages) is crafted with ultra-smooth 58-60 GSM high-brightness paper that prevents ink penetration and feathering. Features heavy-duty spine pinning, subject index page, and fun trivia back cover.",
@@ -7758,8 +7642,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "NB-24X18-BOX-172",
     "images": [
-      "/images/products/classmate-notebook-24x18.jpg",
-      "/images/products/classmate-longbook.jpg"
+      "/images/products/classmate-navneet-student-notebook-24x18-cm-box-172-pages-3.jpg"
     ],
     "shortDescription": "Classmate / Navneet standard school exercise notebook (24x18 cm, Box, 172 pages) with chlorine-free ozone friendly paper.",
     "description": "The Classmate / Navneet Student Notebook 24x18 cm (Box, 172 Pages) is crafted with ultra-smooth 58-60 GSM high-brightness paper that prevents ink penetration and feathering. Features heavy-duty spine pinning, subject index page, and fun trivia back cover.",
@@ -7815,8 +7698,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "NB-24X18-COMBIN-72",
     "images": [
-      "/images/products/classmate-notebook-24x18.jpg",
-      "/images/products/classmate-longbook.jpg"
+      "/images/products/classmate-navneet-student-notebook-24x18-cm-combine-72-pages-3.jpg"
     ],
     "shortDescription": "Classmate / Navneet standard school exercise notebook (24x18 cm, Combine, 72 pages) with chlorine-free ozone friendly paper.",
     "description": "The Classmate / Navneet Student Notebook 24x18 cm (Combine, 72 Pages) is crafted with ultra-smooth 58-60 GSM high-brightness paper that prevents ink penetration and feathering. Features heavy-duty spine pinning, subject index page, and fun trivia back cover.",
@@ -7872,8 +7754,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "NB-24X18-COMBIN-120",
     "images": [
-      "/images/products/classmate-notebook-24x18.jpg",
-      "/images/products/classmate-longbook.jpg"
+      "/images/products/classmate-navneet-student-notebook-24x18-cm-combine-120-pages-3.jpg"
     ],
     "shortDescription": "Classmate / Navneet standard school exercise notebook (24x18 cm, Combine, 120 pages) with chlorine-free ozone friendly paper.",
     "description": "The Classmate / Navneet Student Notebook 24x18 cm (Combine, 120 Pages) is crafted with ultra-smooth 58-60 GSM high-brightness paper that prevents ink penetration and feathering. Features heavy-duty spine pinning, subject index page, and fun trivia back cover.",
@@ -7929,8 +7810,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "NB-24X18-COMBIN-172",
     "images": [
-      "/images/products/classmate-notebook-24x18.jpg",
-      "/images/products/classmate-longbook.jpg"
+      "/images/products/classmate-navneet-student-notebook-24x18-cm-combine-172-pages-4.jpg"
     ],
     "shortDescription": "Classmate / Navneet standard school exercise notebook (24x18 cm, Combine, 172 pages) with chlorine-free ozone friendly paper.",
     "description": "The Classmate / Navneet Student Notebook 24x18 cm (Combine, 172 Pages) is crafted with ultra-smooth 58-60 GSM high-brightness paper that prevents ink penetration and feathering. Features heavy-duty spine pinning, subject index page, and fun trivia back cover.",
@@ -7986,8 +7866,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "NB-24X18-INTERL-72",
     "images": [
-      "/images/products/classmate-notebook-24x18.jpg",
-      "/images/products/classmate-longbook.jpg"
+      "/images/products/classmate-navneet-student-notebook-24x18-cm-interleaf-72-pages-3.jpg"
     ],
     "shortDescription": "Classmate / Navneet standard school exercise notebook (24x18 cm, Interleaf, 72 pages) with chlorine-free ozone friendly paper.",
     "description": "The Classmate / Navneet Student Notebook 24x18 cm (Interleaf, 72 Pages) is crafted with ultra-smooth 58-60 GSM high-brightness paper that prevents ink penetration and feathering. Features heavy-duty spine pinning, subject index page, and fun trivia back cover.",
@@ -8043,8 +7922,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "NB-24X18-INTERL-120",
     "images": [
-      "/images/products/classmate-notebook-24x18.jpg",
-      "/images/products/classmate-longbook.jpg"
+      "/images/products/classmate-navneet-student-notebook-24x18-cm-interleaf-120-pages-3.jpg"
     ],
     "shortDescription": "Classmate / Navneet standard school exercise notebook (24x18 cm, Interleaf, 120 pages) with chlorine-free ozone friendly paper.",
     "description": "The Classmate / Navneet Student Notebook 24x18 cm (Interleaf, 120 Pages) is crafted with ultra-smooth 58-60 GSM high-brightness paper that prevents ink penetration and feathering. Features heavy-duty spine pinning, subject index page, and fun trivia back cover.",
@@ -8100,8 +7978,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "NB-24X18-INTERL-172",
     "images": [
-      "/images/products/classmate-notebook-24x18.jpg",
-      "/images/products/classmate-longbook.jpg"
+      "/images/products/classmate-navneet-student-notebook-24x18-cm-interleaf-172-pages-3.jpg"
     ],
     "shortDescription": "Classmate / Navneet standard school exercise notebook (24x18 cm, Interleaf, 172 pages) with chlorine-free ozone friendly paper.",
     "description": "The Classmate / Navneet Student Notebook 24x18 cm (Interleaf, 172 Pages) is crafted with ultra-smooth 58-60 GSM high-brightness paper that prevents ink penetration and feathering. Features heavy-duty spine pinning, subject index page, and fun trivia back cover.",
@@ -8157,8 +8034,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "NB-24X18-COMBIN-172",
     "images": [
-      "/images/products/classmate-notebook-24x18.jpg",
-      "/images/products/classmate-longbook.jpg"
+      "/images/products/classmate-navneet-student-notebook-24x18-cm-combine-drawing-ruled-172-pages-2.jpg"
     ],
     "shortDescription": "Classmate / Navneet standard school exercise notebook (24x18 cm, Combine Drawing & Ruled, 172 pages) with chlorine-free ozone friendly paper.",
     "description": "The Classmate / Navneet Student Notebook 24x18 cm (Combine Drawing & Ruled, 172 Pages) is crafted with ultra-smooth 58-60 GSM high-brightness paper that prevents ink penetration and feathering. Features heavy-duty spine pinning, subject index page, and fun trivia back cover.",
@@ -8214,8 +8090,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "NB-24X18-2-LINE-172",
     "images": [
-      "/images/products/classmate-notebook-24x18.jpg",
-      "/images/products/classmate-longbook.jpg"
+      "/images/products/classmate-navneet-student-notebook-24x18-cm-2-line-combine-172-pages-3.jpg"
     ],
     "shortDescription": "Classmate / Navneet standard school exercise notebook (24x18 cm, 2 Line Combine, 172 pages) with chlorine-free ozone friendly paper.",
     "description": "The Classmate / Navneet Student Notebook 24x18 cm (2 Line Combine, 172 Pages) is crafted with ultra-smooth 58-60 GSM high-brightness paper that prevents ink penetration and feathering. Features heavy-duty spine pinning, subject index page, and fun trivia back cover.",
@@ -8271,8 +8146,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "NB-29X21-SL-72",
     "images": [
-      "/images/products/classmate-longbook.jpg",
-      "/images/products/classmate-notebook-24x18.jpg"
+      "/images/products/classmate-navneet-long-notebook-29x21-cm-single-line-72-pages-3.jpg"
     ],
     "shortDescription": "Classmate / Navneet A4 long format notebook (29x21 cm, 72 pages) for senior school, college lectures, and coaching classes.",
     "description": "The Classmate / Navneet Long Notebook 29x21 cm (Single Line, 72 Pages) is specifically formatted for high school and university coursework. High opacity paper accommodates gel and fountain pens with zero bleed-through.",
@@ -8328,8 +8202,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "NB-29X21-SL-120",
     "images": [
-      "/images/products/classmate-longbook.jpg",
-      "/images/products/classmate-notebook-24x18.jpg"
+      "/images/products/classmate-navneet-long-notebook-29x21-cm-single-line-120-pages-3.jpg"
     ],
     "shortDescription": "Classmate / Navneet A4 long format notebook (29x21 cm, 120 pages) for senior school, college lectures, and coaching classes.",
     "description": "The Classmate / Navneet Long Notebook 29x21 cm (Single Line, 120 Pages) is specifically formatted for high school and university coursework. High opacity paper accommodates gel and fountain pens with zero bleed-through.",
@@ -8385,8 +8258,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "NB-29X21-SL-172",
     "images": [
-      "/images/products/classmate-longbook.jpg",
-      "/images/products/classmate-notebook-24x18.jpg"
+      "/images/products/classmate-navneet-long-notebook-29x21-cm-single-line-172-pages-3.jpg"
     ],
     "shortDescription": "Classmate / Navneet A4 long format notebook (29x21 cm, 172 pages) for senior school, college lectures, and coaching classes.",
     "description": "The Classmate / Navneet Long Notebook 29x21 cm (Single Line, 172 Pages) is specifically formatted for high school and university coursework. High opacity paper accommodates gel and fountain pens with zero bleed-through.",
@@ -8442,8 +8314,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "NB-29X21-SL-240",
     "images": [
-      "/images/products/classmate-longbook.jpg",
-      "/images/products/classmate-notebook-24x18.jpg"
+      "/images/products/classmate-navneet-long-notebook-29x21-cm-single-line-240-pages-3.jpg"
     ],
     "shortDescription": "Classmate / Navneet A4 long format notebook (29x21 cm, 240 pages) for senior school, college lectures, and coaching classes.",
     "description": "The Classmate / Navneet Long Notebook 29x21 cm (Single Line, 240 Pages) is specifically formatted for high school and university coursework. High opacity paper accommodates gel and fountain pens with zero bleed-through.",
@@ -8499,8 +8370,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "NB-29X21-SL-302",
     "images": [
-      "/images/products/classmate-longbook.jpg",
-      "/images/products/classmate-notebook-24x18.jpg"
+      "/images/products/classmate-navneet-long-notebook-29x21-cm-single-line-302-pages-3.jpg"
     ],
     "shortDescription": "Classmate / Navneet A4 long format notebook (29x21 cm, 302 pages) for senior school, college lectures, and coaching classes.",
     "description": "The Classmate / Navneet Long Notebook 29x21 cm (Single Line, 302 Pages) is specifically formatted for high school and university coursework. High opacity paper accommodates gel and fountain pens with zero bleed-through.",
@@ -8556,8 +8426,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "NB-29X21-SL-384",
     "images": [
-      "/images/products/classmate-longbook.jpg",
-      "/images/products/classmate-notebook-24x18.jpg"
+      "/images/products/classmate-navneet-long-notebook-29x21-cm-single-line-384-pages-3.jpg"
     ],
     "shortDescription": "Classmate / Navneet A4 long format notebook (29x21 cm, 384 pages) for senior school, college lectures, and coaching classes.",
     "description": "The Classmate / Navneet Long Notebook 29x21 cm (Single Line, 384 Pages) is specifically formatted for high school and university coursework. High opacity paper accommodates gel and fountain pens with zero bleed-through.",
@@ -8613,8 +8482,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "WIRO-29X21-SING-172",
     "images": [
-      "/images/products/classmate-wiro.jpg",
-      "/images/products/classmate-longbook.jpg"
+      "/images/products/classmate-navneet-wiro-spiral-notebook-29x21-cm-single-line-172-pages-3.jpg"
     ],
     "shortDescription": "Classmate / Navneet premium wiro twin-loop spiral bound notebook (29x21 cm, Single Line, 172 pages) with 360-degree flat lay.",
     "description": "The Classmate / Navneet Wiro Spiral Notebook 29x21 cm (Single Line, 172 Pages) is equipped with heavy-duty metal wiro spiral binding for complete 360-degree page rotation. Polypropylene protective cover protects pages against spills and tearing during daily commute.",
@@ -8670,8 +8538,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "WIRO-29X21-SING-240",
     "images": [
-      "/images/products/classmate-wiro.jpg",
-      "/images/products/classmate-longbook.jpg"
+      "/images/products/classmate-navneet-wiro-spiral-notebook-29x21-cm-single-line-240-pages-3.jpg"
     ],
     "shortDescription": "Classmate / Navneet premium wiro twin-loop spiral bound notebook (29x21 cm, Single Line, 240 pages) with 360-degree flat lay.",
     "description": "The Classmate / Navneet Wiro Spiral Notebook 29x21 cm (Single Line, 240 Pages) is equipped with heavy-duty metal wiro spiral binding for complete 360-degree page rotation. Polypropylene protective cover protects pages against spills and tearing during daily commute.",
@@ -8727,8 +8594,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "WIRO-29X21-SING-302",
     "images": [
-      "/images/products/classmate-wiro.jpg",
-      "/images/products/classmate-longbook.jpg"
+      "/images/products/classmate-navneet-wiro-spiral-notebook-29x21-cm-single-line-302-pages-3.jpg"
     ],
     "shortDescription": "Classmate / Navneet premium wiro twin-loop spiral bound notebook (29x21 cm, Single Line, 302 pages) with 360-degree flat lay.",
     "description": "The Classmate / Navneet Wiro Spiral Notebook 29x21 cm (Single Line, 302 Pages) is equipped with heavy-duty metal wiro spiral binding for complete 360-degree page rotation. Polypropylene protective cover protects pages against spills and tearing during daily commute.",
@@ -8784,8 +8650,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "WIRO-29X21-SING-384",
     "images": [
-      "/images/products/classmate-wiro.jpg",
-      "/images/products/classmate-longbook.jpg"
+      "/images/products/classmate-navneet-wiro-spiral-notebook-29x21-cm-single-line-384-pages-3.jpg"
     ],
     "shortDescription": "Classmate / Navneet premium wiro twin-loop spiral bound notebook (29x21 cm, Single Line, 384 pages) with 360-degree flat lay.",
     "description": "The Classmate / Navneet Wiro Spiral Notebook 29x21 cm (Single Line, 384 Pages) is equipped with heavy-duty metal wiro spiral binding for complete 360-degree page rotation. Polypropylene protective cover protects pages against spills and tearing during daily commute.",
@@ -8841,8 +8706,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "WIRO-29X21-UNRU-172",
     "images": [
-      "/images/products/classmate-wiro.jpg",
-      "/images/products/classmate-longbook.jpg"
+      "/images/products/classmate-navneet-wiro-spiral-notebook-29x21-cm-unruled-172-pages-3.jpg"
     ],
     "shortDescription": "Classmate / Navneet premium wiro twin-loop spiral bound notebook (29x21 cm, Unruled, 172 pages) with 360-degree flat lay.",
     "description": "The Classmate / Navneet Wiro Spiral Notebook 29x21 cm (Unruled, 172 Pages) is equipped with heavy-duty metal wiro spiral binding for complete 360-degree page rotation. Polypropylene protective cover protects pages against spills and tearing during daily commute.",
@@ -8898,8 +8762,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "WIRO-29X21-UNRU-240",
     "images": [
-      "/images/products/classmate-wiro.jpg",
-      "/images/products/classmate-longbook.jpg"
+      "/images/products/classmate-navneet-wiro-spiral-notebook-29x21-cm-unruled-240-pages-3.jpg"
     ],
     "shortDescription": "Classmate / Navneet premium wiro twin-loop spiral bound notebook (29x21 cm, Unruled, 240 pages) with 360-degree flat lay.",
     "description": "The Classmate / Navneet Wiro Spiral Notebook 29x21 cm (Unruled, 240 Pages) is equipped with heavy-duty metal wiro spiral binding for complete 360-degree page rotation. Polypropylene protective cover protects pages against spills and tearing during daily commute.",
@@ -8955,8 +8818,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "WIRO-29X21-UNRU-302",
     "images": [
-      "/images/products/classmate-wiro.jpg",
-      "/images/products/classmate-longbook.jpg"
+      "/images/products/classmate-navneet-wiro-spiral-notebook-29x21-cm-unruled-302-pages-3.jpg"
     ],
     "shortDescription": "Classmate / Navneet premium wiro twin-loop spiral bound notebook (29x21 cm, Unruled, 302 pages) with 360-degree flat lay.",
     "description": "The Classmate / Navneet Wiro Spiral Notebook 29x21 cm (Unruled, 302 Pages) is equipped with heavy-duty metal wiro spiral binding for complete 360-degree page rotation. Polypropylene protective cover protects pages against spills and tearing during daily commute.",
@@ -9012,8 +8874,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "WIRO-29X21-UNRU-384",
     "images": [
-      "/images/products/classmate-wiro.jpg",
-      "/images/products/classmate-longbook.jpg"
+      "/images/products/classmate-navneet-wiro-spiral-notebook-29x21-cm-unruled-384-pages-3.jpg"
     ],
     "shortDescription": "Classmate / Navneet premium wiro twin-loop spiral bound notebook (29x21 cm, Unruled, 384 pages) with 360-degree flat lay.",
     "description": "The Classmate / Navneet Wiro Spiral Notebook 29x21 cm (Unruled, 384 Pages) is equipped with heavy-duty metal wiro spiral binding for complete 360-degree page rotation. Polypropylene protective cover protects pages against spills and tearing during daily commute.",
