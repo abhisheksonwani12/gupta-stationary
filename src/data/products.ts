@@ -2660,7 +2660,8 @@ export const PRODUCTS: Product[] = [
     "sku": "PID-FEV-5",
     "images": [
       "/images/products/fevicol-mr-bottle.png",
-      "/images/products/fevicol-mr-nozzle.jpg"
+      "/images/products/fevicol-mr-nozzle.jpg",
+      "/images/products/fevicol-mr-spiderman.jpg"
     ],
     "shortDescription": "Fevicol MR all-purpose white craft and paper adhesive (10g Squeezy Bottle) by Pidilite.",
     "description": "Fevicol MR is India's leading non-staining craft adhesive for bonding paper, cardboard, thermocol, fabrics, and craft embellishments with superior initial tack and bond strength.",
@@ -2714,7 +2715,8 @@ export const PRODUCTS: Product[] = [
     "sku": "PID-FEV-10",
     "images": [
       "/images/products/fevicol-mr-bottle.png",
-      "/images/products/fevicol-mr-nozzle.jpg"
+      "/images/products/fevicol-mr-nozzle.jpg",
+      "/images/products/fevicol-mr-spiderman.jpg"
     ],
     "shortDescription": "Fevicol MR all-purpose white craft and paper adhesive (22.5g Squeezy Bottle) by Pidilite.",
     "description": "Fevicol MR is India's leading non-staining craft adhesive for bonding paper, cardboard, thermocol, fabrics, and craft embellishments with superior initial tack and bond strength.",
@@ -2768,7 +2770,8 @@ export const PRODUCTS: Product[] = [
     "sku": "PID-FEV-25",
     "images": [
       "/images/products/fevicol-mr-bottle.png",
-      "/images/products/fevicol-mr-nozzle.jpg"
+      "/images/products/fevicol-mr-nozzle.jpg",
+      "/images/products/fevicol-mr-spiderman.jpg"
     ],
     "shortDescription": "Fevicol MR all-purpose white craft and paper adhesive (50g Bottle) by Pidilite.",
     "description": "Fevicol MR is India's leading non-staining craft adhesive for bonding paper, cardboard, thermocol, fabrics, and craft embellishments with superior initial tack and bond strength.",
@@ -2822,7 +2825,8 @@ export const PRODUCTS: Product[] = [
     "sku": "PID-FEV-60",
     "images": [
       "/images/products/fevicol-mr-bottle.png",
-      "/images/products/fevicol-mr-nozzle.jpg"
+      "/images/products/fevicol-mr-nozzle.jpg",
+      "/images/products/fevicol-mr-spiderman.jpg"
     ],
     "shortDescription": "Fevicol MR all-purpose white craft and paper adhesive (100g Bottle) by Pidilite.",
     "description": "Fevicol MR is India's leading non-staining craft adhesive for bonding paper, cardboard, thermocol, fabrics, and craft embellishments with superior initial tack and bond strength.",
@@ -2876,7 +2880,8 @@ export const PRODUCTS: Product[] = [
     "sku": "PID-FEV-100",
     "images": [
       "/images/products/fevicol-mr-bottle.png",
-      "/images/products/fevicol-mr-nozzle.jpg"
+      "/images/products/fevicol-mr-nozzle.jpg",
+      "/images/products/fevicol-mr-spiderman.jpg"
     ],
     "shortDescription": "Fevicol MR all-purpose white craft and paper adhesive (200g Jar) by Pidilite.",
     "description": "Fevicol MR is India's leading non-staining craft adhesive for bonding paper, cardboard, thermocol, fabrics, and craft embellishments with superior initial tack and bond strength.",
@@ -2930,7 +2935,8 @@ export const PRODUCTS: Product[] = [
     "sku": "PID-FEV-200",
     "images": [
       "/images/products/fevicol-mr-bottle.png",
-      "/images/products/fevicol-mr-nozzle.jpg"
+      "/images/products/fevicol-mr-nozzle.jpg",
+      "/images/products/fevicol-mr-spiderman.jpg"
     ],
     "shortDescription": "Fevicol MR all-purpose white craft and paper adhesive (500g Dispenser Jar) by Pidilite.",
     "description": "Fevicol MR is India's leading non-staining craft adhesive for bonding paper, cardboard, thermocol, fabrics, and craft embellishments with superior initial tack and bond strength.",
@@ -3515,7 +3521,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "LINC-GLYCER-BP",
     "images": [
-      "/images/products/linc-glycer-ball-pen-pack-of-10-3.jpg"
+      "/images/products/linc-glycer-blue-pack-10.jpg"
     ],
     "shortDescription": "LINC GLYCER Ball Pen (Pack of 10) engineered for smooth, smudge-free writing with durable tungsten carbide tip.",
     "description": "The LINC GLYCER Ball Pen (Pack of 10) delivers dependable, fluid ink flow with an ergonomic grip designed for extended exams, office documentation, and daily classroom notes.",
@@ -3848,7 +3854,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "CLAS-OCTANE-BP",
     "images": [
-      "/images/products/classmate-octane-ball-pen-pack-of-10-3.jpg"
+      "/images/products/classmate-octane-ball-box.jpg"
     ],
     "shortDescription": "Classmate Octane Ball Pen (Pack of 10) engineered for smooth, smudge-free writing with durable tungsten carbide tip.",
     "description": "The Classmate Octane Ball Pen (Pack of 10) delivers dependable, fluid ink flow with an ergonomic grip designed for extended exams, office documentation, and daily classroom notes.",
@@ -4124,7 +4130,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "FLAI-SRX-BP",
     "images": [
-      "/images/products/flair-srx-ball-pen-pack-of-10-3.jpg"
+      "/images/products/flair-srx-stand.jpg"
     ],
     "shortDescription": "FLair SRX Ball Pen (Pack of 10) engineered for smooth, smudge-free writing with durable tungsten carbide tip.",
     "description": "The FLair SRX Ball Pen (Pack of 10) delivers dependable, fluid ink flow with an ergonomic grip designed for extended exams, office documentation, and daily classroom notes.",
@@ -4840,8 +4846,8 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "LINC-PENTON-GEL",
     "images": [
-      "/images/products/linc-pentonic-evo-box.jpg",
-      "/images/products/linc-pentonic-evo-pens.jpg"
+      "/images/products/linc-pentonic-gel-06-box.jpg",
+      "/images/products/linc-pentonic-gel-pen-black.jpg"
     ],
     "shortDescription": "LINC Pentonic Gel (Pack of 10) with vibrant Japanese waterproof gel ink technology and instant quick-dry formula.",
     "description": "Experience bold, effortless handwriting with the LINC Pentonic Gel (Pack of 10). Engineered with fast-drying water-resistant pigment gel ink that will not smudge or feather on standard notebook paper.",
@@ -4896,7 +4902,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "LINC-GLYCER-GEL",
     "images": [
-      "/images/products/linc-glycer-gel-pack-of-10-3.jpg"
+      "/images/products/linc-glycer-blue-pack-10.jpg"
     ],
     "shortDescription": "LINC Glycer Gel (Pack of 10) with vibrant Japanese waterproof gel ink technology and instant quick-dry formula.",
     "description": "Experience bold, effortless handwriting with the LINC Glycer Gel (Pack of 10). Engineered with fast-drying water-resistant pigment gel ink that will not smudge or feather on standard notebook paper.",
@@ -5008,7 +5014,8 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "LINC-GRT-GEL",
     "images": [
-      "/images/products/linc-grt-gel-pen-1-piece-3.jpg"
+      "/images/products/linc-pentonic-grt-box.jpg",
+      "/images/products/linc-pentonic-grt-desk.jpg"
     ],
     "shortDescription": "LINC GRT Gel Pen (1 Piece) with vibrant Japanese waterproof gel ink technology and instant quick-dry formula.",
     "description": "Experience bold, effortless handwriting with the LINC GRT Gel Pen (1 Piece). Engineered with fast-drying water-resistant pigment gel ink that will not smudge or feather on standard notebook paper.",
