@@ -3036,7 +3036,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "PID-BONDFIX-20",
     "images": [
-      "/images/products/pidilite-bondfix-multipurpose-adhesive-20ml-3.jpg"
+      "/images/products/pidilite-fevibond-adhesive.jpg"
     ],
     "shortDescription": "Pidilite Bondfix high-strength solvent-based multipurpose adhesive (20ml).",
     "description": "Pidilite Bondfix is a quick-setting solvent-based contact adhesive formulated for quick, permanent joints in stationery, wood craft, leather, and plastics.",
@@ -3089,7 +3089,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "PID-BONDFIX-30",
     "images": [
-      "/images/products/pidilite-bondfix-multipurpose-adhesive-30ml-3.jpg"
+      "/images/products/pidilite-fevibond-adhesive.jpg"
     ],
     "shortDescription": "Pidilite Bondfix high-strength solvent-based multipurpose adhesive (30ml).",
     "description": "Pidilite Bondfix is a quick-setting solvent-based contact adhesive formulated for quick, permanent joints in stationery, wood craft, leather, and plastics.",
@@ -3458,7 +3458,9 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "LINC-PENTON-BP",
     "images": [
-      "/images/products/linc-pentonic-ball-pen-pack-of-10-3.jpg"
+      "/images/products/linc-pentonic-10u-box.jpg",
+      "/images/products/linc-pentonic-ball-pen-purple.jpg",
+      "/images/products/linc-pentonic-evo-pens.jpg"
     ],
     "shortDescription": "LINC PENTONIC Ball Pen (Pack of 10) engineered for smooth, smudge-free writing with durable tungsten carbide tip.",
     "description": "The LINC PENTONIC Ball Pen (Pack of 10) delivers dependable, fluid ink flow with an ergonomic grip designed for extended exams, office documentation, and daily classroom notes.",
@@ -3733,7 +3735,9 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "HAUS-AUTOCL-BP",
     "images": [
-      "/images/products/hauser-autoclick-ball-pen-pack-of-10-3.jpg"
+      "/images/products/hauser-autoclick-retail-stand.jpg",
+      "/images/products/hauser-autoclick-hand-rotating.jpg",
+      "/images/products/hauser-autoclick-pens-detail.jpg"
     ],
     "shortDescription": "HAUSER AUTOCLICK Ball Pen (Pack of 10) engineered for smooth, smudge-free writing with durable tungsten carbide tip.",
     "description": "The HAUSER AUTOCLICK Ball Pen (Pack of 10) delivers dependable, fluid ink flow with an ergonomic grip designed for extended exams, office documentation, and daily classroom notes.",
@@ -3954,7 +3958,8 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "CLAS-HOOK-BP",
     "images": [
-      "/images/products/classmate-hook-ball-pen-pack-of-10-3.jpg"
+      "/images/products/classmate-hook-pack-10.jpg",
+      "/images/products/classmate-hook-limited-colors.jpg"
     ],
     "shortDescription": "Classmate Hook Ball Pen (Pack of 10) engineered for smooth, smudge-free writing with durable tungsten carbide tip.",
     "description": "The Classmate Hook Ball Pen (Pack of 10) delivers dependable, fluid ink flow with an ergonomic grip designed for extended exams, office documentation, and daily classroom notes.",
@@ -4009,7 +4014,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "FLAI-CLICK-BP",
     "images": [
-      "/images/products/flair-click-ball-pen-pack-of-10-3.jpg"
+      "/images/products/flair-ezee-click-box.jpg"
     ],
     "shortDescription": "FLair Click Ball Pen (Pack of 10) engineered for smooth, smudge-free writing with durable tungsten carbide tip.",
     "description": "The FLair Click Ball Pen (Pack of 10) delivers dependable, fluid ink flow with an ergonomic grip designed for extended exams, office documentation, and daily classroom notes.",
@@ -4174,7 +4179,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "FLAI-YOLO-BP",
     "images": [
-      "/images/products/flair-yolo-ball-pen-pack-of-10-3.jpg"
+      "/images/products/flair-yolo-ball-pen-banner.jpg"
     ],
     "shortDescription": "FLair YOLO Ball Pen (Pack of 10) engineered for smooth, smudge-free writing with durable tungsten carbide tip.",
     "description": "The FLair YOLO Ball Pen (Pack of 10) delivers dependable, fluid ink flow with an ergonomic grip designed for extended exams, office documentation, and daily classroom notes.",
@@ -4946,7 +4951,9 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "LINC-EVO-GE-GEL",
     "images": [
-      "/images/products/linc-evo-gel-1-piece-3.jpg"
+      "/images/products/linc-pentonic-evo-box.jpg",
+      "/images/products/linc-pentonic-evo-pens.jpg",
+      "/images/products/linc-pentonic-10u-box.jpg"
     ],
     "shortDescription": "LINC Evo gel (1 Piece) with vibrant Japanese waterproof gel ink technology and instant quick-dry formula.",
     "description": "Experience bold, effortless handwriting with the LINC Evo gel (1 Piece). Engineered with fast-drying water-resistant pigment gel ink that will not smudge or feather on standard notebook paper.",
