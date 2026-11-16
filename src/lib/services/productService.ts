@@ -36,7 +36,7 @@ export const productService = {
             if (!item.bulkPricing) {
               item.bulkPricing = initial?.bulkPricing || [];
             }
-            if (initial && initial.images && initial.images[0] && (!item.images || !item.images[0] || item.images[0].includes("unsplash.com"))) {
+            if (initial && initial.images && JSON.stringify(item.images) !== JSON.stringify(initial.images)) {
               hasImageUpdates = true;
               item.images = initial.images;
             }

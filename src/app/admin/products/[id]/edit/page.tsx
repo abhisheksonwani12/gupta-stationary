@@ -12,6 +12,7 @@ import {
   Check,
 } from "lucide-react";
 import AdminHeader from "@/components/admin/AdminHeader";
+import ProductImageManager from "@/components/admin/ProductImageManager";
 import { useInventory } from "@/context/InventoryContext";
 import { BulkTier, Product } from "@/types";
 
@@ -316,51 +317,12 @@ export default function AdminEditProductPage({ params }: EditProductPageProps) {
           </div>
         </div>
 
-        {/* Section 3: Images */}
-        <div className="bg-white border border-[#E8E3DA] p-6 sm:p-8 shadow-soft space-y-4">
-          <div className="flex items-center justify-between border-b border-gray-100 pb-3">
-            <h3 className="font-serif font-bold text-base uppercase text-gray-900">
-              3. Product Photography (Image URLs)
-            </h3>
-            <button
-              type="button"
-              onClick={handleAddImage}
-              className="text-xs font-bold text-[#B38E5D] hover:underline flex items-center gap-1"
-            >
-              <Plus className="w-3.5 h-3.5" />
-              <span>Add Image</span>
-            </button>
-          </div>
-
-          <div className="space-y-3">
-            {images.map((img, idx) => (
-              <div key={idx} className="flex items-center gap-3 text-xs">
-                <div className="w-12 h-12 bg-[#FAF8F5] border border-gray-200 shrink-0 overflow-hidden flex items-center justify-center">
-                  {img ? (
-                    <img src={img} alt="" className="w-full h-full object-cover" />
-                  ) : (
-                    <ImageIcon className="w-4 h-4 text-gray-400" />
-                  )}
-                </div>
-                <input
-                  type="url"
-                  value={img}
-                  onChange={(e) => handleImageChange(idx, e.target.value)}
-                  className="flex-1 p-2.5 bg-[#FAF8F5] border border-[#E8E3DA] font-mono text-[11px]"
-                />
-                {images.length > 1 && (
-                  <button
-                    type="button"
-                    onClick={() => handleRemoveImage(idx)}
-                    className="p-2 text-gray-400 hover:text-red-600"
-                  >
-                    <Trash2 className="w-4 h-4" />
-                  </button>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
+        {/* Section 3: Product Photography & Multi-Photo Manager */}
+        <ProductImageManager
+          images={images}
+          onChange={setImages}
+          productName={name}
+        />
 
         {/* Section 4: Specifications */}
         <div className="bg-white border border-[#E8E3DA] p-6 sm:p-8 shadow-soft space-y-4">
