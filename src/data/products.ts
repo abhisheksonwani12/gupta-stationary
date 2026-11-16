@@ -4779,7 +4779,8 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "LINC-OCEAN--GEL",
     "images": [
-      "/images/products/linc-ocean-gel-pack-of-10-3.jpg"
+      "/images/products/linc-ocean-gel-pack-10.jpg",
+      "/images/products/linc-ocean-gel-pens-spread.jpg"
     ],
     "shortDescription": "LINC Ocean Gel (Pack of 10) with vibrant Japanese waterproof gel ink technology and instant quick-dry formula.",
     "description": "Experience bold, effortless handwriting with the LINC Ocean Gel (Pack of 10). Engineered with fast-drying water-resistant pigment gel ink that will not smudge or feather on standard notebook paper.",
@@ -4834,7 +4835,8 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "LINC-PENTON-GEL",
     "images": [
-      "/images/products/linc-pentonic-gel-pack-of-10-3.jpg"
+      "/images/products/linc-pentonic-evo-box.jpg",
+      "/images/products/linc-pentonic-evo-pens.jpg"
     ],
     "shortDescription": "LINC Pentonic Gel (Pack of 10) with vibrant Japanese waterproof gel ink technology and instant quick-dry formula.",
     "description": "Experience bold, effortless handwriting with the LINC Pentonic Gel (Pack of 10). Engineered with fast-drying water-resistant pigment gel ink that will not smudge or feather on standard notebook paper.",
@@ -5109,7 +5111,9 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "HAUS-JUMBO--GEL",
     "images": [
-      "/images/products/hauser-jumbo-gel-1-piece-3.jpg"
+      "/images/products/hauser-xo-jumbo-gel-poster.jpg",
+      "/images/products/hauser-xo-jumbo-gel-body.jpg",
+      "/images/products/hauser-xo-jumbo-gel-display.jpg"
     ],
     "shortDescription": "HAUSER JUMBO GEL (1 Piece) with vibrant Japanese waterproof gel ink technology and instant quick-dry formula.",
     "description": "Experience bold, effortless handwriting with the HAUSER JUMBO GEL (1 Piece). Engineered with fast-drying water-resistant pigment gel ink that will not smudge or feather on standard notebook paper.",
@@ -5164,7 +5168,8 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "HAUS-CLICK--GEL",
     "images": [
-      "/images/products/hauser-click-gel-1-piece-3.jpg"
+      "/images/products/hauser-xo-click-gel-pen.jpg",
+      "/images/products/hauser-xo-click-gel-display.jpg"
     ],
     "shortDescription": "HAUSER CLICK GEL (1 Piece) with vibrant Japanese waterproof gel ink technology and instant quick-dry formula.",
     "description": "Experience bold, effortless handwriting with the HAUSER CLICK GEL (1 Piece). Engineered with fast-drying water-resistant pigment gel ink that will not smudge or feather on standard notebook paper.",
@@ -5219,8 +5224,8 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "CLAS-OCTANE-GEL",
     "images": [
-      "/images/products/classmate-octane.jpg",
-      "/images/products/hauser-xo-ball.jpg"
+      "/images/products/classmate-octane-gel-pack-10.jpg",
+      "/images/products/classmate-octane-gel-detail.jpg"
     ],
     "shortDescription": "Classmate Octane Gel (Pack of 10) with vibrant Japanese waterproof gel ink technology and instant quick-dry formula.",
     "description": "Experience bold, effortless handwriting with the Classmate Octane Gel (Pack of 10). Engineered with fast-drying water-resistant pigment gel ink that will not smudge or feather on standard notebook paper.",
