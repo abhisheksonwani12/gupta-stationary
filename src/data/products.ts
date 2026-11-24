@@ -6066,7 +6066,8 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "PENT-ENERGE-GEL",
     "images": [
-      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/pentel-energel-click-1-piece-3.jpg"
+      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/pentel-energel-click-1-piece-3.jpg",
+      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/pentel-energel-click-1-piece-3-pack.jpg"
     ],
     "shortDescription": "PENTEL ENERGEL CLICK (1 Piece) with vibrant Japanese waterproof gel ink technology and instant quick-dry formula.",
     "description": "Experience bold, effortless handwriting with the PENTEL ENERGEL CLICK (1 Piece). Engineered with fast-drying water-resistant pigment gel ink that will not smudge or feather on standard notebook paper.",
@@ -6342,7 +6343,8 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "UNIB-EYE-ROL",
     "images": [
-      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/uniball-eye-liquid-ink-roller-pen-1-piece-3.jpg"
+      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/uniball-eye-liquid-ink-roller-pen-1-piece-3.jpg",
+      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/uniball-eye-liquid-ink-roller-pen-1-piece-3-single.jpg"
     ],
     "shortDescription": "UNIBALL EYE Liquid Ink Roller Pen (1 Piece) engineered with Uni-Flow liquid ink system for skip-free continuous writing.",
     "description": "The UNIBALL EYE Liquid Ink Roller Pen (1 Piece) features advanced liquid ink technology ensuring steady ink flow right down to the last drop. Micro-cushioned tip adapts to your writing angle for frictionless gliding.",
