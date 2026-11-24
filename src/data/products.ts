@@ -1424,7 +1424,8 @@ export const PRODUCTS: Product[] = [
     "isEcoFriendly": true,
     "sku": "JK-ECO-RISE",
     "images": [
-      "/images/products/jk-ecorise-copier-paper.jpg"
+      "/images/products/jk-ecorise-copier-paper.jpg",
+      "/images/products/jk-ecorise-copier-paper-detail.jpg"
     ],
     "shortDescription": "Eco-friendly, cost-effective copier paper engineered for high-volume office and institutional printing.",
     "description": "JK Ecorise is an environmentally conscious copier paper crafted using agro-residue pulping processes. Ideal for everyday printing, draft copies, school assignments, and high-volume corporate document distribution.",
