@@ -4461,7 +4461,7 @@ export const PRODUCTS: Product[] = [
     "sku": "UNOM-ULTRON-BP",
     "images": [
       "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/unomax-ultron-2x-ball-pen-pack-of-10-3.jpg",
-      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/unomax-ultron-2x-ball-pen-pack-of-10-3-poster.jpg"
+      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/unomax-ultron-2x-ball-pen-pack-of-10-3-banner.jpg"
     ],
     "shortDescription": "UNOMAX Ultron 2X Ball Pen (Pack of 10) engineered for smooth, smudge-free writing with durable tungsten carbide tip.",
     "description": "The UNOMAX Ultron 2X Ball Pen (Pack of 10) delivers dependable, fluid ink flow with an ergonomic grip designed for extended exams, office documentation, and daily classroom notes.",
@@ -4517,7 +4517,7 @@ export const PRODUCTS: Product[] = [
     "sku": "UNOM-ULTRON-BP",
     "images": [
       "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/unomax-ultron-neo-2x-ball-pen-pack-of-10-3.jpg",
-      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/unomax-ultron-neo-2x-ball-pen-pack-of-10-3-poster.jpg"
+      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/unomax-ultron-neo-2x-ball-pen-pack-of-10-3-banner.jpg"
     ],
     "shortDescription": "UNOMAX ULTRON NEO 2X Ball Pen (Pack of 10) engineered for smooth, smudge-free writing with durable tungsten carbide tip.",
     "description": "The UNOMAX ULTRON NEO 2X Ball Pen (Pack of 10) delivers dependable, fluid ink flow with an ergonomic grip designed for extended exams, office documentation, and daily classroom notes.",
@@ -4572,7 +4572,8 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "UNOM-BOLDTR-BP",
     "images": [
-      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/unomax-boldtron-ball-pen-pack-of-10-3.jpg"
+      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/unomax-boldtron-ball-pen-pack-of-10-3.jpg",
+      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/unomax-boldtron-ball-pen-pack-of-10-3-poster.jpg"
     ],
     "shortDescription": "UNOMAX Boldtron Ball Pen (Pack of 10) engineered for smooth, smudge-free writing with durable tungsten carbide tip.",
     "description": "The UNOMAX Boldtron Ball Pen (Pack of 10) delivers dependable, fluid ink flow with an ergonomic grip designed for extended exams, office documentation, and daily classroom notes.",
@@ -5463,7 +5464,8 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "MONT-TEXTA--GEL",
     "images": [
-      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/montex-texta-gel-pack-of-10-3.jpg"
+      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/montex-texta-gel-pack-of-10-3.jpg",
+      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/montex-texta-gel-pack-of-10-3-banner.jpg"
     ],
     "shortDescription": "MONtex TEXTA GEL (Pack of 10) with vibrant Japanese waterproof gel ink technology and instant quick-dry formula.",
     "description": "Experience bold, effortless handwriting with the MONtex TEXTA GEL (Pack of 10). Engineered with fast-drying water-resistant pigment gel ink that will not smudge or feather on standard notebook paper.",
