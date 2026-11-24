@@ -284,7 +284,8 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "GS-MECH-05",
     "images": [
-      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/mechanical-pencil-0-5mm.jpg"
+      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/mechanical-pencil-0-5mm.jpg",
+      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/mechanical-pencil-0-5mm-usage.jpg"
     ],
     "shortDescription": "Modern ergonomic mechanical pencil with cushioned shock-absorbing tip and metal clip.",
     "description": "Designed for architects, students, and engineers who demand consistent 0.5mm line width without sharpening.",
@@ -335,7 +336,8 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "GS-HIGH-05",
     "images": [
-      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/highlighter-pen-set-5-colors.jpg"
+      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/highlighter-pen-set-5-colors.jpg",
+      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/highlighter-pen-set-5-colors-pens.jpg"
     ],
     "shortDescription": "Vibrant neon fluorescent highlighters with dual chisel tips for wide and narrow strokes.",
     "description": "Water-based odorless fluorescent ink designed not to bleed through standard notebook or copy paper.",
