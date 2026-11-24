@@ -3786,8 +3786,8 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "REYN-045-CL-BP",
     "images": [
-      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/reynolds-045.jpg",
-      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/hauser-xo-ball.jpg"
+      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/reynolds-045-classic-ball-pen-pack-of-10-3.jpg",
+      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/reynolds-045-classic-ball-pen-pack-of-10-3-pens.jpg"
     ],
     "shortDescription": "REYNOLDS 045 Classic Ball Pen (Pack of 10) engineered for smooth, smudge-free writing with durable tungsten carbide tip.",
     "description": "The REYNOLDS 045 Classic Ball Pen (Pack of 10) delivers dependable, fluid ink flow with an ergonomic grip designed for extended exams, office documentation, and daily classroom notes.",
@@ -4338,7 +4338,8 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "LUXO-FINEWR-BP",
     "images": [
-      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/luxor-finewriter-ball-pen-pack-of-10-3.jpg"
+      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/luxor-finewriter-ball-pen-pack-of-10-3.jpg",
+      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/luxor-finewriter-ball-pen-pack-of-10-3-pens.jpg"
     ],
     "shortDescription": "LUXOR Finewriter Ball Pen (Pack of 10) engineered for smooth, smudge-free writing with durable tungsten carbide tip.",
     "description": "The LUXOR Finewriter Ball Pen (Pack of 10) delivers dependable, fluid ink flow with an ergonomic grip designed for extended exams, office documentation, and daily classroom notes.",
