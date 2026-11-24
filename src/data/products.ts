@@ -5520,7 +5520,8 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "LUXO-GELONE-GEL",
     "images": [
-      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/luxor-gelone-pack-of-10-3.jpg"
+      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/luxor-gelone-pack-of-10-3.jpg",
+      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/luxor-gelone-pack-of-10-3-black.jpg"
     ],
     "shortDescription": "LUXOR GELONE (Pack of 10) with vibrant Japanese waterproof gel ink technology and instant quick-dry formula.",
     "description": "Experience bold, effortless handwriting with the LUXOR GELONE (Pack of 10). Engineered with fast-drying water-resistant pigment gel ink that will not smudge or feather on standard notebook paper.",
@@ -7119,7 +7120,8 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "NB-24X18-4-LINE-120",
     "images": [
-      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/classmate-navneet-student-notebook-24x18-cm-4-line-120-pages-3.jpg"
+      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/classmate-navneet-student-notebook-24x18-cm-4-line-120-pages-3.jpg",
+      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/classmate-navneet-student-notebook-24x18-cm-4-line-120-pages-3-lifestyle.jpg"
     ],
     "shortDescription": "Classmate / Navneet standard school exercise notebook (24x18 cm, 4 Line, 120 pages) with chlorine-free ozone friendly paper.",
     "description": "The Classmate / Navneet Student Notebook 24x18 cm (4 Line, 120 Pages) is crafted with ultra-smooth 58-60 GSM high-brightness paper that prevents ink penetration and feathering. Features heavy-duty spine pinning, subject index page, and fun trivia back cover.",
@@ -8407,7 +8409,8 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "NB-29X21-SL-302",
     "images": [
-      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/classmate-navneet-long-notebook-29x21-cm-single-line-302-pages-3.jpg"
+      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/classmate-navneet-long-notebook-29x21-cm-single-line-302-pages-3.jpg",
+      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/classmate-navneet-long-notebook-29x21-cm-single-line-302-pages-3-poster.jpg"
     ],
     "shortDescription": "Classmate / Navneet A4 long format notebook (29x21 cm, 302 pages) for senior school, college lectures, and coaching classes.",
     "description": "The Classmate / Navneet Long Notebook 29x21 cm (Single Line, 302 Pages) is specifically formatted for high school and university coursework. High opacity paper accommodates gel and fountain pens with zero bleed-through.",
