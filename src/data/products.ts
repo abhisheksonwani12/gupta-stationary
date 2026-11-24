@@ -2659,7 +2659,6 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "PID-FEV-5",
     "images": [
-      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/fevicol-mr-bottle.png",
       "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/fevicol-mr-nozzle.jpg",
       "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/fevicol-mr-spiderman.jpg"
     ],
@@ -2714,7 +2713,6 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "PID-FEV-10",
     "images": [
-      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/fevicol-mr-bottle.png",
       "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/fevicol-mr-nozzle.jpg",
       "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/fevicol-mr-spiderman.jpg"
     ],
@@ -2769,7 +2767,6 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "PID-FEV-25",
     "images": [
-      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/fevicol-mr-bottle.png",
       "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/fevicol-mr-nozzle.jpg",
       "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/fevicol-mr-spiderman.jpg"
     ],
@@ -2824,7 +2821,6 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "PID-FEV-60",
     "images": [
-      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/fevicol-mr-bottle.png",
       "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/fevicol-mr-nozzle.jpg",
       "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/fevicol-mr-spiderman.jpg"
     ],
@@ -2879,7 +2875,6 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "PID-FEV-100",
     "images": [
-      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/fevicol-mr-bottle.png",
       "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/fevicol-mr-nozzle.jpg",
       "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/fevicol-mr-spiderman.jpg"
     ],
@@ -2934,7 +2929,6 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "PID-FEV-200",
     "images": [
-      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/fevicol-mr-bottle.png",
       "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/fevicol-mr-nozzle.jpg",
       "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/fevicol-mr-spiderman.jpg"
     ],
@@ -4405,7 +4399,8 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "LUXO-UNIFLO-BP",
     "images": [
-      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/luxor-uniflow-ball-pen-pack-of-10-3.jpg"
+      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/luxor-uniflow-ball-pen-pack-of-10-3.jpg",
+      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/luxor-uniflow-ball-pen-pack-of-10-3-closeup.jpg"
     ],
     "shortDescription": "LUXOR Uniflow Ball Pen (Pack of 10) engineered for smooth, smudge-free writing with durable tungsten carbide tip.",
     "description": "The LUXOR Uniflow Ball Pen (Pack of 10) delivers dependable, fluid ink flow with an ergonomic grip designed for extended exams, office documentation, and daily classroom notes.",
@@ -4461,7 +4456,7 @@ export const PRODUCTS: Product[] = [
     "sku": "UNOM-ULTRON-BP",
     "images": [
       "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/unomax-ultron-2x-ball-pen-pack-of-10-3.jpg",
-      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/unomax-ultron-2x-ball-pen-pack-of-10-3-banner.jpg"
+      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/unomax-ultron-2x-ball-pen-pack-of-10-3-pens.jpg"
     ],
     "shortDescription": "UNOMAX Ultron 2X Ball Pen (Pack of 10) engineered for smooth, smudge-free writing with durable tungsten carbide tip.",
     "description": "The UNOMAX Ultron 2X Ball Pen (Pack of 10) delivers dependable, fluid ink flow with an ergonomic grip designed for extended exams, office documentation, and daily classroom notes.",
@@ -5409,7 +5404,8 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "FLAI-GLASS--GEL",
     "images": [
-      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/flair-glass-gel-pack-of-10-3.jpg"
+      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/flair-glass-gel-pack-of-10-3.jpg",
+      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/flair-glass-gel-pack-of-10-3-pens.jpg"
     ],
     "shortDescription": "FLair Glass gel (Pack of 10) with vibrant Japanese waterproof gel ink technology and instant quick-dry formula.",
     "description": "Experience bold, effortless handwriting with the FLair Glass gel (Pack of 10). Engineered with fast-drying water-resistant pigment gel ink that will not smudge or feather on standard notebook paper.",
