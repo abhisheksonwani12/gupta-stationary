@@ -2659,8 +2659,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "PID-FEV-5",
     "images": [
-      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/fevicol-mr-nozzle.jpg",
-      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/fevicol-mr-spiderman.jpg"
+      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/fevicol-mr-nozzle.jpg"
     ],
     "shortDescription": "Fevicol MR all-purpose white craft and paper adhesive (10g Squeezy Bottle) by Pidilite.",
     "description": "Fevicol MR is India's leading non-staining craft adhesive for bonding paper, cardboard, thermocol, fabrics, and craft embellishments with superior initial tack and bond strength.",
@@ -2713,8 +2712,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "PID-FEV-10",
     "images": [
-      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/fevicol-mr-nozzle.jpg",
-      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/fevicol-mr-spiderman.jpg"
+      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/fevicol-mr-nozzle.jpg"
     ],
     "shortDescription": "Fevicol MR all-purpose white craft and paper adhesive (22.5g Squeezy Bottle) by Pidilite.",
     "description": "Fevicol MR is India's leading non-staining craft adhesive for bonding paper, cardboard, thermocol, fabrics, and craft embellishments with superior initial tack and bond strength.",
@@ -2767,8 +2765,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "PID-FEV-25",
     "images": [
-      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/fevicol-mr-nozzle.jpg",
-      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/fevicol-mr-spiderman.jpg"
+      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/fevicol-mr-nozzle.jpg"
     ],
     "shortDescription": "Fevicol MR all-purpose white craft and paper adhesive (50g Bottle) by Pidilite.",
     "description": "Fevicol MR is India's leading non-staining craft adhesive for bonding paper, cardboard, thermocol, fabrics, and craft embellishments with superior initial tack and bond strength.",
@@ -2821,8 +2818,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "PID-FEV-60",
     "images": [
-      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/fevicol-mr-nozzle.jpg",
-      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/fevicol-mr-spiderman.jpg"
+      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/fevicol-mr-nozzle.jpg"
     ],
     "shortDescription": "Fevicol MR all-purpose white craft and paper adhesive (100g Bottle) by Pidilite.",
     "description": "Fevicol MR is India's leading non-staining craft adhesive for bonding paper, cardboard, thermocol, fabrics, and craft embellishments with superior initial tack and bond strength.",
@@ -2875,8 +2871,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "PID-FEV-100",
     "images": [
-      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/fevicol-mr-nozzle.jpg",
-      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/fevicol-mr-spiderman.jpg"
+      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/fevicol-mr-nozzle.jpg"
     ],
     "shortDescription": "Fevicol MR all-purpose white craft and paper adhesive (200g Jar) by Pidilite.",
     "description": "Fevicol MR is India's leading non-staining craft adhesive for bonding paper, cardboard, thermocol, fabrics, and craft embellishments with superior initial tack and bond strength.",
@@ -2929,8 +2924,7 @@ export const PRODUCTS: Product[] = [
     "isNew": false,
     "sku": "PID-FEV-200",
     "images": [
-      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/fevicol-mr-nozzle.jpg",
-      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/fevicol-mr-spiderman.jpg"
+      "https://ggumahzbwhgvgortfnvz.supabase.co/storage/v1/object/public/product-images/fevicol-mr-nozzle.jpg"
     ],
     "shortDescription": "Fevicol MR all-purpose white craft and paper adhesive (500g Dispenser Jar) by Pidilite.",
     "description": "Fevicol MR is India's leading non-staining craft adhesive for bonding paper, cardboard, thermocol, fabrics, and craft embellishments with superior initial tack and bond strength.",
